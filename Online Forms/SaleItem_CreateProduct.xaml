@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SaleItem_OnlineForms_CreateProduct" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SaleItem_OnlineForms_CreateProduct" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="MerchantName" Type="InArgument(x:String)" />
     <x:Property Name="ItemName" Type="InArgument(x:String)" />
@@ -13,7 +13,7 @@
   </this:SaleItem_OnlineForms_CreateProduct.SuccessMsg_Var>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1150,2896</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,4582</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,9 +102,15 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SaleItem_OnlineForms_CreateProduct" sap:VirtualizedContainerService.HintSize="546,2831.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SaleItem_OnlineForms_CreateProduct" sap:VirtualizedContainerService.HintSize="546,4517.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Url" />
     </Sequence.Variables>
@@ -113,13 +119,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="484,2720.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="484,4406.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2501.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,4187.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,6 +136,18 @@
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" ContentHash="5SVbvlG79kC72H5ARo1fOg" CvTextArea="1489, 280, 105, 19" CvTextArgument="SALE ITEM" CvType="Text" DesignTimeRectangle="1480, 267, 128, 45" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='SALE ITEM' role='link' /&gt;" FuzzySelectorArgument="&lt;webctrl id='saleitem' tag='A' type='' class='nav-link navbar-brand' aaname='SALE ITEM' check:innerText='SALE ITEM' /&gt;" Guid="aa87865a-80fe-47de-b064-e55c79a133b8" InformativeScreenshot="ff6bc54904066c00db62b672f0a7ad25.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/hnVy1OUml02foJbRIP-CbA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Online Forms - Google Chrome' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Clicked on Sale Item tab"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_Input_SelectMerchant'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="U1aO6Kbq4kaOI7foqHhW0g" CvTextArea="214, 420, 201, 22" CvTextArgument="Select Merchant..." CvType="Text" DesignTimeRectangle="186, 378, 1183, 75" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Select Merchant...' role='grouping' /&gt;&lt;ctrl role='grouping' text='Select Merchant...' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Select Merchant...' role='grouping' /&gt;&lt;ctrl role='grouping' text='Select Merchant...' automationid='' check:text='Select Merchant...' /&gt;" Guid="7d06deca-ffde-4f93-b506-3c562db2e23c" InformativeScreenshot="d3e988b5d6d345118af5efae64319315.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/-Q0j5lk430OwmZcLMfxBPg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -140,11 +158,35 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Merchant name is entered"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dpp_OnlineForm_SaItm_Btn_CreateProduct'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="ZxTCEpzgSEOXCOs08gGaxA" CvElementArea="1601, 379, 211, 61" CvTextArea="1620, 397, 172, 24" CvTextArgument="Create Product" CvType="Button" DesignTimeRectangle="1604, 381, 207, 56" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Create Product' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Create Product' role='push button' automationid='' check:text='Create Product' /&gt;" Guid="8c95b0e5-2cda-4db6-9365-1c6437edd8f2" InformativeScreenshot="de3e01f0065f24d41d9044cc49cb976b.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/SBBe5Scs0EGBNGx-aEj5ug" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Clicked on Create Product button"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_CrtPrd_Input_ItemName'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="ntDT59DaX0GoWWuggJYAIA" CvElementArea="187, 611, 327, 73" CvType="InputBox" DesignTimeRectangle="190, 611, 321, 72" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Item Name*' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Item Name*' role='editable text' automationid='' /&gt;" Guid="4963c6be-b01e-419e-af7b-769bf11c099c" InformativeScreenshot="6d2708a906152f7710aa432b7d8c57dd.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/kwn35-Ihn0m9ASBv1Co0ww" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -155,6 +197,18 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"Item name is entered"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_CrtPrd_Input_ItemCategory'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="oPkP4VSrf0qh6xCNqNSWGQ" CvElementArea="586, 611, 351, 73" CvType="InputBox" DesignTimeRectangle="588, 611, 347, 72" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Item category' role='editable text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='category' tag='INPUT' type='' class='lib-form-control w-100 ng-untouched ng-pristine ng-valid' aaname='Item category' /&gt;" Guid="2eef84d2-1664-4153-a4f6-65fdad6c7b10" InformativeScreenshot="4a36c7e1b49f24cea3f55bbe3470e8aa.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/LweOVsjb1UuMP519jPu7Gw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -165,6 +219,18 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Item category is entered"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_CrtPrd_Input_DefaultTaxRate'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="V_R1rHAKrkGQe0GAtduyuA" CvElementArea="989, 713, 381, 62" CvType="InputBox" DesignTimeRectangle="998, 716, 371, 58" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='No Tax (0.00%)' role='grouping' /&gt;&lt;ctrl role='grouping' text='No Tax (0.00%)' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='ngx-select__toggle btn form-control' aaname='' check:innerText='No Tax (0.00%)' /&gt;" Guid="dd4eb8f1-f842-4bdb-a451-c971f1e2722e" InformativeScreenshot="0672cbf60e10b195245357b541da9cf2.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/3GcktsnWikq50sY1twGaRw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
@@ -175,6 +241,18 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">"Tax is entered "</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_CrtPrd_Input_ItemPrice'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="RlPaYiZ6U0ONZTkAxcdeDQ" CvElementArea="178, 711, 227, 74" CvType="InputBox" DesignTimeRectangle="189, 712, 217, 72" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Item Price*' role='editable text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='itemPrice' tag='INPUT' type='text' class='lib-form-control w-100 ng-untouched ng-pristine ng-valid' aaname='Item Price*' /&gt;" Guid="4db3c4d3-bf2f-4ff3-b6c4-ccf1918104a3" InformativeScreenshot="e4c95080562e8e368ee70b51af61cba3.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/2KE-UPCIWkuCpOipndlzlA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -185,6 +263,18 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">"Item price is entered"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dpp_OnlineForm_SaItm_CrtPrd_Input_Quantity'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="cohlOaJuxkuEq2NbTxDk9A" CvElementArea="489, 712, 235, 73" CvType="InputBox" DesignTimeRectangle="502, 712, 221, 72" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Quantity' role='spin box' /&gt;" FuzzySelectorArgument="&lt;webctrl id='defaultQuantity' tag='INPUT' type='number' class='lib-form-control w-100 ng-untouched ng-pristine ng-valid' aaname='Quantity' /&gt;" Guid="1206d954-374b-4e1e-86ca-20e0a338bb40" InformativeScreenshot="009d135c3750435f8dbdcd72dcfe2b3c.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/uT1jTpSsOkaq_ApNJtggYA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -195,11 +285,35 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Quantity is entered "</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dpp_OnlineForm_SaItm_CrtPrd_Btn_Save'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/saleitem" ContentHash="yKrgeE7bUUOj3hRmmFL9GQ" CvElementArea="1615, 931, 94, 60" CvTextArea="1633, 949, 57, 22" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="1618, 933, 91, 57" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn text-white lib-bg-dashboardblue btn-save' aaname=' Save ' check:innerText='Save' /&gt;" Guid="592da381-1959-4fc2-beba-f534be8ab69f" InformativeScreenshot="cf6f1c60eeedb3d1f7ddc4f92bdc0d7d.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/nfYVck8v6U6dwE22acSCXw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">"Clicked on save button"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
             <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'Success! Product'" sap:VirtualizedContainerService.HintSize="388,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="dc1bf0a0-c38e-4f89-8494-5cec9ec4b06f" Version="V3">
               <uix:NGetAttributeGeneric.Result>
                 <OutArgument x:TypeArguments="x:String">
