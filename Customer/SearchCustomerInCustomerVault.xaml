@@ -1,0 +1,367 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchCustomerInCustomerVault" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="str_in_CustomerID" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_stepId" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_reportId" Type="InArgument(x:Int32)" />
+    <x:Property Name="str_out_testId" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:SearchCustomerInCustomerVault.str_in_stepId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SearchCustomerInCustomerVault.str_in_stepId>
+  <this:SearchCustomerInCustomerVault.str_in_reportId>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:SearchCustomerInCustomerVault.str_in_reportId>
+  <this:SearchCustomerInCustomerVault.str_out_testId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SearchCustomerInCustomerVault.str_out_testId>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1150,3810.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>CommonLibrary.Report</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Jira.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>CommonLibrary</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SearchCustomerInCustomerVault" sap:VirtualizedContainerService.HintSize="606.6666666666666,3746" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_out_CustomerID" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="544.6666666666666,3635.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customer Vault" sap:VirtualizedContainerService.HintSize="506,3396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,3176.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <cr:passedStep sap:VirtualizedContainerService.HintSize="410,250" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Search for the Newly created customer">
+                  <cr:passedStep.str_in_expectedStep>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">str_in_stepId</CSharpValue>
+                    </InArgument>
+                  </cr:passedStep.str_in_expectedStep>
+                  <cr:passedStep.str_in_reportId>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">str_in_reportId</CSharpValue>
+                    </InArgument>
+                  </cr:passedStep.str_in_reportId>
+                  <cr:passedStep.str_in_testId>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">str_out_testId</CSharpValue>
+                    </InArgument>
+                  </cr:passedStep.str_in_testId>
+                </cr:passedStep>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Customer Vault'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="64, 445, 111, 16" CvTextArgument="Customer Vault" CvType="Text" DesignTimeRectangle="11, 421, 281, 67" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FriendlyName="'Customer Vault'" FullSelectorArgument="&lt;webctrl parentid='menuCustomervault' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuCustomervault' tag='A' type='' class='sidebar-link waves-effect waves-dark txt-white' aaname='Customer Vault' check:innerText='Customer Vault' /&gt;" Guid="897e5f40-900b-4edf-843f-790dbeab4a14" ImageBase64="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" InformativeScreenshot="e5ef64ed38b5337340709dbe985a15aa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DisplayName="Type Into 'Customer ID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvElementArea="314, 345, 1108, 42" CvTextArea="333, 355, 51, 18" CvTextArgument="Search" CvType="InputBox" DesignTimeRectangle="320, 424, 1098, 39" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' placeholder='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' placeholder='Search' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="f6efed89-d5ff-4b62-9efc-1ba730404141" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABE4AAAArCAYAAABmSs12AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAykSURBVHhe7d0/aFvXAsdxDW/o0CHDGzS8oYYOz5Ahhg4WZKkhQwwZniBDBRmCyBBEhiAyBJGhQXgIokMQHYowbUEeQpUhoAwBeUmrDAF5KE/m4YdS8KA+UrjNMy+X1Kl/75x7r67u1R/7yk5TJ/5+wsHR1f2jc3Q9nJ/POTclAAAAAAAATERwAgAAAAAAMAXBCQAAAAAAwBQEJwAAAAAAAFMQnAAAAAAAAEzx3gcnr37b1S/OC/3nF4eSoNi2sm0GAAAAAABOQHBig4BfX/xXv/76q168eEE5oNi2sm0GAAAAAABOQHBiR1Hs7Ozo5cuXcl2Xsk+xbWTbyrYZAAAAAAA4IcGJDQV2d3f1+vVryj7FtpFtK4ITAAAAAAB8JyI4efXqlX7//Xft7e1R9im2jWxbEZwAAAAAAOA7UcEJ9kdwAgAAAABAHMEJQgQnAAAAAADEEZwgRHACAAAAAEAcwQlCBCcAAAAAAMRND05cR/3tnnrbjtzdYNuA01HtZl75y3kV77bUH33/GCE4SY7gBAAAAACAuLHgxN1qqXZjWadSKaXCMq/la1W1tl1/p35LxdP+e6cu19ULNh9HbzU46bdVv51Vfq0fbBjlqH0nr8zHftvNLeZVeXx8QopDBSdPyl5dyk+C1wAAAAAAvEdiwYm7WVf+o2hgMlJOF1TfdAlORjhbTVWvLGnudE7Z8yllJwYnrjorGWVuNtUP2svdbqq0mFH5yfFowDcWnGzXlTXbJrcDAAAAAADvjkhw4qi9shSGJEs3amqut9V+3FT9i7wWgu3z1xrq/0RwEtpuKP9ZRc1NP2xo354SGNgw4UxFneBlaKOihfM19YKXb4LrulpbW/N+zoLgBAAAAACAuGFwsttX40raD07+klXNjiwZcDqqnPeDktRiSe1/DoOT1NmCStdyytiRKn9dUPZ6ZEpPwNlsqna7oNy5eXPMKc2fy6n4ZUu9Hfuuq96DsgqX88pfLauxFRxrrlm366hcKam+EXTk3Z4aKwVvbZXCSjNRYPM2RpxETQtOnAcFLXwxFpsYHZXTBTVnyCr2Y+u5urqqzz//3Ps5S72PHpy0Vbb3RKxkVd/29vQ5XdVvLGs+bd+bU+ZyRe3nwXvW4HwPR/erqmM/1vO2KpczmrPnTs9r+UZdXe8+iui3hvt4x5r7Kno/j+mrftHse7Wh7uOK8otz3mdIn85NnkqVuA4dVT+bV9r+f+JUptmv27h98FQvO3KseH5wrmUV17pqmvsydbFurhhxUD0AAAAAANHgxDGd/ozX2bJl6VYzCDYsV85WV90fTdnsydmOBCeTyoWgk2s4G1VlT03Yx5RTF81+pqPmPC4r421LK3/PH3vhPK1oKdhv6U5b9nTus4byf/O3ZW6bbQkWpT0uwUl/LTtlBIbtPC+pthW8PKL79+97ocmg2NdJHT04Md+R48j5seaPOPmqK8e8DiOLnbbKi6Yzf6Gk+sOWWusNlS+klbLB0aDDHpwvnZ5X9k7D7NNS427evz/OL2s5nVH+bnz7grkXwms8b6qQttcoq2H2Ca+RyqiyEewzJggw0mnNfVpUzX62h3WVvOPSKj6KhC4z1WFO858VVblTUXPi93uI6w72W2+qds3+vmZUfhrZ71ldOVv/2PnmzGcx14kGJ0nqAQAAAAAYWeNkq6FCLBCZ09Kloqr32pEQxYiscWLLwqWS6RyWlD872Lag8rrpfNsRIlf8v3zbc+VW6mo9aqhy2Y488ffN3u3Itec7E5zrZkvOrqvO3eVwn9SFihfEOOulYMrQvOlUTgohxh2X4GTqFJ6g8zx5RMJsfvjhh1hoMih2exJvIjjxTJyq45o2WFDqTEnt6L20Y75706kPR+ME58t+G5+81P3Sn0YW3+6qdcPcD+lyOAWqfy9n9suq/izYYO00VTDHplcmjfixggBj9LOZs1YWzfZwKtVsdbDhXiTSmCDpdc29/6CopXMFNaKjd+x+9vfmRiu4jmmPmzb8KKoVO19PNTtiLAxOEtYDAAAAABAPTixno66C7bSZjl+sfFpU48egQx0JTj64NFzjpP+opHlv/w+UW+vJ2aorF4w2mbvaGE6tMceXPgnOe76izs99Na4GAYt9vd1R1XYovXPZklV1oz8MUz4yHchox3gfJyk4+eabb/T111+PFbt9b28v2Gu6PzY4aas8sVPuqHnVfKeDTv2k8xl2xM5YIGL428vm7D53vaR0akHFB5PaepogwBidymL0vrXnz6nhvXG0OoxLet1pRo83n8/+ftwatMaQvf9i+yWpBwAAAABgPDjx7DrqrtdVuZ4NgpCgpLOqPDZdqkhwEl0c1jEdRn/Kjek0f9XVz+EIkZRyq93hX9+j66l8XFBz2zUdxZw+sK8/zKl6r6rsh/5xg5L9oqHqpVPe/2dZkPYkBSdH9YcGJ8G26HcaKweEDmFwEhtxMdg+DE5s5791a8lbVyT1cUb5G1XVn/STjfyYFBh4n2fBn+ZzxDqMS3jdAfN7V72aDdc4GbvuxMDKFwtOktYDAAAAABAJTlxHPbuGiS3PIh3n53ZBysi0mYs1df+dLDj56WExCF5OKb/WiwUnzevBdJ2P8mo8c+UG62LYbfOfBKNPLpRVWwmubTrBgxDHnjthbnJsgpP91zgZH0lxGPV6feqIkyTeRnCydMtfn2SsPA3CjSmhQ/LgxOea+7a1VlUxWCTWrvnRHDl2aLbg5LB1GDdDcLJlfj/SKWWu1dTa7HtrxzhOV7V/RI6fMTg5sB4AAAAAgGFw4kam1aSvNNSP9pyctirn/PdSZ4pqRZ6qs++Ik9gCrx1vgVfPjunw2Q6jfe+Tklp2Mcrok3uCsny3o/7TqpYj21KpJVWeJu/YH5fgxD5VZ/IaG2/uqTrff//98V3jxDX3jNm2YO6DfU0JHZIGJ97itM5It/+ZH8oduMbJhAAjNmXmiHUYl/C6RmfFrl0yGhCNHm/vJVPP2wdM1UlaDwAAAABAZMTJ87bKn9pgwpYllR505QZPrXE2at6TOrz3zlXU+Vey4MTtN8NFX1OLRTWf+Tv218thoDJ/vam+vc7IU31SqWU/IBkNVM6azuMMT/04LsGJnjeUP2M++0ifXhsVLUzoOB/Wn/1UHc/EkQ+Omtf8p7aMrtvhbrTCpzAdLTgJ1ug4Y+5R7/VATzUb/E0IFHxBADG2SGuwqGq4SOvR6jAu6XWD4CNl9gtee3baKtnfr/D+Sbo4bMJ6AAAAAACia5y46t0vhmuSTCvhU3CSBCfmX/fbvDdVwj9+TpmzwyfqpP6aU21j2EsbLi5ryrmK2t5bjtp3/Ceq2LJwIwhaEjo2wYlpi85KRplrw0Vy3e2mSosZ08EeTVMOz9ZzdXXVC03sz1nq/caCE7elkh35cKmq5npL3UHQFTwqN7WYV/W+Py3Ef6RwWrnB03KOFJyYSz/178G5i5XgccRN1a7bNU/SKq1Pa+cgwDDHRR/PW7lop4yNfD9HqMO45Nf1F7219Sp7+zVWi8oO1jqJBm9JH0ecpB4AAAAAgNHFYV311qvK/T3okMXKKWVXmv5jiRMHJ8ZuX23TIYstMmvL2YJqo1NuthsqBJ3BzEpbzmDEy+PBeedUuD8plJju+AQnlqPOakHLQR3nTKe18vjN/3nfdV1999133s9ZvLHgxOg9KAb1nFPlabDRet5W9eqy5m2n3XTS5y8UVF2PtNcRgxPL3WyoHKxtEl5j33YeTHmpqb1eUX7RX2MnfTo3+fs5ZB3GzXZd53FFudNpbx//3umrdct+hvhIFHezruL5wbmWVVzrqhmdqjNwUD0AAAAAAKPBSWCnr86jhuqrNdVW66o/aKsbXfRk11V/c7iQbPiOOW6wwGzv+Uin3S4++7Sl5v2mWhu9MBSJM+fdmnC8Pda7Xk/92BSEg73t4ORddqjg5L0wCDBGgoU/3Nu6bl+NS39G/QAAAADg3Tc5OHmPEJwkR3DyHgQnz+oqr41MtbHr66RSWviCxWABAAAAYFYEJwgRnLz7wYmzXvTWKVm+WffWl2k9rKn4qV0INqfG1McxAwAAAACmIThBiODkPRhxYjg/RtZ4Sc9r+Wp1pidRAQAAAACGCE4QOrnBCQAAAAAAkxGcIERwAgAAAABAHMEJQgQnAAAAAADEEZwgRHACAAAAAEAcwQlCBCcAAAAAAMQRnCBEcAIAAAAAQBzBCUIEJwAAAAAAxL33wckvzgv976Wr169fa29vjzKl2NDEtpFtK9tmAAAAAADgBAQnr37b9YIAO4qCcnCxbWXbDAAAAAAAnIDgBAAAAAAA4LAITgAAAAAAACaS/g+JOK57ZIzo/wAAAABJRU5ErkJggg==" InformativeScreenshot="3638ca5cc707dce73516903825b5b182.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">str_in_CustomerID</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvElementArea="1417, 422, 46, 42" CvType="Button" DesignTimeRectangle="1418, 424, 45, 39" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' tag='SPAN' type='' aaname='' /&gt;" Guid="3ea3fc17-0a10-4c18-92a5-1ccdafe482e3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAArCAYAAADR0WDhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGZSURBVGhD7Zm/S8NAFMf7N3bpIpRAoUsFOwkuBSlkkIJIIQUDkiUdQqGDQwe7dHGwQykOUQolQRDRYHBJEeFrriaW1rNpftFLuAefJe9yvE/e5S6QAnIQXIKVKDzoOgzDwMvbe+bwY9kJIkIuOp9fmYFLsAKXYAUuwQpcghW4RBDW/A5Kqw2h2kCx7FIVUW9dYzi3qeOjko6EY2OsnqNECv+HuqrDcij3RiAFiQXGirgquHqGU1lDR3GRL3Hod8VFUHR8UOcIR/ISeh+CV2SpeYPZ5tN2ntBr+iIiZH0jH4GEJRYYSV6BtS5ubdoYF3uCi5onKk1idyNhiRlkr7gDdUbJr5iq3pKr9TGl5MOQsMQ9Ostl0sDx4JmSX2EO2j8S5S7GlHwYeCf+kot3wiX7uxNh93OieKJh+PhKmSMcKUi47HBiC0e+qAhxtH0TCCIdCY9t307WVPtddnFFUpUIwhxdJSKyVwnCmkhFi3Rm7F2CsBSpSOiZC2o+CCYk4sIlWIFLsAKXYAUuwQpcghXWJIhALv6eZjuAb46OiqfWWoRNAAAAAElFTkSuQmCC" InformativeScreenshot="35e08e3e95fd290d0b20bf2af87bd8d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <cr:passedStep sap:VirtualizedContainerService.HintSize="410,250" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Verify Newly created customer details should be displayed" str_in_expectedStep="Expected Result">
+                  <cr:passedStep.str_in_reportId>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">str_in_reportId</CSharpValue>
+                    </InArgument>
+                  </cr:passedStep.str_in_reportId>
+                  <cr:passedStep.str_in_testId>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">str_out_testId</CSharpValue>
+                    </InArgument>
+                  </cr:passedStep.str_in_testId>
+                </cr:passedStep>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Selct Customer'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvTextArea="339, 625, 34, 16" CvTextArgument="Tom" CvType="Text" DesignTimeRectangle="339, 623, 36, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'Tom'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='NGB-HIGHLIGHT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='NGB-HIGHLIGHT' class='' aaname='Tom' check:innerText='Tom' /&gt;" Guid="60d111e9-e0ed-4c39-b24b-f67702a0b106" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAYAAADFTB7LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFzSURBVFhH7ZTBSsMwHMZ9JN9jryE7+QLbO8yLN70NDxMP4mUnxYNz0MtOgx4mLWpACnVb0nVz0vKZNO1oZ0BLWtvJ/vBB8+XLn1+TNgeUUtRZe0BdbQAPj0a10h5QV7sI6MLCL8pn6CgaFi0F4DPOh1P0N1rAFUDzRcrjuidoKhoWLQXgdije0TdXMVe+9AHbr+jbn2ChCPEKAxDTQaudygxW0ZQ1cmC4QfQsau0t0Tsbo3ExheUlDQDmMnRP5VpNQALDE5MhyGQWHf0Dh11zZ83zx0kuBhTFCM3k8BGA8fWuveXz9eIT0gJsGlErkOFTyh+jY8pdMu/G0osBmUnQSOW6tty1rD/BbfTRr3DNxxqAcaNwiW7G5zqZgYg1L44cJ0c8yObkiwQwrlS+NiA/Xp/7yusmnptTtMT4J8BLlf//AQs84nIA8/8kfw6Y95qpAJArz0VdDmC1+gZ48/gevW1dyvf9HdtBVahK7QF1JbkovgB9cxFo67kJ4wAAAABJRU5ErkJggg==" InformativeScreenshot="699360dae2b8aae6d7515e47cf890196.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NGetText DelayBefore="5" DisplayName="Get Text 'Customer ID'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="bd5896c1-fe91-4cf8-ac2b-dee3367d9529" Version="V3">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1231, 838, 55, 18" CvType="AnyWordGroup" DesignTimeRectangle="1235, 916, 51, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'24123'" FullSelectorArgument="&lt;webctrl tag='B' parentclass='paragraph-title' parentid='collapseCustomerVaultDetail' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' parentclass='paragraph-title' parentid='collapseCustomerVaultDetail' type='' class='text-color-size' /&gt;" Guid="3fd950c7-0387-4379-887e-914300b1a485" ImageBase64="" InformativeScreenshot="fa01273c3484844b41ee69956dddb160.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CvTextArea="1119, 916, 111, 18" CvTextArgument="Customer ID :" CvType="Text" DesignTimeRectangle="1122, 916, 165, 22" FriendlyName="'Customer ID : 24123'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Customer ID : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Customer ID : ' type='' class='paragraph-title' check:text='Customer ID : 24123' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                  <uix:NGetText.TextString>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_out_CustomerID</CSharpReference>
+                    </OutArgument>
+                  </uix:NGetText.TextString>
+                </uix:NGetText>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                  <ui:LogMessage.Level>
+                    <InArgument x:TypeArguments="ui:LogLevel">
+                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Level>
+                  <ui:LogMessage.Message>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Str_in_cus "+str_in_CustomerID+ "str_out_Cus "+ str_out_CustomerID</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Message>
+                </ui:LogMessage>
+                <If sap:VirtualizedContainerService.HintSize="410,1233.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">str_out_CustomerID.Contains(str_in_CustomerID)</CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,524.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"Customer details page is opened"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:passedStep sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_expectedStep="Expected Result">
+                        <cr:passedStep.str_in_actualStep>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">" Newly created Customer details page is opened with customer ID = "+str_in_CustomerID</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_actualStep>
+                        <cr:passedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">str_in_reportId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_reportId>
+                        <cr:passedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">str_out_testId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_testId>
+                      </cr:passedStep>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,524.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Customer details page is not opened"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:failedStep sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Customer details page is not opened" str_in_expectedStep="Actual Result">
+                        <cr:failedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">str_in_reportId</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.str_in_reportId>
+                        <cr:failedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">str_out_testId</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.str_in_testId>
+                      </cr:failedStep>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="7fb18426539b575ec9724fc866a129c4.jpg" Selector="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" Title="Customer Vault" Url="https://payments2.deluxe.com/*" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="510.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">exception.Message</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
