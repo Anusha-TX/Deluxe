@@ -3,10 +3,11 @@
     <x:Property Name="str_in_SaleItemName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_SaleItemPrice" Type="InArgument(x:String)" />
     <x:Property Name="str_in_SaleItemTax" Type="InArgument(x:String)" />
+    <x:Property Name="str_out_SaleItemTaxRate" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>2328.6666666666665,3849.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1820.6666666666667,3920.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,6 +48,7 @@
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -101,44 +103,48 @@
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddQuickSaleItem" sap:VirtualizedContainerService.HintSize="2338.6666666666665,3784.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddQuickSaleItem" sap:VirtualizedContainerService.HintSize="1830.6666666666667,3856" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2296.6666666666665,3697.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1788.6666666666667,3768.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="2258,3458" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1750,3529.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2224,3238.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1716,3310" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Add Quick Sale Item Sequence" sap:VirtualizedContainerService.HintSize="2182,3146" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Add Quick Sale Item Sequence" sap:VirtualizedContainerService.HintSize="1674,3217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="str_SaleItemTaxRate" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="2120,3030" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1612,3101.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1544" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2156" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -150,7 +156,7 @@
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="_oZIJsVFok6F4_ILrDZIBw" DesignTimeRectangle="361, 814, 474, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'Sale Item Name'" FullSelectorArgument="&lt;webctrl parentid='collapseExampleArea' tag='SPAN' visibleinnertext='Item Name' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' class='floating__input dpp-input w-100 text-dark ng-valid ng-pristine ng-touched' aaname='' /&gt;" Guid="11287f96-46c7-4d60-8629-d1a3775edf98" InformativeScreenshot="5af6ad7cd0e1bc2ea77c34df3de6db4e.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/day1HQMt8k2d4CDANLwUUA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NTypeInto.Target>
@@ -160,7 +166,7 @@
                             </InArgument>
                           </uix:NTypeInto.Text>
                         </uix:NTypeInto>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Price'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Price'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="N0G2mzudYE2FpyzGbkuiUA" CvElementArea="923, 797, 444, 60" CvType="InputBox" DesignTimeRectangle="929, 800, 435, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Sale Item Price'" FullSelectorArgument="&lt;webctrl aaname=' Price ' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='floating__input dpp-input w-100 text-dark ng-untouched ng-pristine ng-valid' parentid='collapseExampleArea' tag='INPUT' type='text' aaname='' /&gt;" Guid="c616d328-1388-49c4-b68e-2ca5175770fe" InformativeScreenshot="220259d22857ae800bfcf8592fc36c2f.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/fyFNx95wZEiTgjK9RHHlgw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" />
                           </uix:NTypeInto.Target>
@@ -170,12 +176,12 @@
                             </InArgument>
                           </uix:NTypeInto.Text>
                         </uix:NTypeInto>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="0tr_NBDDKkKLJVYuORxO3w" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Sale Item Tax Rate'" FullSelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' aaname='' /&gt;" Guid="dfe66324-a891-4bdf-b68c-431478bf4114" InformativeScreenshot="c75ef8cee3a6fcfe60a21e227aa19845.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/odD7M_kTLUafBI0DlIXpRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Sale Item Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Sale Item Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="ufsNqkuVE0SaCaFQBEzsgw" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'Sale Item Input'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="111e7dd4-7acc-4536-97ef-7dc5839cbe20" ImageBase64="" InformativeScreenshot="a3dd730f894b7aeadb0252f5ca02c6a3.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/Pmp54FFcnEqeYraa0EM64A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NTypeInto.Target>
@@ -185,12 +191,58 @@
                             </InArgument>
                           </uix:NTypeInto.Text>
                         </uix:NTypeInto>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Quick Item'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NGetText DisplayName="Get Text 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="0tr_NBDDKkKLJVYuORxO3w" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Sale Item Tax Rate'" FullSelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' aaname='' /&gt;" Guid="dfe66324-a891-4bdf-b68c-431478bf4114" InformativeScreenshot="c75ef8cee3a6fcfe60a21e227aa19845.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/odD7M_kTLUafBI0DlIXpRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Visible" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">str_SaleItemTaxRate</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <ui:Matches DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_2" IsBuilderTabModified="False" Pattern="\d+\.\d{2}" RegexOption="IgnoreCase, Compiled">
+                          <ui:Matches.FirstMatch>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">str_SaleItemTaxRate</CSharpReference>
+                            </OutArgument>
+                          </ui:Matches.FirstMatch>
+                          <ui:Matches.Input>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">str_SaleItemTaxRate</CSharpValue>
+                            </InArgument>
+                          </ui:Matches.Input>
+                        </ui:Matches>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">"Selected Sale Item Rate is "+str_SaleItemTaxRate</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_out_SaleItemTaxRate</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">str_SaleItemTaxRate</CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Quick Item'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="HDBsvA9kMky5cDo54Qd_1g" CvElementArea="1689, 751, 154, 45" CvTextArea="1701, 762, 128, 18" CvTextArgument="Add Quick Item" CvType="Button" DesignTimeRectangle="1691, 752, 151, 42" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Add Quick Item'" FullSelectorArgument="&lt;webctrl aaname=' Add Quick Item ' parentid='collapseExampleArea' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Add Quick Item ' parentid='collapseExampleArea' tag='BUTTON' type='button' class='btn btn-sm bg-dashboardblue text-white mr-3 dpp-rounded' check:innerText='Add Quick Item' /&gt;" Guid="b50e541b-7e8d-4390-a9e8-687224d492f8" InformativeScreenshot="a2468c97c0c979fbec54efc0a68dfb37.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/CDJ5Mr8PfEOZj9pNoLx5lg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify New Sale Item with Tax is added" ContinueOnFailure="True" DisplayName="Verify 'New Sale Item with Tax is added successfully'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                        <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify New Sale Item with Tax is added" ContinueOnFailure="True" DisplayName="Verify 'New Sale Item with Tax is added successfully'" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
                           <uta:VerifyControlAttribute.ActivityToTest>
                             <ActivityAction>
                               <uix:NCheckState DisplayName="Check App State 'New Sale Item Added'" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
@@ -292,13 +344,13 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1616,2808.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1062,2880" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1554,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1000,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -310,20 +362,20 @@
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Items Arrow Button'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Items Arrow Button'" sap:VirtualizedContainerService.HintSize="1000,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="D_eIg1pG10WyS_w58uqwkA" CvElementArea="1814, 557, 38, 31" CvType="ArrowButton" DesignTimeRectangle="1825, 561, 18, 21" DesignTimeScaleFactor="1.5" FriendlyName="'Sale Items Arrow Button'" FullSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;&lt;webctrl class='float-left' parentid='main-wrapper' tag='H3' aaname='Sale Items' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='main-wrapper' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='main-wrapper' tag='I' class='fas fa-chevron-up float-right text-dark' aaname='' /&gt;" Guid="dc5ffa5b-c537-4b5c-8ed4-ac7852062aa6" InformativeScreenshot="f1381b1899d728d07f6e2f4539766e38.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/tghGRV6XeE-076DtYno7mQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1554,2306" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1000,2377.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1050,2084.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2156" sap2010:WorkflowViewState.IdRef="Sequence_10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="988,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -335,7 +387,7 @@
                                   </InArgument>
                                 </ui:LogMessage.Message>
                               </ui:LogMessage>
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                                 <uix:NTypeInto.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="_oZIJsVFok6F4_ILrDZIBw" DesignTimeRectangle="361, 814, 474, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'Sale Item Name'" FullSelectorArgument="&lt;webctrl parentid='collapseExampleArea' tag='SPAN' visibleinnertext='Item Name' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' class='floating__input dpp-input w-100 text-dark ng-valid ng-pristine ng-touched' aaname='' /&gt;" Guid="11287f96-46c7-4d60-8629-d1a3775edf98" InformativeScreenshot="5af6ad7cd0e1bc2ea77c34df3de6db4e.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/day1HQMt8k2d4CDANLwUUA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NTypeInto.Target>
@@ -345,7 +397,7 @@
                                   </InArgument>
                                 </uix:NTypeInto.Text>
                               </uix:NTypeInto>
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Price'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Item Price'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                                 <uix:NTypeInto.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="N0G2mzudYE2FpyzGbkuiUA" CvElementArea="923, 797, 444, 60" CvType="InputBox" DesignTimeRectangle="929, 800, 435, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Sale Item Price'" FullSelectorArgument="&lt;webctrl aaname=' Price ' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='floating__input dpp-input w-100 text-dark ng-untouched ng-pristine ng-valid' parentid='collapseExampleArea' tag='INPUT' type='text' aaname='' /&gt;" Guid="c616d328-1388-49c4-b68e-2ca5175770fe" InformativeScreenshot="220259d22857ae800bfcf8592fc36c2f.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/fyFNx95wZEiTgjK9RHHlgw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NTypeInto.Target>
@@ -355,12 +407,12 @@
                                   </InArgument>
                                 </uix:NTypeInto.Text>
                               </uix:NTypeInto>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="0tr_NBDDKkKLJVYuORxO3w" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Sale Item Tax Rate'" FullSelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' aaname='' /&gt;" Guid="dfe66324-a891-4bdf-b68c-431478bf4114" InformativeScreenshot="c75ef8cee3a6fcfe60a21e227aa19845.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/odD7M_kTLUafBI0DlIXpRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Sale Item Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="DebuggerApi" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Sale Item Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="DebuggerApi" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                                 <uix:NTypeInto.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="ufsNqkuVE0SaCaFQBEzsgw" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'Sale Item Input'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="111e7dd4-7acc-4536-97ef-7dc5839cbe20" ImageBase64="" InformativeScreenshot="a3dd730f894b7aeadb0252f5ca02c6a3.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/Pmp54FFcnEqeYraa0EM64A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NTypeInto.Target>
@@ -370,12 +422,58 @@
                                   </InArgument>
                                 </uix:NTypeInto.Text>
                               </uix:NTypeInto>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Quick Item'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                              <uix:NGetText DisplayName="Get Text 'Sale Item Tax Rate'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="0tr_NBDDKkKLJVYuORxO3w" DesignTimeRectangle="1382, 675, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Sale Item Tax Rate'" FullSelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseExampleArea' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='collapseExampleArea' tag='DIV' class='ngx-select__toggle btn form-control' aaname='' /&gt;" Guid="dfe66324-a891-4bdf-b68c-431478bf4114" InformativeScreenshot="c75ef8cee3a6fcfe60a21e227aa19845.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/odD7M_kTLUafBI0DlIXpRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Visible" />
+                                </uix:NGetText.Target>
+                                <uix:NGetText.TextString>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_SaleItemTaxRate</CSharpReference>
+                                  </OutArgument>
+                                </uix:NGetText.TextString>
+                              </uix:NGetText>
+                              <ui:Matches DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_1" IsBuilderTabModified="False" Pattern="\d+\.\d{2}" RegexOption="IgnoreCase, Compiled">
+                                <ui:Matches.FirstMatch>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">str_SaleItemTaxRate</CSharpReference>
+                                  </OutArgument>
+                                </ui:Matches.FirstMatch>
+                                <ui:Matches.Input>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">str_SaleItemTaxRate</CSharpValue>
+                                  </InArgument>
+                                </ui:Matches.Input>
+                              </ui:Matches>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                                <ui:LogMessage.Level>
+                                  <InArgument x:TypeArguments="ui:LogLevel">
+                                    <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Level>
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"Selected Sale Item Rate is "+str_SaleItemTaxRate</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                              </ui:LogMessage>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_out_SaleItemTaxRate</CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">str_SaleItemTaxRate</CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Quick Item'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="HDBsvA9kMky5cDo54Qd_1g" CvElementArea="1689, 751, 154, 45" CvTextArea="1701, 762, 128, 18" CvTextArgument="Add Quick Item" CvType="Button" DesignTimeRectangle="1691, 752, 151, 42" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Add Quick Item'" FullSelectorArgument="&lt;webctrl aaname=' Add Quick Item ' parentid='collapseExampleArea' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Add Quick Item ' parentid='collapseExampleArea' tag='BUTTON' type='button' class='btn btn-sm bg-dashboardblue text-white mr-3 dpp-rounded' check:innerText='Add Quick Item' /&gt;" Guid="b50e541b-7e8d-4390-a9e8-687224d492f8" InformativeScreenshot="a2468c97c0c979fbec54efc0a68dfb37.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/CDJ5Mr8PfEOZj9pNoLx5lg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify New Sale Item with Tax is added" ContinueOnFailure="True" DisplayName="Verify 'New Sale Item with Tax is added successfully'" sap:VirtualizedContainerService.HintSize="988,594.6666666666666" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                              <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify New Sale Item with Tax is added" ContinueOnFailure="True" DisplayName="Verify 'New Sale Item with Tax is added successfully'" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyControlAttribute.ActivityToTest>
                                   <ActivityAction>
                                     <uix:NCheckState DisplayName="Check App State 'New Sale Item Added'" sap:VirtualizedContainerService.HintSize="954,484.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
