@@ -3,18 +3,18 @@
     <x:Property Name="Str_in_UserName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Password" Type="InArgument(x:String)" />
     <x:Property Name="out_TestID" Type="InArgument(x:String)" />
-    <x:Property Name="Step" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
+    <x:Property Name="StepId" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Login.Step>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Login.Step>
   <this:Login.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
   </this:Login.In_Report_ID>
+  <this:Login.StepId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Login.StepId>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1150,1528.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,1568.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,14 +128,14 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="584.6666666666666,1464" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="584.6666666666666,1504" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.6666666666666,1353.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.6666666666666,1393.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Deluxe Payments Platform" sap:VirtualizedContainerService.HintSize="484,1114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="a8499673-901a-4961-9a6a-0c671672c989" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Deluxe Payments Platform" sap:VirtualizedContainerService.HintSize="484,1154" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="a8499673-901a-4961-9a6a-0c671672c989" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -203,7 +203,7 @@
                       <cr:passedStep Actual_Result="Login successful and DPP home page is displayed" Expected_Result="Login to DPP Application should be successful" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Login to DPP Application">
                         <cr:passedStep.str_in_expectedStep>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">Step</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">StepId</CSharpValue>
                           </InArgument>
                         </cr:passedStep.str_in_expectedStep>
                         <cr:passedStep.str_in_reportId>
@@ -241,7 +241,7 @@
                       <cr:failedStep Actual_Result="Login failed and DPP home page is not displayed" Expected_Result="Login to DPP Application should be successful" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Login to DPP Application">
                         <cr:failedStep.str_in_expectedStep>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Step</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">StepId</CSharpValue>
                           </InArgument>
                         </cr:failedStep.str_in_expectedStep>
                         <cr:failedStep.str_in_reportId>

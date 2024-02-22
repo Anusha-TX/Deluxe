@@ -18,8 +18,9 @@
     <x:Property Name="str_in_CardNumber" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Expiration" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
-    <x:Property Name="Step" Type="InArgument(x:String)" />
     <x:Property Name="out_TestID" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_AddCard" Type="InArgument(x:String)" />
+    <x:Property Name="StepId" Type="InArgument(x:String)" />
   </x:Members>
   <this:CreateNewCustomer.str_in_ShippFirstName>
     <InArgument x:TypeArguments="x:String" />
@@ -39,12 +40,12 @@
   <this:CreateNewCustomer.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
   </this:CreateNewCustomer.In_Report_ID>
-  <this:CreateNewCustomer.Step>
+  <this:CreateNewCustomer.str_in_AddCard>
     <InArgument x:TypeArguments="x:String" />
-  </this:CreateNewCustomer.Step>
+  </this:CreateNewCustomer.str_in_AddCard>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>698.6666666666666,6156</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>847.3333333333334,5840</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -179,14 +180,14 @@
       <AssemblyReference>UiPath.Testing</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateNewCustomer" sap:VirtualizedContainerService.HintSize="708.6666666666666,6091.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateNewCustomer" sap:VirtualizedContainerService.HintSize="817.3333333333334,5775.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="646.6666666666666,5980.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="755.3333333333334,5664.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,19 +195,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="608,5741.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="716.6666666666666,5425.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Create New Customer Sequence" sap:VirtualizedContainerService.HintSize="546,5630.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Create New Customer Sequence" sap:VirtualizedContainerService.HintSize="654.6666666666666,5314.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2">
               <ui:LogMessage.Level>
                 <InArgument x:TypeArguments="ui:LogLevel">
                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -218,13 +219,13 @@
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="484,5335.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="de1a97f6-0455-481d-99e8-6fb545091802" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="592.6666666666666,5019.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="de1a97f6-0455-481d-99e8-6fb545091802" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,5116" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558.6666666666666,4800" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_RandomString" />
                     </Sequence.Variables>
@@ -233,22 +234,22 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menu_CustomerVault'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menu_CustomerVault'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" ContentHash="KUP7YPqQ00CB7NodjPckHQ" CvTextArea="84, 588, 146, 21" CvTextArgument="Customer Vault" CvType="Text" DesignTimeRectangle="11, 554, 375, 90" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Menu_CustomerVault'" FullSelectorArgument="&lt;webctrl parentid='menuCustomervault' tag='A' aaname='Customer Vault' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuCustomervault' tag='A' aaname='Customer Vault' type='' class='sidebar-link waves-effect waves-dark txt-white ng-star-inserted active' check:text='Customer Vault' /&gt;" Guid="54729170-9bd1-4012-90fe-e54a9654d71b" InformativeScreenshot="ebccf1dae13d27c5779788743e801ed7.png" Reference="CohMpK4ItUe4eZemqtKt6w/oYj2hdn23USyTDk5EHXD_g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CustomerVault_CreateNewCustomer_Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CustomerVault_CreateNewCustomer_Button'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" ContentHash="VFGeT_VeNUaqkKheVYSGVQ" CvElementArea="1496, 474, 174, 88" CvType="Button" DesignTimeRectangle="1501, 477, 166, 83" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Create New Customer'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname=' Create New Customer ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname=' Create New Customer ' type='button' class='btn text-white bg-dashboardblue' check:text='Create New Customer' /&gt;" Guid="2a577a13-23a4-4806-9bb4-1053c3b33fd6" InformativeScreenshot="e2fc56c6ac8d6fdd55adae93fbc43c65.png" Reference="tYMpFAibJEmSSM__XpQuLQ/_C6EeJN6EUeaV_SLkiblew" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search Merchant'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search Merchant'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="NCv76MA1O0qq9cR3TCclPg" CvTextArea="818, 513, 177, 21" CvTextArgument="Search Merchant..." CvType="Text" DesignTimeRectangle="801, 486, 1049, 77" DesignTimeScaleFactor="1.5" FriendlyName="'CV_CreateNewCustomer_SearchMerchant_Combo'" FullSelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='DIV' class='ngx-select__toggle btn form-control' type='' aaname='' check:text='Search Merchant...' /&gt;" Guid="089c3711-2215-4cc2-9425-86c65b1bd802" InformativeScreenshot="e2f6f0acd56ae657b2f7b7582eea0647.png" Reference="CohMpK4ItUe4eZemqtKt6w/6yCB7kAddUm57O_xIKCp1w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Payments_Search Merchant_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,260.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Payments_Search Merchant_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,260.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="t5FdsZjesECipjWX2STzdg" CvElementArea="795, 482, 1059, 85" CvType="InputBox" DesignTimeRectangle="801, 486, 1049, 77" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_SearchMerchant_Input'" FullSelectorArgument="&lt;webctrl tag='INPUT' parentid='selectMerchantId' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' parentid='selectMerchantId' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="52921712-9d61-4ca9-8a93-b1533225b96f" InformativeScreenshot="90b7cdb4b5702b3ebe0c1017edaba822.png" Reference="CohMpK4ItUe4eZemqtKt6w/d2hi8EIiK0urAFgEv3p0fA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -274,7 +275,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBefore="2" DisplayName="Type Into 'Payments_Search Merchant_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Text="%[k(Enter)]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBefore="2" DisplayName="Type Into 'Payments_Search Merchant_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Text="%[k(Enter)]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="t5FdsZjesECipjWX2STzdg" CvElementArea="795, 482, 1059, 85" CvType="InputBox" DesignTimeRectangle="801, 486, 1049, 77" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_SearchMerchant_Input'" FullSelectorArgument="&lt;webctrl tag='INPUT' parentid='selectMerchantId' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' parentid='selectMerchantId' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="52921712-9d61-4ca9-8a93-b1533225b96f" InformativeScreenshot="90b7cdb4b5702b3ebe0c1017edaba822.png" Reference="tYMpFAibJEmSSM__XpQuLQ/jNB3wABcsUKfYsiztOwiKg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -285,14 +286,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NTypeInto>
-                    <utat:RandomString Case="LowerCase" DisplayName="Random String" sap:VirtualizedContainerService.HintSize="388,200" sap2010:WorkflowViewState.IdRef="RandomString_1" Length="5">
+                    <utat:RandomString Case="LowerCase" DisplayName="Random String" sap:VirtualizedContainerService.HintSize="496.6666666666667,200" sap2010:WorkflowViewState.IdRef="RandomString_1" Length="5">
                       <utat:RandomString.Output>
                         <OutArgument x:TypeArguments="x:String">
                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_RandomString</CSharpReference>
                         </OutArgument>
                       </utat:RandomString.Output>
                     </utat:RandomString>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_FirstName_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_FirstName_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="D90IYMw2wkWlJ7H40_lWOQ" CvElementArea="479, 634, 401, 80" CvType="InputBox" DesignTimeRectangle="489, 636, 389, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_FirstName_Input'" FullSelectorArgument="&lt;webctrl id='FirstName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='FirstName' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="a5bad257-c429-4e80-bbbd-37ffd437efca" InformativeScreenshot="f462097beb17da5675e3309021936d57.png" Reference="CohMpK4ItUe4eZemqtKt6w/dw-Yhb8xLE2pTsHB4fllcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -302,7 +303,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_LastName_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_LastName_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="JlzCX1O1vU6CQ6vmARxbMw" CvElementArea="976, 542, 394, 79" CvType="InputBox" DesignTimeRectangle="980, 621, 389, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_LastName_Input'" FullSelectorArgument="&lt;webctrl id='LastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='LastName' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="5dc3274f-2ede-4850-9abd-9738d02181b9" InformativeScreenshot="8e0cf426338065dce442de69c2e1b5d4.png" Reference="CohMpK4ItUe4eZemqtKt6w/hqfgXPwDc0OAFSghLbXXRw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -312,7 +313,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_Address_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_Address_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="plunn_3iMUKIDFivpjSEYA" CvElementArea="479, 604, 400, 79" CvType="InputBox" DesignTimeRectangle="489, 606, 389, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_Address_Input'" FullSelectorArgument="&lt;webctrl id='Address' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Address' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname=' Address ' /&gt;" Guid="ee71eed8-f6e5-4ff3-ae1b-83768c60bdd1" InformativeScreenshot="5cf3f1496e7b6a878f3d70d09876c136.png" Reference="CohMpK4ItUe4eZemqtKt6w/2miYnU_yz0iatbIshKQZRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -322,7 +323,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_City_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_City_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="UY7RxEeYFEGlYUu1D1TdqA" CvElementArea="969, 470, 400, 79" CvType="InputBox" DesignTimeRectangle="978, 471, 392, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_City_Input'" FullSelectorArgument="&lt;webctrl id='City' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='City' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname=' City ' /&gt;" Guid="bc06ed14-7bb5-4888-8b74-5477c6c49dee" InformativeScreenshot="e62262791a2de1bbf26f2b909d464a19.png" Reference="CohMpK4ItUe4eZemqtKt6w/UtNZXKczMkG_mpnJyrRtmg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -332,12 +333,12 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CV_CreateNewCustomer_State_Combo'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CV_CreateNewCustomer_State_Combo'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="lcv_xpXXdEKbjuLsLfinrg" DesignTimeRectangle="1380, 629, 471, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'CV_CreateNewCustomer_State_Combo'" FullSelectorArgument="&lt;webctrl aaname=' State ' parentid='main-wrapper' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='main-wrapper' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='ngx-select__toggle btn form-control' parentid='main-wrapper' tag='DIV' aaname='' /&gt;" Guid="722d4551-790b-49a8-bc21-7f93a0dabd52" InformativeScreenshot="bbc6820e0daad3d355b06057704e5459.png" Reference="CohMpK4ItUe4eZemqtKt6w/EblUWoq0G0mFPlwGr-ZPcA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'CV_CreateNewCustomer_State_Combo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'CV_CreateNewCustomer_State_Combo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="K-qbfzPg30OkjJR050gMeg" CvElementArea="1468, 618, 400, 82" CvType="InputBox" DesignTimeRectangle="1380, 629, 471, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_State_Input'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' parentid='main-wrapper' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' parentid='main-wrapper' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="44fac513-a3a4-4bf7-884a-c4cb8e4293aa" InformativeScreenshot="ffc568da2ad26f37f7dde282fba1b597.png" Reference="CohMpK4ItUe4eZemqtKt6w/GuXA2j7RsU-xokNi2aKPBA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -347,7 +348,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_PostalCode_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_PostalCode_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="2tHTgLcruUyGTV920dPw3g" CvElementArea="475, 720, 404, 78" CvType="InputBox" DesignTimeRectangle="486, 721, 392, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_PostalCode_Input'" FullSelectorArgument="&lt;webctrl id='PostalCode' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='PostalCode' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname=' Zip Code ' /&gt;" Guid="9dfb8c2d-65dc-4a2b-aa24-d7f0f6e9c16d" InformativeScreenshot="4ff767cb35c88eabf4ab718b9435a93a.png" Reference="CohMpK4ItUe4eZemqtKt6w/Vz7YnBspU0y_BIFIf3s2gg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -357,7 +358,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_Email_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CV_CreateNewCustomer_Email_Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="lEPO323aHUeLeLnhohih1A" CvElementArea="966, 720, 404, 79" CvType="InputBox" DesignTimeRectangle="980, 721, 389, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'CV_CreateNewCustomer_Email_Input'" FullSelectorArgument="&lt;webctrl id='Email' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Email' tag='INPUT' type='text' class='floating__input ng-untouched ng-pristine ng-invalid' aaname=' Email ' /&gt;" Guid="af760af2-85bf-4635-af11-12d17db8eecb" InformativeScreenshot="a431227ab4081b58ed4a6e07740f4915.png" Reference="CohMpK4ItUe4eZemqtKt6w/oUsCa7FiyU6ExW7CTwu90g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
@@ -367,7 +368,7 @@
                         </InArgument>
                       </uix:NTypeInto.Text>
                     </uix:NTypeInto>
-                    <If DisplayName="If Shipping Info is same as above Address" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If DisplayName="If Shipping Info is same as above Address" sap:VirtualizedContainerService.HintSize="496.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">bool_in_ShippingAddressSame.Contains("True")</CSharpValue>
@@ -482,32 +483,66 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Card Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" CvTextArea="352, 685, 163, 18" CvTextArgument="5555555555554444" CvType="Text" DesignTimeRectangle="344, 675, 481, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'5555555555554444'" FullSelectorArgument="&lt;webctrl id='CcNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CcNumber' tag='INPUT' type='tel' class='dpp-input floating__input mastercard identified ng-dirty ng-valid ng-touched' aaname=' Card Number *' /&gt;" Guid="afbd198a-2f3b-4479-91b4-e1acaee019f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAeUAAAAtCAYAAACQ/HMPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAvuSURBVHhe7Z0NbBPnHcbdVp22iUkT2iSrLRmh0DWDDjJaRlZtKmk3re7QtFRsayTUVl6r0Yx1VYj2kbGPkH4oshjaohYVL1UrHDbWsBUlqcYaVpUtWfkIkEIISUkICfHZgZgmYCfN2H/vez57Pvtv5z24cHh6ftIjxebJ5d4Tul/e13cXFwEAAADgugBSBgAAAK4TIGUAAADgOiFDysPDw9TV1UUHDx5EEARBEGQWIj0rfZuOSco9PT00ODhIsVjMeAcAAACYPcJhjd47dpSOHD1EZ4b6KRQ+S+HRkbxMKDxC58fCFI1eMkaXHelZ6Vvp3VSSUpbGlgUAAADgWhAKBWn//nY6eOhdOjsySEFt6P8m0ehFY5S5kd5NnTEnpSyn0pghAwAAuFZ0dR3WpXyy9zgrtnzOuXOaMcrcSO9K/yZISlmucQMAAADXiv0HOnQpv3/qJCu2fI8qqf6FlAEAADiCFLLMqf6rkPLZ06Qd7iTtb29RsLmVggf2kzY0wHdniDZ0gsLvv0OjJ5opfGqfeH11M3hVIGUAAACOc8VSPtNPWv02CpU+TOEb51HYdas5N9xGoYX3UujbT1BwZxO/DRHtbB+NtT9L480PU3R7EcVeuSUj8v0Lb1dSuFdIn9lGrqgCKQMAAHAcy1Ie6CPtFy9QeO7iTBHnSOj+NRTs6DBt6/yhrRRtvIsVcbZM/MVDo93Npu3kiiqQMgAAAMexJGUx4w1/6i5Wukq5uYBCG35J4RN/F3J9iJWuasZbHyFtuIffz5SoAikDAABwHFUph35VR+GbCnjZWsj4A4tpuup2im0rYGVrJZd2rqDQwH52fxNRBVIGAADgOCpS1jb5WMFazfj9S4gevUHPdNUCiv3eBjHvWEra0DF2v2VUgZQBAAA4zkxS1t5o5i/kspixOz+bFHIiU78uZkVrNRNvfIOCQf7BJ6pAygAAABwnp5QHT1HYvZSVrNV8+MNMKctMbrZ2oVe2jHU8n7n/IqpAygAAABwnl5RDP9nECtZqxlcXs0KW+c+Tn6BowzxWtFYS3b6ItKHMC79UsUXKnZuLyeVyMamldqMjUe3RYR8Vsz0X1XYYHYlqL9JCFUxHpqwxaJQEqj2KUMs6vudaE6D/Ne3uOXisTcj9dc/QidO5uUTvmY9fJnb3AAD5RVYp9/ZQeM4drGStZvrpBayQE4ltWcGK1mouvPMz8xhEVLFFyu014iS+rJyq63zkM6WF+o2ORLVHHbXixFtM5T9N7/mopc/oSFR7QwEqEydyz7rMnr8jYpQEqj2hycAaMZYHKzJ6voZ2oawEdvccPNYpxPZUklscpxml3Ocnj9HLKVG7ewCAvCOblLUtL7GCtZrI0jtZEadmuqqQlazVRHd83jQGGVVskLIhlI2m+ReDak80G8vEibfaPKNjUO3FxVNGgQHjdTZUe+In1koxvGbSG4PdPeeOdZJYJ9WuFPu6Rn5fLikHqWmtm4pFrzSnRO3uAQDykWxSDn39EVayVnPxqftYEacn5r+DFa3VpD/1SxUbpNxP/q+6qHhzp/E6G6o90Xy5VMzyfDTjFhV7cmbnclVQS+qUk0G1R7E2qhRiqNg90wZt7jl4rBPoy8cP+ql/n/wFJruUI7sryO2upLYT8dWHbBK1uwcAyE9YKQfPUPhjt7OStZqpDUtZCacn9tKXWMlazVh7rVNSjs/yitd6ybuyUD9Ru5d4qLKxm8x//FG1J5rG0qv38RIqFD2Xu4g8VQHqnjAKBqq9+GzQQ951Hipyi56rkEoe91H7qFEwUO0ll7kfryDPkvhnq4UrveTblyZVu3sOHmsdffm4WIhYbEVfVcgi5QnxS4Y4fro4jbGxErW7BwDIW1gpv3eUFeyV5PJTn2YlnJ5JMfHgJGs1H+x5wiEpGydJ9yovVTc0UdsuP1WuiYvA83LKcqxqL7H06i4l70Y/Ne1tIn9VWVwYcoZmtNR7hniEYMuq6inQ2kKBOi+VSunKmVeKfFR7CSEVrqmk+sYWamn0kXeVlKmbKvekaM/unmPHWhJfPnZXtcXFnlXKMep8zphNy5dZJWp3DwCQz3BS1t5qYwVrOTfexgqYy+Tz9lzsJR/f6YyUJRMRik0bX+v0U0CcwDOWglV70zGKpM3U+hvL9YuLTEu8qj1xYo9EUuQmiAmplIieeYlXtSfej4ixGF/rTIjZ6Uohs7SlYLt7Th3r+PJxOTUl/m9lk/JhnzheJVR7wBhNNona3QMA5DXsTLnlTV6yVvPxeayAuUw9ew8rWau5+PqXHZQyx75q/qSdjmqP2qla9Fw1M12SpNoTkvqW6KXdcpSJak80X5PL32UUmOH4292b9WNtLB+bZtmslPvJ/6CYoSdm0xJWonb3AAD5Divld9/lJXsF4QTMZeoFe6Q8sfub15mUB+InzxkFoNpLyFFVtjP2hHo2qslWtReXnqpEbezN6rGOUXtNMblWps3YGSnrn8m7xUw89TN4RqJ29wAA+Q8r5aHTrGCvJP+uuIWVcHomf2PP8vUHe77njJT7d/vI99u2TGGlnbRVe9TXQr66emrLGEP84qWkbFV7kXby1/kocDg51zIwPk9NyFa1RxFqbxBjaew0LzcL4heKJSRqd8+hYx1sonL5dc7IB5J0Uq38/J3990TkWOzuGbsMAMhrWCmLhG5dzkrWaiZ/9AVWwumJbbVnpjz2z02mcahy1VKWnzXKK5b9pgdNiNnVRjG7cldTm2Ea1V7iqVrmC5JEU8wai11uqt6b2KBiT8jCtyxtCVRizBo9DYnvV+3J24LkPqdd/CVnl1LeKRdI2d1z5FjHgtS5t43a0vOiV/wMF3lflK+7xa8WEermejur9fuKSzc2idedFIzZ3TN2GgCQ12SV8qPrWclazcR372ElnJ7JbbeykrWacN/bpnGoctVS1mUmL0haWEa+XfETZ9NzHnKLk3p5Y+rJXrUnJSUfpVhIZXXyxCu6u2rJI2ZN7rWBpKAkqj39IiXxc0qf8VOL7LX6qULuy0oxw0sRoWqPRoXM5M9ZVUn+VjmWFvKvl/tSImahKZawu+fgsc6AWb5mUV1utrsHAMgrsklZC/yRlazVnL9lPivh1Hz48yJWsFZz6Q/LTWOQUcUGKQsmuqmpxkslC4UIxAlT3mNbuyvznljlnninW8ghcY+ta2EJeWuamHtnVXtCuPvqqWJ1kRCT6Ml7cdfVZ95/LFDt0Wg71SfvZ3ZT0eoKqs+4r1hgd8+xY50GpAwAsJFsUg4OD1B4/gpWtFYz9cwyVsaJxOqXs5K1mrGOOvMYRFSxR8oAAADAVZBVyiLa1gZWslYTWf45VsYy0xsWsIK1mks7llJw5HTGGFSBlAEAADhOLinLhJY9wIrWaqIVd7NSnvzdIlayVnPuyKvs/qsCKQMAAHCcmaSsdR6k0CeLWNFayeicz9D00+bPlyd9Nv3Jxr0/YPddRhVIGQAAgOPMJGU9f9pF4ZsKWNlaydiCRXT5+3N1IU/VFrOCtZqLf/4aacEBfr9FVIGUAQAAOI6SlGWaWyk8dzErWysZW7iQJl+4lxWs1Yz/9THSRvr5/TWiCqQMAADAcZSlLKIvZa8qY2WrlI8u0C8e08720viba1nRqiS6fRGN/SvzSmsuqkDKAAAAHMeKlJMRs+bQfRbkfHMBhb7zpP5M7dTtnDvyCl18/SuseLlEA4sp8o8a0oZ7TNvJFVUgZQAAAI5zRVI2oh06QKEf11Doiw/F72mecweFPzKfwvPuFu95KPTYetK2vETBrqPs9ycy2t2sPx5zvLVcl7SUb+zVAoo2LtH/6pOcVZ/r2kHBkeyfHWeLKpAyAAAAx7kaKedDVIGUAQAAOA6kHIeVcldXF8VimQ9kBAAAAGaDzsMHdCn39nWzUsvnaKGzxihzI70r/ZsgKeXh4WEaHBw0XgEAAACzy6lTfbqUj3YdYsWWz7lw4bwxytxI70r/JkhKWdLT06MXMGMGAAAw20xNTdGx4126mE/2HqeR4BlWcPmWc+dDdPnyZWOUPNKz0rfSu6mYpCyRxpZTabnGjSAIgiCI/ZGeTZ0hJ8iQMgAAAACcgOi/TsyEwYnrgM8AAAAASUVORK5CYII=" InformativeScreenshot="e44c68070ff5f215eb9d51d0bb0ad5e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.Text>
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="496.6666666666667,169.33333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                      <Switch.Expression>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">str_in_CardNumber</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">str_in_AddCard</CSharpValue>
                         </InArgument>
-                      </uix:NTypeInto.Text>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Expiration'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" CvTextArea="867, 685, 58, 18" CvTextArgument="08 / 32" CvType="Text" DesignTimeRectangle="859, 675, 481, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'08 / 32'" FullSelectorArgument="&lt;webctrl id='Expiration' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Expiration' tag='INPUT' type='tel' class='floating__input dpp-input ng-dirty ng-valid ng-touched' aaname=' Expiration *' /&gt;" Guid="57fe8fd8-8218-4cd3-bc92-5a92fabc40f5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAeUAAAAtCAYAAACQ/HMPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUXSURBVHhe7dyxa+NmGMdx/RlaAx0a6HDZ4jGBDmfocIYshg7BUwgdiskQTJcgMhwiQwkdgslQUIYDZyg4w4Ey+oYEB3zgMxz4MGfwcIOHDBo6PH1f+7Ur2Yqc4FgR3PcDL0TyY8uZfn5evXotAQAAmUAoAwCQEYQyAAAZMRfK/X5fWq2W3N7eMhgMBoPBWMHQOavzdlYklDudjvR6PQmCwJwBAADPTeeszludu2HTUNaJrQsAAEA6dO6GO+ZpKOtWmg4ZAID06NzV+TsxDWU9xw0AANIVzl9CGQCAF0QoAwCQEYQyAAAZQSgDAJARhDIAABlBKAMAkBGEMgAAGUEoAwCQEYQyAAAZ8SyhPPzoSfmXdbEtSyxrTXK7rjS+mRdDgk+hOntd8nunsXVJguuK2HZF/KRdQIdt8Q7ysm7r72PJ2mZJ3OuBeTFkVFeQ3A/jOvunvJQv2jI0LwMAkKblQ/nOlZwKtNzuqdSuffGvqlLeslXolsW/NzWaqVvbcad1+5sqDDcdaYTrEgXiH1iy8bZpjmPcN8RRn2tvlaV6pa6jrlU7zqsfArYU34WCeVpXktPLcJ36X46b6koAAKRryVAeh6T1ypVITH71pKDCLX/eNSceqPtclbyqK1zEdLFxvtWkZG2Ie2eOY3TPtlXXW5JapAMPpP5b9PrNk43YOv9A/aCw9qVOuwwASNmSodwUx1ad68ls59oV740Kwb26mQoeiLejjg/8mQ5UdasqlK2jhjlONrgoiPW6qj79Yd1/XHHPGnNT0KP3WhV1xdHR+PvseOqvqHFdQbyv5gQAAClZLpQHNSk+0Ok2/giH3lDqe+r4jRcN1MCXsnr/9llSzE50pfo63H0/TeNIdcCznXqMUadtOya8AQBIz3KhbKapY0P5SIWw9X+4BTeO5PR93b+7427534HUD3MqAPel/pjFXneubMxNNz9GIIOryvja4XvKce7VjwTV+efmOn8AAFYvtVDWBpf7sq6nqyfjx6JUP5kXF2i+3QhNhz+C+W6TaxVVh528eKsr3q+qm950pMkqLwDAC0ivU/7gyLZty/bvVanr1dfXNXF31lQIVsRf1P0GvlTUeyvXT0jLYCDN0XXq4h0VZM1ak9K7h6a+A/V9dddeFO+LOQUAQMqWC+VH31NuivvKEntuoVdbTn9W5w9nz0cF78uPuh+cpHuWVz8S4lZVTwJ5W5wPtMgAgJezXCib1df28YLV10+c5o4aSm13wbPJU0NpnLvins+vvhbVqVuWLc6NOTa6F0WxrRyBDAB4cUuGciD+Ycyq5tnnj80q6/lgHa+ojns0aWr0WXmpfjbHC4xWWc9uXKK0/9LPL0c75eF7vQAsaVobAID0LBnKigngRTt1NU9yo041f+hF7ykv6FK75/mFzyZHfPGkqLv38I5ef5bGu46FdurS97j1ufW96qhmbtwMEqfUAQB4bsuHshLZ0/rBva8DaV86UtoK1zlS+5i0nnp8L7p0mVQTY+DL6V5072vnsh0J2fG0ecJI6t4BAFiBZwnllRk9m8yWlwCA70O2QxkAgO8IoQwAQEYQygAAZAShDABARhDKAABkBKEMAEBGEMoAAGQEoQwAQEYQygAAZERsKLdaLQkCdn4GACAtOnd1/k5MQ7nf70uv1zNHAABg1XTu6vydmIay1ul0RgV0zAAArI7OWZ23OnfDIqGs6cTWrbSe42YwGAwGg/H8Q+dsuEOemAtlAADwEkT+A7McW5eURLj5AAAAAElFTkSuQmCC" InformativeScreenshot="581c339edabbe199f3164800969e69a6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.Text>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">str_in_Expiration</CSharpValue>
-                        </InArgument>
-                      </uix:NTypeInto.Text>
-                    </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CV_CreateNewCustomer_Create_Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                      </Switch.Expression>
+                      <Sequence x:Key="True" DisplayName="Card Details" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Card Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" CvTextArea="352, 685, 163, 18" CvTextArgument="5555555555554444" CvType="Text" DesignTimeRectangle="344, 675, 481, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'5555555555554444'" FullSelectorArgument="&lt;webctrl id='CcNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CcNumber' tag='INPUT' type='tel' class='dpp-input floating__input mastercard identified ng-dirty ng-valid ng-touched' aaname=' Card Number *' /&gt;" Guid="afbd198a-2f3b-4479-91b4-e1acaee019f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAeUAAAAtCAYAAACQ/HMPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAvuSURBVHhe7Z0NbBPnHcbdVp22iUkT2iSrLRmh0DWDDjJaRlZtKmk3re7QtFRsayTUVl6r0Yx1VYj2kbGPkH4oshjaohYVL1UrHDbWsBUlqcYaVpUtWfkIkEIISUkICfHZgZgmYCfN2H/vez57Pvtv5z24cHh6ftIjxebJ5d4Tul/e13cXFwEAAADgugBSBgAAAK4TIGUAAADgOiFDysPDw9TV1UUHDx5EEARBEGQWIj0rfZuOSco9PT00ODhIsVjMeAcAAACYPcJhjd47dpSOHD1EZ4b6KRQ+S+HRkbxMKDxC58fCFI1eMkaXHelZ6Vvp3VSSUpbGlgUAAADgWhAKBWn//nY6eOhdOjsySEFt6P8m0ehFY5S5kd5NnTEnpSyn0pghAwAAuFZ0dR3WpXyy9zgrtnzOuXOaMcrcSO9K/yZISlmucQMAAADXiv0HOnQpv3/qJCu2fI8qqf6FlAEAADiCFLLMqf6rkPLZ06Qd7iTtb29RsLmVggf2kzY0wHdniDZ0gsLvv0OjJ5opfGqfeH11M3hVIGUAAACOc8VSPtNPWv02CpU+TOEb51HYdas5N9xGoYX3UujbT1BwZxO/DRHtbB+NtT9L480PU3R7EcVeuSUj8v0Lb1dSuFdIn9lGrqgCKQMAAHAcy1Ie6CPtFy9QeO7iTBHnSOj+NRTs6DBt6/yhrRRtvIsVcbZM/MVDo93Npu3kiiqQMgAAAMexJGUx4w1/6i5Wukq5uYBCG35J4RN/F3J9iJWuasZbHyFtuIffz5SoAikDAABwHFUph35VR+GbCnjZWsj4A4tpuup2im0rYGVrJZd2rqDQwH52fxNRBVIGAADgOCpS1jb5WMFazfj9S4gevUHPdNUCiv3eBjHvWEra0DF2v2VUgZQBAAA4zkxS1t5o5i/kspixOz+bFHIiU78uZkVrNRNvfIOCQf7BJ6pAygAAABwnp5QHT1HYvZSVrNV8+MNMKctMbrZ2oVe2jHU8n7n/IqpAygAAABwnl5RDP9nECtZqxlcXs0KW+c+Tn6BowzxWtFYS3b6ItKHMC79UsUXKnZuLyeVyMamldqMjUe3RYR8Vsz0X1XYYHYlqL9JCFUxHpqwxaJQEqj2KUMs6vudaE6D/Ne3uOXisTcj9dc/QidO5uUTvmY9fJnb3AAD5RVYp9/ZQeM4drGStZvrpBayQE4ltWcGK1mouvPMz8xhEVLFFyu014iS+rJyq63zkM6WF+o2ORLVHHbXixFtM5T9N7/mopc/oSFR7QwEqEydyz7rMnr8jYpQEqj2hycAaMZYHKzJ6voZ2oawEdvccPNYpxPZUklscpxml3Ocnj9HLKVG7ewCAvCOblLUtL7GCtZrI0jtZEadmuqqQlazVRHd83jQGGVVskLIhlI2m+ReDak80G8vEibfaPKNjUO3FxVNGgQHjdTZUe+In1koxvGbSG4PdPeeOdZJYJ9WuFPu6Rn5fLikHqWmtm4pFrzSnRO3uAQDykWxSDn39EVayVnPxqftYEacn5r+DFa3VpD/1SxUbpNxP/q+6qHhzp/E6G6o90Xy5VMzyfDTjFhV7cmbnclVQS+qUk0G1R7E2qhRiqNg90wZt7jl4rBPoy8cP+ql/n/wFJruUI7sryO2upLYT8dWHbBK1uwcAyE9YKQfPUPhjt7OStZqpDUtZCacn9tKXWMlazVh7rVNSjs/yitd6ybuyUD9Ru5d4qLKxm8x//FG1J5rG0qv38RIqFD2Xu4g8VQHqnjAKBqq9+GzQQ951Hipyi56rkEoe91H7qFEwUO0ll7kfryDPkvhnq4UrveTblyZVu3sOHmsdffm4WIhYbEVfVcgi5QnxS4Y4fro4jbGxErW7BwDIW1gpv3eUFeyV5PJTn2YlnJ5JMfHgJGs1H+x5wiEpGydJ9yovVTc0UdsuP1WuiYvA83LKcqxqL7H06i4l70Y/Ne1tIn9VWVwYcoZmtNR7hniEYMuq6inQ2kKBOi+VSunKmVeKfFR7CSEVrqmk+sYWamn0kXeVlKmbKvekaM/unmPHWhJfPnZXtcXFnlXKMep8zphNy5dZJWp3DwCQz3BS1t5qYwVrOTfexgqYy+Tz9lzsJR/f6YyUJRMRik0bX+v0U0CcwDOWglV70zGKpM3U+hvL9YuLTEu8qj1xYo9EUuQmiAmplIieeYlXtSfej4ixGF/rTIjZ6Uohs7SlYLt7Th3r+PJxOTUl/m9lk/JhnzheJVR7wBhNNona3QMA5DXsTLnlTV6yVvPxeayAuUw9ew8rWau5+PqXHZQyx75q/qSdjmqP2qla9Fw1M12SpNoTkvqW6KXdcpSJak80X5PL32UUmOH4292b9WNtLB+bZtmslPvJ/6CYoSdm0xJWonb3AAD5Divld9/lJXsF4QTMZeoFe6Q8sfub15mUB+InzxkFoNpLyFFVtjP2hHo2qslWtReXnqpEbezN6rGOUXtNMblWps3YGSnrn8m7xUw89TN4RqJ29wAA+Q8r5aHTrGCvJP+uuIWVcHomf2PP8vUHe77njJT7d/vI99u2TGGlnbRVe9TXQr66emrLGEP84qWkbFV7kXby1/kocDg51zIwPk9NyFa1RxFqbxBjaew0LzcL4heKJSRqd8+hYx1sonL5dc7IB5J0Uq38/J3990TkWOzuGbsMAMhrWCmLhG5dzkrWaiZ/9AVWwumJbbVnpjz2z02mcahy1VKWnzXKK5b9pgdNiNnVRjG7cldTm2Ea1V7iqVrmC5JEU8wai11uqt6b2KBiT8jCtyxtCVRizBo9DYnvV+3J24LkPqdd/CVnl1LeKRdI2d1z5FjHgtS5t43a0vOiV/wMF3lflK+7xa8WEermejur9fuKSzc2idedFIzZ3TN2GgCQ12SV8qPrWclazcR372ElnJ7JbbeykrWacN/bpnGoctVS1mUmL0haWEa+XfETZ9NzHnKLk3p5Y+rJXrUnJSUfpVhIZXXyxCu6u2rJI2ZN7rWBpKAkqj39IiXxc0qf8VOL7LX6qULuy0oxw0sRoWqPRoXM5M9ZVUn+VjmWFvKvl/tSImahKZawu+fgsc6AWb5mUV1utrsHAMgrsklZC/yRlazVnL9lPivh1Hz48yJWsFZz6Q/LTWOQUcUGKQsmuqmpxkslC4UIxAlT3mNbuyvznljlnninW8ghcY+ta2EJeWuamHtnVXtCuPvqqWJ1kRCT6Ml7cdfVZ95/LFDt0Wg71SfvZ3ZT0eoKqs+4r1hgd8+xY50GpAwAsJFsUg4OD1B4/gpWtFYz9cwyVsaJxOqXs5K1mrGOOvMYRFSxR8oAAADAVZBVyiLa1gZWslYTWf45VsYy0xsWsIK1mks7llJw5HTGGFSBlAEAADhOLinLhJY9wIrWaqIVd7NSnvzdIlayVnPuyKvs/qsCKQMAAHCcmaSsdR6k0CeLWNFayeicz9D00+bPlyd9Nv3Jxr0/YPddRhVIGQAAgOPMJGU9f9pF4ZsKWNlaydiCRXT5+3N1IU/VFrOCtZqLf/4aacEBfr9FVIGUAQAAOI6SlGWaWyk8dzErWysZW7iQJl+4lxWs1Yz/9THSRvr5/TWiCqQMAADAcZSlLKIvZa8qY2WrlI8u0C8e08720viba1nRqiS6fRGN/SvzSmsuqkDKAAAAHMeKlJMRs+bQfRbkfHMBhb7zpP5M7dTtnDvyCl18/SuseLlEA4sp8o8a0oZ7TNvJFVUgZQAAAI5zRVI2oh06QKEf11Doiw/F72mecweFPzKfwvPuFu95KPTYetK2vETBrqPs9ycy2t2sPx5zvLVcl7SUb+zVAoo2LtH/6pOcVZ/r2kHBkeyfHWeLKpAyAAAAx7kaKedDVIGUAQAAOA6kHIeVcldXF8VimQ9kBAAAAGaDzsMHdCn39nWzUsvnaKGzxihzI70r/ZsgKeXh4WEaHBw0XgEAAACzy6lTfbqUj3YdYsWWz7lw4bwxytxI70r/JkhKWdLT06MXMGMGAAAw20xNTdGx4126mE/2HqeR4BlWcPmWc+dDdPnyZWOUPNKz0rfSu6mYpCyRxpZTabnGjSAIgiCI/ZGeTZ0hJ8iQMgAAAACcgOi/TsyEwYnrgM8AAAAASUVORK5CYII=" InformativeScreenshot="e44c68070ff5f215eb9d51d0bb0ad5e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">str_in_CardNumber</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Expiration'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_19" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" CvTextArea="867, 685, 58, 18" CvTextArgument="08 / 32" CvType="Text" DesignTimeRectangle="859, 675, 481, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'08 / 32'" FullSelectorArgument="&lt;webctrl id='Expiration' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Expiration' tag='INPUT' type='tel' class='floating__input dpp-input ng-dirty ng-valid ng-touched' aaname=' Expiration *' /&gt;" Guid="57fe8fd8-8218-4cd3-bc92-5a92fabc40f5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAeUAAAAtCAYAAACQ/HMPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUXSURBVHhe7dyxa+NmGMdx/RlaAx0a6HDZ4jGBDmfocIYshg7BUwgdiskQTJcgMhwiQwkdgslQUIYDZyg4w4Ey+oYEB3zgMxz4MGfwcIOHDBo6PH1f+7Ur2Yqc4FgR3PcDL0TyY8uZfn5evXotAQAAmUAoAwCQEYQyAAAZMRfK/X5fWq2W3N7eMhgMBoPBWMHQOavzdlYklDudjvR6PQmCwJwBAADPTeeszludu2HTUNaJrQsAAEA6dO6GO+ZpKOtWmg4ZAID06NzV+TsxDWU9xw0AANIVzl9CGQCAF0QoAwCQEYQyAAAZQSgDAJARhDIAABlBKAMAkBGEMgAAGUEoAwCQEYQyAAAZ8SyhPPzoSfmXdbEtSyxrTXK7rjS+mRdDgk+hOntd8nunsXVJguuK2HZF/KRdQIdt8Q7ysm7r72PJ2mZJ3OuBeTFkVFeQ3A/jOvunvJQv2jI0LwMAkKblQ/nOlZwKtNzuqdSuffGvqlLeslXolsW/NzWaqVvbcad1+5sqDDcdaYTrEgXiH1iy8bZpjmPcN8RRn2tvlaV6pa6jrlU7zqsfArYU34WCeVpXktPLcJ36X46b6koAAKRryVAeh6T1ypVITH71pKDCLX/eNSceqPtclbyqK1zEdLFxvtWkZG2Ie2eOY3TPtlXXW5JapAMPpP5b9PrNk43YOv9A/aCw9qVOuwwASNmSodwUx1ad68ls59oV740Kwb26mQoeiLejjg/8mQ5UdasqlK2jhjlONrgoiPW6qj79Yd1/XHHPGnNT0KP3WhV1xdHR+PvseOqvqHFdQbyv5gQAAClZLpQHNSk+0Ok2/giH3lDqe+r4jRcN1MCXsnr/9llSzE50pfo63H0/TeNIdcCznXqMUadtOya8AQBIz3KhbKapY0P5SIWw9X+4BTeO5PR93b+7427534HUD3MqAPel/pjFXneubMxNNz9GIIOryvja4XvKce7VjwTV+efmOn8AAFYvtVDWBpf7sq6nqyfjx6JUP5kXF2i+3QhNhz+C+W6TaxVVh528eKsr3q+qm950pMkqLwDAC0ivU/7gyLZty/bvVanr1dfXNXF31lQIVsRf1P0GvlTUeyvXT0jLYCDN0XXq4h0VZM1ak9K7h6a+A/V9dddeFO+LOQUAQMqWC+VH31NuivvKEntuoVdbTn9W5w9nz0cF78uPuh+cpHuWVz8S4lZVTwJ5W5wPtMgAgJezXCib1df28YLV10+c5o4aSm13wbPJU0NpnLvins+vvhbVqVuWLc6NOTa6F0WxrRyBDAB4cUuGciD+Ycyq5tnnj80q6/lgHa+ojns0aWr0WXmpfjbHC4xWWc9uXKK0/9LPL0c75eF7vQAsaVobAID0LBnKigngRTt1NU9yo041f+hF7ykv6FK75/mFzyZHfPGkqLv38I5ef5bGu46FdurS97j1ufW96qhmbtwMEqfUAQB4bsuHshLZ0/rBva8DaV86UtoK1zlS+5i0nnp8L7p0mVQTY+DL6V5072vnsh0J2fG0ecJI6t4BAFiBZwnllRk9m8yWlwCA70O2QxkAgO8IoQwAQEYQygAAZAShDABARhDKAABkBKEMAEBGEMoAAGQEoQwAQEYQygAAZERsKLdaLQkCdn4GACAtOnd1/k5MQ7nf70uv1zNHAABg1XTu6vydmIay1ul0RgV0zAAArI7OWZ23OnfDIqGs6cTWrbSe42YwGAwGg/H8Q+dsuEOemAtlAADwEkT+A7McW5eURLj5AAAAAElFTkSuQmCC" InformativeScreenshot="581c339edabbe199f3164800969e69a6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">str_in_Expiration</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                      </Sequence>
+                      <Sequence x:Key="False" DisplayName="Disable card toggle" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Toggle Card'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" CvElementArea="135, 971, 48, 27" CvType="Button" DesignTimeRectangle="137, 974, 45, 21" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='slider' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' parentid='main-wrapper' tag='SPAN' type='' aaname='' /&gt;" Guid="fa020a99-c0da-4da8-b7af-bd5a64e9542a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAZCAYAAACYY8ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOPSURBVFhH7VddSFNhGF4/VFYiBBVklBQiRdn+mm05xdWcrk3WgjYU94PCahlZ4I0pQpFJNCvIFAIHWQ2vvFRRVMQbEQQvBAVv9Er0QlFREfWt99t3Tmf6Ld3OESR64LnY+33nfZ/n7Pt5jwz+Afw3sV+wo4nR0VFoaWmBqqoqcDqdoFAoJKdcLo9gRkYGWCwWKC8vh87OTqokOqKaWFpagpqaGmZRqYiCWXEhcQ6+vPn5eapsO5gmBgYGwGg0kiTpt9Rw9pkNkl4VwtHPJSALPRXNQ8HHkOK4ywutq6uD9vZ2GB8fh5WVFZicnITe3l5oamoCrVZL5qjVamhra6MKI7HNxNDQEJ881ZINh7/6mELi5o8ySMvTk/zWggKyXP+GmZkZ8Pl8vKauri468gcRJhYXF8FkMpHJySVmtgiRxH8V87tcLlhdXaWVdwb+W/gc7pfl5WUaDSPCRHV1NZmYlpcJsp9lTBFieOyjF+QqJREyNTVFq+4Oa2trYLfbiT6v10ujYfAm5ubmyIQbahUc+VLKFCGWF9x5pEYoFKJVYwPuGaVSSXLgquHAm+jp6SGDKU4jU4AUvGq8DSqVCtbX12nV2OF2u4nOjo4OGhGYqK+vJ4OnX9iZAsTy4O8TCfPbbDZaMT5wx35FRQWNCExwDo8H3EwRYpn4tpjkxwtMDILBIMmTn59PIwIT3Hl84JufKUIsE98Ukfx+v59WjA/Nzc0kj0ajoRGBCYfDQQYTPnmZIsQSLzjMr9fracX4gMsI85jNZhoRmODW2qmXD5kipOC1TA2pMTs7S6vGDqvVSnIw9wQeeziYXHqPKUAKXrYbSI2GhgZaNTYMDg6S57Gfam1tpVGBieHhYTIhXaeRvtWgPPnOBXKFnPRBExMTtPLugD2VMTeXNzEyMkJHBCY2NjaguDh8gqRas/fkxkaeexReDlgrlrajtraWN+DxeGBzc5OOCEwgpqenycbDyef3qHeSfX8CaaZMUqMgxgYQDWRlZZGYEBEmEP39/eQB5JU7Okj44GGLEUE8qS4WhZcGkmvFx8bG+Fa8r68PGhsbQavT8QaQuC+2YpsJBH5PGAzhTYi89MAAZ57fhxPvpb0Ik14XwnXtTb5ONKL4nJwcoosFpgnEwsICVFZWMpNKSe4NI7f+5oifxqgnGqKa4IDrDz9EAoEAaU3wptwqREpifqyD9bq7u3d1p+xoYv8D4BdUFrYhUCZsdAAAAABJRU5ErkJggg==" InformativeScreenshot="c87bf6759c9d81b02812069c536650c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="191, 977, 36, 16" CvTextArgument="Card" CvType="Text" DesignTimeRectangle="193, 974, 33, 26" ElementType="Text" FriendlyName="'Card'" FullSelectorArgument="&lt;webctrl aaname='Card' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Card' tag='LABEL' type='' class='col-form-label col-form-label-md flex-shrink-0 p-0' check:innerText='Card' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAAeCAYAAACrI9dtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHJSURBVFhH7ZUtk4MwEIbvL6FQuKpzqDgUKg6FOxUXxR9A4apwUTgUCleFq4pD4d5LQtKjX8B0uLneDO8MZrO7ebK73X7gDbVDrdUOtVY71Fr9HyjZFEijA3zPg+cfQJIc9Xmwpxur5fDUPbSU1nAHNaDNiYHxDxQsy5AxioOv4LwQWfsLYItQ3RGRrg494mxNRs4e3di30BLUKf80Dqy+rcgZZayrRSFc7LkGT0IEGla1OGIluktYC24eV0AUsfHh7XgydCVYFJh7goihKmehJEo6Xjw5fywpQHVLwwSFaCCyaGx5WqE3DhbKfAFCQlBoKBfnE6R8OhobQHVHYhLxxhruKmmhfJVr0m/XiUSM6FpD/bUN1CO1fBrr2leqrE4SwuRPUf0w6cCtoAZ0giMhdm1cvnmoMT9XpxO9PujqlSkBIWowVawsqfELmUAne/R9j5otQ71QKaVTjtAme74SXPJ4Mi8D6i9tm4Nys+hfPboXyQKUXp7Z8vLsitAkCmKGTPkw6to4D4W+Qnr16xvXxQLUKNnkSMJxl7i/meYqu0STW1izo4RaC9PWP4FSut1Toj4iXgP119qh1mqHWqsdaq12qLV6QyjgG+i++R7t20VGAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </Switch>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CV_CreateNewCustomer_Create_Button'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/createnewcustomer" ContentHash="xpKEtWBkk02YlhSbvMWfmg" CvElementArea="1643, 922, 102, 55" CvTextArea="1661, 939, 66, 19" CvTextArgument="Create" CvType="Button" DesignTimeRectangle="1645, 923, 99, 52" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'CV_CreateNewCustomer_Create_Button'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname=' Create ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname=' Create ' type='button' class='btn text-white bg-dashboardblue' check:text='Create' /&gt;" Guid="9535ddb6-b864-49f7-a1d6-21015d7d21f9" InformativeScreenshot="eb1a703a73abb7b57578656f2400c7c4.png" Reference="CohMpK4ItUe4eZemqtKt6w/zIo-J71z2EiImYB99wE1Ow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create New Customer' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NGetText DelayBefore="5" DisplayName="Get Text 'Customer ID'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
+                    <uix:NGetText DelayBefore="5" DisplayName="Get Text 'Customer ID'" sap:VirtualizedContainerService.HintSize="496.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="de1a97f6-0455-481d-99e8-6fb545091802" Version="V3">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1231, 838, 55, 18" CvType="AnyWordGroup" DesignTimeRectangle="1235, 916, 51, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'24123'" FullSelectorArgument="&lt;webctrl tag='B' parentclass='paragraph-title' parentid='collapseCustomerVaultDetail' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' parentclass='paragraph-title' parentid='collapseCustomerVaultDetail' type='' class='text-color-size' /&gt;" Guid="3fd950c7-0387-4379-887e-914300b1a485" ImageBase64="" InformativeScreenshot="fa01273c3484844b41ee69956dddb160.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                           <uix:TargetAnchorable.Anchors>
@@ -523,7 +558,7 @@
                         </OutArgument>
                       </uix:NGetText.TextString>
                     </uix:NGetText>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.6666666666667,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                       <ui:LogMessage.Level>
                         <InArgument x:TypeArguments="ui:LogLevel">
                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -535,7 +570,7 @@
                         </InArgument>
                       </ui:LogMessage.Message>
                     </ui:LogMessage>
-                    <cr:passedStep Expected_Result="Verify new customer should be created with vault type card" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Create New Customer with vault type card">
+                    <cr:passedStep Expected_Result="Verify new customer should be created with vault type card" sap:VirtualizedContainerService.HintSize="496.6666666666667,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Create New Customer with vault type card">
                       <cr:passedStep.Actual_Result>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">"New customer is created with vault type card and Customer ID = "+str_out_CustomerID</CSharpValue>
@@ -543,7 +578,7 @@
                       </cr:passedStep.Actual_Result>
                       <cr:passedStep.str_in_expectedStep>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">Step</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">StepId</CSharpValue>
                         </InArgument>
                       </cr:passedStep.str_in_expectedStep>
                       <cr:passedStep.str_in_reportId>
@@ -574,7 +609,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="612.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="721.3333333333334,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
