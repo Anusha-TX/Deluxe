@@ -4,10 +4,11 @@
     <x:Property Name="str_in_CardNumber" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Expiration" Type="InArgument(x:String)" />
     <x:Property Name="str_in_MerchantName" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_4digitCardNumber" Type="InArgument(x:String)" />
     <x:Property Name="Step" Type="InArgument(x:String)" />
     <x:Property Name="out_TestID" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
+    <x:Property Name="str_CardType" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_Last4digitCardNumber" Type="InArgument(x:String)" />
   </x:Members>
   <this:AddNewPaymentMethod.str_in_VaultType>
     <InArgument x:TypeArguments="x:String" />
@@ -21,9 +22,12 @@
   <this:AddNewPaymentMethod.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
   </this:AddNewPaymentMethod.In_Report_ID>
+  <this:AddNewPaymentMethod.str_CardType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:AddNewPaymentMethod.str_CardType>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1216.6666666666667,4748</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1216.6666666666667,5450.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,6 +79,10 @@
       <x:String>UiPath.Web.Activities</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -148,9 +156,12 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddNewPaymentMethod" sap:VirtualizedContainerService.HintSize="1226.6666666666667,4683.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddNewPaymentMethod" sap:VirtualizedContainerService.HintSize="1226.6666666666667,5386" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_out_CardNumber" />
     </Sequence.Variables>
@@ -160,15 +171,15 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1164.6666666666667,4572.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1164.6666666666667,5275.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1126,4333.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="95811466-04b2-407b-b003-74356af30bca" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1126,5036" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="95811466-04b2-407b-b003-74356af30bca" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1092,4114" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1092,4816.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="str_out_SuccessMessage" />
                   <Variable x:TypeArguments="x:String" Name="str_out_ActiveCrumb" />
@@ -299,7 +310,7 @@
                     </InArgument>
                   </uix:NTypeInto.Text>
                 </uix:NTypeInto>
-                <If DisplayName="If for vault types" sap:VirtualizedContainerService.HintSize="1030,54" sap2010:WorkflowViewState.IdRef="If_1">
+                <If DisplayName="If for vault types" sap:VirtualizedContainerService.HintSize="1030,756.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">str_in_VaultType.Contains("Card")</CSharpValue>
@@ -307,7 +318,7 @@
                   </If.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -468,7 +479,12 @@
                           </InArgument>
                         </ui:LogMessage.Message>
                       </ui:LogMessage>
-                      <cr:passedStep Actual_Result="Card details are added and Card body is displayed successfully" Expected_Result="Added card details should be displayed" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Verify Added card details should be displayed">
+                      <cr:passedStep Expected_Result="Added card details should be displayed" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Verify Added card details should be displayed">
+                        <cr:passedStep.Actual_Result>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_309">str_CardType +" Card details are added and Card body is displayed successfully"</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.Actual_Result>
                         <cr:passedStep.str_in_expectedStep>
                           <InArgument x:TypeArguments="x:String">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_255">Step</CSharpValue>
@@ -506,7 +522,12 @@
                           </InArgument>
                         </ui:LogMessage.Message>
                       </ui:LogMessage>
-                      <cr:failedStep Actual_Result="Card details are added and Card body is displayed successfully" Expected_Result="Verify Added card details should be displayed" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_actualStep="Verify Added card details should be displayed">
+                      <cr:failedStep Expected_Result="Verify Added card details should be displayed" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_actualStep="Verify Added card details should be displayed">
+                        <cr:failedStep.Actual_Result>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_310">str_CardType +"Card details are not added and Card body is not displayed "</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.Actual_Result>
                         <cr:failedStep.str_in_expectedStep>
                           <InArgument x:TypeArguments="x:String">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_256">Step</CSharpValue>
@@ -581,7 +602,7 @@
                 <If DisplayName="If for card details validations" sap:VirtualizedContainerService.HintSize="1030,1935.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_249">str_out_CardNumber.Contains(str_in_4digitCardNumber)</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_249">str_out_CardNumber.Contains(str_in_Last4digitCardNumber)</CSharpValue>
                     </InArgument>
                   </If.Condition>
                   <sap:WorkflowViewStateService.ViewState>
