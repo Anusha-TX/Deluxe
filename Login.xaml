@@ -1,0 +1,313 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Str_in_UserName" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_Password" Type="InArgument(x:String)" />
+    <x:Property Name="out_TestID" Type="InArgument(x:String)" />
+    <x:Property Name="Step" Type="InArgument(x:String)" />
+    <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <this:Login.Step>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Login.Step>
+  <this:Login.In_Report_ID>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Login.In_Report_ID>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1150,1528.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>CommonLibrary.Report</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Jira.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>CommonLibrary</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="584.6666666666666,1464" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.6666666666666,1353.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Deluxe Payments Platform" sap:VirtualizedContainerService.HintSize="484,1114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="a8499673-901a-4961-9a6a-0c671672c989" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,894.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'UserName'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a8499673-901a-4961-9a6a-0c671672c989" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/login" DesignTimeRectangle="794, 525, 354, 43" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'INPUT okta-signin-usern…'" FullSelectorArgument="&lt;webctrl id='okta-signin-username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='okta-signin-username' tag='INPUT' type='text' class='' aaname='EMAIL OR USERNAME' /&gt;" Guid="39964551-acf5-4588-ad03-4672577abd55" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWYAAAAvCAYAAADQBmAGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJWSURBVHhe7d3PSlRxHMbhcyFeR7flpkvwCrqRSpEGipJQCAnRRSBuaiP5L22ycpwRfvn+UpcuPd/F88ALwxmY5YfDmXNmhsOrm/bt7007+L1oX34t2t503j7/nLdPF/O2dX7dNn9ct4+32zj7vw93e29mZo/uvpf3/UxL09S0NY1Na9PctDcNTovT5OHrn5u2f5kgL9r2XYzzAW9PZ+3NyaytH8/a2tGsrR5dtdd3e/X9qr00M7NHl1bedzMNTUvT1LQ1jU1r09y0Nw1Oi9PkIS92b4u9PDloSyvv2vB8zczMnnBpbxqcFqfJQyqdA89ebLadw2kD4GmlvWlwWpwmDzmFTq1FGWA8aXBanCYPub6RU2kAxpUW9ybn4rMwA4wvLe5NzjeDwgwwvrS4N3lyIswAFaTFvcm5p06YAcaXFvcm54ZnYQYYX1rcm5ynUYQZYHxpcW9yHhUUZoDxpcW9ycIMUMNDmPNDG8IMML60uDdZmAFqEGaAYoQZoBhhBihGmAGKEWaAYoQZoBhhBihGmAGKEWaAYoQZoBhhBihGmAGKEWaAYoQZoBhhBihGmAGKEWaAYoQZoBhhBijmIcz+JRughrS4N1mYAWp4CPOqMAOUkBb3Jq8dzYQZoIC0uDd5/ViYASpIi3uTJyfCDFBBWtyb/PZUmAEqSIt7kzfOroUZoIC0uDd561yYASpIi3uTty/mbWnlXds5nN69BcBTS4PT4jR52Jsu2vLkoD17sSnOACNIe9PgtDhNHvYvF213Ou8HUuucSpuZ2dMt7U2D0+L9y0X7B7QTA8ZLNtHVAAAAAElFTkSuQmCC" InformativeScreenshot="67407c4ab256a7589e6b33fb9d4dc726.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Deluxe Payments Platform' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Str_in_UserName</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT okta-signin-passw…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a8499673-901a-4961-9a6a-0c671672c989" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/login" CvElementArea="790, 606, 361, 50" CvType="InputBox" DesignTimeRectangle="794, 609, 354, 43" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBoxPassword" FriendlyName="'INPUT okta-signin-passw…'" FullSelectorArgument="&lt;webctrl id='okta-signin-password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='okta-signin-password' tag='INPUT' type='password' class='' aaname='PASSWORD' /&gt;" Guid="f8851420-e8e2-418f-9aaa-d93759e6bf79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWYAAAAvCAYAAADQBmAGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEjSURBVHhe7dbBacAwEETR9N+SrzqpC7XgBhRG4EAasOfwHsxlC/jszwagijADlPkL81prjzH2dV1mZvbi0t40+HHCnMOcc9/3fY4AvCftTYOfOJ8wp9aiDPCdNDgtjhPmvNIAfOtpsTADlBBmgDLCDFBGmAHKCDNAGWEGKCPMAGWEGaCMMAOUEWaAMsIMUEaYAcoIM0AZYQYoI8wAZYQZoIwwA5QRZoAywgxQRpgByggzQBlhBigjzABlhBmgjDADlBFmgDLCDFBGmAHKCDNAGWEGKCPMAGWEGaCMMAOUEWaAMsIMUEaYAcoIM0AZYQYo8y/MY4x93/c5APC+NDgtjhPmtdaec4ozwAfS3jQ4LY4T5sghtc4rbWZm7y3tfaK8996/Ukx4Qr0ti28AAAAASUVORK5CYII=" InformativeScreenshot="58e7d58a13af3379000b437f34146192.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Deluxe Payments Platform' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">str_in_Password</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'LOGIN button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a8499673-901a-4961-9a6a-0c671672c989" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/login" CvElementArea="790, 722, 358, 61" CvTextArea="940, 742, 58, 18" CvTextArgument="LOGIN" CvType="Button" DesignTimeRectangle="793, 724, 356, 56" DesignTimeScaleFactor="1.1299999952316284" ElementType="Button" FriendlyName="'LOGIN'" FullSelectorArgument="&lt;webctrl id='okta-signin-submit' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='okta-signin-submit' tag='INPUT' type='submit' class='button button-primary' aaname='LOGIN' check:text='LOGIN' /&gt;" Guid="444ac4ca-ae67-4382-bce9-9a01d3ac9862" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWgAAAA8CAYAAABLjSCAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAATVSURBVHhe7du/axt3GMfx/guGQjuUEhJCaSn9paGTl0CnQHd7aqGDh4KHDoIMhlKU0jUFQ0M7GDxoNHTwEFDBYDIYdShCtnXUYNVqnYvcRImID0no6X1P95zupFMtt7nzd3h/4EWx7k7xYN49zvIrwhhjzMoRaMYYs3QEmjHGLF0i0GfrP8rhzY+kvnANAJAj017T4PiiQJsDB9fek8b1D6Tx9scAgDz57TUNjkc6CvTBjQ/l4I13ZP/1t6T+6g0AQI5Me02DTYt1UaDNLfb+azenbrsBAPnQBusSgQYAXD0dgQYAy+gINABYRkegAcAyOgINAJbREWgAsIyOQAOAZXQEGgAsoyPQAGAZHYEGAMvoCDQAWEZHoAHAMjoCDQCW0RFoALCMjkADgGV0BBoALKMj0ABgGR2BBgDL6Ag0sldYlj9WVuVk6Xb68TR6jfHZsjhp56Q4Wgqv8TVvpZ8z6/txPl351+tG770ix4X048DLoiPQyN6dXRmYH7JGOf143K016dQ7wc9kYv2OeOU1OUq7ZmFRTtZ3pdcNz41t2KpJpzjxP4YZ38/pTvjvtnflNCXCTxrmYEe6d6aPAS+TjkAje/MGeqksnhf8OIp4rngPK9IpV+RFw5Vh+PKwXpZm4rpFOf3FDY+KDI5r0t3aks6Dqnit8M08R/7+JHbNRYH2N/zt/tRdO4FGXnQEGtmbK9Al6baDH0UZ7N2Xk4k7WOeLDTl/Ojre3y5Grx9vOKN4e0159tVi4hrj6G5FuhvLydfnCLT/huJtfp44TqCRFx2BRvbmCLTzQy34OZRHFfkz5XhA36dfk7PgtaI8f2Re8OR8fTrOM10Q6N5eNbxjd+X5l+PjBBp50RFoZG+OQEdx3Jq4201YDYMcRrKwJT3zZbcqj1PPn+GCQHubi+O76djzaAKNvOgINLI3R6BH8TNxTD+uRuf5d8z3/K/1fZ/6EU051zjZqIpXr8qTldjrFwbafK135yLDve+D59EEGnnREWhk7xJ30P0H4+fL00rSDZ5D+5Esmq/LfqrNRfrIY9rofSeiOlegfdEvLUfPowk08qIj0MjeHIGu3w2f+5rHFTM+Z+ys16Jz3OC1Zen8bl4wj0aSv9BT/yvQvuiXkNKUXsv8l0AjezoCjezNE+gFc4c6+ljcsFURd+KPRZr3qtLvm6P+3WzsUxnOWvjefjjPf1qd+GjcbTn71bznfw908DG+8PXRCDSypyPQyJ4Gse/JsJvU214bn1coSTd87ms2aDni1R3phx+vM3Hub5emPp/c3NS7XH9eR3r+NV7DlUEQdH/9pjy79DPoGPN9hR8BJNDIg45AI3saxJQNdkrJcwur8vhnRwbh35joBml/ERhzVCzLi+P4na4/P9beTln+mvzT7csG2oieRxNoZE9HoAHAMjoCDQCW0RFoALCMjkADgGV0BBoALKMj0ABgGR2BBgDL6Ag0AFhGR6ABwDI6Ag0AltERaACwjI5AA4BldAQaACyjI9AAYBkdgQYAy+gINABYRkegAcAyOgINAJbREWgAsIxuHOjr78t+yokAgHwEDfZbrIsC3fjmO9l/810iDQBXwLTXNNi0WBcFut1uy8HX3wb1TrsYAJAhv72mwabFuijQZq7ryuHhIQDgCpgGjyfyD1dMPJd/yzKwAAAAAElFTkSuQmCC" InformativeScreenshot="08b52e9fa1eebef666cf5e7f0fe592f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Deluxe Payments Platform' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NCheckState DisplayName="Check App State 'Dashboard'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a8499673-901a-4961-9a6a-0c671672c989" Timeout="30" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">"DPP home page is displayed"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:passedStep Actual_Result="Login successful and DPP home page is displayed" Expected_Result="Login to DPP Application should be successful" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Login to DPP Application">
+                        <cr:passedStep.str_in_expectedStep>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">Step</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_expectedStep>
+                        <cr:passedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">In_Report_ID</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_reportId>
+                        <cr:passedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">out_TestID</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_testId>
+                      </cr:passedStep>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"DPP home page is not displayed"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:failedStep Actual_Result="Login failed and DPP home page is not displayed" Expected_Result="Login to DPP Application should be successful" sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Login to DPP Application">
+                        <cr:failedStep.str_in_expectedStep>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Step</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.str_in_expectedStep>
+                        <cr:failedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">In_Report_ID</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.str_in_reportId>
+                        <cr:failedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">out_TestID</CSharpValue>
+                          </InArgument>
+                        </cr:failedStep.str_in_testId>
+                      </cr:failedStep>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="66, 310, 79, 18" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="11, 287, 281, 67" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl parentid='menuDashboard' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuDashboard' tag='A' type='' class='sidebar-link waves-effect waves-dark txt-white active' aaname='Dashboard' check:innerText='Dashboard' /&gt;" Guid="9afe8f62-a1f9-4f74-96d3-2f3ba7aae680" ImageBase64="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" InformativeScreenshot="a2a3dc15ce682bdfba4e3ec64e904b92.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="6d31f18c185067ce31d993f51a343e1b.jpg" Selector="&lt;html app='chrome.exe' title='Deluxe Payments Platform' /&gt;" Title="Deluxe Payments Platform" Url="https://payments2.deluxe.com/gateway/login" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">exception.Message</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
