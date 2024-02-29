@@ -7,6 +7,8 @@
     <x:Property Name="str_in_CustomerTaxExempt" Type="InArgument(x:Boolean)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
+    <x:Property Name="str_in_TaxRateListName" Type="InArgument(x:String)" />
+    <x:Property Name="str_out_TaxRatePercentage" Type="OutArgument(x:String)" />
   </x:Members>
   <this:AdditionalFields.str_in_OrderNote>
     <InArgument x:TypeArguments="x:String" />
@@ -14,9 +16,12 @@
   <this:AdditionalFields.str_in_DiscountRate>
     <InArgument x:TypeArguments="x:String" />
   </this:AdditionalFields.str_in_DiscountRate>
+  <this:AdditionalFields.str_in_TaxRateListName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:AdditionalFields.str_in_TaxRateListName>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1142.6666666666667,2167.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1204.6666666666667,3746</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -134,7 +139,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AdditionalFields" sap:VirtualizedContainerService.HintSize="1152.6666666666667,2102.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AdditionalFields" sap:VirtualizedContainerService.HintSize="1214.6666666666667,3681.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
     </Sequence.Variables>
@@ -143,15 +148,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1110.6666666666667,2038" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1172.6666666666667,3616.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1072,1776" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="1134,3354.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1030,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1092,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -163,19 +168,19 @@
               </InArgument>
             </ui:LogMessage.Message>
           </ui:LogMessage>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1030,1526.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1092,3105.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="996,1284.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1058,2863.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Additional Fields'" sap:VirtualizedContainerService.HintSize="954,237.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Additional Fields'" sap:VirtualizedContainerService.HintSize="1016,237.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="2NPq6rBI606p3nGUAf-GRA" CvElementArea="1813, 776, 40, 34" CvType="ArrowButton" DesignTimeRectangle="1825, 781, 18, 21" DesignTimeScaleFactor="1.5" FriendlyName="'I idAdditionalFieldIcon'" FullSelectorArgument="&lt;webctrl id='idAdditionalFieldIcon' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl id='idAdditionalFieldIcon' tag='I' type='' class='fas fa-chevron-up float-right text-dark' aaname='' /&gt;" Guid="b2684555-8c83-45dc-bd44-141f9d5e1eb0" InformativeScreenshot="340ae55f9f0de3742fc7a6b1302ad793.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/D0oS3rHFX02N_OvPVfWncw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -193,9 +198,9 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'Order Note'" sap:VirtualizedContainerService.HintSize="954,980" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Order Note'" sap:VirtualizedContainerService.HintSize="1016,2558.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,733.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,2312" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="str_MatchedDiscountAmount" />
                         </Sequence.Variables>
@@ -204,7 +209,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -216,7 +221,7 @@
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <cr:passedStep Actual_Result="It displayed the Additional Feilds relevant data and custom fields" Expected_Result="It should display the Additional Fields relevant data and custom fields" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on the additional field accordion icon">
+                        <cr:passedStep Actual_Result="It displayed the Additional Feilds relevant data and custom fields" Expected_Result="It should display the Additional Fields relevant data and custom fields" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on the additional field accordion icon">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -239,7 +244,7 @@
                             </InArgument>
                           </cr:passedStep.str_in_testId>
                         </cr:passedStep>
-                        <If DisplayName="If Order Note is not empty" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If DisplayName="If Order Note is not empty" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">!string.IsNullOrEmpty(str_in_OrderNote)</CSharpValue>
@@ -321,7 +326,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If DisplayName="If Discount rate is not empty" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If DisplayName="If Discount rate is not empty" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">!string.IsNullOrEmpty(str_in_DiscountRate)</CSharpValue>
@@ -465,7 +470,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If DisplayName="If Invoice Number is not Empty" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If DisplayName="If Invoice Number is not Empty" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">!string.IsNullOrEmpty(str_in_InvoiceNumber)</CSharpValue>
@@ -556,7 +561,133 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If DisplayName="If Customer is Tax Exempt" sap:VirtualizedContainerService.HintSize="388,79.33333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If DisplayName="If Tax Rate List is given" sap:VirtualizedContainerService.HintSize="450,1578.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">!string.IsNullOrEmpty(str_in_TaxRateListName)</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1297.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="str_TaxRateName" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+                                <ui:LogMessage.Level>
+                                  <InArgument x:TypeArguments="ui:LogLevel">
+                                    <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Level>
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">"Select the Tax Rate List in Additional Fields"</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                              </ui:LogMessage>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tax Rate List'" sap:VirtualizedContainerService.HintSize="354,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="trFehqm2PkWqs6tTINSKZQ" CvTextArea="473, 645, 161, 30" CvTextArgument="No Tax (0.00%)" CvType="Text" DesignTimeRectangle="361, 844, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Tax Rate List'" FullSelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' visibleinnertext='Tax Rate List' /&gt;&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' visibleinnertext='Tax Rate List' /&gt;&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' class='ngx-select__toggle btn form-control' type='' aaname='' /&gt;" Guid="366a23e7-5151-4813-80cf-cad909a9e4a0" InformativeScreenshot="3a576d170d646d2f030595db6f6cf08b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/1uCgDiR1t0mQvoAlsngIBg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Tax Rate List Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="NVqnBjNiuUa34gS59u26Jw" CvElementArea="357, 840, 482, 51" CvType="InputBox" DesignTimeRectangle="361, 844, 474, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'Tax Rate List Input'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="f794bcfe-2ce5-4052-a059-03c5de0bd0c2" InformativeScreenshot="2768a678d6bc2f275395e52c5b6ab7f6.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/ofvBP6NzVEa5YMzGhMdBEQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.Text>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">str_in_TaxRateListName + "[k(Enter)]"</CSharpValue>
+                                  </InArgument>
+                                </uix:NTypeInto.Text>
+                              </uix:NTypeInto>
+                              <cr:passedStep sap:VirtualizedContainerService.HintSize="354,94" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Select the Tax Rate from the Tax Rate List">
+                                <cr:passedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String" />
+                                </cr:passedStep.Actual_Result>
+                                <cr:passedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">str_in_TaxRateListName+" Tax Rate should be selected from the list"</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Expected_Result>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <cr:passedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_expectedStep>
+                                <cr:passedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_reportId>
+                                <cr:passedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_testId>
+                              </cr:passedStep>
+                              <uix:NGetText DisplayName="Get Text 'Tax Rate List'" sap:VirtualizedContainerService.HintSize="354,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="09693db6-cd67-4daf-bdb5-1c9d775c4e78" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="trFehqm2PkWqs6tTINSKZQ" CvTextArea="473, 645, 161, 30" CvTextArgument="No Tax (0.00%)" CvType="Text" DesignTimeRectangle="361, 844, 474, 43" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Tax Rate List'" FullSelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' visibleinnertext='Tax Rate List' /&gt;&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' visibleinnertext='Tax Rate List' /&gt;&lt;webctrl parentid='collapseAdditionalFields' tag='DIV' class='ngx-select__toggle btn form-control' type='' aaname='' /&gt;" Guid="366a23e7-5151-4813-80cf-cad909a9e4a0" InformativeScreenshot="3a576d170d646d2f030595db6f6cf08b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/1uCgDiR1t0mQvoAlsngIBg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NGetText.Target>
+                                <uix:NGetText.TextString>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">str_TaxRateName</CSharpReference>
+                                  </OutArgument>
+                                </uix:NGetText.TextString>
+                              </uix:NGetText>
+                              <ui:Matches DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="354,100" sap2010:WorkflowViewState.IdRef="Matches_2" IsBuilderTabModified="False" Pattern="\d+\.\d{2}" RegexOption="IgnoreCase, Compiled">
+                                <ui:Matches.FirstMatch>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_out_TaxRatePercentage</CSharpReference>
+                                  </OutArgument>
+                                </ui:Matches.FirstMatch>
+                                <ui:Matches.Input>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">str_TaxRateName</CSharpValue>
+                                  </InArgument>
+                                </ui:Matches.Input>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:Matches>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,170" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+                                <ui:LogMessage.Level>
+                                  <InArgument x:TypeArguments="ui:LogLevel">
+                                    <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Level>
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">"Selected Sale Item Rate is "+str_out_TaxRatePercentage</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                              </ui:LogMessage>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,101.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <If DisplayName="If Customer is Tax Exempt" sap:VirtualizedContainerService.HintSize="450,79.33333333333333" sap2010:WorkflowViewState.IdRef="If_4">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">str_in_CustomerTaxExempt</CSharpValue>
