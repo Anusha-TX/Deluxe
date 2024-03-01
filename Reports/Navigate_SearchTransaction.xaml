@@ -1,12 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="RepotsSubMenu_SearchTransaction" this:RepotsSubMenu_SearchTransaction.str_in_Field_SearchOptions="Merchant ID" this:RepotsSubMenu_SearchTransaction.str_in_Value="6280490007587520" this:RepotsSubMenu_SearchTransaction.SearchTransaction_withName="GuriTest" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="RepotsSubMenu_SearchTransaction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="str_in_Field_SearchOptions" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_Value" Type="InArgument(x:String)" />
-    <x:Property Name="SearchTransaction_withName" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
     <x:Property Name="out_Suite_ID" Type="InArgument(x:String)" />
     <x:Property Name="out_Test_ID" Type="InArgument(x:String)" />
-    <x:Property Name="Step" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_TestCaseID" Type="InArgument(x:String)" />
   </x:Members>
   <this:RepotsSubMenu_SearchTransaction.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
@@ -17,11 +14,11 @@
   <this:RepotsSubMenu_SearchTransaction.out_Test_ID>
     <InArgument x:TypeArguments="x:String" />
   </this:RepotsSubMenu_SearchTransaction.out_Test_ID>
-  <this:RepotsSubMenu_SearchTransaction.Step>
+  <this:RepotsSubMenu_SearchTransaction.str_in_TestCaseID>
     <InArgument x:TypeArguments="x:String" />
-  </this:RepotsSubMenu_SearchTransaction.Step>
+  </this:RepotsSubMenu_SearchTransaction.str_in_TestCaseID>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>944,6006</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,7125</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,6 +66,10 @@
       <x:String>System.Dynamic</x:String>
       <x:String>System.Collections.Specialized</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -144,42 +145,176 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="646,5941" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="875,7060" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Step" />
+      <Variable x:TypeArguments="x:String" Name="str_in_Field_SearchOptions" />
+      <Variable x:TypeArguments="x:String" Name="SearchTransaction_withName" />
+      <Variable x:TypeArguments="x:Int32" Name="LongDelay" />
+      <Variable x:TypeArguments="x:String" Name="SearchTransactionField" />
+      <Variable x:TypeArguments="x:String" Name="str_in_Value" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_TestCaseData" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,5830" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="813,6949" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="RepotsSubMenu_SearchTransaction" sap:VirtualizedContainerService.HintSize="546,5602" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="RepotsSubMenu_SearchTransaction" sap:VirtualizedContainerService.HintSize="775,6721" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="484,5491" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V2">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="LongDelay" CacheStrategy="None" DisplayName="Get Asset" FolderPath="DPP_TestAutomation" sap:VirtualizedContainerService.HintSize="713,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">LongDelay</CSharpReference>
+              </OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="713,6427" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,5234" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="679,6170" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <Sequence DisplayName="Excel" sap:VirtualizedContainerService.HintSize="617,896" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="555,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\T475303\Downloads\DPPTestData (1).xlsx">
+                      <ui:ReadRange.DataTable>
+                        <OutArgument x:TypeArguments="sd:DataTable">
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">dt_DataTable</CSharpReference>
+                        </OutArgument>
+                      </ui:ReadRange.DataTable>
+                    </ui:ReadRange>
+                    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="555,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable.DataTable>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">dt_DataTable</CSharpValue>
+                        </InArgument>
+                      </ui:FilterDataTable.DataTable>
+                      <ui:FilterDataTable.Filters>
+                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">"TestCaseId"</CSharpValue>
+                              </InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">str_in_TestCaseID</CSharpValue>
+                              </InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                        </scg:List>
+                      </ui:FilterDataTable.Filters>
+                      <ui:FilterDataTable.OutputDataTable>
+                        <OutArgument x:TypeArguments="sd:DataTable">
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">dt_TestCaseData</CSharpReference>
+                        </OutArgument>
+                      </ui:FilterDataTable.OutputDataTable>
+                      <ui:FilterDataTable.SelectColumns>
+                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                          <x:Null />
+                        </scg:List>
+                      </ui:FilterDataTable.SelectColumns>
+                    </ui:FilterDataTable>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,452" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,266" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">
+                                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">SearchTransactionField</CSharpReference>
+                                      </OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">CurrentRow["SearchTransactionField"].ToString()</CSharpValue>
+                                      </InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">
+                                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">str_in_Value</CSharpReference>
+                                      </OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">CurrentRow["MID"].ToString()</CSharpValue>
+                                      </InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">
+                                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">SearchTransaction_withName</CSharpReference>
+                                      </OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">CurrentRow["FirstName"].ToString()</CSharpValue>
+                                      </InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <ui:ForEachRow.DataTable>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">dt_TestCaseData</CSharpValue>
+                        </InArgument>
+                      </ui:ForEachRow.DataTable>
+                    </ui:ForEachRow>
+                  </Sequence>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="617,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="45, 350, 41, 13" CvTextArgument="Reports" CvType="Text" DesignTimeRectangle="8, 332, 200, 47" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'Reports'" FullSelectorArgument="&lt;webctrl parentid='menuReports' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuReports' tag='A' type='' class='sidebar-link waves-effect waves-dark txt-white has-arrow d-none d-lg-flex' aaname='Reports' check:innerText='Reports' /&gt;" Guid="8806b838-a87e-4ff0-bd51-54f10c27722e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAzCAYAAADb5uc+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPPSURBVHhe7dlZaFRnGIBhL72wKAiloHgptBdSpSoKljRVW5cYghcurYhNFayCihabusStLiiCIoKiqOBaK3WLKAgpRpMYtTHEmIlLRrOLjQ0hIVfJZ75fz3BMjjGfySQz+v7wMHPmP3M8wnnnLOnjDWkdffr3AxCgurpaamtr5XUuBAN0hGAAA4IBDAgGMCAYwIBgAAOCAQwIBjAgGMCAYAADggEMCAYwIBjAgGAAA4IBDAgGMCAYwIBg8FEZMGRQ4OedFZVgzl/KkNCDEhn3/cTAeaA39P10oBSHQjJ+2tTA+c6ISjBXMzOlorJSEpMmB84DvWXM+EQpDZe+dzQ9Hsy+QweloLDQSd/8R7t5INq6Ek2PB6Nz3jhw5HC7+Y74v9vS0iLFJSGZND0lcF2gIxpNWVmZpK1LD5x/m7gKRu+NNmzb4t5/Meort5x57Vq79brTnAU/y/Wc7MA5xK/RiQlSXl4uK1b9Hjj/NlEN5sf5qe7mv76+Xqpa/6GZ8+Z2WzDKfzD/tGihVFZVSXNzs3vVZQ02v6BAnjx96s5I1TU17nP/+vr5i/9fRC4PdZ8Ki4qkqalJ/snKcvuuw/sB0EvKxsZG973n/z2XZWkrI/uD+KCxhJ+E5ZspkwLnOxLVYPSA1lcdeuDpcncFM/jzoXL24gU5l3FRho740oWzfFWam1u/dbM78+gB/vDxI9mxe5db/+ipk5J357YMHzdW/r17V/Ye2C+fDPpMVm/cELm803168OihfJeS7Lblj3LY2NGSfTNXUhf/4pZ1+0FnUcSursSi4ioY/3f1F/7e/fuS0Pof1+16ZwJvlFdUyJKVv8qN3JzIQT0hOUly8m7Klp073KvG4m0748plF6Puk3+//MGow8eOSkNDg9Q8eyZHjh9zIXpziG36WDlUUiLfJk0JnO+MXg9GeUPngrbn8Z9h9uzf5w5yfa/bbRuA0lC6Oxil909rNm2U0nBYjp/+8405xLaY/MNlTwSjl2FZ2Tfkt/S17r1eYun9hf7i61kn5YdZLpSi4mJ3iWa5JGsbzJ38fBdJ8qwZknsrz92L6fdO/HVazpw7G1kXH764DUYtXLbUnSn0YG57E79p+zYXjN706wMHy02/P5iRCV+7e5q6ujqZnTrvjZt+faDBY+2PS9SC0YPw7wvn3asOfeqky/pL7g092JU33hWMVdtLMqCrohbM+wyCQayLSjDAh4pgAAOCAQwIBjAgGMCAYAADggEMCAYwIBjAgGAAA4IBDAgGMCAYwIBgAAOCAQwIBjAgGMCAYAADggEMXgVTKy8BBpWwvXgEW2oAAAAASUVORK5CYII=" InformativeScreenshot="08e608aaa029ecc556c7faa117cf710e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_1">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -191,7 +326,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <cr:passedStep Actual_Result="Report opened with submenus" Expected_Result="Report should be open with submenus" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Clicked on Reports Menu">
+                  <cr:passedStep Actual_Result="Report opened with submenus" Expected_Result="Report should be open with submenus" sap:VirtualizedContainerService.HintSize="617,345" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Clicked on Reports Menu">
                     <cr:passedStep.str_in_expectedStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">Step</CSharpValue>
@@ -208,7 +343,7 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search Transactions'" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search Transactions'" sap:VirtualizedContainerService.HintSize="617,193" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="46, 391, 103, 11" CvTextArgument="Search Transactions" CvType="Text" DesignTimeRectangle="8, 379, 200, 37" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'Search Transactions'" FullSelectorArgument="&lt;webctrl parentid='menuSearchtransactions' tag='A' aaname='Search Transactions' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuSearchtransactions' tag='A' aaname='Search Transactions' type='' class='sidebar-link' check:text='Search Transactions' /&gt;" Guid="039ff14c-fb8c-400a-8abe-10b9eb0fe2f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAApCAYAAAB5q8bDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPPSURBVHhe7ZivbuNAEIfvFe4N7v3yCKaBBgEhAQYBBqEBBgYGJgYGBpbOZMECSzVwQJ5gbvZPHCfdtJ1T1Z4vv0qfzrfeXY2r/XZm+uPyQ/zz++cvAECAl5cXOp1O5HWBMAC8RVCY1WoFAAgAYQAQAGEAEABhABAAYQAQAGEAEABhABAAYQAQAGEAEABhABAAYQAQAGEAEABhABAAYQAQsEBhIkprTcP5TGfDoKhKo8C8T6JQpIrA+IW0ucYyZ2goDc3/ZnLVU52E34H3WZ4wh5Z6XVEaG0kiitOKdN/SITT3M3hPmBlpo6hJw+++j5Qa9W/Ku0QWKYxuD7SejSXHIyX2eUN5N/hbfqAu3/CYy0jjdPN3lG/cuoJv287OV1TczBtJ1ylFZk8WRjc16dGt7xs/HuCVMLy27zqbgVQxj+1Mo64pjcw8c6A7qi/vRo7Fx7fJ3VoXt6LSZoZH+6woSq9xunHee/Dr7TeaGBv77/3vZehy2thxaTzPxXJLsnGgXrVUHZNJnrjkbFD6/6/3VOuOsmmdY511LMDePhfqTLrau/kmc6mSkrVZm1CpNdU7fuZDb8qro8lo6wO1fFDcgXtNSJgzZ8O92XM2z3zDrtI+c5lDPfq4ebzULKWJb0sVH9zcZlKWId7S1j+H9+HYenOI1/y8poT30fWOn28zzCSMz9Q2tmhHWduTLmM3/6/j+f9ZbtMfxZxZSj4MA42qoJjHjADuNr0wULPnmzFrppvXMHCWMHsU6nr400aHy6m7kmy+5p6QMNe1Ee1Z6Hm/MwkzL5m4J1I+vg2vH8eRxkFTW3qxH+3D67Rfd0tYmFffG5Wk+fcoj+e5WJwwcXrk/mU+FnEj29lDUChNpS9Prlxu3tiVUrMD8KXCxHwge85UG5MB5u8eH1ALXwzbQ8HfwGWiyQCP9vkCYdy8u3gu40/C8oQxJUKbU+LLgXWSU9e70mt6Z0sgLkuSHUuS8fuWDr7UytshmGFWXKoNs5Ks6BRVpkb/LGF23F/oknYsdBSnVGkue94U5kit9qWgL41sifVwH/5O21f4kqzoSFUJP/P+pjT1F8mHSjJJPJd5T8ICS7INZXw7TiXJyDdlZpp79+7aEJvG3f1xIOU6f2rmWQTdHu3828P/uOn/FGFWMR/KS2wDqY57j+qtA3rbZF+b+0f7hJp+t2fWjnauKU8/1vRL4nkultvDAPANQBgABEAYAARAGAAEQBgABEAYAARAGAAEQBgABEAYAARAGAAEQBgABEAYAARAGAAEQBgABEAYAARAGAAEQBgABDhhTvQHw+LhJgymI+EAAAAASUVORK5CYII=" InformativeScreenshot="c7dc31a3c1b1f6235f4bd8ad331da30b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -226,7 +361,7 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_2">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -238,7 +373,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <cr:passedStep Actual_Result="Application navigated to the search transaction report page" Expected_Result="Application should navigate to the search transaction report page" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Clicked on search transaction report submenu">
+                  <cr:passedStep Actual_Result="Application navigated to the search transaction report page" Expected_Result="Application should navigate to the search transaction report page" sap:VirtualizedContainerService.HintSize="617,345" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Clicked on search transaction report submenu">
                     <cr:passedStep.str_in_expectedStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">Step</CSharpValue>
@@ -255,12 +390,12 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchant ID'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchant ID'" sap:VirtualizedContainerService.HintSize="617,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" CvElementArea="388, 342, 426, 32" CvTextArea="401, 352, 61, 11" CvTextArgument="Merchant ID" CvType="InputBox" DesignTimeRectangle="391, 344, 422, 29" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'Merchant ID'" FullSelectorArgument="&lt;webctrl tag='SELECT' colName='Field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' colName='Field' type='' class='p-2 w-100 ng-valid ng-dirty ng-touched' aaname='' /&gt;" Guid="b6b2e731-176c-45f8-b631-bc8892731ee4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAaoAAAAhCAYAAACIj+9ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOSSURBVHhe7dqhb+JgHMZx/ouaJWzZEswlSCSyshKJRCLrzlYtdWsyg6ysRFZW9hxuJFuyygZV+bv3fXnLCoO7y9bdvcl9P8mz0AIFTJ/83r2D3W4nhBBCiKuhqAghhDidQ1F9+/GdEEIIcSZniwoAABdQVAAAp1FUAACnUVQAAKdRVAAAp1FUAACnUVQAAKdRVAAAp1FUAACnfbqoimggg3EspT0+KCLxBoGklT3+DHWtQVTYg69RpYEE9sua3zTYxxv5skw30phnAAB/Wy9F5XkTiY+aqpE89NSN3rWiqiQNzn+n06JqH0u9kdVsKLOsjx8CAP+3+/t7qar391N9Lo5je3Ssl6IK1cUnYf42ddSZzP1Qwm4pbNey9IeqvDwZzRIp9YurVIJFJNHUs8XQSJnMZOSpaWaoJpn11rzVFFWwsO8fih8X+89qNpIufRnq6Ue9Pspr83Lz+kUsyWykpjr1efNMtlJIZKekcwV6sag0/XumK3UNAMBHPTw8mHvw3d2dvL6+2rNiHutz+rnHx0d79k0vRRUVW1n5c8lsT2xXvsyzsjO9qOdV0bRDSZXOZaxHMF1U41DafmnyUIaLTM09Sp1LOF7IWj9niiqRjX7cFOr8bH+tqpS8tBet17Lwov0SpH79eClr+9lpMLYT3wcmKkOXXKT+AgA+Sk9N19fXh7LSxzptSbXnTvVSVHpZrM7m9uauS0mVT9MpBV1IZpLpZLGWWp8P0n0xKWY667ZBU+8np6Olv27ZbGWtJiozgZnr2jIxxXZ83f3bKSoA+JdeXl7k9vbW3LNvbm5M9GN9rjtldfVSVOamricafyXbsl0GPCkqVRzvls5+V1StC0VVZTOZxoXsB7JOmfRdVPp7svQHAL14fn4+FFRbUrrALumvqFQ15eFEJpN2Y0W3FDaSqPOH/yFVheQbNSudFNXx0l8psd9Z+jtTVFtVLn6yMWfrTaKmtj8sqjONc3kzRclmCgDomS6mq6srsxT4q5LSeiwqRU1TYz1VmYOT6eWwmWIgQ38pZp/ESVHpsutupjjaHHGmqKQpJQnsBotlKIvxUnK9VnixqNRXTKZnt82fFlXb9N5oJlHG9nQA6NvT05OZrn7n00UFAMBXoqgAAE6jqAAATqOoAABOo6gAAE6jqAAATqOoAABOo6gAAE6jqAAATqOoAABOu1hUhBBCiCt5V1SEEEKIi6GoCCGEOJyd/AQyKKYYD5XMdAAAAABJRU5ErkJggg==" InformativeScreenshot="f99af2f6b07a290afe937b60d03b349a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_4">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -272,7 +407,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <uix:NSelectItem DisplayName="Select Item 'Merchant ID'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <uix:NSelectItem DisplayName="Select Item 'Merchant ID'" sap:VirtualizedContainerService.HintSize="617,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
                     <uix:NSelectItem.Item>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">str_in_Field_SearchOptions</CSharpValue>
@@ -297,7 +432,7 @@
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" DesignTimeRectangle="391, 344, 422, 29" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'Merchant ID'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='SELECT' colName='Field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='SELECT' colName='Field' type='' class='p-2 w-100 ng-valid ng-dirty ng-touched' aaname='' /&gt;" Guid="17c3119d-43a7-40ad-9081-bd5846c08e28" ImageBase64="" InformativeScreenshot="06b2f970e6dc371b7ed9a4f1ab2f2a33.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NSelectItem.Target>
                   </uix:NSelectItem>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -309,7 +444,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT value_0'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT value_0'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="617,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" CvElementArea="1035, 344, 317, 31" CvType="InputBox" DesignTimeRectangle="1036, 345, 314, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="InputBox" FriendlyName="'INPUT value_0'" FullSelectorArgument="&lt;webctrl id='value_0 ' tag='INPUT' colName='Value' /&gt;" FuzzySelectorArgument="&lt;webctrl id='value_0 ' tag='INPUT' colName='Value' type='text' class='form-control w-100 ng-valid ng-dirty ng-touched' aaname='' /&gt;" Guid="357e8da8-cc8a-49fc-8e83-ac00559589ae" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAT4AAAAgCAYAAACLkxRvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVHhe7d0xisQwEERRn8r2qQ0CX0yBcaihl2USzQlU70FlHf+0t977MDNLmvCZWdy+4buua5znObZtMzNbavu+j9baHL6K3vM8A2A11bZq3BS+qiLAqqpxwgdEET4gjvABcYQPiCN8QBzhA+IIHxBH+IA4wgfEET4gjvABcYQPiCN8QBzhA+IIHxBH+IA4wgfEET4gjvABcYQPiCN8QBzhA+IIHxDnZ/iO4xjv+/6fAKyjHopX46bwtdb+Po1XFc3MVlq17b7vOXxmZikTPjMLWx8fj1OjsmPURQwAAAAASUVORK5CYII=" InformativeScreenshot="7a0c593a91f3e2bebf434324920f1089.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
@@ -319,7 +454,7 @@
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_3">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -331,7 +466,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <cr:passedStep Actual_Result="Given MID displayed" Expected_Result="Given MID should be displayed" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Entered the MID number in the value box">
+                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Entered the MID number in the value box">
                     <cr:passedStep.str_in_expectedStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">Step</CSharpValue>
@@ -348,7 +483,12 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="False" ClickType="Single" DelayAfter="13" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                  <uix:NClick ActivateBefore="False" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f8555f7-d044-4779-b2d3-7a0e658480c7" Version="V3">
+                    <uix:NClick.DelayAfter>
+                      <InArgument x:TypeArguments="x:Double">
+                        <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">LongDelay</CSharpValue>
+                      </InArgument>
+                    </uix:NClick.DelayAfter>
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" CvElementArea="654, 223, 58, 30" CvTextArea="665, 232, 36, 11" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="656, 225, 56, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname='Search' type='button' class='btn btn-blue text-white ml-2' check:text='Search' /&gt;" Guid="ece9df7d-a01e-452f-8b0e-766b1b42a845" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAAgCAYAAABO6BuSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJQSURBVFhH7ZnPauJQFMbnlfoSpfUF+gKuuh6YXWHGuAq47EaYjbMYmC4spZBNuygo07gQcWFmGuwfjJpqkBtsGmLlm3NvEkc7KSOkICYJfHC9OSc5v3u+3ID5wBhDmpRe4Gp9iH3pBjsftcRov3CDs+thNPDu51+RSduu3S+/o4GjgpOiDDgDTpgy4Aw4YYoPXJ5Ac+bwjzns3gSHUXHvpFMT6KrR59ZRTOB7KBZg342RL9Lv0gA1BozaRkTs+2jDwIYA7NZvF3P56gTKRZ/GOuSOBzfo/aLzxQEU8yWYpcXRabH4fPUJNnPR9ShWNyn/AT96YdwcRsdEjuI4sM3C684J/mFx73UUE1hDjgod0a1t6xkN1fQ7zc+dO1TYFFKJxtT5Bi2MdkXjyhin6hifhCMsaN4LGic05sDwoFR0kZ9vEnmQn6swGJihVgmAe5bIP+QxzhOkpXr+p9jAQsV7yPUpNEbPsjfDZVWDrP/tYniMOtzqfufCzgMETPECmIqXg2tyMKPpw3MdlHtiMVcs/SpnHcUE7uNrc4yjpbmjzgygDnBg35rL8SSVUBkVecxhTDSc9YBDbRj4ES2Pnq92YOVSX2xi7t0jdq6e4XoulO/8+b6FpDJ8K5M9uQ0tW1jy4MQmq0YDr1qa3gTknNDSGwT2i2lxKweHbU0hc/hXm5YbzhdN1Kwg3nFh0CutdUHz/xS/uml124PFprVR4G1TBpwBJ0wZcAacMGXAqQTeKyTrq0OovcIbf8Sf/RyKk1FJ26qcpOP8rU8taVHKgBn+ADatUbyDOuqQAAAAAElFTkSuQmCC" InformativeScreenshot="17844385fe16b0c96f290303c2961fc2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -378,7 +518,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <cr:passedStep Actual_Result="Value fetched based on given user input" Expected_Result="Value should be fetched based on given user input" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Clicked on search button">
+                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Clicked on search button and value fetch based on given user input">
                     <cr:passedStep.str_in_expectedStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">Step</CSharpValue>

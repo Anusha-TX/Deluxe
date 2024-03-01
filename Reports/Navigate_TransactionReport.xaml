@@ -1,11 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_to_the_transaction_report_page" this:Navigate_to_the_transaction_report_page.str_in_MerchantID="Test" this:Navigate_to_the_transaction_report_page.str_in_ReportDetailType="CreditCard" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_to_the_transaction_report_page" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="str_in_MerchantID" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_ReportDetailType" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
     <x:Property Name="out_Suite_ID" Type="InArgument(x:String)" />
     <x:Property Name="out_Test_ID" Type="InArgument(x:String)" />
-    <x:Property Name="Step" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_TestCaseID" Type="InArgument(x:String)" />
   </x:Members>
   <this:Navigate_to_the_transaction_report_page.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
@@ -16,11 +14,11 @@
   <this:Navigate_to_the_transaction_report_page.out_Test_ID>
     <InArgument x:TypeArguments="x:String" />
   </this:Navigate_to_the_transaction_report_page.out_Test_ID>
-  <this:Navigate_to_the_transaction_report_page.Step>
+  <this:Navigate_to_the_transaction_report_page.str_in_TestCaseID>
     <InArgument x:TypeArguments="x:String" />
-  </this:Navigate_to_the_transaction_report_page.Step>
+  </this:Navigate_to_the_transaction_report_page.str_in_TestCaseID>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1202,7542</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1202,8608</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,6 +63,10 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -137,36 +139,137 @@
       <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1212,7477" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="1212,8543" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_in_MerchantID" />
+      <Variable x:TypeArguments="x:String" Default="CreditCard" Name="str_in_ReportDetailType" />
+      <Variable x:TypeArguments="x:String" Name="Step" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150,7366" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150,8432" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Navigate_to_the_transaction_report_page" sap:VirtualizedContainerService.HintSize="1112,7138" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Navigate_to_the_transaction_report_page" sap:VirtualizedContainerService.HintSize="1112,8204" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="1050,7027" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="56c7b25b-b0ce-4e35-b10e-d00a7da70831" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="1050,8093" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="56c7b25b-b0ce-4e35-b10e-d00a7da70831" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,6810" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,7836" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Excel" sap:VirtualizedContainerService.HintSize="954,834" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_TestCaseData" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="555,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\T475303\Downloads\DPPTestData (1).xlsx">
+                      <ui:ReadRange.DataTable>
+                        <OutArgument x:TypeArguments="sd:DataTable">
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_DataTable</CSharpReference>
+                        </OutArgument>
+                      </ui:ReadRange.DataTable>
+                    </ui:ReadRange>
+                    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="555,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable.DataTable>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">dt_DataTable</CSharpValue>
+                        </InArgument>
+                      </ui:FilterDataTable.DataTable>
+                      <ui:FilterDataTable.Filters>
+                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">"TestCaseId"</CSharpValue>
+                              </InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">str_in_TestCaseID</CSharpValue>
+                              </InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                        </scg:List>
+                      </ui:FilterDataTable.Filters>
+                      <ui:FilterDataTable.OutputDataTable>
+                        <OutArgument x:TypeArguments="sd:DataTable">
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">dt_TestCaseData</CSharpReference>
+                        </OutArgument>
+                      </ui:FilterDataTable.OutputDataTable>
+                      <ui:FilterDataTable.SelectColumns>
+                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                          <x:Null />
+                        </scg:List>
+                      </ui:FilterDataTable.SelectColumns>
+                    </ui:FilterDataTable>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,390" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,204" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">
+                                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_in_MerchantID</CSharpReference>
+                                      </OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">CurrentRow["MID"].ToString()</CSharpValue>
+                                      </InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <ui:ForEachRow.DataTable>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">dt_TestCaseData</CSharpValue>
+                        </InArgument>
+                      </ui:ForEachRow.DataTable>
+                    </ui:ForEachRow>
+                  </Sequence>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56c7b25b-b0ce-4e35-b10e-d00a7da70831" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="45, 350, 41, 13" CvTextArgument="Reports" CvType="Text" DesignTimeRectangle="8, 332, 200, 47" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'Reports'" FullSelectorArgument="&lt;webctrl parentid='menuReports' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuReports' tag='A' type='' class='sidebar-link waves-effect waves-dark txt-white has-arrow d-none d-lg-flex' aaname='Reports' check:innerText='Reports' /&gt;" Guid="8806b838-a87e-4ff0-bd51-54f10c27722e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAzCAYAAADb5uc+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPPSURBVHhe7dlZaFRnGIBhL72wKAiloHgptBdSpSoKljRVW5cYghcurYhNFayCihabusStLiiCIoKiqOBaK3WLKAgpRpMYtTHEmIlLRrOLjQ0hIVfJZ75fz3BMjjGfySQz+v7wMHPmP3M8wnnnLOnjDWkdffr3AxCgurpaamtr5XUuBAN0hGAAA4IBDAgGMCAYwIBgAAOCAQwIBjAgGMCAYAADggEMCAYwIBjAgGAAA4IBDAgGMCAYwIBg8FEZMGRQ4OedFZVgzl/KkNCDEhn3/cTAeaA39P10oBSHQjJ+2tTA+c6ISjBXMzOlorJSEpMmB84DvWXM+EQpDZe+dzQ9Hsy+QweloLDQSd/8R7t5INq6Ek2PB6Nz3jhw5HC7+Y74v9vS0iLFJSGZND0lcF2gIxpNWVmZpK1LD5x/m7gKRu+NNmzb4t5/Meort5x57Vq79brTnAU/y/Wc7MA5xK/RiQlSXl4uK1b9Hjj/NlEN5sf5qe7mv76+Xqpa/6GZ8+Z2WzDKfzD/tGihVFZVSXNzs3vVZQ02v6BAnjx96s5I1TU17nP/+vr5i/9fRC4PdZ8Ki4qkqalJ/snKcvuuw/sB0EvKxsZG973n/z2XZWkrI/uD+KCxhJ+E5ZspkwLnOxLVYPSA1lcdeuDpcncFM/jzoXL24gU5l3FRho740oWzfFWam1u/dbM78+gB/vDxI9mxe5db/+ipk5J357YMHzdW/r17V/Ye2C+fDPpMVm/cELm803168OihfJeS7Lblj3LY2NGSfTNXUhf/4pZ1+0FnUcSursSi4ioY/3f1F/7e/fuS0Pof1+16ZwJvlFdUyJKVv8qN3JzIQT0hOUly8m7Klp073KvG4m0748plF6Puk3+//MGow8eOSkNDg9Q8eyZHjh9zIXpziG36WDlUUiLfJk0JnO+MXg9GeUPngrbn8Z9h9uzf5w5yfa/bbRuA0lC6Oxil909rNm2U0nBYjp/+8405xLaY/MNlTwSjl2FZ2Tfkt/S17r1eYun9hf7i61kn5YdZLpSi4mJ3iWa5JGsbzJ38fBdJ8qwZknsrz92L6fdO/HVazpw7G1kXH764DUYtXLbUnSn0YG57E79p+zYXjN706wMHy02/P5iRCV+7e5q6ujqZnTrvjZt+faDBY+2PS9SC0YPw7wvn3asOfeqky/pL7g092JU33hWMVdtLMqCrohbM+wyCQayLSjDAh4pgAAOCAQwIBjAgGMCAYAADggEMCAYwIBjAgGAAA4IBDAgGMCAYwIBgAAOCAQwIBjAgGMCAYAADggEMXgVTKy8BBpWwvXgEW2oAAAAASUVORK5CYII=" InformativeScreenshot="08e608aaa029ecc556c7faa117cf710e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -531,6 +634,7 @@
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
                   <uix:NKeyboardShortcuts ActivateBefore="False" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="954,154" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="954,112" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="2" Version="V3" />
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
