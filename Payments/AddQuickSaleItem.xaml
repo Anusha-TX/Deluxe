@@ -2,11 +2,10 @@
   <x:Members>
     <x:Property Name="str_in_SaleItemName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_SaleItemPrice" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_SaleItemTax" Type="InArgument(x:String)" />
-    <x:Property Name="str_out_SaleItemTaxRate" Type="OutArgument(x:String)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
-    <x:Property Name="dbl_out_SalleItemTaxAmount" Type="OutArgument(x:Double)" />
+    <x:Property Name="dbl_out_SaleItemTaxRate" Type="OutArgument(x:Double)" />
+    <x:Property Name="str_in_SaleItemTaxName" Type="InArgument(x:String)" />
   </x:Members>
   <this:AddQuickSaleItem.str_in_TestId>
     <InArgument x:TypeArguments="x:String" />
@@ -16,7 +15,7 @@
   </this:AddQuickSaleItem.int_in_ReportId>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1862.6666666666667,4995.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1862.6666666666667,4870</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,7 +136,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddQuickSaleItem" sap:VirtualizedContainerService.HintSize="1872.6666666666667,4930.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddQuickSaleItem" sap:VirtualizedContainerService.HintSize="1872.6666666666667,4805.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
     </Sequence.Variables>
@@ -146,9 +145,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1830.6666666666667,4866" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1830.6666666666667,4740.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1792,4604" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence sap:VirtualizedContainerService.HintSize="1792,4478.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -166,19 +165,19 @@
               </InArgument>
             </ui:LogMessage.Message>
           </ui:LogMessage>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1750,4354.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1750,4229.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1716,4112.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1716,3987.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Add Quick Sale Item Sequence" sap:VirtualizedContainerService.HintSize="1674,4045.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Add Quick Sale Item Sequence" sap:VirtualizedContainerService.HintSize="1674,3920" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_SaleItemTaxRate" />
                     </Sequence.Variables>
@@ -188,9 +187,9 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1612,3929.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1612,3804" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2958.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2833.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="res_AddQuickSaleItem" />
                           </Sequence.Variables>
@@ -265,7 +264,7 @@
                             </uix:NTypeInto.Target>
                             <uix:NTypeInto.Text>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">str_in_SaleItemTax + "[k(Enter)]"</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">str_in_SaleItemTaxName + "[k(Enter)]"</CSharpValue>
                               </InArgument>
                             </uix:NTypeInto.Text>
                           </uix:NTypeInto>
@@ -310,7 +309,7 @@
                           <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Select Quick Sale Item Tax Rate">
                             <cr:passedStep.Expected_Result>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">"User should select the Quick Sale Item Tax Rate as "+str_in_SaleItemTax</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">"User should select the Quick Sale Item Tax Rate as "+str_in_SaleItemTaxName</CSharpValue>
                               </InArgument>
                             </cr:passedStep.Expected_Result>
                             <sap:WorkflowViewStateService.ViewState>
@@ -359,27 +358,15 @@
                               </InArgument>
                             </ui:LogMessage.Message>
                           </ui:LogMessage>
-                          <Assign DisplayName="Assign Calaculate Sale Item Tax Amount" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign DisplayName="Assign Sale Item Tax Rate" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Double">
-                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">dbl_out_SalleItemTaxAmount</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">dbl_out_SaleItemTaxRate</CSharpReference>
                               </OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:Double">
-                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">(Convert.ToDouble(str_SaleItemTaxRate)*Convert.ToDouble(str_in_SaleItemPrice))/100</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign DisplayName="Assign Sale Item Tax Rate" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_out_SaleItemTaxRate</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">str_SaleItemTaxRate</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">Convert.ToDouble(str_SaleItemTaxRate)</CSharpValue>
                               </InArgument>
                             </Assign.Value>
                           </Assign>
@@ -560,7 +547,7 @@
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1062,3682.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1062,3557.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -583,9 +570,9 @@
                               <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="D_eIg1pG10WyS_w58uqwkA" CvElementArea="1814, 557, 38, 31" CvType="ArrowButton" DesignTimeRectangle="1825, 561, 18, 21" DesignTimeScaleFactor="1.5" FriendlyName="'Sale Items Arrow Button'" FullSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;&lt;webctrl class='float-left' parentid='main-wrapper' tag='H3' aaname='Sale Items' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='main-wrapper' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='main-wrapper' tag='I' class='fas fa-chevron-up float-right text-dark' aaname='' /&gt;" Guid="dc5ffa5b-c537-4b5c-8ed4-ac7852062aa6" InformativeScreenshot="f1381b1899d728d07f6e2f4539766e38.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/tghGRV6XeE-076DtYno7mQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1000,3205.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'Sale Item Name'" sap:VirtualizedContainerService.HintSize="1000,3080" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b412c89-6a9f-4cb2-9567-75503876dd30" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2958.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2833.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Boolean" Name="res_AddQuickSaleItem" />
                                 </Sequence.Variables>
@@ -688,7 +675,7 @@
                                   </uix:NTypeInto.Target>
                                   <uix:NTypeInto.Text>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">str_in_SaleItemTax + "[k(Enter)]"</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">str_in_SaleItemTaxName + "[k(Enter)]"</CSharpValue>
                                     </InArgument>
                                   </uix:NTypeInto.Text>
                                 </uix:NTypeInto>
@@ -705,7 +692,7 @@
                                 <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Select Quick Sale Item Tax Rate">
                                   <cr:passedStep.Expected_Result>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">"User should select the Quick Sale Item Tax Rate as "+str_in_SaleItemTax</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">"User should select the Quick Sale Item Tax Rate as "+str_in_SaleItemTaxName</CSharpValue>
                                     </InArgument>
                                   </cr:passedStep.Expected_Result>
                                   <sap:WorkflowViewStateService.ViewState>
@@ -754,27 +741,15 @@
                                     </InArgument>
                                   </ui:LogMessage.Message>
                                 </ui:LogMessage>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_out_SaleItemTaxRate</CSharpReference>
-                                    </OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">str_SaleItemTaxRate</CSharpValue>
-                                    </InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Assign DisplayName="Assign Calaculate Sale Item Tax Amount" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Double">
-                                      <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">dbl_out_SalleItemTaxAmount</CSharpReference>
+                                      <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">dbl_out_SaleItemTaxRate</CSharpReference>
                                     </OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:Double">
-                                      <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">(Convert.ToDouble(str_SaleItemTaxRate)*Convert.ToDouble(str_in_SaleItemPrice))/100</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">Convert.ToDouble(str_SaleItemTaxRate)</CSharpValue>
                                     </InArgument>
                                   </Assign.Value>
                                 </Assign>
