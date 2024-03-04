@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="OrderSummary" this:OrderSummary.dbl_in_DiscountRateAmount="0" this:OrderSummary.dbl_in_FirstSaleItemTaxRate="0" this:OrderSummary.dbl_in_SecondSaleItemTaxRate="0" this:OrderSummary.dbl_in_ThirdSaleItemTaxRate="0" this:OrderSummary.dbl_in_FirstSaleitemPrice="0" this:OrderSummary.dbl_in_SecondSaleitemPrice="0" this:OrderSummary.dbl_in_ThirdSaleitemPrice="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+
     <x:Property Name="dbl_in_SaleItemTotalAmount" Type="InArgument(x:Double)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
@@ -14,6 +15,7 @@
     <x:Property Name="str_in_CustomerZipCode" Type="InArgument(x:String)" />
     <x:Property Name="str_in_CustomerCountryCode" Type="InArgument(x:String)" />
     <x:Property Name="bool_in_RemoveSurcharge" Type="InArgument(x:Boolean)" />
+
     <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
     <x:Property Name="str_in_SecondSaleItem" Type="InArgument(x:String)" />
     <x:Property Name="str_in_FirstSaleItem" Type="InArgument(x:String)" />
@@ -26,6 +28,7 @@
     <x:Property Name="dbl_in_SecondSaleitemPrice" Type="InArgument(x:Double)" />
     <x:Property Name="dbl_in_ThirdSaleitemPrice" Type="InArgument(x:Double)" />
     <x:Property Name="dbl_out_TotalAmount" Type="OutArgument(x:Double)" />
+
   </x:Members>
   <this:OrderSummary.dbl_in_SaleItemTotalAmount>
     <InArgument x:TypeArguments="x:Double" />
@@ -65,7 +68,9 @@
   </this:OrderSummary.bool_in_RemoveSurcharge>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+
   <sap:VirtualizedContainerService.HintSize>1416.6666666666667,5972</sap:VirtualizedContainerService.HintSize>
+
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -191,6 +196,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
+
   <Sequence DisplayName="OrderSummary" sap:VirtualizedContainerService.HintSize="1426.6666666666667,5907.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
@@ -206,13 +212,16 @@
       <Variable x:TypeArguments="x:Boolean" Name="res_SecondItemName" />
       <Variable x:TypeArguments="x:String" Name="str_out_Surcharge" />
       <Variable x:TypeArguments="x:String" Name="str_out_TotalAmount" />
+
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1384.6666666666667,5842.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,13 +229,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
+
         <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="1346,5580.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V2">
+
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
+
               <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1312,5361.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="res_OpenOrderSummary" />
                 </Sequence.Variables>
@@ -235,7 +248,9 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OrderSummary'" sap:VirtualizedContainerService.HintSize="1270,237.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3">
+
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="M-2k1kWKrUiTTgUso1f3_Q" CvElementArea="1845, 982, 32, 28" CvTextArea="1716, 984, 122, 21" CvTextArgument="Order Summary" CvType="ArrowButton" DesignTimeRectangle="1701, 970, 180, 49" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Order Summary'" FullSelectorArgument="&lt;webctrl id='*OrderSummary' tag='BUTTON' aaname=' Order Summary ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='*OrderSummary' tag='BUTTON' aaname=' Order Summary ' type='button' class='btn btn-secondary dropdown-toggle menu-btn' check:text='Order Summary' /&gt;" Guid="cd801225-97eb-45ab-9e24-1d4f479f410f" InformativeScreenshot="d07d89c46f97fd8b59b1eb05f922b75b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/ML1w9rHayEC3u9bgLctqDw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:NClick.Target>
@@ -245,7 +260,9 @@
                         <InArgument x:TypeArguments="x:Boolean" />
                       </uix:VerifyExecutionOptions.Retry>
                       <uix:VerifyExecutionOptions.Target>
+
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="osf7wgpuykKZbFehZNpebQ" CvTextArea="1023, 447, 170, 29" CvTextArgument="Order Summary" CvType="Text" DesignTimeRectangle="1025, 443, 836, 34" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'OrderSummary'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='H3' aaname='Order Summary' visibleinnertext='Order Summary' aastate='enabled' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='H3' aaname='Order Summary' visibleinnertext='Order Summary' aastate='enabled' type='' class='' check:text='Order Summary' /&gt;" Guid="b3a3056e-cb36-4fd5-b962-e2d0d1726970" InformativeScreenshot="abaf29b35eb02222c4ff8d195e36e2ba.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/NIEkDAyfIUOXGdypv91akQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+
                       </uix:VerifyExecutionOptions.Target>
                       <uix:VerifyExecutionOptions.Timeout>
                         <InArgument x:TypeArguments="x:Double" />
@@ -253,7 +270,9 @@
                     </uix:VerifyExecutionOptions>
                   </uix:NClick.VerifyOptions>
                 </uix:NClick>
+
                 <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Oder Summary Opened" sap:VirtualizedContainerService.HintSize="1270,94" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+
                   <uta:VerifyControlAttribute.ActivityToTest>
                     <ActivityAction>
                       <uix:NCheckState DisplayName="Check App State 'OrderSummary'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
@@ -294,7 +313,9 @@
                           </OutArgument>
                         </uix:NCheckState.OutUiElement>
                         <uix:NCheckState.Target>
+
                           <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="osf7wgpuykKZbFehZNpebQ" CvTextArea="1023, 447, 170, 29" CvTextArgument="Order Summary" CvType="Text" DesignTimeRectangle="1025, 443, 836, 34" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'OrderSummary'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='H3' aaname='Order Summary' visibleinnertext='Order Summary' aastate='enabled' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='H3' aaname='Order Summary' visibleinnertext='Order Summary' aastate='enabled' type='' class='' check:text='Order Summary' /&gt;" Guid="b3a3056e-cb36-4fd5-b962-e2d0d1726970" InformativeScreenshot="abaf29b35eb02222c4ff8d195e36e2ba.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/NIEkDAyfIUOXGdypv91akQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+
                         </uix:NCheckState.Target>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -333,12 +354,15 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uta:VerifyControlAttribute>
+
                 <If DisplayName="If Order Summary Screen Opened" sap:VirtualizedContainerService.HintSize="1270,4962.666666666667" sap2010:WorkflowViewState.IdRef="If_5">
+
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">res_OpenOrderSummary</CSharpValue>
                     </InArgument>
                   </If.Condition>
+
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -350,14 +374,15 @@
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="dbl_ExpTotalTaxAmount" />
                       </Sequence.Variables>
+
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+
                       <cr:passedStep Actual_Result="{x:Null}" Expected_Result="Order Summary Screen should be display" sap:VirtualizedContainerService.HintSize="1174,94" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Open Order Summary Screen">
-                        <sap:WorkflowViewStateService.ViewState>
+     <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -379,6 +404,7 @@
                           </InArgument>
                         </cr:passedStep.str_in_testId>
                       </cr:passedStep>
+
                       <Sequence DisplayName="Get the order summary transaction details Sequence" sap:VirtualizedContainerService.HintSize="1174,124.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="str_SurchargeRate" />
@@ -387,6 +413,7 @@
                           <Variable x:TypeArguments="x:String" Name="str_ActlSurChargeAmount" />
                           <Variable x:TypeArguments="x:Boolean" Name="res_SurchageCal" />
                         </Sequence.Variables>
+
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -406,26 +433,24 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1062,1690.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1162,2453.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_49">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NCheckState DisplayName="Check App State 'Remove Surcharge'" sap:VirtualizedContainerService.HintSize="1000,1606" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
+                              <uix:NCheckState DisplayName="Check App State 'Remove Surcharge'" sap:VirtualizedContainerService.HintSize="1100,2368.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
                                 <uix:NCheckState.IfExists>
-                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,1362" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="596,2084.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="res_RemoveSurcharge" />
-                                      <Variable x:TypeArguments="x:String" Name="str_TotalAmount" />
-                                      <Variable x:TypeArguments="x:String" Name="str_SurchargeAmount" />
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15">
                                       <ui:LogMessage.Level>
                                         <InArgument x:TypeArguments="ui:LogLevel">
                                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -443,32 +468,12 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <uix:NGetText DisplayName="Get Text 'Total Amount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="weEVuNV-f0GAQoH__oB9JA" CvTextArea="1770, 539, 60, 21" CvType="AnyWordGroup" DesignTimeRectangle="1769, 536, 61, 26" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Total Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Total Amount' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Total Amount' type='' /&gt;" Guid="62c2a43a-9612-4e85-869e-9cba77b1d870" ImageBase64="" InformativeScreenshot="0777efa8bfff3d5b1ec74b099d02e45f.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/5SRwAN8OukqBLbihuMt4SQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">str_TotalAmount</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uix:NGetText DisplayName="Get Text 'Surcharge Amount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="gW1gXzXaDkCS8NYw3NXwUQ" DesignTimeRectangle="1792, 709, 38, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Surcharge Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' type='' /&gt;" Guid="1be92262-7c98-4a5e-8883-9eed95bd20a6" ImageBase64="" InformativeScreenshot="75c03bee5fde0144fe7694521bc970a0.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/KM3hwHxFc0y8aIkWz5WsQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">str_SurchargeAmount</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Remove Surcharge'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Remove Surcharge'" sap:VirtualizedContainerService.HintSize="534,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="tDgTD6wVa0aA1khXsSNqCw" CvElementArea="1241, 500, 184, 45" CvTextArea="1262, 512, 143, 21" CvTextArgument="Remove Surcharge" CvType="Button" DesignTimeRectangle="1243, 501, 182, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Remove Surcharge'" FullSelectorArgument="&lt;webctrl aaname=' Remove Surcharge ' parentid='main-wrapper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Remove Surcharge ' parentid='main-wrapper' tag='BUTTON' type='button' class='btn btn-md btn-block charge-btn-color text-white rounded mt-2' check:innerText='Remove Surcharge' /&gt;" Guid="b44846b6-140c-4906-8730-6e6ee14c3714" InformativeScreenshot="ce24e0e20c1322d9da4bee1ef59cf5a4.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/89EiWlQ9UEK7pvxdIqYTzQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                       </uix:NClick.Target>
                                     </uix:NClick>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16">
                                       <ui:LogMessage.Level>
                                         <InArgument x:TypeArguments="ui:LogLevel">
                                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -486,17 +491,19 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <Assign DisplayName="Assign Surcharge Amount to be 0" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                    <Assign sap:VirtualizedContainerService.HintSize="534,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">
+
                                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_123">str_out_Surcharge</CSharpReference>
+
                                         </OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
                                         <InArgument x:TypeArguments="x:String">0.00</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge Amount Removed" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge Amount Removed" sap:VirtualizedContainerService.HintSize="534,204" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                       <uta:VerifyControlAttribute.ActivityToTest>
                                         <ActivityAction>
                                           <uix:NCheckState DisplayName="Check App State 'Surcharge Amount'" sap:VirtualizedContainerService.HintSize="289.3333333333333,54" sap2010:WorkflowViewState.IdRef="NCheckState_4" Mode="WaitDisappear" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
@@ -571,12 +578,12 @@
                                       </uta:VerifyControlAttribute.Result>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </uta:VerifyControlAttribute>
-                                    <If DisplayName="If Remove Surcharge Results" sap:VirtualizedContainerService.HintSize="434,79.33333333333333" sap2010:WorkflowViewState.IdRef="If_20">
+                                    <If DisplayName="If Remove Surcharge Results" sap:VirtualizedContainerService.HintSize="534,1090.6666666666667" sap2010:WorkflowViewState.IdRef="If_20">
                                       <If.Condition>
                                         <InArgument x:TypeArguments="x:Boolean">
                                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">res_RemoveSurcharge</CSharpValue>
@@ -584,29 +591,18 @@
                                       </If.Condition>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,820" sap2010:WorkflowViewState.IdRef="Sequence_55">
-                                          <Sequence.Variables>
-                                            <Variable x:TypeArguments="x:Double" Name="dbl_ExpectedTotalAmount" />
-                                            <Variable x:TypeArguments="x:String" Name="str_ActualTotalAmount" />
-                                            <Variable x:TypeArguments="x:Boolean" Name="res_TotalAmount" />
-                                          </Sequence.Variables>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <cr:passedStep Actual_Result="Surcharge Amount is Removed" Expected_Result="Surcharge Amount should be Removed from OrderSummary" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Remove Surcharge Amount">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
+                                          <cr:passedStep Actual_Result="Surcharge Amount is Removed" Expected_Result="Surcharge Amount should be Removed from OrderSummary" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Remove Surcharge Amount">
                                             <cr:passedStep.str_in_expectedStep>
                                               <InArgument x:TypeArguments="x:String">
                                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">str_StepName</CSharpValue>
@@ -623,136 +619,6 @@
                                               </InArgument>
                                             </cr:passedStep.str_in_testId>
                                           </cr:passedStep>
-                                          <uix:NGetText DisplayName="Get Text 'Total Amount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_19" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                            <uix:NGetText.Target>
-                                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="weEVuNV-f0GAQoH__oB9JA" CvTextArea="1770, 539, 60, 21" CvType="AnyWordGroup" DesignTimeRectangle="1769, 536, 61, 26" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Total Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Total Amount' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Total Amount' type='' /&gt;" Guid="62c2a43a-9612-4e85-869e-9cba77b1d870" ImageBase64="" InformativeScreenshot="0777efa8bfff3d5b1ec74b099d02e45f.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/5SRwAN8OukqBLbihuMt4SQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                            </uix:NGetText.Target>
-                                            <uix:NGetText.TextString>
-                                              <OutArgument x:TypeArguments="x:String">
-                                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">str_ActualTotalAmount</CSharpReference>
-                                              </OutArgument>
-                                            </uix:NGetText.TextString>
-                                          </uix:NGetText>
-                                          <Assign DisplayName="Assign Calculate Expected Total amount after the removing the surcharge " sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Double">
-                                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">dbl_ExpectedTotalAmount</CSharpReference>
-                                              </OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Double">
-                                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_218">Convert.ToDouble(str_TotalAmount)-Convert.ToDouble(str_SurchargeAmount)</CSharpValue>
-                                              </InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                          <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge Amount is Removed from the Total Amount" sap:VirtualizedContainerService.HintSize="434,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_11" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
-                                            <uta:VerifyExpressionWithOperator.FirstExpression>
-                                              <InArgument x:TypeArguments="x:Double">
-                                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_219">dbl_ExpectedTotalAmount</CSharpValue>
-                                              </InArgument>
-                                            </uta:VerifyExpressionWithOperator.FirstExpression>
-                                            <uta:VerifyExpressionWithOperator.Result>
-                                              <OutArgument x:TypeArguments="x:Boolean">
-                                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">res_TotalAmount</CSharpReference>
-                                              </OutArgument>
-                                            </uta:VerifyExpressionWithOperator.Result>
-                                            <uta:VerifyExpressionWithOperator.SecondExpression>
-                                              <InArgument x:TypeArguments="x:Double">
-                                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_220">Convert.ToDouble(str_ActualTotalAmount)</CSharpValue>
-                                              </InArgument>
-                                            </uta:VerifyExpressionWithOperator.SecondExpression>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </uta:VerifyExpressionWithOperator>
-                                          <If DisplayName="If Surcharge amount diducted from Total amount " sap:VirtualizedContainerService.HintSize="434,76.66666666666667" sap2010:WorkflowViewState.IdRef="If_24">
-                                            <If.Condition>
-                                              <InArgument x:TypeArguments="x:Boolean">
-                                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_221">res_TotalAmount</CSharpValue>
-                                              </InArgument>
-                                            </If.Condition>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If.Then>
-                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_65">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <cr:passedStep sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_15" str_in_actualStep="Verify the surcharge tax should not be included in the payable amount ">
-                                                  <cr:passedStep.Actual_Result>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_225">"Surcharge Amount "+ str_SurchargeAmount+" is not included in the payable amount "+str_TotalAmount</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:passedStep.Actual_Result>
-                                                  <cr:passedStep.Expected_Result>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_226">"Surcharge Amount "+ str_SurchargeAmount+" should not be included in the payable amount "+str_TotalAmount</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:passedStep.Expected_Result>
-                                                  <cr:passedStep.str_in_expectedStep>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_222">str_StepName</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:passedStep.str_in_expectedStep>
-                                                  <cr:passedStep.str_in_reportId>
-                                                    <InArgument x:TypeArguments="x:Int32">
-                                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_223">int_in_ReportId</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:passedStep.str_in_reportId>
-                                                  <cr:passedStep.str_in_testId>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_224">str_in_TestId</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:passedStep.str_in_testId>
-                                                </cr:passedStep>
-                                              </Sequence>
-                                            </If.Then>
-                                            <If.Else>
-                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_66">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <cr:failedStep DisplayName="Failed step" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_14" str_in_actualStep="Verify the surcharge tax should not be included in the payable amount ">
-                                                  <cr:failedStep.Actual_Result>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_231">"Surcharge Amount "+ str_SurchargeAmount+" is included in the payable amount "+str_TotalAmount</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:failedStep.Actual_Result>
-                                                  <cr:failedStep.Expected_Result>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_230">"Surcharge Amount "+ str_SurchargeAmount+" should not be included in the payable amount "+str_TotalAmount</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:failedStep.Expected_Result>
-                                                  <cr:failedStep.str_in_expectedStep>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_227">str_StepName</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:failedStep.str_in_expectedStep>
-                                                  <cr:failedStep.str_in_reportId>
-                                                    <InArgument x:TypeArguments="x:Int32">
-                                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_228">int_in_ReportId</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:failedStep.str_in_reportId>
-                                                  <cr:failedStep.str_in_testId>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_229">str_in_TestId</CSharpValue>
-                                                    </InArgument>
-                                                  </cr:failedStep.str_in_testId>
-                                                </cr:failedStep>
-                                              </Sequence>
-                                            </If.Else>
-                                          </If>
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
@@ -806,7 +672,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,161.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,1398.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_50">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="bool_SurchargeDisplayed" />
                                 <Variable x:TypeArguments="x:Boolean" Name="res_SurCharge" />
@@ -816,25 +682,20 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NCheckState DisplayName="Check App State 'Surcharge Amount'" sap:VirtualizedContainerService.HintSize="354,76.66666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
+                              <uix:NCheckState DisplayName="Check App State 'Surcharge Amount'" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
                                 <uix:NCheckState.Exists>
                                   <OutArgument x:TypeArguments="x:Boolean">
                                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">bool_SurchargeDisplayed</CSharpReference>
                                   </OutArgument>
                                 </uix:NCheckState.Exists>
                                 <uix:NCheckState.IfExists>
-                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,2708" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:String" Name="str_TaxAmount" />
-                                      <Variable x:TypeArguments="x:String" Name="str_Discount" />
-                                      <Variable x:TypeArguments="x:Double" Name="dbl_ChargebaleAmount" />
-                                    </Sequence.Variables>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1">
                                       <ui:LogMessage.Level>
                                         <InArgument x:TypeArguments="ui:LogLevel">
                                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -846,7 +707,7 @@
                                         </InArgument>
                                       </ui:LogMessage.Message>
                                     </ui:LogMessage>
-                                    <uix:NGetText DisplayName="Get Text 'Surcharge'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
+                                    <uix:NGetText DisplayName="Get Text 'Surcharge'" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
                                       <uix:NGetText.Target>
                                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="gW1gXzXaDkCS8NYw3NXwUQ" DesignTimeRectangle="1792, 709, 38, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Surcharge Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' type='' /&gt;" Guid="1be92262-7c98-4a5e-8883-9eed95bd20a6" ImageBase64="" InformativeScreenshot="75c03bee5fde0144fe7694521bc970a0.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/KM3hwHxFc0y8aIkWz5WsQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                       </uix:NGetText.Target>
@@ -856,317 +717,6 @@
                                         </OutArgument>
                                       </uix:NGetText.TextString>
                                     </uix:NGetText>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_19">
-                                      <ui:LogMessage.Level>
-                                        <InArgument x:TypeArguments="ui:LogLevel">
-                                          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_194">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                        </InArgument>
-                                      </ui:LogMessage.Level>
-                                      <ui:LogMessage.Message>
-                                        <InArgument x:TypeArguments="x:Object">
-                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_193">"Verifying Surcharge is Calsulated correctly"</CSharpValue>
-                                        </InArgument>
-                                      </ui:LogMessage.Message>
-                                    </ui:LogMessage>
-                                    <uix:NGetText DisplayName="Get Text 'Sub Total'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="jrVxlMmmwkqJht_0KZXcPw" CvTextArea="1770, 581, 61, 21" CvType="AnyWordGroup" DesignTimeRectangle="1783, 582, 47, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Sub Total'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Sub Total' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName='Sub Total' type='' /&gt;" Guid="cf539f8f-32b4-4262-9828-1ed990584975" ImageBase64="" InformativeScreenshot="76111fc5bc9c106ff8c62c05e6e4fbb3.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/PtxjAAjwPE6TpWFe6Ij0aQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">str_SubTotal</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uix:NGetText DisplayName="Get Text 'Tax Amount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="lwC8DQX7f0Wlt3p3aaW9XQ" CvTextArea="1781, 623, 49, 21" CvType="AnyWordGroup" DesignTimeRectangle="1792, 624, 38, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Tax Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Tax Amount ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Tax Amount ' type='' /&gt;" Guid="5de6f177-b07e-41ac-9bf5-02873dbcb7b4" ImageBase64="" InformativeScreenshot="207c275526801e21ed2e244423f52821.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/9YZxRoYJnk-7uuZ1WJf1Hw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">str_TaxAmount</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uix:NGetText DisplayName="Get Text 'Discount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_16" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="gjAPzWnN_UuzppMij7zj5Q" CvTextArea="1782, 668, 48, 18" CvType="AnyWordGroup" DesignTimeRectangle="1783, 667, 47, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Discount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Discount ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Discount ' type='' /&gt;" Guid="c7344a0d-f8b4-4d5b-a736-263fda18dfb1" ImageBase64="" InformativeScreenshot="903622777d70a014c7e791a1f1a2bf66.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/3LQe-D_OFE-C-9-f9LoGcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">str_Discount</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uix:NGetText DisplayName="Get Text '2.50% surcharge'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="1059, 500, 129, 21" CvType="AnyWordGroup" DesignTimeRectangle="1061, 499, 129, 20" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'2.50% surcharge'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='B' aaname='*% surcharge ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='B' type='' class='' /&gt;" Guid="357a8e7e-a47c-4bab-b61a-8083f79f5eaf" ImageBase64="" InformativeScreenshot="281913be7e9369fbf0b6fe899af12463.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">str_SurchargeRate</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">str_SurchargeRate</CSharpReference>
-                                        </OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_195">str_SurchargeRate.Split(new string[]{"%"}, StringSplitOptions.RemoveEmptyEntries).First().Replace(" ","")</CSharpValue>
-                                        </InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Double">
-                                          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">dbl_ChargebaleAmount</CSharpReference>
-                                        </OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Double">
-                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_210">(Convert.ToDouble(str_SubTotal))+(Convert.ToDouble(str_TaxAmount))-(Convert.ToDouble(str_Discount))</CSharpValue>
-                                        </InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <Assign DisplayName="Assign Calculated Surcharge Amount is" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Double">
-                                          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">dbl_ExpSurChargeAmount</CSharpReference>
-                                        </OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Double">
-                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_212">(Convert.ToDouble(str_SurchargeRate)*dbl_ChargebaleAmount)/100</CSharpValue>
-                                        </InArgument>
-                                      </Assign.Value>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Assign>
-                                    <Assign DisplayName="Assign Rounding Exp Surcharge" sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Double">
-                                          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">dbl_ExpSurChargeAmount</CSharpReference>
-                                        </OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Double">
-                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">Convert.ToDouble(dbl_ExpSurChargeAmount.ToString("N2"))</CSharpValue>
-                                        </InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <uix:NGetText DisplayName="Get Text 'Surcharge Amount'" sap:VirtualizedContainerService.HintSize="434,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="098d677f-bb87-468f-803e-242ef5b3ec9e" Version="V3">
-                                      <uix:NGetText.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="gW1gXzXaDkCS8NYw3NXwUQ" DesignTimeRectangle="1792, 709, 38, 20" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Surcharge Amount'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='transaction-details-table*' /&gt;&lt;webctrl tag='SPAN' class='amount' rowName=' Surcharge*' type='' /&gt;" Guid="1be92262-7c98-4a5e-8883-9eed95bd20a6" ImageBase64="" InformativeScreenshot="75c03bee5fde0144fe7694521bc970a0.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/KM3hwHxFc0y8aIkWz5WsQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                      </uix:NGetText.Target>
-                                      <uix:NGetText.TextString>
-                                        <OutArgument x:TypeArguments="x:String">
-                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">str_ActlSurChargeAmount</CSharpReference>
-                                        </OutArgument>
-                                      </uix:NGetText.TextString>
-                                    </uix:NGetText>
-                                    <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge is Calculated Properly" sap:VirtualizedContainerService.HintSize="434,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_10" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
-                                      <uta:VerifyExpressionWithOperator.FirstExpression>
-                                        <InArgument x:TypeArguments="x:Double">
-                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197">Convert.ToDouble(str_ActlSurChargeAmount)</CSharpValue>
-                                        </InArgument>
-                                      </uta:VerifyExpressionWithOperator.FirstExpression>
-                                      <uta:VerifyExpressionWithOperator.Result>
-                                        <OutArgument x:TypeArguments="x:Boolean">
-                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">res_SurchageCal</CSharpReference>
-                                        </OutArgument>
-                                      </uta:VerifyExpressionWithOperator.Result>
-                                      <uta:VerifyExpressionWithOperator.SecondExpression>
-                                        <InArgument x:TypeArguments="x:Double">
-                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">dbl_ExpSurChargeAmount</CSharpValue>
-                                        </InArgument>
-                                      </uta:VerifyExpressionWithOperator.SecondExpression>
-                                    </uta:VerifyExpressionWithOperator>
-                                    <If DisplayName="If Surcharge Results" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="If_23">
-                                      <If.Condition>
-                                        <InArgument x:TypeArguments="x:Boolean">
-                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199">res_SurchageCal</CSharpValue>
-                                        </InArgument>
-                                      </If.Condition>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_63">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <cr:passedStep sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_14" str_in_actualStep="Verify Surcharge Amount is calculated correctly">
-                                            <cr:passedStep.Actual_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203">"Surcharge Amount is calculated Correctly "+str_ActlSurChargeAmount</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.Actual_Result>
-                                            <cr:passedStep.Expected_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_204">"Surcharge Amount should calculate as per the given rate "+str_SurchargeRate</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.Expected_Result>
-                                            <cr:passedStep.str_in_expectedStep>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_200">str_StepName</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_expectedStep>
-                                            <cr:passedStep.str_in_reportId>
-                                              <InArgument x:TypeArguments="x:Int32">
-                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201">int_in_ReportId</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_reportId>
-                                            <cr:passedStep.str_in_testId>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_202">str_in_TestId</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_testId>
-                                          </cr:passedStep>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_64">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <cr:failedStep DisplayName="Failed step" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_13" str_in_actualStep="Verify Surcharge Amount is calculated correctly">
-                                            <cr:failedStep.Actual_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_209">"Surcharge Amount is not calculated Correctly "+str_ActlSurChargeAmount</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.Actual_Result>
-                                            <cr:failedStep.Expected_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_208">"Surcharge Amount should calculate as per the given rate "+str_SurchargeRate</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.Expected_Result>
-                                            <cr:failedStep.str_in_expectedStep>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">str_StepName</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_expectedStep>
-                                            <cr:failedStep.str_in_reportId>
-                                              <InArgument x:TypeArguments="x:Int32">
-                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">int_in_ReportId</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_reportId>
-                                            <cr:failedStep.str_in_testId>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_207">str_in_TestId</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_testId>
-                                          </cr:failedStep>
-                                        </Sequence>
-                                      </If.Else>
-                                    </If>
-                                    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge Amount is Displayed" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
-                                      <uta:VerifyExpression.Expression>
-                                        <InArgument x:TypeArguments="x:Boolean">
-                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">bool_SurchargeDisplayed==true</CSharpValue>
-                                        </InArgument>
-                                      </uta:VerifyExpression.Expression>
-                                      <uta:VerifyExpression.Result>
-                                        <OutArgument x:TypeArguments="x:Boolean">
-                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">res_SurCharge</CSharpReference>
-                                        </OutArgument>
-                                      </uta:VerifyExpression.Result>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </uta:VerifyExpression>
-                                    <If DisplayName="If Surcharge Results" sap:VirtualizedContainerService.HintSize="434,79.33333333333333" sap2010:WorkflowViewState.IdRef="If_21">
-                                      <If.Condition>
-                                        <InArgument x:TypeArguments="x:Boolean">
-                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">res_SurCharge</CSharpValue>
-                                        </InArgument>
-                                      </If.Condition>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_57">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <cr:passedStep Expected_Result="Surcharge Amount shoud be Displayed" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_12" str_in_actualStep="Verify Surcharge Amount is Displayed">
-                                            <cr:passedStep.Actual_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_168">"Surcharge Amount is Displayed as "+str_out_Surcharge</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.Actual_Result>
-                                            <cr:passedStep.str_in_expectedStep>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">str_StepName</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_expectedStep>
-                                            <cr:passedStep.str_in_reportId>
-                                              <InArgument x:TypeArguments="x:Int32">
-                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">int_in_ReportId</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_reportId>
-                                            <cr:passedStep.str_in_testId>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">str_in_TestId</CSharpValue>
-                                              </InArgument>
-                                            </cr:passedStep.str_in_testId>
-                                          </cr:passedStep>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_58">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <cr:failedStep DisplayName="Failed step" Expected_Result="Surcharge Amount shoud be Displayed" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_11" str_in_actualStep="Verify Surcharge Amount is Displayed">
-                                            <cr:failedStep.Actual_Result>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_172">"Surcharge Amount doesn't Displayed, Value is "+str_out_Surcharge</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.Actual_Result>
-                                            <cr:failedStep.str_in_expectedStep>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">str_StepName</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_expectedStep>
-                                            <cr:failedStep.str_in_reportId>
-                                              <InArgument x:TypeArguments="x:Int32">
-                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">int_in_ReportId</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_reportId>
-                                            <cr:failedStep.str_in_testId>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_171">str_in_TestId</CSharpValue>
-                                              </InArgument>
-                                            </cr:failedStep.str_in_testId>
-                                          </cr:failedStep>
-                                        </Sequence>
-                                      </If.Else>
-                                    </If>
                                   </Sequence>
                                 </uix:NCheckState.IfExists>
                                 <uix:NCheckState.IfNotExists>
@@ -1210,6 +760,87 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NCheckState>
+                              <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Surcharge Amount is Displayed" sap:VirtualizedContainerService.HintSize="450,132" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                <uta:VerifyExpression.Expression>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">bool_SurchargeDisplayed==true</CSharpValue>
+                                  </InArgument>
+                                </uta:VerifyExpression.Expression>
+                                <uta:VerifyExpression.Result>
+                                  <OutArgument x:TypeArguments="x:Boolean">
+                                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">res_SurCharge</CSharpReference>
+                                  </OutArgument>
+                                </uta:VerifyExpression.Result>
+                              </uta:VerifyExpression>
+                              <If DisplayName="If Surcharge Results" sap:VirtualizedContainerService.HintSize="450,1088" sap2010:WorkflowViewState.IdRef="If_21">
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">res_SurCharge</CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <cr:passedStep Expected_Result="Surcharge Amount shoud be Displayed" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_12" str_in_actualStep="Verify Surcharge Amount is Displayed">
+                                      <cr:passedStep.Actual_Result>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_168">"Surcharge Amount is Displayed as "+str_out_Surcharge</CSharpValue>
+                                        </InArgument>
+                                      </cr:passedStep.Actual_Result>
+                                      <cr:passedStep.str_in_expectedStep>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">str_StepName</CSharpValue>
+                                        </InArgument>
+                                      </cr:passedStep.str_in_expectedStep>
+                                      <cr:passedStep.str_in_reportId>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">int_in_ReportId</CSharpValue>
+                                        </InArgument>
+                                      </cr:passedStep.str_in_reportId>
+                                      <cr:passedStep.str_in_testId>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">str_in_TestId</CSharpValue>
+                                        </InArgument>
+                                      </cr:passedStep.str_in_testId>
+                                    </cr:passedStep>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <cr:failedStep DisplayName="Failed step" Expected_Result="Surcharge Amount shoud be Displayed" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_11" str_in_actualStep="Verify Surcharge Amount is Displayed">
+                                      <cr:failedStep.Actual_Result>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_172">"Surcharge Amount doesn't Displayed, Value is "+str_out_Surcharge</CSharpValue>
+                                        </InArgument>
+                                      </cr:failedStep.Actual_Result>
+                                      <cr:failedStep.str_in_expectedStep>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">str_StepName</CSharpValue>
+                                        </InArgument>
+                                      </cr:failedStep.str_in_expectedStep>
+                                      <cr:failedStep.str_in_reportId>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">int_in_ReportId</CSharpValue>
+                                        </InArgument>
+                                      </cr:failedStep.str_in_reportId>
+                                      <cr:failedStep.str_in_testId>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_171">str_in_TestId</CSharpValue>
+                                        </InArgument>
+                                      </cr:failedStep.str_in_testId>
+                                    </cr:failedStep>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
                             </Sequence>
                           </If.Else>
                         </If>
@@ -2486,7 +2117,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,588.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,422.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="res_SubTotal" />
                               </Sequence.Variables>
@@ -2495,7 +2126,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -2507,7 +2138,7 @@
                                   </InArgument>
                                 </ui:LogMessage.Message>
                               </ui:LogMessage>
-                              <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Sale Item Sub Total Price in Order Summary" sap:VirtualizedContainerService.HintSize="354,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                              <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Sale Item Sub Total Price in Order Summary" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:Double">
                                     <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">dbl_in_SaleItemTotalAmount</CSharpValue>
@@ -2525,12 +2156,12 @@
                                 </uta:VerifyExpressionWithOperator.SecondExpression>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uta:VerifyExpressionWithOperator>
-                              <If DisplayName="If Results" sap:VirtualizedContainerService.HintSize="354,76.66666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If DisplayName="If Results" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="If_2">
                                 <If.Condition>
                                   <InArgument x:TypeArguments="x:Boolean">
                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">res_SubTotal</CSharpValue>
@@ -2630,13 +2261,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,101.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12" />
                           </If.Else>
                         </If>
                         <If DisplayName="If Verify Order Summary Total Amount" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_4">
@@ -2652,13 +2277,15 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
+
                             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,714" sap2010:WorkflowViewState.IdRef="Sequence_17">
+
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -2793,6 +2420,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
+
                             <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,101.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2800,6 +2428,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Sequence>
+
                           </If.Else>
                         </If>
                         <If DisplayName="If Verify Sale Item Tax Amount" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_6">
@@ -3005,7 +2634,7 @@
                               <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Order Note" sap:VirtualizedContainerService.HintSize="334,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_4" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_232">str_out_OrderNote</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">str_out_OrderNote</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.FirstExpression>
                                 <uta:VerifyExpressionWithOperator.Result>
@@ -3151,7 +2780,7 @@
                                 </uta:VerifyExpressionWithOperator.Result>
                                 <uta:VerifyExpressionWithOperator.SecondExpression>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_233">str_out_Discount</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">str_out_Discount</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.SecondExpression>
                               </uta:VerifyExpressionWithOperator>
@@ -3350,7 +2979,7 @@
                               <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Card last 4 Numbers" sap:VirtualizedContainerService.HintSize="434,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_6" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_234">str_out_CardLastNumber</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">str_out_CardLastNumber</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.FirstExpression>
                                 <uta:VerifyExpressionWithOperator.Result>
@@ -3512,7 +3141,7 @@
                               <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Card Logo" sap:VirtualizedContainerService.HintSize="354,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_7" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_235">str_out_CardIcon</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">str_out_CardIcon</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.FirstExpression>
                                 <uta:VerifyExpressionWithOperator.Result>
@@ -3634,7 +3263,7 @@
                         <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">
-                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">str_out_CustomerInfo</CSharpReference>
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">str_out_CustomerInfo</CSharpReference>
                             </OutArgument>
                           </Assign.To>
                           <Assign.Value>
@@ -3703,7 +3332,7 @@
                               <Assign sap:VirtualizedContainerService.HintSize="434,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">str_out_CustomerInfo</CSharpReference>
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">str_out_CustomerInfo</CSharpReference>
                                   </OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
@@ -3715,7 +3344,7 @@
                               <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify the order summary customer info" sap:VirtualizedContainerService.HintSize="434,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_8" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_236">str_out_CustomerInfo</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_140">str_out_CustomerInfo</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.FirstExpression>
                                 <uta:VerifyExpressionWithOperator.Result>
@@ -3814,6 +3443,8 @@
                           </If.Else>
                         </If>
                       </Sequence>
+
+                    
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -3877,7 +3508,9 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
+
         <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1350.6666666666667,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
