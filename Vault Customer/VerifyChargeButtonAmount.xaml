@@ -1,15 +1,18 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="ChargeButtonAmount" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ChargeButtonAmount" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="str_in_SaleItemTotal" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_TaxAmount" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_DiscountAmount" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_SurchargeAmount" Type="InArgument(x:String)" />
     <x:Property Name="str_in_testId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_reportId" Type="InArgument(x:Int32)" />
-    <x:Property Name="dbl_in_ExpectedTotalAmount" Type="InArgument(x:Double)" />
   </x:Members>
-  <this:ChargeButtonAmount.dbl_in_ExpectedTotalAmount>
-    <InArgument x:TypeArguments="x:Double" />
-  </this:ChargeButtonAmount.dbl_in_ExpectedTotalAmount>
+  <this:ChargeButtonAmount.str_in_SaleItemTotal>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ChargeButtonAmount.str_in_SaleItemTotal>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>881.3333333333334,2756</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>881.3333333333334,540.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -56,7 +59,6 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
-      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -124,30 +126,26 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
-      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ChargeButtonAmount" sap:VirtualizedContainerService.HintSize="648.6666666666666,2691.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ChargeButtonAmount" sap:VirtualizedContainerService.HintSize="476,476" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_ChargeButtonText" />
-      <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="606.6666666666666,2626.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,388.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="568,2364.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,326" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -159,13 +157,13 @@
               </InArgument>
             </ui:LogMessage.Message>
           </ui:LogMessage>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="526,2115.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP_Payments" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="492,1873.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,987.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Double" Name="dbl_ExpectedAmount" />
                     <Variable x:TypeArguments="x:Boolean" Name="bool_VerifyResults" />
@@ -175,7 +173,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Charge Button'" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Charge Button'" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,369.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
@@ -183,7 +181,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="LogMessage_1">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -201,7 +199,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <uix:NGetText DisplayName="Get Text 'Charge Button'" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
+                        <uix:NGetText DisplayName="Get Text 'Charge Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
                           <uix:NGetText.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="k0YkYpMYhkC71_0fViE6PA" CvElementArea="324, 977, 368, 46" CvTextArea="455, 989, 115, 22" CvTextArgument="Charge $0.00" CvType="Button" DesignTimeRectangle="329, 980, 362, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Charge Button'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname='*Charge*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='BUTTON' aaname='  Charge*' type='button' class='btn btn-block charge-btn-color charge-button-disabled rounded text-white mt-2 mx-0 mr-2' check:text='Charge    0.00' /&gt;" Guid="38c10a2c-6c1b-402e-aec8-7dac1697ccf4" ImageBase64="" InformativeScreenshot="117092a916b8d1a0d516161fe33aadcf.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/hskwN9O0Y0KOg0OmmSrxvQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NGetText.Target>
@@ -220,7 +218,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Payments_Cash_CompleteTransaction_Button'" sap:VirtualizedContainerService.HintSize="433.3333333333333,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Payments_Cash_CompleteTransaction_Button'" sap:VirtualizedContainerService.HintSize="433.3333333333333,54" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
                           <uix:NCheckState.IfExists>
                             <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
@@ -228,7 +226,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -240,9 +238,9 @@
                                   </InArgument>
                                 </ui:LogMessage.Message>
                               </ui:LogMessage>
-                              <uix:NGetText DisplayName="Get Text 'Payments_Cash_CompleteTransaction_Button'" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="a25fedea-b8f9-4693-afa1-45b91f9f9145" Version="V3">
+                              <uix:NGetText DisplayName="Get Text 'Payments_Cash_CompleteTransaction_Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" Version="V3">
                                 <uix:NGetText.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="zvVN8wyOiEuwn0Pi0izMQw" CvElementArea="405, 966, 341, 56" CvTextArea="471, 983, 207, 25" CvTextArgument="Complete Transaction" CvType="Button" DesignTimeRectangle="329, 980, 362, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Payments_Cash_CompleteTransaction_Button'" FullSelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' type='button' class='btn btn-block charge-btn-color charge-button-disabled rounded text-white mt-2 mx-0 mr-2' check:text='Complete Transaction' /&gt;" Guid="b9646c79-8b4c-4eaa-add3-d5d37d995c96" InformativeScreenshot="eb5776c43d323ecc36e968ea340b03a8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/iq5n0z-_l0OCFiaX_BeByg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="ZtK8sCXLIU-9MnolIGFEyw" CvElementArea="405, 966, 341, 56" CvTextArea="471, 983, 207, 25" CvTextArgument="Complete Transaction" CvType="Button" DesignTimeRectangle="409, 968, 335, 52" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Complete Transaction'" FullSelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' type='button' class='btn btn-block charge-btn-color charge-button-disabled rounded text-white mt-2 mx-0 mr-2' check:innerText='Complete Transaction' /&gt;" Guid="b9646c79-8b4c-4eaa-add3-d5d37d995c96" InformativeScreenshot="0492029ec444f25cc1fc048eda2c7dff.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/iq5n0z-_l0OCFiaX_BeByg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NGetText.Target>
                                 <uix:NGetText.TextString>
                                   <OutArgument x:TypeArguments="x:String">
@@ -259,7 +257,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
@@ -274,7 +272,7 @@
                             </Sequence>
                           </uix:NCheckState.IfNotExists>
                           <uix:NCheckState.Target>
-                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="zvVN8wyOiEuwn0Pi0izMQw" CvElementArea="405, 966, 341, 56" CvTextArea="471, 983, 207, 25" CvTextArgument="Complete Transaction" CvType="Button" DesignTimeRectangle="329, 980, 362, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Payments_Cash_CompleteTransaction_Button'" FullSelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' type='button' class='btn btn-block charge-btn-color charge-button-disabled rounded text-white mt-2 mx-0 mr-2' check:text='Complete Transaction' /&gt;" Guid="b9646c79-8b4c-4eaa-add3-d5d37d995c96" InformativeScreenshot="eb5776c43d323ecc36e968ea340b03a8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/iq5n0z-_l0OCFiaX_BeByg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="ZtK8sCXLIU-9MnolIGFEyw" CvElementArea="405, 966, 341, 56" CvTextArea="471, 983, 207, 25" CvTextArgument="Complete Transaction" CvType="Button" DesignTimeRectangle="409, 968, 335, 52" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Payments_Cash_CompleteTransaction_Button'" FullSelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Complete Transaction  ' parentid='main-wrapper' tag='BUTTON' type='button' class='btn btn-block charge-btn-color charge-button-disabled rounded text-white mt-2 mx-0 mr-2' check:innerText='Complete Transaction' /&gt;" Guid="b9646c79-8b4c-4eaa-add3-d5d37d995c96" InformativeScreenshot="0492029ec444f25cc1fc048eda2c7dff.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/iq5n0z-_l0OCFiaX_BeByg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NCheckState.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -295,7 +293,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <ui:Matches DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="450,100" sap2010:WorkflowViewState.IdRef="Matches_2" IsBuilderTabModified="False" Pattern="\d+(.\d+)?" RegexOption="IgnoreCase, Compiled">
+                  <ui:Matches DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_2" IsBuilderTabModified="False" Pattern="\d+(.\d+)?" RegexOption="IgnoreCase, Compiled">
                     <ui:Matches.FirstMatch>
                       <OutArgument x:TypeArguments="x:String">
                         <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_ChargeButtonText</CSharpReference>
@@ -307,7 +305,7 @@
                       </InArgument>
                     </ui:Matches.Input>
                   </ui:Matches>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -319,7 +317,19 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Double">
+                        <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">dbl_ExpectedAmount</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Double">
+                        <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Convert.ToDouble(str_in_SaleItemTotal)+Convert.ToDouble(str_in_TaxAmount)-Convert.ToDouble(str_in_DiscountAmount)+Convert.ToDouble(str_in_SurchargeAmount)</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -327,7 +337,7 @@
                     </ui:LogMessage.Level>
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Expected Charge Button Amount is "+dbl_in_ExpectedTotalAmount.ToString()</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Expected Charge Button Amount is "+dbl_ExpectedAmount.ToString()</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                     <sap:WorkflowViewStateService.ViewState>
@@ -337,10 +347,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Amount displayed in Charge Button" sap:VirtualizedContainerService.HintSize="450,240" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                  <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Amount displayed in Charge Button" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                     <uta:VerifyExpressionWithOperator.FirstExpression>
                       <InArgument x:TypeArguments="x:Double">
-                        <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">dbl_in_ExpectedTotalAmount</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">dbl_ExpectedAmount</CSharpValue>
                       </InArgument>
                     </uta:VerifyExpressionWithOperator.FirstExpression>
                     <uta:VerifyExpressionWithOperator.Result>
@@ -360,7 +370,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uta:VerifyExpressionWithOperator>
-                  <If DisplayName="If Verify Results" sap:VirtualizedContainerService.HintSize="450,1090.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If DisplayName="If Verify Results" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">bool_VerifyResults</CSharpValue>
@@ -368,37 +378,26 @@
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <cr:passedStep sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Verify Amount displayed in Charge Button">
-                          <cr:passedStep.Actual_Result>
+                        <cr:passedStep sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="passedStep_1">
+                          <cr:passedStep.str_in_actualStep>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"Actual payable amount displayed in Charge button is "+str_ChargeButtonText</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Actual payable amount displayed in Charge button is "+str_ChargeButtonText</CSharpValue>
                             </InArgument>
-                          </cr:passedStep.Actual_Result>
-                          <cr:passedStep.Expected_Result>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">"Expected payable amount should be displayed in Charge button is"+dbl_in_ExpectedTotalAmount.ToString()</CSharpValue>
-                            </InArgument>
-                          </cr:passedStep.Expected_Result>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
+                          </cr:passedStep.str_in_actualStep>
                           <cr:passedStep.str_in_expectedStep>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">str_StepName</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">"Expected payable amount should be displayed in Charge button is"+dbl_ExpectedAmount.ToString()</CSharpValue>
                             </InArgument>
                           </cr:passedStep.str_in_expectedStep>
                           <cr:passedStep.str_in_reportId>
@@ -415,26 +414,21 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <cr:failedStep sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Verify Amount displayed in Charge Button">
-                          <cr:failedStep.Actual_Result>
+                        <cr:failedStep sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="failedStep_1">
+                          <cr:failedStep.str_in_actualStep>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">"Actual payable amount displayed in Charge button is "+str_ChargeButtonText</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">"Actual payable amount displayed in Charge button is "+str_ChargeButtonText</CSharpValue>
                             </InArgument>
-                          </cr:failedStep.Actual_Result>
-                          <cr:failedStep.Expected_Result>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">"Expected payable amount should be displayed in Charge button is"+dbl_in_ExpectedTotalAmount.ToString()</CSharpValue>
-                            </InArgument>
-                          </cr:failedStep.Expected_Result>
+                          </cr:failedStep.str_in_actualStep>
                           <cr:failedStep.str_in_expectedStep>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">str_StepName</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">"Expected payable amount should be displayed in Charge button is"+dbl_ExpectedAmount.ToString()</CSharpValue>
                             </InArgument>
                           </cr:failedStep.str_in_expectedStep>
                           <cr:failedStep.str_in_reportId>
@@ -459,7 +453,7 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -467,10 +461,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572.6666666666666,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,215.33333333333334" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
