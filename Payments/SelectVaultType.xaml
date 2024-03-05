@@ -1,69 +1,31 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="AddNewPaymentMethod" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="str_in_VaultType" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_CardNumber" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_Expiration" Type="InArgument(x:String)" />
     <x:Property Name="out_TestID" Type="InArgument(x:String)" />
     <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
     <x:Property Name="str_CardType" Type="InArgument(x:String)" />
     <x:Property Name="str_in_CardLogo" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_AccountNickname" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_Routing" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_AccountType" Type="InArgument(x:String)" />
-    <x:Property Name="StepId" Type="InArgument(x:String)" />
     <x:Property Name="in_PaymentType" Type="InArgument(x:String)" />
     <x:Property Name="Step" Type="InArgument(x:String)" />
     <x:Property Name="in_SelectCard" Type="InArgument(x:String)" />
     <x:Property Name="in_CardNumber" Type="InArgument(x:String)" />
-    <x:Property Name="str_out_RemainingDueAmount" Type="OutArgument(x:String)" />
-    <x:Property Name="str_AmountTendered" Type="InArgument(x:String)" />
-    <x:Property Name="str_in_CheckNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_TestID" Type="InArgument(x:String)" />
   </x:Members>
-  <this:AddNewPaymentMethod.str_in_VaultType>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_VaultType>
-  <this:AddNewPaymentMethod.str_in_CardNumber>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_CardNumber>
   <this:AddNewPaymentMethod.In_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
   </this:AddNewPaymentMethod.In_Report_ID>
   <this:AddNewPaymentMethod.str_CardType>
     <InArgument x:TypeArguments="x:String" />
   </this:AddNewPaymentMethod.str_CardType>
-  <this:AddNewPaymentMethod.str_in_AccountNickname>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_AccountNickname>
-  <this:AddNewPaymentMethod.str_in_Routing>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_Routing>
-  <this:AddNewPaymentMethod.str_in_AccountType>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_AccountType>
-  <this:AddNewPaymentMethod.StepId>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.StepId>
-  <this:AddNewPaymentMethod.in_PaymentType>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.in_PaymentType>
   <this:AddNewPaymentMethod.Step>
     <InArgument x:TypeArguments="x:String" />
   </this:AddNewPaymentMethod.Step>
-  <this:AddNewPaymentMethod.in_SelectCard>
+  <this:AddNewPaymentMethod.in_TestID>
     <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.in_SelectCard>
-  <this:AddNewPaymentMethod.in_CardNumber>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.in_CardNumber>
-  <this:AddNewPaymentMethod.str_AmountTendered>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_AmountTendered>
-  <this:AddNewPaymentMethod.str_in_CheckNumber>
-    <InArgument x:TypeArguments="x:String" />
-  </this:AddNewPaymentMethod.str_in_CheckNumber>
+  </this:AddNewPaymentMethod.in_TestID>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>683.3333333333334,1284</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1848.6666666666667,4998.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -201,7 +163,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddNewPaymentMethod" sap:VirtualizedContainerService.HintSize="693.3333333333334,1219.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddNewPaymentMethod" sap:VirtualizedContainerService.HintSize="1858.6666666666667,4934" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_out_CardNumber" />
     </Sequence.Variables>
@@ -211,15 +173,15 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="631.3333333333334,1108.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1796.6666666666667,4823.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="592.6666666666666,869.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="95811466-04b2-407b-b003-74356af30bca" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1758,4587.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="95811466-04b2-407b-b003-74356af30bca" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558.6666666666666,650" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1724,4368.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="str_out_SuccessMessage" />
                   <Variable x:TypeArguments="x:String" Name="str_out_ActiveCrumb" />
@@ -231,7 +193,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.6666666666667,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_22">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1662,146" sap2010:WorkflowViewState.IdRef="LogMessage_22">
                   <ui:LogMessage.Level>
                     <InArgument x:TypeArguments="ui:LogLevel">
                       <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -243,7 +205,7 @@
                     </InArgument>
                   </ui:LogMessage.Message>
                 </ui:LogMessage>
-                <Switch x:TypeArguments="x:String" DisplayName="Switch for Vault Type" sap:VirtualizedContainerService.HintSize="496.6666666666667,346.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+                <Switch x:TypeArguments="x:String" DisplayName="Switch for Vault Type" sap:VirtualizedContainerService.HintSize="1662,4066.6666666666665" sap2010:WorkflowViewState.IdRef="Switch`1_6">
                   <Switch.Expression>
                     <InArgument x:TypeArguments="x:String">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_615">str_in_VaultType</CSharpValue>
@@ -255,17 +217,17 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence x:Key="Card" DisplayName="Adding Card Details" sap:VirtualizedContainerService.HintSize="558.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                  <Sequence x:Key="Card" DisplayName="Adding Card Details" sap:VirtualizedContainerService.HintSize="1622,3808.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_119">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strVaultType" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NSelectItem DisplayName="Select Item 'PaymentType'" sap:VirtualizedContainerService.HintSize="496.6666666666667,199.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                    <uix:NSelectItem DisplayName="Select Item 'PaymentType'" sap:VirtualizedContainerService.HintSize="1560,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                       <uix:NSelectItem.Item>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_616">in_PaymentType</CSharpValue>
@@ -282,7 +244,7 @@
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="376, 624, 42, 19" CvTextArgument="Card" CvType="Text" DesignTimeRectangle="363, 613, 472, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'Card'" FullSelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' type='' class='custom-select ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="78003dca-2085-4fd3-a5ed-28ec632b1cca" ImageBase64="" InformativeScreenshot="0b0f8475a975bb81171c44b8b45757fb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NSelectItem.Target>
                     </uix:NSelectItem>
-                    <uix:NGetText DisplayName="Get Text 'Card'" sap:VirtualizedContainerService.HintSize="496.6666666666667,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                    <uix:NGetText DisplayName="Get Text 'Card'" sap:VirtualizedContainerService.HintSize="1560,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="376, 624, 42, 19" CvType="AnyWordGroup" DesignTimeRectangle="363, 613, 472, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'Card'" FullSelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' type='' class='custom-select ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="65e93cfc-e841-410b-86d1-03489869b661" ImageBase64="" InformativeScreenshot="0b0f8475a975bb81171c44b8b45757fb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -292,7 +254,7 @@
                         </OutArgument>
                       </uix:NGetText.TextString>
                     </uix:NGetText>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.6666666666667,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_109">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1560,146" sap2010:WorkflowViewState.IdRef="LogMessage_109">
                       <ui:LogMessage.Level>
                         <InArgument x:TypeArguments="ui:LogLevel">
                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_618">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -304,7 +266,7 @@
                         </InArgument>
                       </ui:LogMessage.Message>
                     </ui:LogMessage>
-                    <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully displayed vault type in dropdown" Expected_Result="Selected vault type should be displayed" sap:VirtualizedContainerService.HintSize="496.6666666666667,395.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_77">
+                    <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully displayed vault type in dropdown" Expected_Result="Selected vault type should be displayed" sap:VirtualizedContainerService.HintSize="1560,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_77">
                       <cr:passedStep.str_in_expectedStep>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_619">Step</CSharpValue>
@@ -317,11 +279,11 @@
                       </cr:passedStep.str_in_reportId>
                       <cr:passedStep.str_in_testId>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_621">out_TestID</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_771">in_TestID</CSharpValue>
                         </InArgument>
                       </cr:passedStep.str_in_testId>
                     </cr:passedStep>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch Case For Select Card" sap:VirtualizedContainerService.HintSize="496.6666666666667,279.3333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch Case For Select Card" sap:VirtualizedContainerService.HintSize="1560,2718" sap2010:WorkflowViewState.IdRef="Switch`1_5">
                       <Switch.Expression>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_622">in_SelectCard</CSharpValue>
@@ -333,9 +295,9 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NCheckState x:Key="Master" DisplayName="Check App State 'Master Card Logo'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_44" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                      <uix:NCheckState x:Key="Master" DisplayName="Check App State 'Master Card Logo'" sap:VirtualizedContainerService.HintSize="1520,2437.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_44" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                         <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1218" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_120">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="strCardNumber" />
                             </Sequence.Variables>
@@ -345,12 +307,12 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,220" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NTypeInto.Target>
@@ -360,12 +322,12 @@
                                 </InArgument>
                               </uix:NTypeInto.Text>
                             </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_24" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_24" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NGetText.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NGetText.Target>
@@ -375,7 +337,7 @@
                                 </OutArgument>
                               </uix:NGetText.TextString>
                             </uix:NGetText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_112">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,146" sap2010:WorkflowViewState.IdRef="LogMessage_112">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_625">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -387,16 +349,16 @@
                                 </InArgument>
                               </ui:LogMessage.Message>
                             </ui:LogMessage>
-                            <uix:NCheckState DisplayName="Check App State 'Master Card Logo'" sap:VirtualizedContainerService.HintSize="388,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_45" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NCheckState DisplayName="Check App State 'Master Card Logo'" sap:VirtualizedContainerService.HintSize="954,1059.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_45" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_121">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_117">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_117">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_627">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -408,7 +370,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_150">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_150">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_698">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -426,7 +388,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
-                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_89">
+                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_89">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -445,21 +407,21 @@
                                     </cr:passedStep.str_in_reportId>
                                     <cr:passedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_701">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_772">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:passedStep.str_in_testId>
                                   </cr:passedStep>
                                 </Sequence>
                               </uix:NCheckState.IfExists>
                               <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_122">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_118">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_118">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_629">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -471,7 +433,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_151">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_151">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_703">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -483,7 +445,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_59">
+                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_59">
                                     <cr:failedStep.str_in_expectedStep>
                                       <InArgument x:TypeArguments="x:String">
                                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_704">Step</CSharpValue>
@@ -496,208 +458,7 @@
                                     </cr:failedStep.str_in_reportId>
                                     <cr:failedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_706">out_TestID</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_testId>
-                                  </cr:failedStep>
-                                </Sequence>
-                              </uix:NCheckState.IfNotExists>
-                              <uix:NCheckState.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="853, 611, 64, 45" CvType="Icon" DesignTimeRectangle="853, 606, 72, 58" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' type='' aaname='' /&gt;" Guid="468da7fa-d5ad-4376-896e-e9529223d6e3" InformativeScreenshot="e7d55ca577d532730090d968df52765f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NCheckState.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </uix:NCheckState>
-                          </Sequence>
-                        </uix:NCheckState.IfExists>
-                        <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_124">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_111">
-                              <ui:LogMessage.Level>
-                                <InArgument x:TypeArguments="ui:LogLevel">
-                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_636">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Level>
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_635">"Unable to find to select card number field "</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                          </Sequence>
-                        </uix:NCheckState.IfNotExists>
-                        <uix:NCheckState.Target>
-                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="360, 577, 45, 24" CvTextArgument="Type" CvType="Text" DesignTimeRectangle="363, 577, 41, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Type'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' type='' class='' aaname=' Type ' check:innerText='Type' /&gt;" Guid="62e9ceb5-2516-494e-9ccf-0b67082a2e28" InformativeScreenshot="88221b50fdf55f39acc6c08c21c7045f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                        </uix:NCheckState.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </uix:NCheckState>
-                      <uix:NCheckState x:Key="Visa" DisplayName="Check App State 'Visa Card'" sap:VirtualizedContainerService.HintSize="1520,2492.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_47" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                        <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2271.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_123">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="strCardNumber" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                            </uix:NClick>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NTypeInto.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NTypeInto.Target>
-                              <uix:NTypeInto.Text>
-                                <InArgument x:TypeArguments="x:String">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_640">in_CardNumber</CSharpValue>
-                                </InArgument>
-                              </uix:NTypeInto.Text>
-                            </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                            </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_25" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NGetText.Target>
-                              <uix:NGetText.TextString>
-                                <OutArgument x:TypeArguments="x:String">
-                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">strCardNumber</CSharpReference>
-                                </OutArgument>
-                              </uix:NGetText.TextString>
-                            </uix:NGetText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_120">
-                              <ui:LogMessage.Level>
-                                <InArgument x:TypeArguments="ui:LogLevel">
-                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_642">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Level>
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_707">"The displayed Visa card number is :" +strCardNumber</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                            <uix:NCheckState DisplayName="Check App State 'visa Card Logo'" sap:VirtualizedContainerService.HintSize="954,1132.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_46" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_125">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_122">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_644">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_643">"Able to view the card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_121">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_648">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_647">"Successfully Selected card number and displayed with card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_82">
-                                    <cr:passedStep.str_in_expectedStep>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_649">Step</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_expectedStep>
-                                    <cr:passedStep.str_in_reportId>
-                                      <InArgument x:TypeArguments="x:Int32">
-                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_650">In_Report_ID</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_reportId>
-                                    <cr:passedStep.str_in_testId>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_651">out_TestID</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_testId>
-                                  </cr:passedStep>
-                                </Sequence>
-                              </uix:NCheckState.IfExists>
-                              <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_126">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_123">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_646">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_645">"Unable to view the card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_131">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_709">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_708">"Failed to Select card number in dropdown"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_55">
-                                    <cr:failedStep.str_in_expectedStep>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_710">Step</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_expectedStep>
-                                    <cr:failedStep.str_in_reportId>
-                                      <InArgument x:TypeArguments="x:Int32">
-                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_711">In_Report_ID</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_reportId>
-                                    <cr:failedStep.str_in_testId>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_712">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_773">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:failedStep.str_in_testId>
                                   </cr:failedStep>
@@ -716,14 +477,215 @@
                           </Sequence>
                         </uix:NCheckState.IfExists>
                         <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,262" sap2010:WorkflowViewState.IdRef="Sequence_124">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_124">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_111">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_636">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_635">"Unable to find to select card number field "</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="360, 577, 45, 24" CvTextArgument="Type" CvType="Text" DesignTimeRectangle="363, 577, 41, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Type'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' type='' class='' aaname=' Type ' check:innerText='Type' /&gt;" Guid="62e9ceb5-2516-494e-9ccf-0b67082a2e28" InformativeScreenshot="88221b50fdf55f39acc6c08c21c7045f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <uix:NCheckState x:Key="Visa" DisplayName="Check App State 'Visa Card'" sap:VirtualizedContainerService.HintSize="1520,2520" sap2010:WorkflowViewState.IdRef="NCheckState_47" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="strCardNumber" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,220" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_640">in_CardNumber</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_25" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.TextString>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">strCardNumber</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetText.TextString>
+                            </uix:NGetText>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,146" sap2010:WorkflowViewState.IdRef="LogMessage_120">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_642">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_707">"The displayed Visa card number is :" +strCardNumber</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NCheckState DisplayName="Check App State 'visa Card Logo'" sap:VirtualizedContainerService.HintSize="954,1059.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_46" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_122">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_644">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_643">"Able to view the card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_121">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_648">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_647">"Successfully Selected card number and displayed with card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_82">
+                                    <cr:passedStep.str_in_expectedStep>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_649">Step</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_expectedStep>
+                                    <cr:passedStep.str_in_reportId>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_650">In_Report_ID</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_reportId>
+                                    <cr:passedStep.str_in_testId>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_774">in_TestID</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_testId>
+                                  </cr:passedStep>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_123">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_646">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_645">"Unable to view the card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_131">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_709">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_708">"Failed to Select card number in dropdown"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_55">
+                                    <cr:failedStep.str_in_expectedStep>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_710">Step</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_expectedStep>
+                                    <cr:failedStep.str_in_reportId>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_711">In_Report_ID</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_reportId>
+                                    <cr:failedStep.str_in_testId>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_775">in_TestID</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_testId>
+                                  </cr:failedStep>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="853, 611, 64, 45" CvType="Icon" DesignTimeRectangle="853, 606, 72, 58" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' type='' aaname='' /&gt;" Guid="468da7fa-d5ad-4376-896e-e9529223d6e3" InformativeScreenshot="e7d55ca577d532730090d968df52765f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,262" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_124">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_653">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -747,9 +709,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NCheckState>
-                      <uix:NCheckState x:Key="Amex" DisplayName="Check App State 'Amex Card'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_52" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                      <uix:NCheckState x:Key="Amex" DisplayName="Check App State 'Amex Card'" sap:VirtualizedContainerService.HintSize="1520,2437.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_52" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                         <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1218" sap2010:WorkflowViewState.IdRef="Sequence_135">
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_135">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="strCardNumber" />
                             </Sequence.Variables>
@@ -759,12 +721,12 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,220" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NTypeInto.Target>
@@ -774,12 +736,12 @@
                                 </InArgument>
                               </uix:NTypeInto.Text>
                             </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_26" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_26" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NGetText.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NGetText.Target>
@@ -789,7 +751,7 @@
                                 </OutArgument>
                               </uix:NGetText.TextString>
                             </uix:NGetText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_133">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,146" sap2010:WorkflowViewState.IdRef="LogMessage_133">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_715">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -801,16 +763,16 @@
                                 </InArgument>
                               </ui:LogMessage.Message>
                             </ui:LogMessage>
-                            <uix:NCheckState DisplayName="Check App State 'Amex Card Logo'" sap:VirtualizedContainerService.HintSize="388,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_51" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NCheckState DisplayName="Check App State 'Amex Card Logo'" sap:VirtualizedContainerService.HintSize="954,1059.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_51" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_138">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_134">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_134">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_717">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -822,7 +784,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_136">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_136">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_719">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -834,7 +796,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_86">
+                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_86">
                                     <cr:passedStep.str_in_expectedStep>
                                       <InArgument x:TypeArguments="x:String">
                                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_720">Step</CSharpValue>
@@ -847,21 +809,21 @@
                                     </cr:passedStep.str_in_reportId>
                                     <cr:passedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_722">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_776">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:passedStep.str_in_testId>
                                   </cr:passedStep>
                                 </Sequence>
                               </uix:NCheckState.IfExists>
                               <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_139">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_135">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_135">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_724">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -873,7 +835,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_137">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_137">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_726">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -885,7 +847,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_56">
+                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_56">
                                     <cr:failedStep.str_in_expectedStep>
                                       <InArgument x:TypeArguments="x:String">
                                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_727">Step</CSharpValue>
@@ -898,208 +860,7 @@
                                     </cr:failedStep.str_in_reportId>
                                     <cr:failedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_729">out_TestID</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_testId>
-                                  </cr:failedStep>
-                                </Sequence>
-                              </uix:NCheckState.IfNotExists>
-                              <uix:NCheckState.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="853, 611, 64, 45" CvType="Icon" DesignTimeRectangle="853, 606, 72, 58" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' type='' aaname='' /&gt;" Guid="468da7fa-d5ad-4376-896e-e9529223d6e3" InformativeScreenshot="e7d55ca577d532730090d968df52765f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NCheckState.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </uix:NCheckState>
-                          </Sequence>
-                        </uix:NCheckState.IfExists>
-                        <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_140">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_132">
-                              <ui:LogMessage.Level>
-                                <InArgument x:TypeArguments="ui:LogLevel">
-                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_731">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Level>
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_730">"Unable to find to select card number field "</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                          </Sequence>
-                        </uix:NCheckState.IfNotExists>
-                        <uix:NCheckState.Target>
-                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="360, 577, 45, 24" CvTextArgument="Type" CvType="Text" DesignTimeRectangle="363, 577, 41, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Type'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' type='' class='' aaname=' Type ' check:innerText='Type' /&gt;" Guid="62e9ceb5-2516-494e-9ccf-0b67082a2e28" InformativeScreenshot="88221b50fdf55f39acc6c08c21c7045f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                        </uix:NCheckState.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </uix:NCheckState>
-                      <uix:NCheckState x:Key="Discover" DisplayName="Check App State 'Discover Card'" sap:VirtualizedContainerService.HintSize="1520,2492.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_54" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                        <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2271.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_136">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="strCardNumber" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                            </uix:NClick>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NTypeInto.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NTypeInto.Target>
-                              <uix:NTypeInto.Text>
-                                <InArgument x:TypeArguments="x:String">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_732">in_CardNumber</CSharpValue>
-                                </InArgument>
-                              </uix:NTypeInto.Text>
-                            </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                            </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_27" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NGetText.Target>
-                              <uix:NGetText.TextString>
-                                <OutArgument x:TypeArguments="x:String">
-                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">strCardNumber</CSharpReference>
-                                </OutArgument>
-                              </uix:NGetText.TextString>
-                            </uix:NGetText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_139">
-                              <ui:LogMessage.Level>
-                                <InArgument x:TypeArguments="ui:LogLevel">
-                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_734">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Level>
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_733">"The displayed Discover card number is :" +strCardNumber</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                            <uix:NCheckState DisplayName="Check App State 'Discover Card Logo'" sap:VirtualizedContainerService.HintSize="954,1132.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_53" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                              <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_141">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_140">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_736">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_735">"Able to view the card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_142">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_738">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_737">"Successfully Selected card number and displayed with card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_87">
-                                    <cr:passedStep.str_in_expectedStep>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_739">Step</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_expectedStep>
-                                    <cr:passedStep.str_in_reportId>
-                                      <InArgument x:TypeArguments="x:Int32">
-                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_740">In_Report_ID</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_reportId>
-                                    <cr:passedStep.str_in_testId>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_741">out_TestID</CSharpValue>
-                                      </InArgument>
-                                    </cr:passedStep.str_in_testId>
-                                  </cr:passedStep>
-                                </Sequence>
-                              </uix:NCheckState.IfExists>
-                              <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_142">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_141">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_743">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_742">"Unable to view the card logo"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_143">
-                                    <ui:LogMessage.Level>
-                                      <InArgument x:TypeArguments="ui:LogLevel">
-                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_745">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Level>
-                                    <ui:LogMessage.Message>
-                                      <InArgument x:TypeArguments="x:Object">
-                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_744">"Failed to Select card number in dropdown"</CSharpValue>
-                                      </InArgument>
-                                    </ui:LogMessage.Message>
-                                  </ui:LogMessage>
-                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_57">
-                                    <cr:failedStep.str_in_expectedStep>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_746">Step</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_expectedStep>
-                                    <cr:failedStep.str_in_reportId>
-                                      <InArgument x:TypeArguments="x:Int32">
-                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_747">In_Report_ID</CSharpValue>
-                                      </InArgument>
-                                    </cr:failedStep.str_in_reportId>
-                                    <cr:failedStep.str_in_testId>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_748">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_777">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:failedStep.str_in_testId>
                                   </cr:failedStep>
@@ -1118,14 +879,215 @@
                           </Sequence>
                         </uix:NCheckState.IfExists>
                         <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_143">
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,262" sap2010:WorkflowViewState.IdRef="Sequence_140">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_138">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_132">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_731">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_730">"Unable to find to select card number field "</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="360, 577, 45, 24" CvTextArgument="Type" CvType="Text" DesignTimeRectangle="363, 577, 41, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Type'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' type='' class='' aaname=' Type ' check:innerText='Type' /&gt;" Guid="62e9ceb5-2516-494e-9ccf-0b67082a2e28" InformativeScreenshot="88221b50fdf55f39acc6c08c21c7045f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <uix:NCheckState x:Key="Discover" DisplayName="Check App State 'Discover Card'" sap:VirtualizedContainerService.HintSize="1520,2561.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_54" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="strCardNumber" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,220" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_732">in_CardNumber</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_27" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.TextString>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">strCardNumber</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetText.TextString>
+                            </uix:NGetText>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,146" sap2010:WorkflowViewState.IdRef="LogMessage_139">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_734">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_733">"The displayed Discover card number is :" +strCardNumber</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NCheckState DisplayName="Check App State 'Discover Card Logo'" sap:VirtualizedContainerService.HintSize="954,1059.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_53" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_141">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_140">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_736">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_735">"Able to view the card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_142">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_738">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_737">"Successfully Selected card number and displayed with card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_87">
+                                    <cr:passedStep.str_in_expectedStep>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_739">Step</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_expectedStep>
+                                    <cr:passedStep.str_in_reportId>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_740">In_Report_ID</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_reportId>
+                                    <cr:passedStep.str_in_testId>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_778">in_TestID</CSharpValue>
+                                      </InArgument>
+                                    </cr:passedStep.str_in_testId>
+                                  </cr:passedStep>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_142">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_141">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_743">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_742">"Unable to view the card logo"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_143">
+                                    <ui:LogMessage.Level>
+                                      <InArgument x:TypeArguments="ui:LogLevel">
+                                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_745">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Level>
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_744">"Failed to Select card number in dropdown"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
+                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_57">
+                                    <cr:failedStep.str_in_expectedStep>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_746">Step</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_expectedStep>
+                                    <cr:failedStep.str_in_reportId>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_747">In_Report_ID</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_reportId>
+                                    <cr:failedStep.str_in_testId>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_779">in_TestID</CSharpValue>
+                                      </InArgument>
+                                    </cr:failedStep.str_in_testId>
+                                  </cr:failedStep>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="853, 611, 64, 45" CvType="Icon" DesignTimeRectangle="853, 606, 72, 58" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='SPAN' class='cclogo-span input-group-text p-4 mastercard' parentclass='input-group-prepend' type='' aaname='' /&gt;" Guid="468da7fa-d5ad-4376-896e-e9529223d6e3" InformativeScreenshot="e7d55ca577d532730090d968df52765f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,262" sap2010:WorkflowViewState.IdRef="Sequence_143">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_138">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_750">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -1149,9 +1111,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NCheckState>
-                      <uix:NCheckState x:Key="Dinners Club" DisplayName="Check App State 'Dinners club Card'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_56" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                      <uix:NCheckState x:Key="Dinners Club" DisplayName="Check App State 'Dinners club Card'" sap:VirtualizedContainerService.HintSize="1520,2437.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_56" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                         <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1218" sap2010:WorkflowViewState.IdRef="Sequence_137">
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,2217.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_137">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="strCardNumber" />
                             </Sequence.Variables>
@@ -1161,12 +1123,12 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on dropdown" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1122, 620, 22, 36" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='I' class='ngx-select__toggle-caret caret' parentclass='ngx-select__toggle-buttons' type='' aaname='' /&gt;" Guid="d11e5acf-bd24-49dd-b502-e681bcf5385c" InformativeScreenshot="b54540b208a0315205d70a1b684fb555.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,262.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_26" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,220" sap2010:WorkflowViewState.IdRef="NTypeInto_26" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="921, 609, 273, 49" CvType="InputBox" DesignTimeRectangle="924, 613, 266, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control ng-star-inserted' aaname='' /&gt;" Guid="56ea7786-4fa8-48d4-ab64-978c195a62a0" InformativeScreenshot="b077e9777044ee2ee8860c5b4950f9f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NTypeInto.Target>
@@ -1176,12 +1138,12 @@
                                 </InArgument>
                               </uix:NTypeInto.Text>
                             </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'on Number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="940, 673, 188, 22" CvTextArgument="5555 55** **** 4444" CvType="Text" DesignTimeRectangle="925, 667, 264, 36" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapsePaymentInfoArea' tag='A' type='' class='ngx-select__item dropdown-item ng-star-inserted ngx-select__item_active active' aaname=' 5555 55** **** 4444 ' check:innerText='5555 55** **** 4444' /&gt;" Guid="aecd17fc-fea0-40ba-9e25-742e58f3d432" InformativeScreenshot="88a6e679f9f9d85ba145cf5630211ea3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_28" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NGetText DisplayName="Get Text 'of selected Card number'" sap:VirtualizedContainerService.HintSize="954,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_28" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NGetText.Target>
                                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="922, 611, 243, 47" CvType="InputBox" DesignTimeRectangle="944, 623, 172, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' parentid='collapsePaymentInfoArea' tag='SPAN' type='' /&gt;" Guid="b7d362ba-81f2-4a0b-a6d1-145148386a43" ImageBase64="" InformativeScreenshot="c04e6db77eedf3f105c325b83b116557.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                               </uix:NGetText.Target>
@@ -1191,7 +1153,7 @@
                                 </OutArgument>
                               </uix:NGetText.TextString>
                             </uix:NGetText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_145">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,146" sap2010:WorkflowViewState.IdRef="LogMessage_145">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_753">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -1203,16 +1165,16 @@
                                 </InArgument>
                               </ui:LogMessage.Message>
                             </ui:LogMessage>
-                            <uix:NCheckState DisplayName="Check App State 'Dinners club Logo'" sap:VirtualizedContainerService.HintSize="388,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_55" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
+                            <uix:NCheckState DisplayName="Check App State 'Dinners club Logo'" sap:VirtualizedContainerService.HintSize="954,1059.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_55" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
                               <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,846" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_144">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_146">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_146">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_755">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -1224,7 +1186,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_148">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_148">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_757">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -1236,7 +1198,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_88">
+                                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully Selected card number and displayed with card logo" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_88">
                                     <cr:passedStep.str_in_expectedStep>
                                       <InArgument x:TypeArguments="x:String">
                                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_758">Step</CSharpValue>
@@ -1249,21 +1211,21 @@
                                     </cr:passedStep.str_in_reportId>
                                     <cr:passedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_760">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_780">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:passedStep.str_in_testId>
                                   </cr:passedStep>
                                 </Sequence>
                               </uix:NCheckState.IfExists>
                               <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_145">
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_145">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_147">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_147">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_762">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -1275,7 +1237,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_149">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_149">
                                     <ui:LogMessage.Level>
                                       <InArgument x:TypeArguments="ui:LogLevel">
                                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_764">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -1287,7 +1249,7 @@
                                       </InArgument>
                                     </ui:LogMessage.Message>
                                   </ui:LogMessage>
-                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_58">
+                                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to Select card number in dropdown" DisplayName="Failed step" Expected_Result="Selected card number should be displayed with card logo" sap:VirtualizedContainerService.HintSize="388,351.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_58">
                                     <cr:failedStep.str_in_expectedStep>
                                       <InArgument x:TypeArguments="x:String">
                                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_765">Step</CSharpValue>
@@ -1300,7 +1262,7 @@
                                     </cr:failedStep.str_in_reportId>
                                     <cr:failedStep.str_in_testId>
                                       <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_767">out_TestID</CSharpValue>
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_781">in_TestID</CSharpValue>
                                       </InArgument>
                                     </cr:failedStep.str_in_testId>
                                   </cr:failedStep>
@@ -1311,7 +1273,7 @@
                               </uix:NCheckState.Target>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -1319,14 +1281,14 @@
                           </Sequence>
                         </uix:NCheckState.IfExists>
                         <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,262" sap2010:WorkflowViewState.IdRef="Sequence_146">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_144">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_144">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_769">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -1345,28 +1307,12 @@
                         </uix:NCheckState.Target>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NCheckState>
                     </Switch>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Expiration Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496.6666666666667,79.33333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="707, 664, 526, 45" CvType="InputBox" DesignTimeRectangle="709, 666, 525, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname=' Expiration ' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='floating__input dpp-input ng-untouched ng-pristine ng-invalid' tag='INPUT' type='tel' aaname='' /&gt;" Guid="a5ccff2c-8b44-4bd4-a3d2-18a12a3a5ee4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhEAAAAtCAYAAAAQuTntAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFiSURBVHhe7dkxboNQFETR7H9tVFS0SOyB8kcTORhjW4mm9TnSFCAWcPX4GgAABREBAFREBABQeYqIbdvGPM9jmiYzMzP78KUJ0gavPETEsixjXdex7/vtDQDwydIEaYM0wtUREamMfAQAcJVGuF4kjojIucIFAgB4JY2QVjg7IiL/PQAA3rm2gogAAP5FRAAAFREBAFREBABQEREAQEVEAAAVEQEAVEQEAFAREQBARUQAABURAQBURAQAUBERAEBFRAAAFREBAFREBABQEREAQEVEAAAVEQEAVEQEAFAREQBARUQAABURAQBURAQAUBERAEBFRAAAFREBAFREBABQEREAQEVEAAAVEQEAVEQEAFB5GxHzPI99329PAAB3aYS0wtkREdu2jXVdb08AAHdphLTC2RERsSzLz0cuEgBApAnSBmmEq4eIiFRGzhX572FmZmafvTTB9QLx6ykiAAD+NsY3mPL5MHpguvEAAAAASUVORK5CYII=" InformativeScreenshot="ef601abdc6f9a9445b54f89c9a1a6de9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.Text>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_687">str_in_Expiration</CSharpValue>
-                        </InArgument>
-                      </uix:NTypeInto.Text>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NTypeInto>
                   </Sequence>
                   <Sequence x:Key="ACH/EFT" DisplayName="Adding ACH/EFT Details" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_118">
                     <Sequence.Variables>
@@ -1380,188 +1326,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Sequence>
-                  <Sequence x:Key="Cash" DisplayName="Adding Cash Details" sap:VirtualizedContainerService.HintSize="450,1424" sap2010:WorkflowViewState.IdRef="Sequence_147">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="str_out_AccountNumber" />
-                      <Variable x:TypeArguments="x:Decimal" Name="Str_AccountNumber" />
-                      <Variable x:TypeArguments="x:String" Name="str_RemAmountOrderSummary" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NSelectItem DisplayName="Select Item 'Payment Type'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Cash" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NSelectItem.Items>
-                        <scg:List x:TypeArguments="x:String" Capacity="3">
-                          <x:String>Card</x:String>
-                          <x:String>Cash</x:String>
-                          <x:String>Check</x:String>
-                        </scg:List>
-                      </uix:NSelectItem.Items>
-                      <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="341, 393, 482, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="DropDown" FriendlyName="'Card'" FullSelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' type='' class='custom-select ng-valid ng-dirty ng-touched' aaname='' /&gt;" Guid="828c4c99-df85-4973-8841-7a34bec5a003" ImageBase64="" InformativeScreenshot="0919f3868e63e48d009d016ce2e93e85.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NSelectItem.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NSelectItem>
-                    <uix:NGetText DisplayName="Get Text 'Remaining due amount'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_29" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="856, 667, 489, 45" CvTextArea="864, 680, 39, 18" CvTextArgument="4.00" CvType="InputBox" DesignTimeRectangle="858, 669, 483, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'4.00'" FullSelectorArgument="&lt;webctrl id='Total' name='CashAmountBalance' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Total' name='CashAmountBalance' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname=' Total *' /&gt;" Guid="99de3cd8-ca5d-4f8d-935d-6c3bf3a3f54c" ImageBase64="" InformativeScreenshot="4b025c76c0b0f77c31af7607e950ddaa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NGetText.Target>
-                      <uix:NGetText.TextString>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">str_out_RemainingDueAmount</CSharpReference>
-                        </OutArgument>
-                      </uix:NGetText.TextString>
-                    </uix:NGetText>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Order Summary'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="1728, 987, 114, 19" CvTextArgument="Order Summary" CvType="Text" DesignTimeRectangle="1714, 974, 168, 46" DesignTimeScaleFactor="1.1299999952316284" ElementType="Button" FriendlyName="'Order Summary'" FullSelectorArgument="&lt;webctrl id='dropdownMenuOrderSummary' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dropdownMenuOrderSummary' tag='BUTTON' type='button' class='btn btn-secondary dropdown-toggle menu-btn' aaname=' Order Summary ' check:innerText='Order Summary' /&gt;" Guid="da4c19ef-375d-4b51-81c2-5d9fab65ac71" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKwAAAAyCAYAAADBXTDrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAZ/SURBVHhe7Z3dSxRdHID9i/zovfQP6DLowhshRCS8KIooUBTRi6RCobqITDIwAiHJUEQRJVERFcKPoFAoLUy0/MRK0+q8PGf7zTs7Hdf9cN+dod/Aw+yerz0z85xzfjO7Vp7RTbcIbXHC/vr1S1FCh3+zwpL48+dP8+PHj6Q5PDxUlIxxuRUEN0XcvMLCQgNFRUWKElrEUxVWiQRxwhYUqLBKuMHR38LG3rgKKUpYiAlbZPJ4kZ9f4CykKGEBR3HVCqszrBJ2xFMNCZRIgKM2JIgJ6y6kKGEBRz1h8/N1hlXCDY7+FvaUzrBK6InNsKdUWCUaeMLyQoVVwo54qsIqkUCFVSKFCqtEChVWiRRZFfbcuXNmYmLC7O/v2x/dsp+dnTUVFRXO8scxOTlp1tbWzPnz55356XLnzh3z8eNH+yNhfiC8u7tr+vv7zenTp53lldyRNWEvXLhgVldXraRjY2OmpaXF7nlPOvmueonIhrD379+3fULYR48emevXr5uXL1/aX8Ez2IqLi531lNyQNWGHh4fN9+/fzcOHD+PSeU86+f70ZMiGsK9fvzY7Ozumuro6Ln1kZMR8+/bN3LhxIy5dSR1WqsrKSmdeqmRF2NLSUjtjffjwwZw5cyYuj/ekM8uWl5eb2tpa8+XLFzM1NWW2trbsa9LOnj1rxsfHzcHBgV2m379/b+XyCytlmCEps729bVpbW20eZShLnZWVFTtIHjx4ENcXePv2rdnY2DCXLl2KS6+rqzPPnz83ly9ftvXoR1dXl5cv7TOIeM/+06dP9jikP58/fzbNzc3m2bNn5uvXrzYsYt/Z2em1k249/7FLPuVlRaCvpNE+fX/37p158+bNH8dKOfLb2tq8tJOEfr569cqef/rnKpMKWRFWJJSLGYR0EVPKckAzMzP2ohD7cjFYlgkjWKapQ4wpwnJhWLKpNzAwYMtwUZgVb9686QlFGwsLC558wb709fXZP26bnp4+MrZOVlhkow9NTU3myZMnNham3vr6unn8+LG5ffu2HciI1NjYmHY9jp3+IisScOxzc3Nx4tFX2mX1ePHihV3Znj59asu0t7fbMrSDxHxOOiHacYis9IONz85U2tAIyxIs+deuXbOzJRdFZgz23LCJsMxAe3t7cfVY1rlAtC9CcUGkDRcsVwwK+ctNxOjo6Ii74UpW2M3NTXP16lWvDGEP7YogwGva4jPSrcfAY9UYHR318uvr670Zlff0FaHv3r3rlZHzysTgf0/MLmVOiqCssmUqbWiE9cuAIMyc/iVQ6omwlKfMvXv3vHwJN1jmg0Idx5UrV+ysjvAyMzGzkZessNI3KUN56lFf0oJtpVsvSPCcU07Osb8cskpYwCBg0Ps/5yQIysrnMQjpPxv7dKUNrbCkBU+k/+IODg7ag3dtxMe3bt1KSVg/POYinmb2qaqqcsqSa2EbGhpsqMNM7N+kP5RzCUvIgKTIirzBz84Ul6zM/uQhKcfAxj4dabMiLDdTSJPKTZdcCODicFJl2RT8F5fyxKs8LhPxBZbXixcvxgnlgliZWVxmUj/d3d2eNEFZIJfCEm8Sdy4tLdn4lZAn2B/KuYSVuvPz83bvD6kyJZGsQqbSZkVYSPRYi47KieKEBoVNJoYlNkPq3t5erx4Q3yFi8AK6kIvHEwhOtj+PLw4k5ODRFoODNMlnUBB75kLYYBsQ7A95LmGBMtxocv78MW6mDA0NJZRV8EtLH7gfcZVzkTVhkYEbAwL/RF8cuIQF/1MC7vq5MfA/JWCmZpbgwHlKQDvMitxhM1iSERZ6enrs5ywuLnpfHDCY6Ofy8rKVHzgW2mbAITE3Z2zSfjripVtPbi55/EWfuftHEH9/KHeUsEjK8XFMHFswP104d0w0iWQVkJYJgWsYnCwSkTVhgZNx3FezRwnLQSAtF4lRe9xzWDZGK7KRnqyw4P9qVtoJ9pNZAEHoC31iADE750JY3vO8GTnoD/3l0RXt8HiM1YhyRwnLZMGxnGQ4IJSUlCQtYFlZWcpff2dVWCWccOPFauGK3cOOCvsXwTeQhBDMroRAwRviKKDC/kXwRISbLWLXmpoaZ5mwo8IqkUKFVSKFCqtEChVWiRQqrBIpVFglUqiwSqRQYZVIocIqkUKFVSKFCqtEChVWiRQqrBIpVFglUnjC8s9wg6uQooQF8dT7b49i8P8dwD8mPz+2V5T/m//cEx9jfhYWFpl/AZqJ2cryiEWlAAAAAElFTkSuQmCC" InformativeScreenshot="5cf6e0bd9ec92213d79422205dd85c16.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NGetText DisplayName="Get Text 'Remaining Amount In Order Summary'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_30" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="1798, 603, 35, 19" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FriendlyName="'4.00'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='w-100 transaction-details-table-web ng-star-inserted' idx='1' /&gt;&lt;webctrl tableRow='1' tag='SPAN' class='amount' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='TABLE' class='w-100 transaction-details-table-web ng-star-inserted' /&gt;&lt;webctrl type='' tag='SPAN' class='amount' /&gt;" Guid="e1ab9ef4-d65b-4c4e-821d-172f0b2d45f3" ImageBase64="" InformativeScreenshot="3a005521b4baaa2940b0bda55950ce39.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NGetText.Target>
-                      <uix:NGetText.TextString>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">str_RemAmountOrderSummary</CSharpReference>
-                        </OutArgument>
-                      </uix:NGetText.TextString>
-                    </uix:NGetText>
-                    <If sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
-                      <If.Condition>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_771">str_out_RemainingDueAmount == str_RemAmountOrderSummary</CSharpValue>
-                        </InArgument>
-                      </If.Condition>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_148">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <cr:passedStep Expected_Result="Remaining Amount should be same in Order summary and Payment Info" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_90" str_in_actualStep="Verify remaining due amount">
-                            <cr:passedStep.Actual_Result>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_775" xml:space="preserve">"Remaing due amount in order summary ="+str_RemAmountOrderSummary+"  same as remaining amount in payment info ="+str_out_RemainingDueAmount</CSharpValue>
-                              </InArgument>
-                            </cr:passedStep.Actual_Result>
-                            <cr:passedStep.str_in_expectedStep>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_772">StepId</CSharpValue>
-                              </InArgument>
-                            </cr:passedStep.str_in_expectedStep>
-                            <cr:passedStep.str_in_reportId>
-                              <InArgument x:TypeArguments="x:Int32">
-                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_773">In_Report_ID</CSharpValue>
-                              </InArgument>
-                            </cr:passedStep.str_in_reportId>
-                            <cr:passedStep.str_in_testId>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_774">out_TestID</CSharpValue>
-                              </InArgument>
-                            </cr:passedStep.str_in_testId>
-                          </cr:passedStep>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_149">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <cr:failedStep DisplayName="Failed step" Expected_Result="Remaining Amount should be same in Order summary and Payment Info" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_60" str_in_actualStep="Verify remaining due amount">
-                            <cr:failedStep.Actual_Result>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_779">"Remaing due amount in order summary ="+str_RemAmountOrderSummary+" not same as remaining amount in payment info ="+str_out_RemainingDueAmount</CSharpValue>
-                              </InArgument>
-                            </cr:failedStep.Actual_Result>
-                            <cr:failedStep.str_in_expectedStep>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_776">StepId</CSharpValue>
-                              </InArgument>
-                            </cr:failedStep.str_in_expectedStep>
-                            <cr:failedStep.str_in_reportId>
-                              <InArgument x:TypeArguments="x:Int32">
-                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_777">In_Report_ID</CSharpValue>
-                              </InArgument>
-                            </cr:failedStep.str_in_reportId>
-                            <cr:failedStep.str_in_testId>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_778">out_TestID</CSharpValue>
-                              </InArgument>
-                            </cr:failedStep.str_in_testId>
-                          </cr:failedStep>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OrderSummary'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="M-2k1kWKrUiTTgUso1f3_Q" CvElementArea="1845, 982, 32, 28" CvTextArea="1716, 984, 122, 21" CvTextArgument="Order Summary" CvType="ArrowButton" DesignTimeRectangle="1701, 970, 180, 49" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'OrderSummary'" FullSelectorArgument="&lt;webctrl id='*OrderSummary' tag='BUTTON' aaname=' Order Summary ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='*OrderSummary' tag='BUTTON' aaname=' Order Summary ' type='button' class='btn btn-secondary dropdown-toggle menu-btn' check:text='Order Summary' /&gt;" Guid="cd801225-97eb-45ab-9e24-1d4f479f410f" InformativeScreenshot="d07d89c46f97fd8b59b1eb05f922b75b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/ML1w9rHayEC3u9bgLctqDw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount Tendered'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="338, 477, 490, 46" CvTextArea="348, 489, 37, 18" CvTextArgument="0.00" CvType="InputBox" DesignTimeRectangle="341, 479, 483, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl id='AmountTender' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='AmountTender' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="9040d7c8-fbef-4275-8243-b47d98ebaa40" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAecAAAAtCAYAAACUCaMyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAL9SURBVHhe7dwvbyJbGMBhvgUSWVmJrEQiV1ZWIvsRkMhKJLISicQ0QS4kJJV1VCLfPbMMXP717uQOl54lz5O8STucg/3lDDCNAACyIs4AkBlxBoDMnMR5tVrFcrmMxWIRb29vxhhjjPkfpuhs0duiu8cO4jyfz79cCABc1vZAXPR33y7O2wUAwHUdH4x3cXZiBoDvcXxA3sW5uPcNAHyP/Q7v4lx8OA0AfI/9DoszAGRAnAEgM+IMAJkRZwDIjDgDQGbEGQAyI84AkJmLxPnz5yh6nbtoNhrRaLSi/TiI6Wf54r/6jJ+jXnTummlf2ttqx+Ngmq4eq7oOAP5+9eM8G0Q7BbP9+BKvk0lMxsPoPaSINnsxWZdrvjAbtFNsU2hfXmOS9o6HvXhoNqLZm8T+1qrrAOAW1IzzOia9dJK9H8SsvPLbxyi6Kdid4Xt54Yz1JHppzf3gYGfa2k0h7sRua9V1AHAjasZ5Fv10gj0OZ8R7jLop2k/jr289z/rRbNzH6dZN2J/G5c6q6wDgRtSL88dr/EiB7I4+ygv/mD6nOHdHcfrKxsfrj3Ty7cbp1mk8771n1XUAcCtqxnlzej0b536Kc6OfEnre5rb0+ej203s2+pudVdcBwK0QZwDIjDgDQGZqxtlnzgBwafXiXH5bu9n/r9/Wbsbp1nPf1q6wDgBuRM04r2Py3Dz9nfP7MDp/OtWuJ/F85mdY78PO4Um56joAuBE145yUIW51B7snhD2106m53Y/p7vFdnzHu3UXr4eUg4pvAtqI72D7562nztLH+9ODJX1XXAcAtqB/nZP3HZ2sXcW79DvbsoKbris/MrroOAP5+F4kzAHA54gwAmRFnAMiMOANAZsQZADIjzgCQGXEGgMyIMwBkRpwBIDPiDACZORvnxWJR/gUAXNt+h3dxXi6XsVqtyv8AgGsp+lt0eGsX5+MXAIDrOD4g7+JcmM/nTtAAcCXbg3HR330HcS5sFxb3vosPp40xxhhz+Sk6+9WB+CTOAMB3ivgF+ktPMrCN8i4AAAAASUVORK5CYII=" InformativeScreenshot="1008961e6493357859b2a47dbb5c2570.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.Text>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_780">str_AmountTendered</CSharpValue>
-                        </InArgument>
-                      </uix:NTypeInto.Text>
-                    </uix:NTypeInto>
-                  </Sequence>
-                  <Sequence x:Key="Check" DisplayName="Adding Check Details" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_150">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NSelectItem DisplayName="Select Item 'Payment Type'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Check" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NSelectItem.Items>
-                        <scg:List x:TypeArguments="x:String" Capacity="3">
-                          <x:String>Card</x:String>
-                          <x:String>Cash</x:String>
-                          <x:String>Check</x:String>
-                        </scg:List>
-                      </uix:NSelectItem.Items>
-                      <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" DesignTimeRectangle="341, 393, 482, 41" DesignTimeScaleFactor="1.1299999952316284" ElementType="DropDown" FriendlyName="'Card'" FullSelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Trantype' tag='SELECT' type='' class='custom-select ng-valid ng-dirty ng-touched' aaname='' /&gt;" Guid="828c4c99-df85-4973-8841-7a34bec5a003" ImageBase64="" InformativeScreenshot="0919f3868e63e48d009d016ce2e93e85.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NSelectItem.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NSelectItem>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT CheckNumber'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_28" ScopeIdentifier="95811466-04b2-407b-b003-74356af30bca" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="359, 593, 479, 47" CvType="InputBox" DesignTimeRectangle="363, 595, 473, 43" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT CheckNumber'" FullSelectorArgument="&lt;webctrl id='CheckNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CheckNumber' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-invalid' aaname=' Check Number *' /&gt;" Guid="224a5268-6703-404e-bf54-ad98406a3adc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAd0AAAAvCAYAAACmEBDIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGUSURBVHhe7dkxboNAFEXR7H9tbsGS8SIMtEgTfQcjHKdIZPKqc6RXgOivZvhoAECE6AJAiOgCQMhLdKdpasMwtL7v2+l0MjMzsz+s67p7R6un3z1F93a7tfP53OZ5bsuyrG8BgN+qflZH6/A6juP69ssW3SpyfQAAHKO6uj/xbtG9XC73MgMAx6iu1lXzwxbdqrErZQA4TnW1/vE+bNGtn78AwLH2fRVdAPhHogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIaILACGiCwAhogsAIT9Gt+u6tizL+gQAvKu6Wn192KI7DEOb53l9AgDeVV29Xq/r0y660zS1vu/XJwDgXXXK3R9ot+iWcRzv4a0PXDUDwN9VP6uj1dM60O49RbfUB3XVXB/Xz18zMzP7/aqfdaX80y/bl+gCAP+htU+A96LADlPskQAAAABJRU5ErkJggg==" InformativeScreenshot="d38e478b2fa63ad0fac843a04992010c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.Text>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_781">str_in_CheckNumber</CSharpValue>
-                        </InArgument>
-                      </uix:NTypeInto.Text>
-                    </uix:NTypeInto>
-                  </Sequence>
+                  <x:Null x:Key="Cash" />
+                  <x:Null x:Key="Check" />
                 </Switch>
               </Sequence>
             </ActivityAction>
@@ -1578,7 +1344,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="597.3333333333334,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1762.6666666666667,21.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
