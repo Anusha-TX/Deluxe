@@ -1,11 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Logout" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_DppURL" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Logout.str_in_DppURL>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Logout.str_in_DppURL>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1140.6666666666667,2854.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140.6666666666667,2814.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,10 +121,13 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="1150.6666666666667,2790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="1150.6666666666667,2750" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="str_StepName" />
-      <Variable x:TypeArguments="x:String" Name="str_in_DppURL" />
+      <Variable x:TypeArguments="x:String" Name="str_StepName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">step </Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -128,9 +135,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1088.6666666666667,2679.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1088.6666666666667,2639.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1050,2440" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1050,2400" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
