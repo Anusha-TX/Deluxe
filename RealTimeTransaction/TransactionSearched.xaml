@@ -1,0 +1,798 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="realtimetransaction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="str_in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_MerchantID" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
+    <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <this:realtimetransaction.str_in_MerchantID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:realtimetransaction.str_in_MerchantID>
+  <this:realtimetransaction.str_in_Url>
+    <InArgument x:TypeArguments="x:String" />
+  </this:realtimetransaction.str_in_Url>
+  <this:realtimetransaction.str_in_TestId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:realtimetransaction.str_in_TestId>
+  <this:realtimetransaction.int_in_ReportId>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:realtimetransaction.int_in_ReportId>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>738.4,4253.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>CommonLibrary.Report</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Jira.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>Deluxe_ReusableLibrary.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>CommonLibrary</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>Deluxe_ReusableLibrary.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="668,4188.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="605.6,4076.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="TransactionSearched" sap:VirtualizedContainerService.HintSize="568,3847.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="505.6,3735.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="TransactionSearched" sap:VirtualizedContainerService.HintSize="472,3518.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Real-Time Transaction'" sap:VirtualizedContainerService.HintSize="410,193" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="42, 290, 106, 12" CvTextArgument="Real-Time Transaction" CvType="Text" DesignTimeRectangle="8, 276, 188, 45" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Real-Time Transaction'" FullSelectorArgument="&lt;webctrl parentid='menuRealtimetransaction' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuRealtimetransaction' tag='A' type='' class='sidebar-link waves-effect waves-dark txt-white' aaname='Real-Time Transaction' check:innerText='Real-Time Transaction' /&gt;" Guid="14c6e50e-d629-47f8-a594-24adb95557c9" InformativeScreenshot="37439f4dff3aeec323dd963a91b384c4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Label 'Real-Time Transaction'" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvTextArea="216, 150, 107, 10" CvTextArgument="REAL-TIMETRANSACTION" CvType="Text" DesignTimeRectangle="218, 149, 266, 15" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Real-Time Transaction'" FullSelectorArgument="&lt;webctrl tag='H5' aaname='Real-Time Transaction' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' aaname='Real-Time Transaction' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' type='' check:text='Real-Time Transaction' /&gt;" Guid="08e3f7aa-f5a8-4274-b956-3b27e791d25b" InformativeScreenshot="c39bebf2c481af0ddacc122542e8c678.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:VerifyExecutionOptions.Target>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Clicked on the Realtime Transaction Module">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <cr:passedStep.str_in_expectedStep>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">str_StepName</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_expectedStep>
+                    <cr:passedStep.str_in_reportId>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">int_in_ReportId</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_reportId>
+                    <cr:passedStep.str_in_testId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_146">str_in_TestId</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_testId>
+                  </cr:passedStep>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">"Clicked on Realtime Transaction Module"</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <If sap:VirtualizedContainerService.HintSize="410,1620" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">!string.IsNullOrEmpty(str_in_MerchantID)</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,1438" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_37">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_153">"Searche transaction with merchant and user switch case name -(Search with merchant and user)"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search Merchant'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" ContentHash="7OvCN6aADUy8uRPD6dMxcQ" CvElementArea="287, 306, 954, 54" CvTextArea="303, 324, 108, 14" CvTextArgument="Search Merchant" CvType="InputBox" DesignTimeRectangle="291, 307, 947, 51" DesignTimeScaleFactor="1" FriendlyName="'Search Merchant'" FullSelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='DIV' class='ngx-select__toggle btn form-control' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='DIV' class='ngx-select__toggle btn form-control' type='' aaname='' check:text='Search Merchant' /&gt;" Guid="cb749083-b1ab-476a-83cc-dbd92b826cea" ImageBase64="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" InformativeScreenshot="ec486583a6ceff25fd6d380d63417e3c.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/IjwmsWty20iBcgQd_IsXdA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,254" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" ContentHash="ZSkmfjBALESnGieyvr6yZw" CvTextArea="229, 238, 81, 11" CvTextArgument="Search Merchant" CvType="Text" DesignTimeRectangle="291, 307, 947, 51" DesignTimeScaleFactor="1" FriendlyName="'SearchMerchantInput'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' parentid='selectMerchantId' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' parentid='selectMerchantId' type='text' class='ngx-select__search form-control' aaname='' /&gt;" Guid="1ce6b5a6-c132-4aa7-97d2-af28fae52a78" ImageBase64="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" InformativeScreenshot="3b78b32a87197c137ac34ab9e6c393e8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/7AIIwkd3gEuAbLWJLZSCxw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_155">str_in_MerchantID</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                          <uix:NTypeInto.VerifyOptions>
+                            <uix:VerifyExecutionTypeIntoOptions DisplayName="Label 'MerchantName''" Mode="Appears" Retry="True">
+                              <uix:VerifyExecutionTypeIntoOptions.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" ContentHash="uQ1NetmcyE2BPfGyn3Op_Q" CvTextArea="300, 372, 262, 21" CvTextArgument="QA Fee Test (6280888815760052)" CvType="Text" DesignTimeRectangle="292, 367, 945, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Label 'MerchantName''" FullSelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='A' type='' class='ngx-select__item dropdown-item ngx-select__item_active active' aaname='QA Fee Test (6280888815760052)' check:innerText='QA Fee Test (6280888815760052)' /&gt;" Guid="d36fc10d-69a1-47f4-8ec7-fa3183370694" ImageBase64="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" InformativeScreenshot="074d9745799dc08b0df0ec17f321c04b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/HbRgC-g5W0-DBDkWxO-FWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:VerifyExecutionTypeIntoOptions.Target>
+                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            </uix:VerifyExecutionTypeIntoOptions>
+                          </uix:NTypeInto.VerifyOptions>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Label 'MerchantName''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Text="%[k(Enter)]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" ContentHash="uQ1NetmcyE2BPfGyn3Op_Q" CvTextArea="300, 372, 262, 21" CvTextArgument="QA Fee Test (6280888815760052)" CvType="Text" DesignTimeRectangle="292, 367, 945, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Label 'MerchantName''" FullSelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='A' type='' class='ngx-select__item dropdown-item ngx-select__item_active active' aaname='QA Fee Test (6280888815760052)' check:innerText='QA Fee Test (6280888815760052)' /&gt;" Guid="d36fc10d-69a1-47f4-8ec7-fa3183370694" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA7UAAAAiCAYAAACA0v5TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA1qSURBVHhe7Z2/SyPdGsf9l7baaru3Sme13a1kCzthwS0WYUGLRZDrFmkELSJcQQsthDSxCChcLUQs9L1vVpNsoiSaqwkaQ1See57zY+bMmZlkdKO+uXwf+MC7MycnM+eML/PJc36MfPr0iWqXV4RAIBAIBAKBQCAQCMSwBHss++zI2dkZpBaBQCAQCAQCgUAgEEMV7LHssyPValX+493nYwAAAAAAAAAAYChgj2WfHalUKpBaAAAAAAAAAABDBXss++zIr1+/ILUAAAAAAAAAAIYK9lj22ZFyuQypBQAAAAAAAAAwVLDHss+OlEolSC0AAAAAAAAAgKGCPZZ9dqRYLEJqAQAAAAAAAAAMFeyx7LOQWgAAAAAAAAAAQwek9v+A8XybLmrXlIo4B8DgKFG2dk97m6cR5wAAAAAAAHgbPKk9PT19ttR++FGl+fw1bR3d0PbhNS2vV2j0S3RZ5v3cGa0e3tJB8Za2d+s09i26HOhPav2WWvRIJ/tVSC14ccZ3O9ShB9pbL0SeBwAAAAAA4LVhj2WffZ7Ufi3S9G6bLigcnWabVldO6X3oc3/SWI5FTEe3QxuZE6dMBOJlOj74JTviM4NASmP/ONmN+OxLM1OjvbZo6+JlSGhTmQZt1x6o0+WrE23snl9r0nHzQV67jO6DEONz+hhR7qT9qAuJaHdpL+8KdJmWjzpWOz1Sq9ak6Rm7zBPqKnTDdc3ZZQZbl+HjypVss4tCLeJ8gbINXY0TLVle9UWvcJ+Rfn30bkGd90L3UaivZV+6bVEOlOl1ffZ1jedv+rRrgZYr4nz7lma9YwAAAAAAALwdntSenJw8UWoLNLlzFxS+7qN4NbeifUerrrB+E6JRtF7UhWhUxYv6qF0mCi21F8UmZfddrmg2HfGZQZCu0ar9XULe+Erc61hcifjss9DykUAaxvbZhrqUde6dhyPLfune0/FRkzZyZ0FZXbimE/5ou0PbO3Wa3FQyx3FxdOaXSwfLTeeadCDl6ZEOcn6mburoXh7jNllcq9OqFtxO7ZrGnljXbIGvI1wXNVo0/hJ18XOcawWkUEmqOW/Q/dJsB/qdWV0vifMFGluq0mQmzKJ83oP91LePPp/RdlOdP9i/pGmvjx6FhPL36XIzDTqObAv3hx7RZuJop3YTun7z7KqsvyjD95g7D7Trcd7KzC60qCqOVvet6wAAAAAAAOCNYI9ln32y1P6xcEkHXubngY53xUv5FzW0eKOiBImjVbmiCStjl1q6omM3YyQkY/rHn4H6Q2ipfZOMqI1+8X+560gqtVp6RPsGMnda+Dq1Jk06mVLDfJFFpUtbC/bxOh1IObqlaX1s7JAPsCha5WZE/4mjVGnoY+I54GKNpi+wAiW697SdUf9+Wl2tV6vLy8RLKbyRshYttUoKo8/1QrVrIJueoI/e5dryx5OgOOo+b97QpD7mtcWmKSMItYVgrd9zW1KZ6G6bFu1rSjdlm1DtOlxWXMeUdwwAAAAAAIC34ZlS+5efaRLBGbnJ7/750ZWmyqRxcLZ26S99rkCTck6eG0Iy1osRQ5Utkkrt3DlleUinLC1CyMqWu7BNkjJx9JTaU5re71DL3LuQ/ZPDupMldYaUtu/p2AwpjRhiHStRmRs57Lu6H5zbOCmlLZy9tVmtPFKncePJq2GjJj5qybSqy834aVk0kmOu49DJ2jntlKiuzw0lYwGBMuImPrum/j3Iut6lz2l2xfR9D3GdUXLntnc/VDZdPN9WJj9JH5kyW04ZlX32hyovV7iYEFGrDP+dSem0fqBQ/eG2mc05bTfEc1Fx/x+gf2SJbEfrxwEAAAAAAADeiOdJ7ZcizcqXbhXu8OH3QhplRknGPW2ta2n4fiZkUg/z7HZp+9AfvnxRuKSxr34dIZJIrZ5j6g/ZvNbDJy2pSFKmF7FSWwgNd90o3ktx9of0Wt+9q4b97gmR4M/IIaVzZZrMNFQGvN2m5UyVJtIxEiXbw5UULTPNOzVXU/ynjCTSrrN7nWLdP6aHKXc4k87zUGdKtKjv0RuOGtce7vEkdXlt+EAHeh7nR/MDiZ0VHGRdAXpIrb6fTttu16i5qzY6sxrIYifrI1de4467P0QYQsf1309LXL+JjvjO7FofSV8xP570/tECAAAAAACAt8KT2p8/fyaX2q9CIrx5sUIkdsr0wT7/vSpeqrW8snjlSjIL+3GtRVWWChE89HLaCByHkLjFBZPRjSAii2nCvFirrBiJ67Fe1J2hmEnK9CTuZT6th2kGhgMXaJUzaXRHy/zvH6pMQJpmuA0ehUyatk82/DhaevRnOYSw8BzL+R1e+IcP9JL2guhP7i93SDIvQqSkxg/V316ZpFIr6FuXpCwzyYEQEhpedGpwdfn0kFo9HLjDMspzUQ/b+lnmHxaixTC1cyfOO0ODE/bRoKV2QmZWxb3VbmmLr99b2KtLWafPfcq0FTUkmUmrebWtwnnwOAAAAAAAAK8Meyz77Ei9Xv8Nqa3QH/b5KKkNZHc5M3lGo9/KVj0P4XpstNRWD8ML8Yzr1Wzli7wRSI/gUMwkZfzjEcRJnL6+43zweEpKtGgDOdzVCM0DnRQ4m1sOrTY8EKnlz9oSorNtgSysB2c0uV+4TxwpdBaUkgsHyczyvS9ySaU2SV3WtUQtOuUt7jTIugL0kFpm7tQZSq7Ejofm+j9kGPz5r8GscLI+GrTUMilx/fZ1prSoR99vWf8Nx0l7n7YCAAAAAADglWCPZZ99mtT2GX7Mc1a3vOHHXTn8+EO6TnveMfFa3n6gi+aDNf9UHKtcxy+co6UxJE8eFes7I0K+4CcpE1W3RYzETRz67REOFgNdlufzVu6t+36kaqFh3fcApNaZ/xh/3Ow7KsTvqBYSM7OgVHDup5G1llqsKKHUJqpLZ7td+TYZT/ODwSDrCvJUUfN/DAn11aYSxsCIAEmyPnoJqQ0Tdy3+0O1w9tsAqQUAAAAAAH8Pnie1n//zhIWi2rS88JPGc3752Oh2KLsSs2dtX6k1L/JqLqqbzZ1cKklpS1Imqm6POImT16fmb4bqzVRoLELWU+kzWjzqSvnx5UuLxrOk9lx91lnxN05elNAqMYm6757CZL5bLxR1cVQNlDHDdU07JaqrjyCboa6DrCtIvKhN5ZqUzYf3iI2+Fn8l4fnAcSZZH6mFosILMalh4n6/y4WiQiMPSmrYsLguNfKgRLM7TdrYdAU16rnokbm3SZvhx5BaAAAAAADwtjxTasNb+hzsnNFo3JY+/wzuTduqtemg6GPvEVo9jNmzNoHUetu1OHNHU5kzLxOapExP4mRJDx8N7PPKzFRpKqOzdfIenK1oQmKRTGqNRLur2aospnN/Cy15bbaAmD1J44SWMcK0GmgXnRH1hElvBRS5pY+/em+iujxBDrahyq76bT7IuoLES62SSec7zVxs0XeBNox7FjSJ+khneiO39LGEWM0Rj97Sh7cRUse05LpDofV12vdrMvc9hZaJ+zsAAAAAAADglXm21HJGZ2KnT/a126Xs2qkQRvGSbTK33Q6tGsmT/Eljm7fy5VpG44Zmo/asTSC1oZWNM9Y8SiHX/0haphexL/NmyKaZw1n1FwDqChn6IcrMNFQ7iHbZ26nT5NolZUMrJBd0xlGU2W/S6rqz6qwhZksfsweq+Q7/Gjq0saDKGKHl1YPnQ1lla8VlU67ZpmzuXK7WrLYjCkqPElhxDxW+73NaPPTnrnqim6iukrh3Fr4HOjm6Etcm6tpv0wXfD0u+EcpB1hWgx5BaM+dVf6ecxyt/jHHnnPqLgwWl2yJBH3kCK+T3mJ9T8axsefdoPRPuM7VpVvMO/uCRyt/J56xVu6HVTfvZ9L/Ty9wXr2gq4rkwc9cZbOkDAAAAAAD+LvyG1Aq+Fml6V4iCeL2NCt4LdX6hSFP6ZVke48yt87L/Pl3XL/Ac97S3qVZLtsskklrG3YO2y1LTCC4MlKRMHLFSy7j71D5KiVj2REXIRaZBe43e351av/FWib44iltdVktPYLVlhfoOFhsVvGKvvXWLku/4sKXu41pTyI9fV2BfXY9TmmeRDdx3M7TKcKK6Zqq0XOjKNlYRbsNB1+XTQ2oFKec7eUucbXdLH714VPSiXD79+kgyV5ciG3hWQm3PdV0JkbX6NGarofH8LVVZZHW0nO9UP6bEh//M6x9eYrdGAgAAAAAA4PX4PanVfJir0Gz+mraObumgeOcJmYz2Hf1777/0r3yDlvOXNJs5DQureEkeX7sU53WZpagywEUNPe06CyYB8MKkm1LcQ3vXAgAAAAAA8AYMRGpdRpcuaVtnoVrFa5qaixhODH4fPZSa50662TsAXga9pzEP4Y48DwAAAAAAwOvyIlLLvJ+r0nyuThPfIbQviZofm2BhHwAGgJp3G7d3LQAAAAAAAK/Pi0kteD14e6ULdwVeAAZOibI1nvN+GnEOAAAAAACAtwFSCwAAAAAAAABgaIHUAgAAAAAAAAAYWiC1AAAAAAAAAACGFkgtAAAAAAAAAIChBVILAAAAAAAAAGBoCUktAoFAIBAIBAKBQCAQwxKQWgQCgUAgEAgEAoFADG0oqa3T/wB9IqE0/0OZqAAAAABJRU5ErkJggg==" InformativeScreenshot="074d9745799dc08b0df0ec17f321c04b.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/HbRgC-g5W0-DBDkWxO-FWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="passedStep_8" str_in_actualStep="Clicked on merchant search field">
+                          <cr:passedStep.Expected_Result>
+                            <InArgument x:TypeArguments="x:String" />
+                          </cr:passedStep.Expected_Result>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:passedStep.str_in_expectedStep>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">str_StepName</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_expectedStep>
+                          <cr:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">int_in_ReportId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_reportId>
+                          <cr:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">str_in_TestId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_testId>
+                        </cr:passedStep>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_38">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">"Entered the merchant id"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_39">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">"Enter opertion perfome after Entered the merchant name"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_40" />
+                    </If.Else>
+                  </If>
+                  <If sap:VirtualizedContainerService.HintSize="410,1143" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">!string.IsNullOrEmpty(str_in_FirstName)</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,961" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvElementArea="234, 426, 155, 28" CvType="InputBox" DesignTimeRectangle="311, 417, 204, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' type='text' parentclass='input-group w-auto' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' type='text' parentclass='input-group w-auto' class='form-control ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="d3f42b95-5158-4d8a-bf00-943c49e0ea62" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANAAAAAnCAYAAAB+M8bVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMiSURBVHhe7d39SyJBHMfx+/ODfugHQY6EoDCouy4TFlQSRRCUIxYMtJbzAcsoOenBEPNa+Nx3dsdtFXu4ZpPj7vOCAWdXr/vBNzM7EH0CEb0bAyIyEAQ0mUzQbrXgnJ5ycHC8MM7OztAf3HgjCEjFMxwO9YyInqMiUvGMf7lPAamLRPQ6BkRkgAERGWBARAYYEJEBBkRkgAERGWBARAYYEJGBfzOgnxXE0yd6QvRxog1o1EF2P4XVz1+wImN1MwPrx52+uUQMiJYkwoD6yCdT2LJ7uH9Ucxfj6yYsufat7XrvWBoGREsSYUAn2E5WcKVngYsyYpajJxN0qznE9AoV2z9CT98BBrAt62n1SpbQGOlb+t+2qxmsyb14qS/XXAzqRcQT0/cXYV/rUHVAvdDPih82ce/fJYpMpCtQNpmG1X5+y3ZfyyGedXDrrVBj9Gw1b3r3uoW0hNHVq9cEt/U81vZr8i5FApII1gsd3Hpz0S5iLVmGM1TRyPvbZcQ3y+iqeyqgjRQ2Ck3/Zz325P+2JyuhukkUnQgDEtNnoISFrcIRnCv/6++TwHaKaOiZ71K+2Pm5a1PhFU1eJ8KfdXGcllgv9NTjopHNoXItL1VA86thXWL1Vi6i6EQb0NTDAK16Bbs7EtNOGS1vK+avImo7NTvyOPY+dIdGIYOY3pJ5IxzQTBBqtZt+boFFz0CneQZEkfuYgAKubMXkOeSwI6/nI5iltnAxq4beaKKvzK1ADIj+QtEFJF/QWOlST0KCL3MP1mYG34ODgTAVRA62nvleCmjRFk4itMs4Vr9Iy4BoSaIL6MHBrjy479anx9jy7D5sIvs1hfXqjTcfVC3ZlqkHf7XKuBhf1XBQauLRC2IPW3ZfXouHS1TSqRe2cOK1QwQGREsQXUDKUB0ipIOj6JWEhe1qJ3R8rI+xFx09j5o4SO7pz6UlRCe0Ki0ISKJ77Rh7BgOiDxBtQET/GQZEZIABERlgQEQGGBCRAQZEZIABERlgQEQGGBCRAQZEZIABERlYGBD/PhDR2ywMiH+hjoPjbeP8/NwLSI0gICL6cwyI6N2A33yG1o73mIC1AAAAAElFTkSuQmCC" InformativeScreenshot="c9409936456ea059dcb7112b569e1118.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">str_in_FirstName</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                        <cr:passedStep Actual_Result="Searched name highlighted with yellow colour" Expected_Result="Searched name should be highlighted with yellow colour" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_actualStep="Search the  customer name in the search box">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:passedStep.str_in_expectedStep>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">str_StepName</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_expectedStep>
+                          <cr:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">int_in_ReportId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_reportId>
+                          <cr:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">str_in_TestId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_testId>
+                        </cr:passedStep>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_40">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_168">"Entered user first name"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" DesignTimeRectangle="515, 417, 40, 35" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' parentclass='input-group-prepend' /&gt;" FuzzySelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' parentclass='input-group-prepend' tag='SPAN' type='' aaname='' /&gt;" Guid="93bf54d8-0a07-4623-aa19-2a89cbd7fd06" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAnCAYAAAB0Q6rCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHNSURBVFhH7dlBS8JgHMdxX1BvJi8eRYQIIogOeihKhDzsIkh2EErYQehgIZ5EKEYd9GCIeRhkYRJmOWimokTxa49OU3usqc9TChO+Hvbf4LOH+SBqOb8DRnttY25fiwdeyu5gOR/Gabbe77b8gidlvuq9LOSNoAk0cfPR6bn+jtbb/GSCeWeCeWeCeWeCeccP3FShqKQGfT5lzMFKQYLg9sJq3/3KKUBIFqBQzp80puDS5REcg9CRbHsSSpTrJokduCzBpcMcfgm5aluftbUbiWDF2Z2txYrD100YM3DmUF9FIY1HylxJi7CRG3KKuGh+nxuNEbiA0GoXHLymzUlGzvk9RuA8gmT17AHEy7Q5qYK4Z27ARRxvdjFCuvfsjibrK+xDSKbNjcXsGc6Jvg7Y6klQd4JS8kB/hiPIUOZGYwZuVdPw6DuBbTuK1H0DNe14TX1ASgx0sVquZIV+vcHYgbUUOYoNHT0+L7ZmQDMFd6rKONkX+itKsrlDCF8VkPDPjmYPHqimfY8gj0X/mKrtJvqHc1o0VzC1QfR6DDLtnB/6ezBJlREWRJyN3bPH9z/gGTLBvDPBvDPBvDPBvBsCE+xC/QK/cP9xLBYY+AT4aGJu5IUNWwAAAABJRU5ErkJggg==" InformativeScreenshot="c12ebea3ce1bc7ce5e69aacb2af7754c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_41">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_171">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">"Clicked on searched icon after enter the user first name"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42" />
+                    </If.Else>
+                  </If>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="556,163" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch-SearchMethod-if you serach with merchant id then use(Search with merchant and user) else (Search with user)" sap:VirtualizedContainerService.HintSize="494,52" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                          <Switch.Expression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">str_in_SearchMethod</CSharpValue>
+                            </InArgument>
+                          </Switch.Expression>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence x:Key="Merchant and User" DisplayName="Search transaction with merchant id and user name " sap:VirtualizedContainerService.HintSize="450,2237" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">"Searche transaction with merchant and user switch case name -(Search with merchant and user)"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvTextArea="229, 238, 81, 11" CvTextArgument="Search Merchant" CvType="Text" DesignTimeRectangle="220, 226, 1112, 38" DesignTimeScaleFactor="0.75" FriendlyName="'Search Merchant'" FullSelectorArgument="&lt;webctrl visibleinnertext='Search Merchant' class='ngx-select__toggle btn form-control' parentid='selectMerchantId' /&gt;" FuzzySelectorArgument="&lt;webctrl visibleinnertext='Search Merchant' class='ngx-select__toggle btn form-control' parentid='selectMerchantId' tag='DIV' type='' aaname='' check:text='Search Merchant' /&gt;" Guid="1ce6b5a6-c132-4aa7-97d2-af28fae52a78" InformativeScreenshot="15fb3da3484cc55bdb2d7a9b3974ff91.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">str_in_MerchantID</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Clicked on merchant search field">
+                              <cr:passedStep.Expected_Result>
+                                <InArgument x:TypeArguments="x:String" />
+                              </cr:passedStep.Expected_Result>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep.str_in_expectedStep>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_140">str_StepName</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_expectedStep>
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"Entered the merchant id"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Test'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Text="%[k(Enter)]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvTextArea="229, 238, 23, 11" CvTextArgument="Test" CvType="Text" DesignTimeRectangle="220, 278, 1112, 38" DesignTimeScaleFactor="0.75" ElementType="InputBox" FriendlyName="'Test'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='INPUT' type='text' class='ngx-select__search form-control' aaname='' /&gt;" Guid="f022af86-d220-44ad-95aa-97a1291d20e8" InformativeScreenshot="f2f748d265af15d78b114514229b172e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">"Enter opertion perfome after Entered the merchant name"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvElementArea="234, 426, 155, 28" CvType="InputBox" DesignTimeRectangle="235, 427, 152, 26" DesignTimeScaleFactor="0.75" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="d3f42b95-5158-4d8a-bf00-943c49e0ea62" InformativeScreenshot="7fdefc8a7cb02012b2106fec2f8a7f49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">str_in_FirstName</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <cr:passedStep Actual_Result="Searched name highlighted with yellow colour" Expected_Result="Searched name should be highlighted with yellow colour" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Entered user name">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep.str_in_expectedStep>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">str_StepName</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_expectedStep>
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Entered user first name"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" DesignTimeRectangle="388, 427, 31, 26" DesignTimeScaleFactor="0.75" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' /&gt;" FuzzySelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' tag='SPAN' type='' aaname='' /&gt;" Guid="93bf54d8-0a07-4623-aa19-2a89cbd7fd06" InformativeScreenshot="e5ba73f62d3cc3558f3e4522f25b33af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <cr:passedStep sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Clicked on view icon button">
+                              <cr:passedStep.Actual_Result>
+                                <InArgument x:TypeArguments="x:String" />
+                              </cr:passedStep.Actual_Result>
+                              <cr:passedStep.Expected_Result>
+                                <InArgument x:TypeArguments="x:String" />
+                              </cr:passedStep.Expected_Result>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep.str_in_expectedStep>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">str_StepName</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_expectedStep>
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_120">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Clicked on search icon after enter first name"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                          </Sequence>
+                          <Sequence x:Key="User" DisplayName="Search with user,MID, etc." sap:VirtualizedContainerService.HintSize="450,988" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" CvElementArea="234, 426, 155, 28" CvType="InputBox" DesignTimeRectangle="235, 427, 152, 26" DesignTimeScaleFactor="0.75" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="d3f42b95-5158-4d8a-bf00-943c49e0ea62" InformativeScreenshot="7fdefc8a7cb02012b2106fec2f8a7f49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">str_in_FirstName</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <cr:passedStep Actual_Result="Searched name highlighted with yellow colour" Expected_Result="Searched name should be highlighted with yellow colour" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Search the  customer name in the search box">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep.str_in_expectedStep>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_143">str_StepName</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_expectedStep>
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Entered user first name"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/realtimetransaction" DesignTimeRectangle="388, 427, 31, 26" DesignTimeScaleFactor="0.75" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' /&gt;" FuzzySelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' isleaf='0' tag='SPAN' type='' aaname='' /&gt;" Guid="93bf54d8-0a07-4623-aa19-2a89cbd7fd06" InformativeScreenshot="e5ba73f62d3cc3558f3e4522f25b33af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Real-Time Transaction' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">"Clicked on searched icon after enter the user first name"</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </Switch>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="c33f3f30da36ad23942a031cd286d7a3.jpg" Selector="&lt;html app='chrome.exe' url='https://payments2.deluxe.com/gateway/*' /&gt;" Title="Dashboard" Url="https://payments2.deluxe.com/gateway/*" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="450,551" sap2010:WorkflowViewState.IdRef="Sequence_38">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_36">
+                <ui:LogMessage.Level>
+                  <InArgument x:TypeArguments="ui:LogLevel">
+                    <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Level>
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_145">exception.Message</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <cr:failedStep Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_expectedStep="Step">
+                <cr:failedStep.Actual_Result>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">exception.Source</CSharpValue>
+                  </InArgument>
+                </cr:failedStep.Actual_Result>
+                <cr:failedStep.str_in_actualStep>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">"Exception caught in Transaction Search in Realtime Transaction "+exception.Message</CSharpValue>
+                  </InArgument>
+                </cr:failedStep.str_in_actualStep>
+                <cr:failedStep.str_in_reportId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">int_in_ReportId</CSharpValue>
+                  </InArgument>
+                </cr:failedStep.str_in_reportId>
+                <cr:failedStep.str_in_testId>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">str_in_TestId</CSharpValue>
+                  </InArgument>
+                </cr:failedStep.str_in_testId>
+              </cr:failedStep>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
