@@ -18,13 +18,14 @@
     <x:Property Name="StepName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_PaymentMethod" Type="InArgument(x:String)" />
     <x:Property Name="str_in_TesID" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_Amount" Type="InArgument(x:String)" />
   </x:Members>
   <this:Verify_the_customer_details.int_in_ReportId>
     <InArgument x:TypeArguments="x:Int32" />
   </this:Verify_the_customer_details.int_in_ReportId>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1264.6666666666667,6146</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1264.6666666666667,7044</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -146,7 +147,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Verify_the_customer_details" sap:VirtualizedContainerService.HintSize="1274.6666666666667,6081.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Verify_the_customer_details" sap:VirtualizedContainerService.HintSize="1274.6666666666667,6979.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Customername" />
       <Variable x:TypeArguments="x:String" Name="str_SelectedPaymentMethod" />
@@ -169,15 +170,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1212.6666666666667,5970.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1212.6666666666667,6868.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1174,5731.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d2824872-d3b9-4ded-ad84-f6e5fd6268bb" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1174,6629.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d2824872-d3b9-4ded-ad84-f6e5fd6268bb" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1140,5512" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1140,6410" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2445,12 +2446,59 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <Sequence DisplayName="Enter Amount" sap:VirtualizedContainerService.HintSize="1078,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                <Sequence DisplayName="Enter Amount" sap:VirtualizedContainerService.HintSize="1078,1005.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_64">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <If sap:VirtualizedContainerService.HintSize="410,889.3333333333334" sap2010:WorkflowViewState.IdRef="If_16">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_430">string.IsNullOrEmpty(str_in_Amount) == false</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,705.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Total *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d2824872-d3b9-4ded-ad84-f6e5fd6268bb" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="300, 552, 503, 40" CvType="InputBox" DesignTimeRectangle="303, 554, 500, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT Total'" FullSelectorArgument="&lt;webctrl id='Total' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Total' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-invalid' aaname=' Total *' /&gt;" Guid="fccf5c76-72ac-43e7-96bc-afbc024b8ee8" InformativeScreenshot="b12acb9c05f04b0d439130a59c739add.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CvTextArea="300, 525, 49, 16" CvTextArgument="Total *" CvType="Text" DesignTimeRectangle="303, 524, 500, 20" ElementType="Text" FriendlyName="'Total *'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='LABEL' type='' class='dpp-label' aaname='' check:innerText='Total *' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_431">str_in_Amount</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                        <cr:passedStep Actual_Result="Entered Amount in Amount field" Expected_Result="Able to enter amount in Amount field" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_29" str_in_actualStep="Enter Amount in Amount field" str_in_expectedStep="Step ">
+                          <cr:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_432">int_in_ReportId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_reportId>
+                          <cr:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_433">str_in_TesID</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_testId>
+                        </cr:passedStep>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_66" />
+                    </If.Else>
+                  </If>
                 </Sequence>
               </Sequence>
             </ActivityAction>
