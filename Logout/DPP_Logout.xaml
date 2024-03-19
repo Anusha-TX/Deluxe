@@ -116,6 +116,8 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="1212.6666666666667,3050.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -140,6 +142,12 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ca:ReadBrowserValue sap:VirtualizedContainerService.HintSize="1050,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadBrowserValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <ca:ReadBrowserValue.str_out_BrowserValue>
               <OutArgument x:TypeArguments="x:String">
                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_BrowserValue</CSharpReference>
@@ -158,7 +166,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="10" DisplayName="Click 'Click User Profile'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click User Profile'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="DkL7wblxC0-ZK1_eEKomUg" DesignTimeRectangle="1185, 162, 31, 31" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'Click User Profile'" FullSelectorArgument="&lt;webctrl parentid='userProfileDD' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='userProfileDD' tag='IMG' type='' class='rounded-circle' aaname='user' /&gt;" Guid="b2fb8b3a-6575-4aa9-8afd-2cb97addd228" ImageBase64="" InformativeScreenshot="6ce1139808121c94c7e2f3fe25c2fdca.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/LNHecXFwzE667_-lsWOvTw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -183,7 +191,7 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Logout''" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Logout''" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" ContentHash="LFGf-VSgOUeny3SYtsDdoA" CvTextArea="1584, 480, 52, 19" CvTextArgument="Logout" CvType="Text" DesignTimeRectangle="1538, 466, 394, 46" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FriendlyName="'Click 'Logout''" FullSelectorArgument="&lt;webctrl aaname='*Logout*' parentid='userProfileDD' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Logout ' parentid='userProfileDD' tag='A' type='' class='dropdown-item ng-star-inserted' check:innerText='Logout' /&gt;" Guid="2492628b-ffc8-406a-b078-c774ea090239" ImageBase64="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" InformativeScreenshot="8e55ff02fec7dd00e8972a479e8f14e8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/XI9C1WO4OE2qqwQjd3srig" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.PointOffset>
