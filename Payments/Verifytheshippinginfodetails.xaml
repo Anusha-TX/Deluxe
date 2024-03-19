@@ -1,0 +1,1460 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Verify_the_shipping_info_details" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="str_in_testId" Type="InArgument(x:String)" />
+    <x:Property Name="str_StepName" Type="InArgument(x:String)" />
+    <x:Property Name="int_in_reportId" Type="InArgument(x:Int32)" />
+    <x:Property Name="str_Url" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_shipping_Method" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Verify_the_shipping_info_details.str_in_testId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_the_shipping_info_details.str_in_testId>
+  <this:Verify_the_shipping_info_details.str_StepName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_the_shipping_info_details.str_StepName>
+  <this:Verify_the_shipping_info_details.int_in_reportId>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Verify_the_shipping_info_details.int_in_reportId>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>822,3408.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>CommonLibrary.Report</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>CommonLibrary.Asset</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>CommonLibrary</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="708.6666666666666,3344" sap2010:WorkflowViewState.IdRef="Sequence_24">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="646.6666666666666,3233.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Verify_the_shipping_info_details" sap:VirtualizedContainerService.HintSize="608,2994.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ca:ReadBrowserValue sap:VirtualizedContainerService.HintSize="546,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadBrowserValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ca:ReadBrowserValue.str_out_BrowserValue>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">str_BrowserValue</CSharpReference>
+              </OutArgument>
+            </ca:ReadBrowserValue.str_out_BrowserValue>
+          </ca:ReadBrowserValue>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="546,2646.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2479.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="str_get_shipping_method" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Up" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="450,240.66666666666666" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+                    <uix:NMouseScroll.SearchedElement>
+                      <uix:SearchedElement>
+                        <uix:SearchedElement.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="350, 453, 211, 17" CvTextArgument="Enter alternate shipping address?" CvType="Text" DesignTimeRectangle="351, 452, 210, 20" DesignTimeScaleFactor="1" FriendlyName="'Enter alternate'" FullSelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='B' aaname='Enter alternate shipping address?' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='B' aaname='Enter alternate shipping address?' type='' class='' check:text='Enter alternate shipping address?' /&gt;" Guid="1bd81d78-6d1a-41d8-bc9c-79e8da52e26c" ImageBase64="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" InformativeScreenshot="eddf891c935322bca6bdf0522dd761f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:SearchedElement.Target>
+                        <uix:SearchedElement.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:SearchedElement.Timeout>
+                      </uix:SearchedElement>
+                    </uix:NMouseScroll.SearchedElement>
+                  </uix:NMouseScroll>
+                  <uix:NCheckState DisplayName="Check App State 'Shipping Method'" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Timeout="5" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,469" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 499, 43, 23" CvType="Button" DesignTimeRectangle="301, 502, 40, 19" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' type='' aaname='' /&gt;" Guid="d4283d03-feeb-4ae9-9788-dc2c26bd0f9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGxSURBVFhH3ZaxjoJAFEX3lzCUNJYmFjYmVFZ8gzGxMZT29H6KDX9grCysrewtnjmGN3kLOsoO6+KeZBIzMMNxuG+YL/kw/pfw8XiU+Xwuw+FQBoOBRFH0Ky1JEpnNZlIUxe2ZPh4KLxaLu5O/o63X68qiSUP4dDrJZDJxg0ejkWw2GzkcDnK5XG6N3/RxjXviOJbtdlvN0J7z+SxlWcpqtXLPZcVxqdMQnk6nblCe5zfBR3CNe1R6v99XV37ObreTNE2ddJ1vwrwKK/sqKp1lWdUTBiuu0vV4OGHCrrK8at/K1uFejUdINCystPrYQnTCVKjeQD7bwhjGLpfLqicczTRuihMmLypMUbWFMYwdj8dVTzgUInPaLDth9kIVbhMHhTGMpfi6giwzJ26KE1bZPgmDOil3V7gvkfCusM1wX4rOm2G7S/RhWwPvLmH3Ydpffjjg6T4M+qXTkxkivpXmmsp29WmGl750imZZpXnV5JOiQpDGb/o0BqGHH0urswRwQrIF+KwRg9CVDTqtKfYg9O5Wj4HloTAQdiqUf2v36a4bc/MMnmUL7B5e4T7yYcIiV+EjZy9aW2oAAAAAAElFTkSuQmCC" InformativeScreenshot="7cffb13b19620e48241585af306ea75e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 499, 43, 23" CvType="Button" DesignTimeRectangle="301, 502, 40, 19" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' type='' aaname='' /&gt;" Guid="d4283d03-feeb-4ae9-9788-dc2c26bd0f9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGxSURBVFhH3ZaxjoJAFEX3lzCUNJYmFjYmVFZ8gzGxMZT29H6KDX9grCysrewtnjmGN3kLOsoO6+KeZBIzMMNxuG+YL/kw/pfw8XiU+Xwuw+FQBoOBRFH0Ky1JEpnNZlIUxe2ZPh4KLxaLu5O/o63X68qiSUP4dDrJZDJxg0ejkWw2GzkcDnK5XG6N3/RxjXviOJbtdlvN0J7z+SxlWcpqtXLPZcVxqdMQnk6nblCe5zfBR3CNe1R6v99XV37ObreTNE2ddJ1vwrwKK/sqKp1lWdUTBiuu0vV4OGHCrrK8at/K1uFejUdINCystPrYQnTCVKjeQD7bwhjGLpfLqicczTRuihMmLypMUbWFMYwdj8dVTzgUInPaLDth9kIVbhMHhTGMpfi6giwzJ26KE1bZPgmDOil3V7gvkfCusM1wX4rOm2G7S/RhWwPvLmH3Ydpffjjg6T4M+qXTkxkivpXmmsp29WmGl750imZZpXnV5JOiQpDGb/o0BqGHH0urswRwQrIF+KwRg9CVDTqtKfYg9O5Wj4HloTAQdiqUf2v36a4bc/MMnmUL7B5e4T7yYcIiV+EjZy9aW2oAAAAAAElFTkSuQmCC" InformativeScreenshot="7cffb13b19620e48241585af306ea75e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 499, 43, 23" CvType="Button" DesignTimeRectangle="301, 450, 40, 19" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseCustomerInfo' tag='SPAN' visibleinnertext='Enter alternate shipping address?' /&gt;&lt;webctrl class='slider' parentid='collapseCustomerInfo' tag='SPAN' type='' aaname='' /&gt;" Guid="d4283d03-feeb-4ae9-9788-dc2c26bd0f9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGxSURBVFhH3ZaxjoJAFEX3lzCUNJYmFjYmVFZ8gzGxMZT29H6KDX9grCysrewtnjmGN3kLOsoO6+KeZBIzMMNxuG+YL/kw/pfw8XiU+Xwuw+FQBoOBRFH0Ky1JEpnNZlIUxe2ZPh4KLxaLu5O/o63X68qiSUP4dDrJZDJxg0ejkWw2GzkcDnK5XG6N3/RxjXviOJbtdlvN0J7z+SxlWcpqtXLPZcVxqdMQnk6nblCe5zfBR3CNe1R6v99XV37ObreTNE2ddJ1vwrwKK/sqKp1lWdUTBiuu0vV4OGHCrrK8at/K1uFejUdINCystPrYQnTCVKjeQD7bwhjGLpfLqicczTRuihMmLypMUbWFMYwdj8dVTzgUInPaLDth9kIVbhMHhTGMpfi6giwzJ26KE1bZPgmDOil3V7gvkfCusM1wX4rOm2G7S/RhWwPvLmH3Ydpffjjg6T4M+qXTkxkivpXmmsp29WmGl750imZZpXnV5JOiQpDGb/o0BqGHH0urswRwQrIF+KwRg9CVDTqtKfYg9O5Wj4HloTAQdiqUf2v36a4bc/MMnmUL7B5e4T7yYcIiV+EjZy9aW2oAAAAAAElFTkSuQmCC" InformativeScreenshot="a3571181ae5d03731fb7572bb121c87a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="298, 487, 124, 19" CvTextArgument="Shipping Method" CvType="Text" DesignTimeRectangle="300, 486, 318, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Shipping Method'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='LABEL' visibleinnertext='Shipping Method' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='LABEL' visibleinnertext='Shipping Method' type='' class='dpp-label' aaname='' check:text='Shipping Method' /&gt;" Guid="177d3f0c-9d33-41ca-b77e-06585f9eee93" ImageBase64="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" InformativeScreenshot="a09da1d347dee2f909c02b7109654467.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <Sequence DisplayName="Veryfing the shipping info" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_get_firstname" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_lastname" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_country" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_address" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_state" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_city" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_Zipcode" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_Email" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_phone" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_shipping_country_code" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DisplayName="Get Text 'bhanu'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="646, 524, 322, 39" CvTextArea="656, 536, 46, 15" CvTextArgument="bhanu" CvType="InputBox" DesignTimeRectangle="648, 526, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'bhanu'" FullSelectorArgument="&lt;webctrl id='BillFirstName' tag='INPUT' aaname='First Name' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillFirstName' tag='INPUT' aaname='First Name' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' /&gt;" Guid="db4a28e6-3090-423c-8fe8-d7e6f0492522" ImageBase64="" InformativeScreenshot="d28787c37681a3a75029104d2ef1c72b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_get_firstname</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">!string.IsNullOrEmpty(str_get_firstname)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"User given first name is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given first name should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">"User given first name is displayed in shipping info details as "+str_get_firstname</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given first name is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given first name should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"User given first name is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'chandra'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="995, 524, 322, 39" CvTextArea="1004, 536, 59, 15" CvTextArgument="chandra" CvType="InputBox" DesignTimeRectangle="997, 526, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'chandra'" FullSelectorArgument="&lt;webctrl id='BillLastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillLastName' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='Last Name' /&gt;" Guid="2c3a1db6-8850-42c7-bfe0-d35bb7823590" ImageBase64="" InformativeScreenshot="03730b3d49a37d8e71b266233bc78859.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_get_lastname</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">!string.IsNullOrEmpty(str_get_lastname)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"User given last name is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given last name should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"User given last name is displayed in shipping info details as "+str_get_lastname</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given last name is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given last name should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"User given last name is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'India'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="298, 607, 321, 38" CvTextArea="316, 617, 36, 15" CvTextArgument="India" CvType="InputBox" DesignTimeRectangle="300, 608, 318, 36" DesignTimeScaleFactor="1" FriendlyName="'India'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='DIV' class='ngx-select__selected ng-star-inserted' idx='2' /&gt;&lt;webctrl tag='DIV' class='ngx-select__toggle btn form-control' parentid='main-wrapper' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='DIV' class='ngx-select__selected ng-star-inserted' /&gt;&lt;webctrl tag='DIV' class='ngx-select__toggle btn form-control' parentid='main-wrapper' type='' aaname='' /&gt;" Guid="62a83eec-2506-4713-b5f0-23b7370c7de9" ImageBase64="" InformativeScreenshot="c391cfa46e90c4a12228cab6b2a7693d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_get_country</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">!string.IsNullOrEmpty(str_get_country)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"User given country name is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given country should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19" xml:space="preserve">"User given country  is displayed in shipping info details as "+str_get_country</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given country is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given country should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_3" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">"User given country is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text '5145'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="646, 606, 324, 39" CvTextArea="657, 618, 37, 15" CvTextArgument="5145" CvType="InputBox" DesignTimeRectangle="648, 608, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'5145'" FullSelectorArgument="&lt;webctrl id='BillAddress' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillAddress' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='Address' /&gt;" Guid="310f9b28-bf91-417d-84d4-6f6709e4baca" ImageBase64="" InformativeScreenshot="dff9342fbb4d50c2a3bfed726337c46d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">str_get_shipping_address</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">!string.IsNullOrEmpty(str_get_shipping_address)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">"User given address is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given address should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26" xml:space="preserve">"User given address  is displayed in shipping info details as "+str_get_shipping_address</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given address is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given address should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_4" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">"User given address is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'Telangana'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="995, 607, 322, 38" CvTextArea="1004, 618, 76, 18" CvTextArgument="Telangana" CvType="InputBox" DesignTimeRectangle="997, 608, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Telangana'" FullSelectorArgument="&lt;webctrl id='BillState' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillState' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='State' /&gt;" Guid="8ee67f0c-8341-4333-b287-565871dc5a14" ImageBase64="" InformativeScreenshot="06d2b7e26363ca30b5998c00fc86711a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_get_shipping_state</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="If_10">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">!string.IsNullOrEmpty(str_get_shipping_state)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_20">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">"User given state is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given state should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_10" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87" xml:space="preserve">"User given state  is displayed in shipping info details as "+str_get_shipping_state</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given state is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given state should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_10" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_21">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">"User given state is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'hyderabad'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 441, 320, 38" CvType="InputBox" DesignTimeRectangle="300, 420, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'hyderabad'" FullSelectorArgument="&lt;webctrl id='BillCity' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillCity' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='City' /&gt;" Guid="ff250dd9-6ea7-4d21-8ceb-9850ab302b53" ImageBase64="" InformativeScreenshot="1b50ccec36bcc9555a5f6b5749f2a218.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">str_get_shipping_city</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">!string.IsNullOrEmpty(str_get_shipping_city)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"User given city is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given city should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_5" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32" xml:space="preserve">"User given city  is displayed in shipping info details as "+str_get_shipping_city</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given city is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given city should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_5" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">"User given city is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text '518000'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="646, 419, 323, 38" CvTextArea="656, 430, 56, 15" CvTextArgument="518000" CvType="InputBox" DesignTimeRectangle="648, 420, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'518000'" FullSelectorArgument="&lt;webctrl id='BillPostalCode' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillPostalCode' tag='INPUT' type='text' class='floating__input dpp-input ng-touched ng-pristine ng-valid' aaname='Zip Code' /&gt;" Guid="9444fadb-d7a2-41d5-b498-89e895b12d52" ImageBase64="" InformativeScreenshot="412ede271b972fd5e2f50dcd8aae68f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">str_get_shipping_Zipcode</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">!string.IsNullOrEmpty(str_get_shipping_Zipcode)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">"User given zip code is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given zipcode should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38" xml:space="preserve">"User given zipcode  is displayed in shipping info details as "+str_get_shipping_Zipcode</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given zipcode is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given zipcode should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_6" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">"User given zipcode is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'hyd.ts@gmail.com'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="996, 419, 321, 39" CvTextArea="1004, 430, 135, 19" CvTextArgument="hyd.ts@gmail.com" CvType="InputBox" DesignTimeRectangle="997, 420, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'hyd.ts@gmail.com'" FullSelectorArgument="&lt;webctrl id='BillEmail' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillEmail' tag='INPUT' type='text' class='floating__input dpp-input ng-pristine ng-valid ng-touched' aaname='Email' /&gt;" Guid="43b36968-ebce-4390-9f4d-397845eee17c" ImageBase64="" InformativeScreenshot="39967d4ae8180d7e3bafaa799a501e57.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">str_get_shipping_Email</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_7">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">!string.IsNullOrEmpty(str_get_shipping_Email)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_13">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">"User given email is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given email should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44" xml:space="preserve">"User given email  is displayed in shipping info details as "+str_get_shipping_Email</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given email is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given email should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_7" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_14">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">"User given email is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text 'IN (+91)'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="300, 501, 121, 38" CvTextArea="308, 510, 59, 20" CvTextArgument="IN (+91)" CvType="InputBox" DesignTimeRectangle="300, 502, 120, 36" DesignTimeScaleFactor="1" FriendlyName="'IN (+91)'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='DIV' class='ngx-select__toggle btn form-control' idx='3' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-wrapper' tag='DIV' class='ngx-select__toggle btn form-control' type='' aaname='' /&gt;" Guid="ce2f90af-e866-463a-a0cd-9204172da3c3" ImageBase64="" InformativeScreenshot="78659108c5e587faea88232c46c19e35.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">str_get_shipping_country_code</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">!string.IsNullOrEmpty(str_get_shipping_country_code)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">"User given country code is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given country code should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_8" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56" xml:space="preserve">"User given country code  is displayed in shipping info details as "+str_get_shipping_country_code</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given country code  is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given country code should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_8" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_16">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">"User given country code is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NGetText DisplayName="Get Text '87458-64566'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 501, 319, 38" CvTextArea="427, 511, 96, 16" CvTextArgument="87458-64566" CvType="InputBox" DesignTimeRectangle="420, 502, 198, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'87458-64566'" FullSelectorArgument="&lt;webctrl id='BillPhone' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillPhone' tag='INPUT' type='text' class='floating__input dpp-input no-left-border ng-pristine ng-valid ng-touched' aaname='Phone' /&gt;" Guid="b1c35126-adbb-44ef-a3e9-e6626e682497" ImageBase64="" InformativeScreenshot="704ffda444067e9632e20610fc972a17.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">str_get_shipping_phone</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <If sap:VirtualizedContainerService.HintSize="410,1414" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">!string.IsNullOrEmpty(str_get_shipping_phone)</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_17">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"User given phone number is displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="User given phone number  should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_expectedStep="Validation">
+                            <cr:passedStep.Actual_Result>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"User given phone number is displayed in shipping info details as "+str_get_shipping_phone</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.Actual_Result>
+                            <cr:passedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_110">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_reportId>
+                            <cr:passedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_111">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:passedStep.str_in_testId>
+                          </cr:passedStep>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="User given phone number  is not displayed in shipping info details" DisplayName="Failed step" Expected_Result="User given phone number  should be displayed in shipping info details" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_9" str_in_expectedStep="Validation">
+                            <cr:failedStep.str_in_reportId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_112">int_in_reportId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_reportId>
+                            <cr:failedStep.str_in_testId>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">str_in_testId</CSharpValue>
+                              </InArgument>
+                            </cr:failedStep.str_in_testId>
+                          </cr:failedStep>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_18">
+                            <ui:LogMessage.Level>
+                              <InArgument x:TypeArguments="ui:LogLevel">
+                                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Level>
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63" xml:space="preserve">"User given phone number  is not displayed in shipping info details"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT BillMethod'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="298, 331, 322, 39" CvType="InputBox" DesignTimeRectangle="300, 332, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT BillMethod'" FullSelectorArgument="&lt;webctrl id='BillMethod' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillMethod' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='Shipping Method' /&gt;" Guid="87d69cdb-d1e0-4cf1-bedd-2f84c8dcd32a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUIAAAAoCAYAAACLtfMUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEqSURBVHhe7ddBioUwAETBuf/ZxBN4AvfuhAw9fIMf5gTpKuiFmvUj/gyAckII1PsK4XVd4ziOse/72LbNzGyppW1pXFr3NkOYDzl0nue47/vzFmAdaVsal9a9YzhDmErmAMDq0ro07zFDmEK6CQIN0ro07zFDmP9ngBbv5gkhUEkIgXpCCNQTQqCeEAL1hBCoJ4RAPSEE6gkhUE8IgXpCCNQTQqCeEAL1hBCoJ4RAPSEE6gkhUE8IgXpCCNQTQqCeEAL1hBCoJ4RAPSEE6gkhUE8IgXpCCNT7N4T7vo/7vj9PAOtK69K8xwzhcRzjPM/PE8C60ro07zFDeF3XXyFzwM0QWFHalsaldWneY4Yw8iGVzKH8P5uZrbS0LY17RzC+QgjQSAiBcmP8AgBL4PvoHbVbAAAAAElFTkSuQmCC" InformativeScreenshot="034e78db666ce75b284e1dd9b489a2a3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">str_in_shipping_Method + "[k(Enter)]"</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NGetText DisplayName="Get Text 'ground shipping'" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="2ca32d10-37b8-4a75-ac68-172d130759b6" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="299, 438, 322, 38" CvTextArea="308, 449, 116, 18" CvTextArgument="ground shipping" CvType="InputBox" DesignTimeRectangle="300, 439, 318, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'ground shipping'" FullSelectorArgument="&lt;webctrl id='BillMethod' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BillMethod' tag='INPUT' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' aaname='Shipping Method' /&gt;" Guid="bfbcf087-7e7e-4984-8cec-72d09926af07" ImageBase64="" InformativeScreenshot="e42f4db7853fbb47042cd9d9161eca15.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NGetText.Target>
+                    <uix:NGetText.TextString>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">str_get_shipping_method</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetText.TextString>
+                  </uix:NGetText>
+                  <If sap:VirtualizedContainerService.HintSize="450,1414" sap2010:WorkflowViewState.IdRef="If_11">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">str_in_shipping_Method == str_get_shipping_method</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_22">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_122" xml:space="preserve">"The user given shipping method  displayed as "+str_get_shipping_method</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <cr:passedStep str_in_actualStep="{x:Null}" Expected_Result="The user given shipping method should be displayed" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_expectedStep="Validation">
+                          <cr:passedStep.Actual_Result>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116" xml:space="preserve">"The user given shipping method  displayed as "+str_get_shipping_method</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.Actual_Result>
+                          <cr:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">int_in_reportId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_reportId>
+                          <cr:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">str_in_testId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_testId>
+                        </cr:passedStep>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_23">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_123">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_124">"The user given shipping method not displayed"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="The user given shipping method not displayed" DisplayName="Failed step" Expected_Result="The user given shipping method should be displayed" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_11" str_in_expectedStep="Validation">
+                          <cr:failedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">int_in_reportId</CSharpValue>
+                            </InArgument>
+                          </cr:failedStep.str_in_reportId>
+                          <cr:failedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_120">str_in_testId</CSharpValue>
+                            </InArgument>
+                          </cr:failedStep.str_in_testId>
+                        </cr:failedStep>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="700a3caf9304c83d1b60285a852c8ac4.jpg" Title="Payments">
+                <uix:TargetApp.Selector>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_125">string.Format("&lt;html app='{0}' title='Payments' /&gt;", str_BrowserValue)</CSharpValue>
+                  </InArgument>
+                </uix:TargetApp.Selector>
+                <uix:TargetApp.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">str_Url</CSharpValue>
+                  </InArgument>
+                </uix:TargetApp.Url>
+              </uix:TargetApp>
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="612,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_19">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">exception.Message</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

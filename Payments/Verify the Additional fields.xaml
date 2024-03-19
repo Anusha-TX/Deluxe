@@ -1,0 +1,518 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Verify_the_Additional_fields" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Step" Type="InArgument(x:String)" />
+    <x:Property Name="In_Report_ID" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_Test_ID" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Verify_the_Additional_fields.Step>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_the_Additional_fields.Step>
+  <this:Verify_the_Additional_fields.In_Report_ID>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Verify_the_Additional_fields.In_Report_ID>
+  <this:Verify_the_Additional_fields.out_Test_ID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_the_Additional_fields.out_Test_ID>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1102,1624.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>CommonLibrary.Report</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>CommonLibrary</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Verify_the_Additional_fields" sap:VirtualizedContainerService.HintSize="1112,1560" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1050,1472" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1230" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Additional Fields'" sap:VirtualizedContainerService.HintSize="954,237.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="2NPq6rBI606p3nGUAf-GRA" CvElementArea="1813, 776, 40, 34" CvType="ArrowButton" DesignTimeRectangle="1825, 781, 18, 21" DesignTimeScaleFactor="1.5" FriendlyName="'I idAdditionalFieldIcon'" FullSelectorArgument="&lt;webctrl id='idAdditionalFieldIcon' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl id='idAdditionalFieldIcon' tag='I' type='' class='fas fa-chevron-up float-right text-dark' aaname='' /&gt;" Guid="b2684555-8c83-45dc-bd44-141f9d5e1eb0" InformativeScreenshot="340ae55f9f0de3742fc7a6b1302ad793.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/D0oS3rHFX02N_OvPVfWncw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Input 'Order Note'" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="e-mnTVc7iE2R1fKk68AEoQ" CvElementArea="441, 574, 1405, 59" CvType="InputBox" DesignTimeRectangle="449, 576, 1394, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Order Note'" FullSelectorArgument="&lt;webctrl id='OrderNote' tag='INPUT' aaname=' Order Note ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='OrderNote' tag='INPUT' aaname=' Order Note ' type='text' class='floating__input dpp-input ng-untouched ng-pristine ng-valid' /&gt;" Guid="fd4452b1-7c1b-4d1e-bea4-1fc369f49a9e" InformativeScreenshot="26a9933b1ec09d1a60b6da16c8b0b470.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/x9Glboej1E-rTEZmj6PqZw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:VerifyExecutionOptions.Target>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Verify the Additional fields" sap:VirtualizedContainerService.HintSize="954,905.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Verify Order note field" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Able to see the Order Note field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"Unable to see the Order Note field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="358, 621, 98, 19" CvTextArgument="Order Note" CvType="Text" DesignTimeRectangle="361, 620, 94, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Order Note'" FullSelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='SPAN' type='' class='' aaname=' Order Note ' check:innerText='Order Note' /&gt;" Guid="8e74bd24-daa0-4848-b80d-7dbfe73fbde9" InformativeScreenshot="0543801d45794c39bb6a3d34a82faadf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Verify the Tax Rate List" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Able to see the Tax Rate List dropdown"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"Unable to see the Tax Rate List dropdown"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="358, 718, 114, 19" CvTextArgument="Tax Rate List" CvType="Text" DesignTimeRectangle="361, 718, 110, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Tax Rate List'" FullSelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseAdditionalFields' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Tax Rate List' parentid='collapseAdditionalFields' tag='SPAN' type='' class='' check:innerText='Tax Rate List' /&gt;" Guid="2e77732e-897f-40d2-a8ed-a5b63b7c9151" InformativeScreenshot="c32366a54cd4409a3efa1365d14183e4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Verify the Invoice Field" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Able to see the Invoice field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Unable to see the Invoice field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="868, 718, 82, 19" CvTextArgument="Invoice #" CvType="Text" DesignTimeRectangle="871, 718, 78, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Invoice #'" FullSelectorArgument="&lt;webctrl aaname=' Invoice # ' parentid='collapseAdditionalFields' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Invoice # ' parentid='collapseAdditionalFields' tag='SPAN' type='' class='' check:innerText='Invoice #' /&gt;" Guid="19e853e3-ec2c-46de-9bdd-43eadd950aaf" InformativeScreenshot="c8a9c263e410d9cb696d485a8294c0a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Verify the Discount Rate List field" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Able to see the Discount Rate List field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"Unable to see the Discount Rate List field"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="1378, 718, 161, 19" CvTextArgument="Discount Rate List" CvType="Text" DesignTimeRectangle="1382, 718, 156, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Discount Rate List'" FullSelectorArgument="&lt;webctrl aaname='Discount Rate List' parentid='collapseAdditionalFields' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Discount Rate List' parentid='collapseAdditionalFields' tag='SPAN' type='' class='' check:innerText='Discount Rate List' /&gt;" Guid="1eabe196-6eca-48af-ac7c-e6f0ca05b99f" InformativeScreenshot="f3b9e018606d9b6bc7459bd9fa7eb64c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Verify the Customer is Tax Exempt toggle" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="a948d08c-9095-4cc8-b46b-62394ac40533" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Able to see the Customer is Tax Exempt toggle button"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">"Unable to see the Customer is Tax Exempt toggle button"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="420, 840, 181, 21" CvTextArgument="Customer is Tax Exempt" CvType="Text" DesignTimeRectangle="421, 837, 181, 24" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Customer is Tax Exempt'" FullSelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='B' type='' class='' aaname='Customer is Tax Exempt' check:innerText='Customer is Tax Exempt' /&gt;" Guid="e37771d4-42bc-4ace-a582-c14b16c288c5" InformativeScreenshot="4b92357aba6727091b98c4889d42bcae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">"Successfully able to see the additional field following fields 1.Order note, 2.Tax drop down, 3.Customer tax exempt toggle, 4.Invoice, 5.Discount drop down, 6.Custom fields"</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <cr:passedStep str_in_actualStep="{x:Null}" Actual_Result="Successfully able to see the additional field following fields 1.Order note, 2.Tax drop down, 3.Customer tax exempt toggle, 4.Invoice, 5.Discount drop down, 6.Custom fields" Expected_Result="It should display the preset item button and quick item following fields 1.Item name, 2.Price, 3.Tax dropdown" sap:VirtualizedContainerService.HintSize="954,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_1">
+                    <cr:passedStep.str_in_expectedStep>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Step</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_expectedStep>
+                    <cr:passedStep.str_in_reportId>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">In_Report_ID</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_reportId>
+                    <cr:passedStep.str_in_testId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">out_Test_ID</CSharpValue>
+                      </InArgument>
+                    </cr:passedStep.str_in_testId>
+                  </cr:passedStep>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">"Failed to see the preset item button and quick item with the following fields 1.Item name, 2.Price, 3.Tax dropdown"</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <cr:failedStep str_in_actualStep="{x:Null}" Actual_Result="Failed to see the preset item button and quick item with the following fields 1.Item name, 2.Price, 3.Tax dropdown" DisplayName="Failed step" Expected_Result="User should see the preset item button and quick item with the following fields 1.Item name, 2.Price, 3.Tax dropdown" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_1">
+                    <cr:failedStep.str_in_expectedStep>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Step</CSharpValue>
+                      </InArgument>
+                    </cr:failedStep.str_in_expectedStep>
+                    <cr:failedStep.str_in_reportId>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">In_Report_ID</CSharpValue>
+                      </InArgument>
+                    </cr:failedStep.str_in_reportId>
+                    <cr:failedStep.str_in_testId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">out_Test_ID</CSharpValue>
+                      </InArgument>
+                    </cr:failedStep.str_in_testId>
+                  </cr:failedStep>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvTextArea="358, 621, 98, 19" CvTextArgument="Order Note" CvType="Text" DesignTimeRectangle="361, 620, 94, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Order Note'" FullSelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseAdditionalFields' tag='SPAN' type='' class='' aaname=' Order Note ' check:innerText='Order Note' /&gt;" Guid="18b35cb9-7efc-4136-9851-9a10cc568dcd" InformativeScreenshot="0543801d45794c39bb6a3d34a82faadf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="0aa98c352d0675fd2df30b2aa5a4566d.jpg" Selector="&lt;html app='chrome.exe' title='Payments' /&gt;" Title="Payments" Url="https://payments2.deluxe.com/gateway/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
