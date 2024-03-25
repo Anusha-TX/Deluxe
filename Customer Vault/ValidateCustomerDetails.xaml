@@ -17,7 +17,7 @@
   </this:ValidateEditedCustomerDetails.int_in_Report_ID>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>582,2828</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,3196.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,7 +130,7 @@
       <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ValidateEditedCustomerDetails" sap:VirtualizedContainerService.HintSize="592,2763.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ValidateEditedCustomerDetails" sap:VirtualizedContainerService.HintSize="1112,3132" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
     </Sequence.Variables>
@@ -139,7 +139,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="530,54" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+    <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="1050,54" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -152,13 +152,13 @@
         </OutArgument>
       </ca:ReadAssetValue.str_out_AssetValue>
     </ca:ReadAssetValue>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault" sap:VirtualizedContainerService.HintSize="530,2558.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault" sap:VirtualizedContainerService.HintSize="1050,2927.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2391.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2760" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="str_Firstname" />
               <Variable x:TypeArguments="x:String" Name="str_Lastname" />
@@ -171,7 +171,41 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DelayBefore="5" DisplayName="Get Text 'FirstName'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'XIcVHR'" sap:VirtualizedContainerService.HintSize="954,328.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Timeout="20" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvTextArea="302, 534, 55, 15" CvTextArgument="XIcVHR" CvType="Text" DesignTimeRectangle="303, 533, 55, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'XIcVHR'" Guid="13f54330-58f2-4986-9f92-8f2a2529ffec" InformativeScreenshot="1aa78ac94b9bbbedfc85a17ae66d6735.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.FullSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">string.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='SPAN' aaname='{0}' colName='First Name' /&gt;", str_in_FirstName)</CSharpValue>
+                    </InArgument>
+                  </uix:TargetAnchorable.FullSelectorArgument>
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">string.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='SPAN' aaname='{0}' colName='First Name' type='' class='ngb-highlight ng-star-inserted' check:text='XIcVHR' /&gt;", str_in_FirstName)</CSharpValue>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NGetText DisplayName="Get Text 'FirstName'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvTextArea="338, 597, 90, 21" CvType="AnyWordGroup" DesignTimeRectangle="339, 596, 88, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'TestingNm'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='NGB-HIGHLIGHT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='NGB-HIGHLIGHT' class='' /&gt;" Guid="1dc127df-2d80-4634-b1d3-8b08bb028d85" ImageBase64="" InformativeScreenshot="70226878f50ca733ef3adb780d99d64e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
@@ -181,7 +215,7 @@
                 </OutArgument>
               </uix:NGetText.TextString>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'LastName'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'LastName'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvTextArea="618, 597, 85, 18" CvType="AnyWordGroup" DesignTimeRectangle="621, 596, 83, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'LastName'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='NGB-HIGHLIGHT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='NGB-HIGHLIGHT' /&gt;" Guid="f3011006-21e7-4ab1-bd52-6f6f6ab6c6d1" ImageBase64="" InformativeScreenshot="95e2091ff609b67be072729c38749b66.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
@@ -191,7 +225,7 @@
                 </OutArgument>
               </uix:NGetText.TextString>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'Email'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'Email'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="c94b8a88-0ed5-4f07-9849-5bdfc5ab2b6a" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvTextArea="893, 596, 196, 24" CvType="AnyWordGroup" DesignTimeRectangle="895, 596, 194, 22" DesignTimeScaleFactor="1.1299999952316284" FriendlyName="'ketaki.kale@deluxe.com'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='2' tag='NGB-HIGHLIGHT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='NGB-HIGHLIGHT' /&gt;" Guid="e50bcb15-baa2-455a-a5da-5ba496b0aa1a" ImageBase64="" InformativeScreenshot="a2a975fd846de3541767c57ec43ddc34.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
