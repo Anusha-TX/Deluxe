@@ -3,6 +3,7 @@
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="Str_in_Url" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_Customizations" Type="InArgument(x:String)" />
   </x:Members>
   <this:Verify_Settings_Customizations_Fields.int_in_ReportId>
     <InArgument x:TypeArguments="x:Int32" />
@@ -13,8 +14,11 @@
   <this:Verify_Settings_Customizations_Fields.Str_in_Url>
     <InArgument x:TypeArguments="x:String" />
   </this:Verify_Settings_Customizations_Fields.Str_in_Url>
+  <this:Verify_Settings_Customizations_Fields.str_in_Customizations>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_Settings_Customizations_Fields.str_in_Customizations>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1257,2812</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1257,2910</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,6 +57,8 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>CommonLibrary.Asset</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -113,27 +119,34 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Verify_Settings_Customizations_Fields" sap:VirtualizedContainerService.HintSize="646,2747" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Verify_Settings_Customizations_Fields" sap:VirtualizedContainerService.HintSize="755,2845" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,2636" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="693,2734" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="546,2408" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="655,2506" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="484,192" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="593,52" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -143,13 +156,13 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customizations" sap:VirtualizedContainerService.HintSize="484,2065" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customizations" sap:VirtualizedContainerService.HintSize="593,2303" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Verification" sap:VirtualizedContainerService.HintSize="450,1848" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Verification" sap:VirtualizedContainerService.HintSize="559,2086" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="bool_MyProfile" />
                     <Variable x:TypeArguments="x:Boolean" Name="bool_GeneralSettings" />
@@ -165,7 +178,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Settings'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Settings'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvElementArea="7, 678, 251, 62" CvTextArea="54, 700, 55, 17" CvTextArgument="Settings" CvType="Button" DesignTimeRectangle="56, 696, 180, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Settings'" FullSelectorArgument="&lt;webctrl parentid='menuSettings' tag='SPAN' innertext='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuSettings' tag='SPAN' innertext='Settings' type='' class='hide-menu' aaname='Settings' check:text='Settings' /&gt;" Guid="02ddf756-d583-429c-b186-6b0b81352d1f" InformativeScreenshot="72531194661c1cf5b408a27a03a2ff6d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.PointOffset>
@@ -180,7 +193,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'My Profile'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'My Profile'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">bool_MyProfile</CSharpReference>
@@ -214,7 +227,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'General Settings'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'General Settings'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">bool_GeneralSettings</CSharpReference>
@@ -248,7 +261,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'Customizations'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Customizations'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">bool_Customizations</CSharpReference>
@@ -282,7 +295,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'User Management'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'User Management'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">bool_UserManagment</CSharpReference>
@@ -316,7 +329,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <If sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">bool_Customizations &amp;&amp; bool_GeneralSettings&amp;&amp; bool_MyProfile&amp;&amp;bool_UserManagment</CSharpValue>
@@ -401,12 +414,18 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Customizations'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Customizations'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvTextArea="56, 842, 102, 14" CvTextArgument="Customizations" CvType="Text" DesignTimeRectangle="58, 838, 180, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Customizations'" FullSelectorArgument="&lt;webctrl parentid='menuCustomizations' tag='SPAN' type='' class='hide-menu' aaname='Customizations' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuCustomizations' tag='SPAN' type='' class='hide-menu' aaname='Customizations' check:innerText='Customizations' /&gt;" Guid="56cda3bb-f373-4d9e-be36-f7bea588c0af" InformativeScreenshot="effa13d4543d0adf11fa91ea27c55292.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -424,7 +443,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <uix:NCheckState DisplayName="Check App State 'Supplemental Data'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Supplemental Data'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">bool_SupplementData</CSharpReference>
@@ -458,7 +477,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'Custom Fields'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Custom Fields'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">bool_CustomFields</CSharpReference>
@@ -492,7 +511,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'Custom Receipts'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Custom Receipts'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">bool_CustomReceipts</CSharpReference>
@@ -526,7 +545,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'Sales Items'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Sales Items'" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
                     <uix:NCheckState.Exists>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">bool_SaleItems</CSharpReference>
@@ -560,7 +579,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <If sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">bool_SupplementData&amp;&amp;bool_CustomFields&amp;&amp;bool_CustomReceipts&amp;&amp;bool_SaleItems</CSharpValue>
@@ -671,100 +690,320 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom Fields'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvElementArea="832, 320, 522, 149" CvTextArea="1026, 408, 133, 19" CvTextArgument="Custom Fields" CvType="Button" DesignTimeRectangle="847, 404, 492, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Fields'" FullSelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' type='' class='' check:innerText='Custom Fields' /&gt;" Guid="71b1d85a-f106-4503-912f-c1a47abc5a16" InformativeScreenshot="87343905706ec3b0bb5c0833a899aca2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_9">
-                    <ui:LogMessage.Level>
-                      <InArgument x:TypeArguments="ui:LogLevel">
-                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="497,777" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                    <Switch.Expression>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">str_in_Customizations</CSharpValue>
                       </InArgument>
-                    </ui:LogMessage.Level>
-                    <ui:LogMessage.Message>
-                      <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">"Clicked on Custom Fields"</CSharpValue>
-                      </InArgument>
-                    </ui:LogMessage.Message>
-                  </ui:LogMessage>
-                  <uix:NCheckState DisplayName="Check App State 'Custom Field Management'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                    </Switch.Expression>
+                    <Sequence x:Key="Custom Fields" DisplayName="Custom Fields" sap:VirtualizedContainerService.HintSize="450,547" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom Fields'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvElementArea="832, 320, 522, 149" CvTextArea="1026, 408, 133, 19" CvTextArgument="Custom Fields" CvType="Button" DesignTimeRectangle="847, 404, 492, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Fields'" FullSelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' type='' class='' check:innerText='Custom Fields' /&gt;" Guid="71b1d85a-f106-4503-912f-c1a47abc5a16" InformativeScreenshot="87343905706ec3b0bb5c0833a899aca2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">"Clicked on Custom Fields"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <uix:NCheckState DisplayName="Check App State 'Custom Field Management'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">"Custom Field Management screen is displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:passedStep Actual_Result="Custom Field Management screen is displayed." Expected_Result="Custom Field Management screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Clicked on Custom Fields" str_in_expectedStep="Step ">
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">"Custom Field Management screen is Not displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:failedStep Actual_Result="Custom Field Management screen is Not displayed." Expected_Result="Custom Field Management screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_4" str_in_actualStep="Clicked on Custom Fields" str_in_expectedStep="Step ">
+                              <cr:failedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_reportId>
+                              <cr:failedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_testId>
+                            </cr:failedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations/custom-fields-management" CvTextArea="287, 222, 170, 12" CvTextArgument="CUSTOM FIELD MANAGEMENT" CvType="Text" DesignTimeRectangle="288, 219, 380, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Field Management'" FullSelectorArgument="&lt;webctrl tag='H5' aaname='Custom Field Management' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' type='' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' aaname='Custom Field Management' check:innerText='CUSTOM FIELD MANAGEMENT' /&gt;" Guid="4a8eb01f-b09d-4741-a58f-875f52c52da9" InformativeScreenshot="2a4f66d38ecca5b0065bfaa9d0174f50.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Custom Field Management' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                    <Sequence x:Key="Sales Items" DisplayName="Sale Items" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom Fields'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvElementArea="832, 320, 522, 149" CvTextArea="1026, 408, 133, 19" CvTextArgument="Custom Fields" CvType="Button" DesignTimeRectangle="297, 574, 486, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Fields'" FullSelectorArgument="&lt;webctrl aaname='Sales Items' parentid='collapseMerSet0' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' type='' class='' check:innerText='Custom Fields' /&gt;" Guid="71b1d85a-f106-4503-912f-c1a47abc5a16" ImageBase64="" InformativeScreenshot="09e7e267ab1670247fe2768bed700721.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">"Clicked on Sales Items"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <uix:NCheckState DisplayName="Check App State 'Sale Item Management'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_13">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">"SALE ITEM MANAGEMENT screen is displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:passedStep Actual_Result="SALE ITEM MANAGEMENT screen is displayed." Expected_Result="SALE ITEM MANAGEMENT screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Clicked on Sale Items" str_in_expectedStep="Step ">
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_14">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"SALE ITEM MANAGEMENT screen is Not displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:failedStep Actual_Result="SALE ITEM MANAGEMENT screen is Not displayed." Expected_Result="SALE ITEM MANAGEMENT screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_5" str_in_actualStep="Clicked on Sale Items" str_in_expectedStep="Step ">
+                              <cr:failedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_reportId>
+                              <cr:failedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_testId>
+                            </cr:failedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations/sale-item-management" CvTextArea="286, 222, 148, 12" CvTextArgument="SALEITEM MANAGEMENT" CvType="Text" DesignTimeRectangle="288, 219, 380, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Sale Item Management'" FullSelectorArgument="&lt;webctrl tag='H5' aaname='Sale Item Management' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' type='' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' aaname='Sale Item Management' check:innerText='SALE ITEM MANAGEMENT' /&gt;" Guid="fe9e7ee6-6054-4026-ac97-4407bb913101" InformativeScreenshot="36d93ca7e7f8d656802f4722db543ea4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sale Item Management' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                    <Sequence x:Key="Custom Receipts" DisplayName="Custom Receipts" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom Fields'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations" CvElementArea="832, 320, 522, 149" CvTextArea="1026, 408, 133, 19" CvTextArgument="Custom Fields" CvType="Button" DesignTimeRectangle="1386, 404, 486, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Fields'" FullSelectorArgument="&lt;webctrl aaname='Custom Receipts' parentid='collapseMerSet0' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Custom Fields' parentid='collapseMerSet0' tag='H3' type='' class='' check:innerText='Custom Fields' /&gt;" Guid="71b1d85a-f106-4503-912f-c1a47abc5a16" ImageBase64="" InformativeScreenshot="480d95bf4b89226b1c3ee7b1afa1d2d7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customizations' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,143" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">"Clicked on Custom Receipts"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <uix:NCheckState DisplayName="Check App State 'Sale Item Management'" sap:VirtualizedContainerService.HintSize="954,900" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="6b0cec1f-0f95-4b03-a98e-787883b71022" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_16">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">"The Custom Receipts screen is displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:passedStep Actual_Result="Custom Receipts screen is displayed." Expected_Result="Custom Receipts screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_5" str_in_actualStep="Clicked on Custom Receipts" str_in_expectedStep="Step ">
+                              <cr:passedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_reportId>
+                              <cr:passedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:passedStep.str_in_testId>
+                            </cr:passedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_17">
+                              <ui:LogMessage.Level>
+                                <InArgument x:TypeArguments="ui:LogLevel">
+                                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Level>
+                              <ui:LogMessage.Message>
+                                <InArgument x:TypeArguments="x:Object">
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">"Custom Receipts screen is Not displayed."</CSharpValue>
+                                </InArgument>
+                              </ui:LogMessage.Message>
+                            </ui:LogMessage>
+                            <cr:failedStep Actual_Result="Custom Receipts screen is Not displayed." Expected_Result="Custom Receipts screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_6" str_in_actualStep="Clicked on Custom Receipts" str_in_expectedStep="Step ">
+                              <cr:failedStep.str_in_reportId>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">int_in_ReportId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_reportId>
+                              <cr:failedStep.str_in_testId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">str_in_TestId</CSharpValue>
+                                </InArgument>
+                              </cr:failedStep.str_in_testId>
+                            </cr:failedStep>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations/sale-item-management" CvTextArea="286, 222, 148, 12" CvTextArgument="SALEITEM MANAGEMENT" CvType="Text" DesignTimeRectangle="288, 219, 380, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Sale Item Management'" FullSelectorArgument="&lt;webctrl tag='H5' aaname='Custom Receipts' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' type='' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' aaname='Sale Item Management' check:innerText='SALE ITEM MANAGEMENT' /&gt;" Guid="fe9e7ee6-6054-4026-ac97-4407bb913101" ImageBase64="" InformativeScreenshot="4aa8ac3c863eced3a1bea87f50abfe37.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sale Item Management' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_10">
-                          <ui:LogMessage.Level>
-                            <InArgument x:TypeArguments="ui:LogLevel">
-                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                            </InArgument>
-                          </ui:LogMessage.Level>
-                          <ui:LogMessage.Message>
-                            <InArgument x:TypeArguments="x:Object">
-                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">"The Custom Field Management screen is displayed."</CSharpValue>
-                            </InArgument>
-                          </ui:LogMessage.Message>
-                        </ui:LogMessage>
-                        <cr:passedStep Actual_Result="The Custom Field Management screen is displayed." Expected_Result="The Custom Field Management screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Clicked on Custom Fields" str_in_expectedStep="Step ">
-                          <cr:passedStep.str_in_reportId>
-                            <InArgument x:TypeArguments="x:Int32">
-                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">int_in_ReportId</CSharpValue>
-                            </InArgument>
-                          </cr:passedStep.str_in_reportId>
-                          <cr:passedStep.str_in_testId>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">str_in_TestId</CSharpValue>
-                            </InArgument>
-                          </cr:passedStep.str_in_testId>
-                        </cr:passedStep>
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_11">
-                          <ui:LogMessage.Level>
-                            <InArgument x:TypeArguments="ui:LogLevel">
-                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
-                            </InArgument>
-                          </ui:LogMessage.Level>
-                          <ui:LogMessage.Message>
-                            <InArgument x:TypeArguments="x:Object">
-                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">"The Custom Field Management screen is Not displayed."</CSharpValue>
-                            </InArgument>
-                          </ui:LogMessage.Message>
-                        </ui:LogMessage>
-                        <cr:failedStep Actual_Result="The Custom Field Management screen is Not displayed." Expected_Result="The Custom Field Management screen should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_4" str_in_actualStep="Clicked on Custom Fields" str_in_expectedStep="Step ">
-                          <cr:failedStep.str_in_reportId>
-                            <InArgument x:TypeArguments="x:Int32">
-                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">int_in_ReportId</CSharpValue>
-                            </InArgument>
-                          </cr:failedStep.str_in_reportId>
-                          <cr:failedStep.str_in_testId>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">str_in_TestId</CSharpValue>
-                            </InArgument>
-                          </cr:failedStep.str_in_testId>
-                        </cr:failedStep>
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/settings/customizations/custom-fields-management" CvTextArea="287, 222, 170, 12" CvTextArgument="CUSTOM FIELD MANAGEMENT" CvType="Text" DesignTimeRectangle="288, 219, 380, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Custom Field Management'" FullSelectorArgument="&lt;webctrl tag='H5' aaname='Custom Field Management' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' type='' class='text-uppercase mb-0 mt-2 mt-md-0 text-white' aaname='Custom Field Management' check:innerText='CUSTOM FIELD MANAGEMENT' /&gt;" Guid="4a8eb01f-b09d-4741-a58f-875f52c52da9" InformativeScreenshot="2a4f66d38ecca5b0065bfaa9d0174f50.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Custom Field Management' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NCheckState.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NCheckState>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </Switch>
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
@@ -777,11 +1016,17 @@
                 </uix:TargetApp.Url>
               </uix:TargetApp>
             </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="659,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
