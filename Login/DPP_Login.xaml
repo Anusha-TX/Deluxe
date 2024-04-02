@@ -1,12 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" this:Sequence.bool_in_MerchantLogin="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="str_out_DppURL" Type="OutArgument(x:String)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="bool_in_MerchantLogin" Type="InArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1202.6666666666667,8945.333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1202.6666666666667,9377.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,9 +136,10 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1212.6666666666667,8880.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1212.6666666666667,9312.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DppUsername" />
       <Variable x:TypeArguments="ss:SecureString" Name="str_DppPassword" />
@@ -147,7 +149,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150.6666666666667,8770" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150.6666666666667,9202" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,7 +157,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1112,8530.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1112,8962.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_VerificationCode" />
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lst_Messages" />
@@ -170,18 +172,55 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ca:ReadDPPCredentials sap:VirtualizedContainerService.HintSize="1050,250" sap2010:WorkflowViewState.IdRef="ReadDPPCredentials_1" str_in_AssetName="DPPCredentials" str_in_Orch_FolderPath="DPP_TestAutomation">
-            <ca:ReadDPPCredentials.str_out_Password>
-              <OutArgument x:TypeArguments="ss:SecureString">
-                <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_DppPassword</CSharpReference>
-              </OutArgument>
-            </ca:ReadDPPCredentials.str_out_Password>
-            <ca:ReadDPPCredentials.str_out_UserName>
-              <OutArgument x:TypeArguments="x:String">
-                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_DppUsername</CSharpReference>
-              </OutArgument>
-            </ca:ReadDPPCredentials.str_out_UserName>
-          </ca:ReadDPPCredentials>
+          <If sap:VirtualizedContainerService.HintSize="1050,858.6666666666666" sap2010:WorkflowViewState.IdRef="If_12">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_120">bool_in_MerchantLogin == true</CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ca:ReadDPPCredentials sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="ReadDPPCredentials_2" str_in_AssetName="DPPMerchantCredentials" str_in_Orch_FolderPath="DPP_TestAutomation">
+                  <ca:ReadDPPCredentials.str_out_Password>
+                    <OutArgument x:TypeArguments="ss:SecureString">
+                      <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">str_DppPassword</CSharpReference>
+                    </OutArgument>
+                  </ca:ReadDPPCredentials.str_out_Password>
+                  <ca:ReadDPPCredentials.str_out_UserName>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">str_DppUsername</CSharpReference>
+                    </OutArgument>
+                  </ca:ReadDPPCredentials.str_out_UserName>
+                </ca:ReadDPPCredentials>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ca:ReadDPPCredentials sap:VirtualizedContainerService.HintSize="334,250" sap2010:WorkflowViewState.IdRef="ReadDPPCredentials_1" str_in_AssetName="DPPCredentials" str_in_Orch_FolderPath="DPP_TestAutomation">
+                  <ca:ReadDPPCredentials.str_out_Password>
+                    <OutArgument x:TypeArguments="ss:SecureString">
+                      <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_DppPassword</CSharpReference>
+                    </OutArgument>
+                  </ca:ReadDPPCredentials.str_out_Password>
+                  <ca:ReadDPPCredentials.str_out_UserName>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_DppUsername</CSharpReference>
+                    </OutArgument>
+                  </ca:ReadDPPCredentials.str_out_UserName>
+                </ca:ReadDPPCredentials>
+              </Sequence>
+            </If.Else>
+          </If>
           <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="1050,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -208,13 +247,6 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1050,136.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1">
-            <ui:KillProcess.ProcessName>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">str_BrowserValue</CSharpValue>
-              </InArgument>
-            </ui:KillProcess.ProcessName>
-          </ui:KillProcess>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
