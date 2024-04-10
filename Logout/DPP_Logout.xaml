@@ -8,8 +8,9 @@
   <this:Logout.str_in_DppURL>
     <InArgument x:TypeArguments="x:String" />
   </this:Logout.str_in_DppURL>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1202.6666666666667,3136.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1202.6666666666667,3190.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +121,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="1212.6666666666667,3072" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="1212.6666666666667,3126" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="step " Name="str_StepName" />
     </Sequence.Variables>
@@ -130,9 +131,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150.6666666666667,2961.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1150.6666666666667,3015.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1112,2722" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="1112,2776" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -154,18 +155,74 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="DPP_SideMenu" sap:VirtualizedContainerService.HintSize="1050,2517.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="DPP_SideMenu" sap:VirtualizedContainerService.HintSize="1050,2571.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2310" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2404" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State '×'" sap:VirtualizedContainerService.HintSize="954,54" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,500.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Closing the Popup before logout"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '×'" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="1184, 532, 26, 25" CvType="CloseButton" DesignTimeRectangle="1177, 517, 43, 53" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'×'" FullSelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' check:text='×' /&gt;" Guid="4f968c95-fc18-44d8-b5a0-ff64ef153064" InformativeScreenshot="764fb3e2a8b3033b54e0dcad1b0ac8a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="Button '×'" Mode="Disappears" Retry="True">
+                              <uix:VerifyExecutionOptions.Target>
+                                <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="1184, 532, 26, 25" CvType="CloseButton" DesignTimeRectangle="1177, 517, 43, 53" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'×'" FullSelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' check:text='×' /&gt;" Guid="9994a779-f33c-40c5-a0bc-980e7fc63786" InformativeScreenshot="764fb3e2a8b3033b54e0dcad1b0ac8a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:VerifyExecutionOptions.Target>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CvElementArea="1184, 532, 26, 24" CvType="CloseButton" DesignTimeRectangle="1177, 517, 43, 53" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'×'" FullSelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='document' tag='DIV' class='modal-dialog modal-dialog-centered' /&gt;&lt;webctrl aria-label='Close' tag='BUTTON' type='button' aaname='×' class='close' check:text='×' /&gt;" Guid="56bc18a7-3b04-490a-a1de-cc96c6e12a5b" InformativeScreenshot="6afe6ae290540d9e628de596288f5b60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Click User Profile'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d268f03-b257-40db-a3e0-d9186e9e1af8" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="DkL7wblxC0-ZK1_eEKomUg" DesignTimeRectangle="1185, 162, 31, 31" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'Click User Profile'" FullSelectorArgument="&lt;webctrl parentid='userProfileDD' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='userProfileDD' tag='IMG' type='' class='rounded-circle' aaname='user' /&gt;" Guid="b2fb8b3a-6575-4aa9-8afd-2cb97addd228" ImageBase64="" InformativeScreenshot="6ce1139808121c94c7e2f3fe25c2fdca.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/LNHecXFwzE667_-lsWOvTw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
