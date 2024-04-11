@@ -8,7 +8,7 @@
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1830.6666666666667,3155.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1830.6666666666667,3248.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -140,7 +140,7 @@
       <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1840.6666666666667,3090.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1840.6666666666667,3184" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DppUsername" />
       <Variable x:TypeArguments="ss:SecureString" Name="str_DppPassword" />
@@ -150,7 +150,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1778.6666666666667,2980" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1778.6666666666667,3073.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +158,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1740,2740.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1740,2834" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_VerificationCode" />
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lst_Messages" />
@@ -166,6 +166,7 @@
             <Variable x:TypeArguments="x:Boolean" Name="bln_VerifyExists" />
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="Browser_type" />
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
+            <Variable x:TypeArguments="x:String" Name="str_Url" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -291,21 +292,33 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1678,1657.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Version="V2" WindowResize="Maximize">
+          <Assign sap:VirtualizedContainerService.HintSize="1678,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">str_Url</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">str_out_DppURL.Replace("*","")</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="1678,1625.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1644,1490" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                <Sequence sap:VirtualizedContainerService.HintSize="1644,1458" sap2010:WorkflowViewState.IdRef="Sequence_54">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'EMAIL OR USERNAME'" sap:VirtualizedContainerService.HintSize="1582,1379.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Timeout="5" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'EMAIL OR USERNAME'" sap:VirtualizedContainerService.HintSize="1582,1342" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Timeout="5" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,198" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,200.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_56">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1781,13 +1794,13 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,1158" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,1120.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_57">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Dashboard'" sap:VirtualizedContainerService.HintSize="954,1044.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Timeout="5" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Dashboard'" sap:VirtualizedContainerService.HintSize="954,1004.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="8329a13a-6c5e-479f-b6e0-02492fa0c9b4" Timeout="5" Version="V3">
                           <uix:NCheckState.IfExists>
                             <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,783.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <sap:WorkflowViewStateService.ViewState>
@@ -1905,7 +1918,7 @@
                 </uix:TargetApp.Selector>
                 <uix:TargetApp.Url>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_196">str_out_DppURL+"login"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">str_Url+"login"</CSharpValue>
                   </InArgument>
                 </uix:TargetApp.Url>
               </uix:TargetApp>
