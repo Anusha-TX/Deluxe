@@ -52,7 +52,7 @@
   </this:Verify_ReceiptDetails.bool_in_VerifyQRCode>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1402.6666666666667,4172.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1402.6666666666667,4132.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -173,6 +173,8 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -180,7 +182,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Verify_ReceiptDetails" sap:VirtualizedContainerService.HintSize="1412.6666666666667,4108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Verify_ReceiptDetails" sap:VirtualizedContainerService.HintSize="1412.6666666666667,4068" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
     </Sequence.Variables>
@@ -190,9 +192,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1350.6666666666667,3997.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1350.6666666666667,3957.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1312,3758" sap2010:WorkflowViewState.IdRef="Sequence_220">
+        <Sequence sap:VirtualizedContainerService.HintSize="1312,3718" sap2010:WorkflowViewState.IdRef="Sequence_220">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -214,7 +216,7 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="1250,3553.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="1250,3513.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -2504,7 +2506,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Transaction Type Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Headers'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Values'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
+                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Transaction Type Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Headers'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Values'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                   <uix:NExtractData.DataTable>
                                     <InOutArgument x:TypeArguments="sd:DataTable">
                                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">dt_TransactionTypeDataTable</CSharpReference>
@@ -2514,14 +2516,14 @@
                                     <uix:TargetAnchorable DesignTimeRectangle="453, 326, 373, 110" DesignTimeScaleFactor="1" FriendlyName="'Transaction type:CREDIT…'" FullSelectorArgument="&lt;webctrl parentid='customPrint' tag='TABLE' innertext='*Transaction type:*' /&gt;" Guid="5d321439-5988-4fad-8232-55fa79238862" InformativeScreenshot="3f271a151f2220839e4f76f216b664ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NExtractData.Target>
                                 </uix:NExtractData>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_64">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_64">
                                   <ui:LogMessage.Message>
                                     <InArgument x:TypeArguments="x:Object">
                                       <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_593">"Executing Transaction type datat table script"</CSharpValue>
                                     </InArgument>
                                   </ui:LogMessage.Message>
                                 </ui:LogMessage>
-                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                       <ActivityAction.Argument>
@@ -3348,7 +3350,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Amounts Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Headers'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Values'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="510,160" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
+                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Amounts Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Headers'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Values'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                   <uix:NExtractData.DataTable>
                                     <InOutArgument x:TypeArguments="sd:DataTable">
                                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">ExtractTransactionDataTable</CSharpReference>
@@ -3358,13 +3360,13 @@
                                     <uix:TargetAnchorable DesignTimeRectangle="453, 416, 373, 110" DesignTimeScaleFactor="1" FriendlyName="'Total Amount:$'" FullSelectorArgument="&lt;webctrl parentid='customPrint' tag='TABLE' innertext='*Total Amount:*' /&gt;" Guid="46d715d9-9d48-4af9-aea6-3d59c6a74878" InformativeScreenshot="6deaf0f08a0cc975961432230fd03eea.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NExtractData.Target>
                                 </uix:NExtractData>
-                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,1216" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1026" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1049.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_85">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Default="Discount:" Name="str_DiscountHeader" />
                                           <Variable x:TypeArguments="x:String" Default="Total Amount:" Name="str_TotalAmountHeader" />
@@ -3386,14 +3388,14 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_56">
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_56">
                                           <ui:LogMessage.Message>
                                             <InArgument x:TypeArguments="x:Object">
                                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_600">"Current Header is "+CurrentRow["Headers"].ToString()+" and its Value is "+CurrentRow["Values"].ToString()</CSharpValue>
                                             </InArgument>
                                           </ui:LogMessage.Message>
                                         </ui:LogMessage>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">
                                               <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">str_CurrentHeader</CSharpReference>
@@ -3405,7 +3407,7 @@
                                             </InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">
                                               <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">str_CurrentValue</CSharpReference>
@@ -3417,10 +3419,10 @@
                                             </InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <If DisplayName="If Discount is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_18">
+                                        <If DisplayName="If Discount is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_18">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_385">str_CurrentHeader.ToUpper().Equals(str_DiscountHeader)</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_817">str_CurrentHeader.ToUpper().Equals(str_DiscountHeader.ToUpper())</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -3430,13 +3432,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="452,644" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Discount" sap:VirtualizedContainerService.HintSize="410,556" sap2010:WorkflowViewState.IdRef="If_17">
+                                              <If DisplayName="If Verify Discount" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_17">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_386">!string.IsNullOrEmpty(str_in_DiscountAmount)</CSharpValue>
@@ -3444,12 +3446,12 @@
                                                 </If.Condition>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <If.Then>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,374" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,381.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="x:Boolean" Name="res_Discount" />
                                                     </Sequence.Variables>
@@ -3458,7 +3460,7 @@
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Discount Amount in Custom Receipt" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_8" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                                    <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Discount Amount in Custom Receipt" sap:VirtualizedContainerService.HintSize="334,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_8" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                                       <uta:VerifyExpressionWithOperator.FirstExpression>
                                                         <InArgument x:TypeArguments="x:String">
                                                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_387">str_CurrentValue.Replace("$","").Trim()</CSharpValue>
@@ -3475,7 +3477,7 @@
                                                         </InArgument>
                                                       </uta:VerifyExpressionWithOperator.SecondExpression>
                                                     </uta:VerifyExpressionWithOperator>
-                                                    <If sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_21">
+                                                    <If sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="If_21">
                                                       <If.Condition>
                                                         <InArgument x:TypeArguments="x:Boolean">
                                                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_389">res_Discount</CSharpValue>
@@ -3488,13 +3490,13 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <If.Then>
-                                                        <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_91">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <cr:passedStep sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="passedStep_27" str_in_actualStep="Verify Discount Amount in Cutom Receipt">
+                                                          <cr:passedStep sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_27" str_in_actualStep="Verify Discount Amount in Cutom Receipt">
                                                             <cr:passedStep.Actual_Result>
                                                               <InArgument x:TypeArguments="x:String">
                                                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_393">"Discount Amount is displayed as "+str_DiscountValue</CSharpValue>
@@ -3530,13 +3532,13 @@
                                                         </Sequence>
                                                       </If.Then>
                                                       <If.Else>
-                                                        <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_92">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <cr:failedStep sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="failedStep_26" str_in_actualStep="Verify Discount Amount in Cutom Receipt">
+                                                          <cr:failedStep sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="failedStep_26" str_in_actualStep="Verify Discount Amount in Cutom Receipt">
                                                             <cr:failedStep.Actual_Result>
                                                               <InArgument x:TypeArguments="x:String">
                                                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_398">"Discount Amount displayed as "+str_DiscountValue</CSharpValue>
@@ -3575,19 +3577,25 @@
                                                   </Sequence>
                                                 </If.Then>
                                                 <If.Else>
-                                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_89" />
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
                                                 </If.Else>
                                               </If>
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,234.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_87">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_57">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_57">
                                                 <ui:LogMessage.Message>
                                                   <InArgument x:TypeArguments="x:Object">
                                                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_400">"Discount Amount is not displayed in Custom Receipt"</CSharpValue>
@@ -3597,10 +3605,10 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If DisplayName="If Surcharge Amount is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_22">
+                                        <If DisplayName="If Surcharge Amount is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_22">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_401">str_CurrentHeader.ToUpper().Equals(str_SurChargeHeader) == true</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_818">str_CurrentHeader.ToUpper().Equals(str_SurChargeHeader.ToUpper()) == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -3610,13 +3618,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_97">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="452,642" sap2010:WorkflowViewState.IdRef="Sequence_97">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Surcharge Amount" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_23">
+                                              <If DisplayName="If Verify Surcharge Amount" sap:VirtualizedContainerService.HintSize="410,554.6666666666666" sap2010:WorkflowViewState.IdRef="If_23">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_402">!string.IsNullOrEmpty(str_in_SurChargeAmount)</CSharpValue>
@@ -3777,10 +3785,10 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If DisplayName="If Total Amount is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_25">
+                                        <If DisplayName="If Total Amount is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_25">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_591">str_CurrentHeader.ToUpper().Contains(str_TotalAmountHeader) == true</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_819">str_CurrentHeader.ToUpper().Contains(str_TotalAmountHeader.ToUpper()) == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -3790,13 +3798,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_103">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="528,1641.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_103">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Total Amount" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_26">
+                                              <If DisplayName="If Verify Total Amount" sap:VirtualizedContainerService.HintSize="486,1554" sap2010:WorkflowViewState.IdRef="If_26">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_424">!string.IsNullOrEmpty(str_in_TotalAmount)</CSharpValue>
@@ -3957,10 +3965,10 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If DisplayName="If Response is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_28">
+                                        <If DisplayName="If Response is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_28">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_444">str_CurrentHeader.ToUpper().Equals(str_ResponseHeader) == true</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_820">str_CurrentHeader.ToUpper().Equals(str_ResponseHeader.ToUpper()) == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -3970,13 +3978,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_109">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Response" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="If_29">
+                                              <If DisplayName="If Verify Response" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_29">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_445">!string.IsNullOrEmpty(str_in_Response)</CSharpValue>
@@ -4127,13 +4135,13 @@
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,234.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_60">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_60">
                                                 <ui:LogMessage.Message>
                                                   <InArgument x:TypeArguments="x:Object">
                                                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_485">"Response is not displayed in Custom Receipt"</CSharpValue>
@@ -4143,10 +4151,10 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If DisplayName="If Approval Code is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_31">
+                                        <If DisplayName="If Approval Code is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_31">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_460">str_CurrentHeader.ToUpper().Equals(str_ApprovalCodeHeader) == true</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_821">str_CurrentHeader.ToUpper().Equals(str_ApprovalCodeHeader.ToUpper()) == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -4156,13 +4164,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_115">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Approval Code" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="If_32">
+                                              <If DisplayName="If Verify Approval Code" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_32">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_476">!string.IsNullOrEmpty(str_in_ApprovalCode)</CSharpValue>
@@ -4329,10 +4337,10 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If DisplayName="If Order Note is displayed" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_34">
+                                        <If DisplayName="If Order Note is displayed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_34">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_487">str_CurrentHeader.ToUpper().Equals(str_OrderNoteHeader) == true</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_822">str_CurrentHeader.ToUpper().Equals(str_OrderNoteHeader.ToUpper()) == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -4342,13 +4350,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_121">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If DisplayName="If Verify Order Note" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="If_35">
+                                              <If DisplayName="If Verify Order Note" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_35">
                                                 <If.Condition>
                                                   <InArgument x:TypeArguments="x:Boolean">
                                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_488">!string.IsNullOrEmpty(str_in_OrderNote)</CSharpValue>
@@ -4525,12 +4533,12 @@
                                   </ui:ForEachRow.DataTable>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:ForEachRow>
-                                <uix:NGetText DisplayName="Get Text Transaction Id" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
+                                <uix:NGetText DisplayName="Get Text Transaction Id" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                   <uix:NGetText.Target>
                                     <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" ContentHash="mCyNMAGFDE2UZS2YoIDW6g" CvTextArea="563, 418, 262, 13" CvType="AnyWordGroup" DesignTimeRectangle="534, 414, 292, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Transaction Id'" FullSelectorArgument="&lt;webctrl parentid='customPrint' tag='TABLE' innertext='Trans ID*' /&gt;&lt;webctrl tableCol='2' tag='TD' rowName='Trans ID:' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='customPrint' tag='TABLE' innertext='Trans ID*' /&gt;&lt;webctrl type='' tag='TD' rowName='Trans ID:' class='' /&gt;" Guid="19c13f51-3031-47ef-955c-741aa8a64337" ImageBase64="" InformativeScreenshot="73c7d7ef58b7ff2dd1c68fe10866c947.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/h3BfB2zbO0qLWSUNM2xCqw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NGetText.Target>
@@ -4540,7 +4548,7 @@
                                     </OutArgument>
                                   </uix:NGetText.TextString>
                                 </uix:NGetText>
-                                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Transaction id" sap:VirtualizedContainerService.HintSize="510,194" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_15" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Transaction id" sap:VirtualizedContainerService.HintSize="388,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_15" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                   <uta:VerifyExpressionWithOperator.FirstExpression>
                                     <InArgument x:TypeArguments="x:String">
                                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_602">str_TransactionId.ToUpper()</CSharpValue>
@@ -4557,7 +4565,7 @@
                                     </InArgument>
                                   </uta:VerifyExpressionWithOperator.SecondExpression>
                                 </uta:VerifyExpressionWithOperator>
-                                <If sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_38">
+                                <If sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_38">
                                   <If.Condition>
                                     <InArgument x:TypeArguments="x:Boolean">
                                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_517">res_TransactionId</CSharpValue>
