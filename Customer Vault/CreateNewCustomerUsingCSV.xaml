@@ -6,6 +6,7 @@
     <x:Property Name="str_in_FilePath" Type="InArgument(x:String)" />
     <x:Property Name="str_in_FirstName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_MerchantID" Type="InArgument(x:String)" />
+    <x:Property Name="str_out_MerchantName" Type="OutArgument(x:String)" />
   </x:Members>
   <this:CreateNewCustomerUsingCSV.Int_in_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
@@ -15,7 +16,7 @@
   </this:CreateNewCustomerUsingCSV.str_in_TestID>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>2334.6666666666665,8048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2334.6666666666665,8560</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -133,7 +134,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="2344.6666666666665,7983.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="2344.6666666666665,8495.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
     </Sequence.Variables>
@@ -155,24 +156,25 @@
         </OutArgument>
       </ca:ReadAssetValue.str_out_AssetValue>
     </ca:ReadAssetValue>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2282.6666666666665,7635.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2282.6666666666665,8147.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="CreateNewCustomerUsingCSV" sap:VirtualizedContainerService.HintSize="2244,7396" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="CreateNewCustomerUsingCSV" sap:VirtualizedContainerService.HintSize="2244,7908" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="2182,7285.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c75d859c-48eb-4746-be02-16500a07e2f2" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="2182,7797.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c75d859c-48eb-4746-be02-16500a07e2f2" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2148,7118" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2148,7630" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="bool_NewFileAdded" />
                     <Variable x:TypeArguments="x:String" Name="str_SelectedMerchant" />
+                    <Variable x:TypeArguments="x:String" Name="str_getMerchant" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -258,6 +260,40 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
+                  <uix:NGetText DisplayName="Get Text 'IATS ZENTRO'" sap:VirtualizedContainerService.HintSize="2086,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c75d859c-48eb-4746-be02-16500a07e2f2" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customervault" CvElementArea="283, 257, 1194, 43" CvType="InputBox" DesignTimeRectangle="300, 266, 263, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'IATS ZENTRO'" FullSelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selectMerchantId' tag='SPAN' type='' class='ngx-select__selected-single pull-left float-left ngx-select__allow-clear' aaname='' /&gt;" Guid="cfe751dd-5d3e-4502-8bc3-148bd806d134" ImageBase64="" InformativeScreenshot="f1892ab82986787fa9a5bdc123f2cef1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NGetText.Target>
+                    <uix:NGetText.TextString>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_getMerchant</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetText.TextString>
+                  </uix:NGetText>
+                  <Assign sap:VirtualizedContainerService.HintSize="2086,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">str_out_MerchantName</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">str_getMerchant.Split("(" , System.StringSplitOptions.None)[0].Trim()</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2086,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">"Merchant Name "+str_out_MerchantName</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
                   <uix:NSelectItem DisplayName="Select Item 'Vault Actions'" sap:VirtualizedContainerService.HintSize="2086,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Import List" ScopeIdentifier="c75d859c-48eb-4746-be02-16500a07e2f2" Version="V3">
                     <uix:NSelectItem.Items>
                       <scg:List x:TypeArguments="x:String" Capacity="3">
