@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VerifyCustomerVaultDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VerifyCustomerVaultDetails" this:VerifyCustomerVaultDetails.str_in_URL="https://payments2.deluxe.com/gateway/*" this:VerifyCustomerVaultDetails.str_in_CardNumber="37344444" this:VerifyCustomerVaultDetails.str_in_PaymentType="Card" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="str_in_URL" Type="InArgument(x:String)" />
     <x:Property Name="str_in_CardNumber" Type="InArgument(x:String)" />
@@ -15,6 +15,7 @@
     <x:Property Name="str_in_ZipCode" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Email" Type="InArgument(x:String)" />
     <x:Property Name="str_in_PhoneNumber" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_PaymentType" Type="InArgument(x:String)" />
   </x:Members>
   <this:VerifyCustomerVaultDetails.str_in_Test_ID>
     <InArgument x:TypeArguments="x:String" />
@@ -23,7 +24,7 @@
     <InArgument x:TypeArguments="x:Int32" />
   </this:VerifyCustomerVaultDetails.int_in_Report_ID>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1224.6666666666667,20031.333333333332</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1224.6666666666667,21463.333333333332</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,9 +138,10 @@
       <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1234.6666666666667,19966.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="1234.6666666666667,21398.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
     </Sequence.Variables>
@@ -161,21 +163,21 @@
         </OutArgument>
       </ca:ReadAssetValue.str_out_AssetValue>
     </ca:ReadAssetValue>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1172.6666666666667,19618.666666666668" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1172.6666666666667,21050.666666666668" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="VerifyCustomerVaultDetails" sap:VirtualizedContainerService.HintSize="1134,19379.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="VerifyCustomerVaultDetails" sap:VirtualizedContainerService.HintSize="1134,20811.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1072,19268.666666666668" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1072,20700.666666666668" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1038,19049.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1038,20481.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="str_getCardNumber" />
                     <Variable x:TypeArguments="x:String" Name="str_VerificationType" />
@@ -221,17 +223,34 @@
                       <InArgument x:TypeArguments="x:String">Vault details</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <uix:NGetText DisplayName="Get Text '5555 55** **** 4444'" sap:VirtualizedContainerService.HintSize="976,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
-                    <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" DesignTimeRectangle="837, 369, 185, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='font-weight-h3' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl class='font-weight-h3' tag='H3' type='' /&gt;" Guid="ee13d3ed-8b78-4439-b53b-b7fd456dac90" ImageBase64="" InformativeScreenshot="55a6421e05be06d45827b26da5593ec5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NGetText.Target>
-                    <uix:NGetText.TextString>
-                      <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_getCardNumber</CSharpReference>
-                      </OutArgument>
-                    </uix:NGetText.TextString>
-                  </uix:NGetText>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,270.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="976,169.33333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                    <Switch.Expression>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_460">str_in_PaymentType</CSharpValue>
+                      </InArgument>
+                    </Switch.Expression>
+                    <uix:NGetText x:Key="ACH" DisplayName="Get Text '**6789'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="711, 374, 66, 18" CvType="AnyWordGroup" DesignTimeRectangle="714, 369, 64, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'**6789'" FullSelectorArgument="&lt;webctrl tag='H3' class='pull-right font-weight-h3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' class='pull-right font-weight-h3' type='' /&gt;" Guid="185b1688-26c3-4e2e-b35f-2d8806b1c6af" ImageBase64="" InformativeScreenshot="bc7d3d6ee0bc73804f6389b3b0e83692.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">str_getCardNumber</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <uix:NGetText x:Key="Card" DisplayName="Get Text '5555 55** **** 4444'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" DesignTimeRectangle="837, 369, 185, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'5555 55** **** 4444'" FullSelectorArgument="&lt;webctrl class='font-weight-h3' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl class='font-weight-h3' tag='H3' type='' /&gt;" Guid="ee13d3ed-8b78-4439-b53b-b7fd456dac90" ImageBase64="" InformativeScreenshot="55a6421e05be06d45827b26da5593ec5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">str_getCardNumber</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                  </Switch>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,178.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -268,42 +287,6 @@
                             </InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_60">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">
-                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">str_getCardNumber</CSharpReference>
-                            </OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_456">str_getCardNumber.Replace(" ","")</CSharpValue>
-                            </InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">
-                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">str_getCardNumber</CSharpReference>
-                            </OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">str_getCardNumber.Substring(str_getCardNumber.Length-4,4)</CSharpValue>
-                            </InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">
-                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">str_in_CardNumber</CSharpReference>
-                            </OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">str_in_CardNumber.Substring(str_in_CardNumber.Length-4,4)</CSharpValue>
-                            </InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                     <sap:WorkflowViewStateService.ViewState>
@@ -312,6 +295,73 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                  </ui:MultipleAssign>
+                  <If sap:VirtualizedContainerService.HintSize="976,356.6666666666667" sap2010:WorkflowViewState.IdRef="If_21">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_464">str_getCardNumber.Contains(" ") == true</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">str_getCardNumber</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_465">str_getCardNumber.Replace(" ","")</CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_49" />
+                    </If.Else>
+                  </If>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_93">str_getCardNumber</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_466">str_getCardNumber.Substring(str_getCardNumber.Length-4,4)</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_94">str_in_CardNumber</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_467">str_in_CardNumber.Substring(str_in_CardNumber.Length-4,4)</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
                   <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="976,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                     <uta:VerifyExpression.Expression>
@@ -453,17 +503,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NGetText ContinueOnError="True" DisplayName="Get Text '**/ 25'" sap:VirtualizedContainerService.HintSize="976,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
-                    <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1274, 452, 56, 19" CvType="AnyWordGroup" DesignTimeRectangle="1276, 447, 54, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'**/ 25'" FullSelectorArgument="&lt;webctrl tag='H3' aaname='**/*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='font-weight-h3 ml-auto' /&gt;" Guid="44bc411a-0482-44b1-8849-f99847d7e728" ImageBase64="" InformativeScreenshot="c2739c86610fcef5830d07b53074a0c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NGetText.Target>
-                    <uix:NGetText.TextString>
-                      <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">str_getCardExpiry</CSharpReference>
-                      </OutArgument>
-                    </uix:NGetText.TextString>
-                  </uix:NGetText>
-                  <If sap:VirtualizedContainerService.HintSize="976,54" sap2010:WorkflowViewState.IdRef="If_20">
+                  <If sap:VirtualizedContainerService.HintSize="976,936.6666666666666" sap2010:WorkflowViewState.IdRef="If_20">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_457">string.IsNullOrEmpty(str_in_CardExpiry) == false</CSharpValue>
@@ -471,17 +511,27 @@
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,553.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                      <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,752.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_46">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText ContinueOnError="True" DisplayName="Get Text '**/ 25'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1274, 452, 56, 19" CvType="AnyWordGroup" DesignTimeRectangle="1276, 447, 54, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'**/ 25'" FullSelectorArgument="&lt;webctrl tag='H3' aaname='**/*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='font-weight-h3 ml-auto' /&gt;" Guid="44bc411a-0482-44b1-8849-f99847d7e728" ImageBase64="" InformativeScreenshot="c2739c86610fcef5830d07b53074a0c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">str_getCardExpiry</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
                         <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
@@ -695,19 +745,42 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_47" />
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="class" DisplayName="Get Attribute 'A javascript: void(0);'" sap:VirtualizedContainerService.HintSize="976,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
-                    <uix:NGetAttributeGeneric.Result>
-                      <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">str_getCardLogo</CSharpReference>
-                      </OutArgument>
-                    </uix:NGetAttributeGeneric.Result>
-                    <uix:NGetAttributeGeneric.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="835, 400, 55, 39" CvType="Icon" DesignTimeRectangle="837, 399, 60, 40" DesignTimeScaleFactor="1" FriendlyName="'A javascript: void(0);'" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='main-wrapper' tabindex='0' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='main-wrapper' tabindex='0' tag='A' type='' class='ccLogo link mastercard ng-star-inserted' aaname='' /&gt;" Guid="ec92ee17-48e0-46f0-826b-aba8838a55df" InformativeScreenshot="270339da89d4a44557d9313603dc55c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NGetAttributeGeneric.Target>
-                  </uix:NGetAttributeGeneric>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="976,426.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <Switch.Expression>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_461">str_in_PaymentType</CSharpValue>
+                      </InArgument>
+                    </Switch.Expression>
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" x:Key="ACH" Attribute="class" sap:VirtualizedContainerService.HintSize="334,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                      <uix:NGetAttributeGeneric.Result>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">str_getCardLogo</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetAttributeGeneric.Result>
+                      <uix:NGetAttributeGeneric.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="714, 335, 57, 15" CvTextArgument="ACH/EFT" CvType="Text" DesignTimeRectangle="714, 321, 60, 40" DesignTimeScaleFactor="1" FriendlyName="'A javascript: void(0);'" FullSelectorArgument="&lt;webctrl href='javascript: void*' isleaf='1' parentid='main-wrapper' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl href='javascript: void(0);' isleaf='1' parentid='main-wrapper' tag='A' type='' class='ach-eft link ccLogo ng-star-inserted' aaname='' /&gt;" Guid="ebd7cf99-607a-40fe-9910-9900899ccb48" InformativeScreenshot="c2546dc40a6dd67313f8d2abca3bbd18.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetAttributeGeneric.Target>
+                    </uix:NGetAttributeGeneric>
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" x:Key="Card" Attribute="class" DisplayName="Get Attribute 'A javascript: void(0);'" sap:VirtualizedContainerService.HintSize="334,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                      <uix:NGetAttributeGeneric.Result>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">str_getCardLogo</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetAttributeGeneric.Result>
+                      <uix:NGetAttributeGeneric.Target>
+                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="835, 400, 55, 39" CvType="Icon" DesignTimeRectangle="837, 399, 60, 40" DesignTimeScaleFactor="1" FriendlyName="'A javascript: void(0);'" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='main-wrapper' tabindex='0' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='main-wrapper' tabindex='0' tag='A' type='' class='ccLogo link mastercard ng-star-inserted' aaname='' /&gt;" Guid="ec92ee17-48e0-46f0-826b-aba8838a55df" InformativeScreenshot="270339da89d4a44557d9313603dc55c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetAttributeGeneric.Target>
+                    </uix:NGetAttributeGeneric>
+                  </Switch>
                   <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
@@ -886,7 +959,7 @@
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" DesignTimeRectangle="1034, 433, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'*8161-7FEA'" FullSelectorArgument="&lt;webctrl class='card-body-details' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='card-body-details' parentid='main-wrapper' tag='SPAN' type='' /&gt;" Guid="a72194b0-7666-485d-a06e-8fc7edfbc481" ImageBase64="" InformativeScreenshot="77dada9f5c63691e7c1d6b847c8645e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="837, 433, 197, 20" ElementType="Text" FriendlyName="'Vault ID'" FullSelectorArgument="&lt;webctrl aaname='Vault ID :' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Vault ID :' parentid='main-wrapper' tag='SPAN' type='' class='card-body-details-width card-body-details' check:innerText='Vault ID :' /&gt;" ImageBase64="" SearchSteps="Selector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -1076,7 +1149,7 @@
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" DesignTimeRectangle="1034, 461, 148, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'XXXXXXXX07557770'" FuzzySelectorArgument="&lt;webctrl class='card-body-details' parentid='main-wrapper' tag='SPAN' type='' /&gt;" Guid="e72f5a04-64aa-42a5-bc69-19521e44cae0" ImageBase64="" InformativeScreenshot="2616a179883dbb77455e85b734bdd529.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="837, 461, 197, 20" ElementType="Text" FriendlyName="'MID'" FullSelectorArgument="&lt;webctrl aaname='MID :' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='MID :' parentid='main-wrapper' tag='SPAN' type='' class='card-body-details-width card-body-details' check:innerText='MID :' /&gt;" ImageBase64="" SearchSteps="Selector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -1469,15 +1542,9 @@
                       <InArgument x:TypeArguments="x:String">Customer details</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <uix:NGetText DisplayName="Get Text 'Customer ID : 26457'" sap:VirtualizedContainerService.HintSize="976,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
+                  <uix:NGetText DisplayName="Get Text 'B'" sap:VirtualizedContainerService.HintSize="976,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="164990b6-0347-444f-9ebb-da3dd8d07c96" Version="V3">
                     <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1205, 743, 49, 15" CvType="AnyWordGroup" DesignTimeRectangle="1208, 741, 47, 19" DesignTimeScaleFactor="1" FriendlyName="'26457'" FullSelectorArgument="&lt;webctrl tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' type='' class='text-color-size' /&gt;" Guid="231d1612-bd7a-4ac9-ae30-ea732aa281be" ImageBase64="" InformativeScreenshot="71c9a7dc7897a90d4a00ca321eb67a7a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CvTextArea="1101, 741, 153, 17" CvTextArgument="Customer ID : 26457" CvType="Text" DesignTimeRectangle="1104, 741, 151, 19" FriendlyName="'Customer ID : 26457'" FullSelectorArgument="&lt;webctrl class='paragraph-title' parentid='collapseCustomerVaultDetail' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='paragraph-title' parentid='collapseCustomerVaultDetail' tag='SPAN' type='' aaname='Customer ID : ' check:innerText='Customer ID : 26457' /&gt;" SearchSteps="Selector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
+                      <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1205, 743, 49, 15" CvType="AnyWordGroup" DesignTimeRectangle="21, 141, 40, 60" DesignTimeScaleFactor="1" FriendlyName="'B'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl role='grouping' text='Customer ID :*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' parentclass='navbar-brand' type='' class='logo-icon ng-star-inserted' aaname='' /&gt;" Guid="557297a1-eb98-4094-9573-b9d396cd32fa" ImageBase64="" InformativeScreenshot="3a179081f7d80617fc17bf80d51f3551.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NGetText.Target>
                     <uix:NGetText.TextString>
                       <OutArgument x:TypeArguments="x:String">
@@ -1485,7 +1552,7 @@
                       </OutArgument>
                     </uix:NGetText.TextString>
                   </uix:NGetText>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="976,178.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
@@ -1508,6 +1575,18 @@
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
                             <InArgument x:TypeArguments="x:String">Customer ID</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_61">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">str_getCustID</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_463">str_getCustID.Trim()</CSharpValue>
+                            </InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                       </scg:List>
