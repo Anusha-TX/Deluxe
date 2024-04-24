@@ -1,0 +1,1689 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="MergedRows" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="466,499" sap2010:WorkflowViewState.IdRef="MergedRows_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>Microsoft.Activities.Extensions.Statements</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Activities.Extensions</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="MergedRows" sap:VirtualizedContainerService.HintSize="476,474" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="currentTestCaseID" />
+      <Variable x:TypeArguments="x:String" Name="str_AccessToken" />
+      <Variable x:TypeArguments="x:String" Name="projectID" />
+      <Variable x:TypeArguments="sd:DataTable" Name="TestCaseDT" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="int_ProjectIndex" />
+      <Variable x:TypeArguments="x:String" Name="str_TmTestCaseID" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="int_StepOrderNo" />
+      <Variable x:TypeArguments="x:String" Name="str_TestmanagerURL" />
+      <Variable x:TypeArguments="x:String" Name="str_TestCaseDocPath" />
+      <Variable x:TypeArguments="x:String" Name="str_TestCaseSheet" />
+      <Variable x:TypeArguments="x:String" Name="str_projectName" />
+      <Variable x:TypeArguments="x:String" Name="str_TestCaseID" />
+      <Variable x:TypeArguments="x:String" Name="str_TestCaseDescription" />
+      <Variable x:TypeArguments="x:String" Name="str_TestSteps" />
+      <Variable x:TypeArguments="x:String" Name="str_StepExpectedBehaviour" />
+      <Variable x:TypeArguments="x:String" Name="str_TestCaseName" />
+      <Variable x:TypeArguments="x:String" Name="str_ClientId" />
+      <Variable x:TypeArguments="x:String" Name="str_ClientSecret" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ResultDT" />
+      <Variable x:TypeArguments="scg:IDictionary(x:String, x:String)" Name="ConfigDictionary" />
+      <Variable x:TypeArguments="x:String" Name="str_TestData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,386.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_HtmlReportPath" />
+        <Variable x:TypeArguments="x:String" Name="str_reportHTML" />
+        <Variable x:TypeArguments="s:String[]" Name="arr_TestCaseSheets" />
+        <Variable x:TypeArguments="x:String" Name="str_TokenStatus" />
+        <Variable x:TypeArguments="x:String" Name="str_ProjectStatus" />
+      </TryCatch.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="492,421.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Read Config File and TestData Sequence" sap:VirtualizedContainerService.HintSize="450,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="ConfigDt" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Initialize Config Dictionary" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_26">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[ConfigDictionary]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[new Dictionary(of String,String)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[ConfigDt]" DisplayName="Read Range Configuration Workbook" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Configurations" WorkbookPath="Configurations\TestCase Import Configuration.xlsx">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ReadRange>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ConfigDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="335.333333333333,160.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <maes:AddToDictionary x:TypeArguments="x:String, x:String" Dictionary="[ConfigDictionary]" DisplayName="Add to dictionary" sap:VirtualizedContainerService.HintSize="293.333333333333,73.3333333333333" sap2010:WorkflowViewState.IdRef="AddToDictionary`2_1" Key="[CurrentRow(&quot;Arguments&quot;).ToString]" Value="[CurrentRow(&quot;Value&quot;).ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </maes:AddToDictionary>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[ConfigDictionary(&quot;TestCase Document Path&quot;)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[ConfigDictionary(&quot;TestCase Sheet Name&quot;)]" />
+            <Assign DisplayName="Assign TestCase Doc Path" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_29">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestCaseDocPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestCase Document Path")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestCase Sheet" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_30">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestCaseSheet]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestCase Sheet Name")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestManager Url" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_31">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestmanagerURL]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestManager URL")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Project Name" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_32">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_projectName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("Project Name")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Client Id" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_33">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_ClientId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("Client Id")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Client Secret" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_34">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_ClientSecret]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("Client Secret")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestCase Id Column" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_35">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestCaseID]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestCase Id")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestCase Name" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_36">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestCaseName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestCase Name")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestCase Description" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_37">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestCaseDescription]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestCase Description")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Test Steps" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_38">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestSteps]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("Test Steps")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TestSteps Expected Results" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_39">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_StepExpectedBehaviour]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("Expected Results")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Test Data" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_96">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_TestData]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("TestData")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign TC Sheet names into array" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_89">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[arr_TestCaseSheets]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[str_TestCaseSheet.Split({","}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign Html Report Path" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_51">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_HtmlReportPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ConfigDictionary("HtmlReportPath")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:BuildDataTable DataTable="[ResultDT]" DisplayName="Build Result Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TestCaseId&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;TCName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;TCDescription&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ResponseCode&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Error&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;TestCaseId&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          </Sequence>
+          <Sequence DisplayName="Initializing API Requests Sequence" sap:VirtualizedContainerService.HintSize="450,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_TokenResponce" />
+              <Variable x:TypeArguments="njl:JObject" Name="json_TokenResponce" />
+              <Variable x:TypeArguments="x:String" Name="str_Projects" />
+              <Variable x:TypeArguments="njl:JObject" Name="json_Projects" />
+              <Variable x:TypeArguments="x:String" Name="TotalProjects" />
+              <Variable x:TypeArguments="x:Int32" Name="int_TokenResponseCode" />
+              <Variable x:TypeArguments="x:Int32" Name="int_ProjectsResponseCode" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Get Access Token HTTP Request" EnableSSLVerification="True" EndPoint="https://cloud.uipath.com/identity_/connect/token" sap:VirtualizedContainerService.HintSize="388,72" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[str_TokenResponce]" StatusCode="[int_TokenResponseCode]" TimeoutMS="6000">
+              <ui:HttpClient.Attachments>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Attachments>
+              <ui:HttpClient.Cookies>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Cookies>
+              <ui:HttpClient.Headers>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Headers>
+              <ui:HttpClient.Parameters>
+                <InArgument x:TypeArguments="x:String" x:Key="grant_type">client_credentials</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="client_id">[str_ClientId]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="client_secret">[str_ClientSecret]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="scope">TM.Attachments TM.CustomFieldDefinitions TM.CustomFieldValues TM.Defects TM.ObjectLabels TM.Projects.Read TM.Requirements TM.TestCases TM.TestExecutions TM.TestSets TM.Users.Read</InArgument>
+              </ui:HttpClient.Parameters>
+              <ui:HttpClient.UrlSegments>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.UrlSegments>
+            </ui:HttpClient>
+            <ui:LogMessage DisplayName="Access Token Log Message" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Access Token Response Code &quot;+int_TokenResponseCode.ToString]" />
+            <If Condition="[int_TokenResponseCode=200]" DisplayName="If Access Token get valid response" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,698" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="s:DateTime" Name="dt_ProjectsLoopStartTime" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign Access Token Pass" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_91">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_TokenStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Access token generated.</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Token JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_6" JsonObject="[json_TokenResponce]" JsonString="[str_TokenResponce]" />
+                  <Assign DisplayName="Assign Access Token" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_AccessToken]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[json_TokenResponce("access_token").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Get Projects list HTTP Request" EnableSSLVerification="True" EndPoint="https://cloud.uipath.com/testirmavaxt/DefaultTenant/testmanager_/api/v2/projects" sap:VirtualizedContainerService.HintSize="434,72" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" OAuth2Token="[str_AccessToken]" Result="[str_Projects]" StatusCode="[int_ProjectsResponseCode]" TimeoutMS="6000">
+                    <ui:HttpClient.Attachments>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Attachments>
+                    <ui:HttpClient.Cookies>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Cookies>
+                    <ui:HttpClient.Headers>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Headers>
+                    <ui:HttpClient.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Parameters>
+                    <ui:HttpClient.UrlSegments>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.UrlSegments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:HttpClient>
+                  <ui:LogMessage DisplayName="Get Project response code Log Message" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Get Projects List Response code &quot;+int_ProjectsResponseCode.ToString]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <If Condition="[int_ProjectsResponseCode=200]" DisplayName="If Project Request Response" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,722" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Projects JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_7" JsonObject="[json_Projects]" JsonString="[str_Projects]" />
+                        <ui:LogMessage DisplayName="Deserialized Project Json Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_63" Level="Info" Message="[json_Projects(&quot;paging&quot;).ToString]" />
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[json_Projects(&quot;paging&quot;)(&quot;total&quot;).ToString]" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <Assign DisplayName="Assign Total Projects" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[TotalProjects]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[json_Projects("paging")("total").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Do while start time Assign" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_40">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:DateTime">[dt_ProjectsLoopStartTime]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Convert.ToInt32(TotalProjects)&gt;int_ProjectIndex]" DisplayName="Do While Projects List" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                          <ui:InterruptibleDoWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,454.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[json_Projects(&quot;data&quot;)(int_ProjectIndex)]" />
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:CommentOut>
+                              <If Condition="[json_Projects(&quot;data&quot;)(int_ProjectIndex)(&quot;name&quot;).ToString.Contains(str_projectName)]" DisplayName="If Project name match with the TM Project" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_3">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,444.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Project Name Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Project Name &quot;+json_Projects(&quot;data&quot;)(int_ProjectIndex)(&quot;name&quot;).ToString]" />
+                                    <ui:LogMessage DisplayName="Project Id Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Project Id &quot;+json_Projects(&quot;data&quot;)(int_ProjectIndex)(&quot;id&quot;).ToString]" />
+                                    <Assign DisplayName="Assign Project ID" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[projectID]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[json_Projects("data")(int_ProjectIndex)("id").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Project not match Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Project Name not match with the Testmanager Projects&quot;]" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <Assign DisplayName="Assign Project Index" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[int_ProjectIndex]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[int_ProjectIndex+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[DateTime.Now.Subtract(dt_ProjectsLoopStartTime).Minutes&lt;=3]" DisplayName="If loop reached to maximum wait time" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="300,81.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,248.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Projets loop reached to max wait time Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Error" Message="[&quot;Loop time reached to maximum wait time 3 min&quot;]" />
+                                    <ui:Break DisplayName="Break Projects Loop" sap:VirtualizedContainerService.HintSize="334,25.3333333333333" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ui:InterruptibleDoWhile.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InterruptibleDoWhile>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,172.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign Project Request Fail" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_92">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ProjectStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["Request failed, Response Code: "+int_ProjectsResponseCode.ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,266.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Failed Access Token Response Log Message" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Error" Message="[&quot;Access Token not generated due to the response code &quot;+int_TokenResponseCode.ToString]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <Assign DisplayName="Assign Access Token failed" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_90">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_TokenStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Access token not generated, Response Code: "+int_TokenResponseCode.ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+          <Sequence DisplayName="Test Case upload Sequence " sap:VirtualizedContainerService.HintSize="450,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="resultsDT" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[not String.IsNullOrEmpty(projectID)]" DisplayName="If Project Id not null" sap:VirtualizedContainerService.HintSize="998,774" sap2010:WorkflowViewState.IdRef="If_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,608.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="bool_TCCreation" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign Project Name" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_95">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_ProjectStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[str_projectName]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign curresntTescaseID" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[currentTestCaseID]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each TestCase Sheet in Excel" sap:VirtualizedContainerService.HintSize="434,270.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arr_TestCaseSheets]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:String">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:String" Name="TCSheet" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,141.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[not String.IsNullOrEmpty(TCSheet)]" DisplayName="If Testcase sheet name not null" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,405.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Reading Data from Sheet Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="Info" Message="[&quot;Reading data from the sheet &quot;+TCSheet]" />
+                                <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[TestCaseDT]" DisplayName="Read Range of TestCase sheet data in Excel" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_9" SheetName="[TCSheet]" WorkbookPath="[str_TestCaseDocPath]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ReadRange>
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TestCaseDT]" DisplayName="For Each Row in TestCase Data Table" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1390,1499.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="testCaseID" />
+                                          <Variable x:TypeArguments="x:String" Name="str_StepDescription" />
+                                          <Variable x:TypeArguments="x:String" Name="str_StepExpectedResult" />
+                                          <Variable x:TypeArguments="x:String" Name="str_StepsJsonbody" />
+                                          <Variable x:TypeArguments="njl:JObject" Name="json_BodyTestSteps" />
+                                          <Variable x:TypeArguments="x:String" Name="str_StepsResponse" />
+                                          <Variable x:TypeArguments="x:Int32" Name="str_StepsResponseCode" />
+                                          <Variable x:TypeArguments="njl:JObject" Name="str_StepsJsonResponse" />
+                                          <Variable x:TypeArguments="x:String" Name="str_ClipboardData" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign testcaseID" sap:VirtualizedContainerService.HintSize="1348,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[testCaseID]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestCaseID).ToString]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:LogMessage DisplayName="Current TC ID and TestCase ID Log Message" sap:VirtualizedContainerService.HintSize="1348,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Current Testcase Id &quot;+currentTestCaseID+&quot; and TestCase id is &quot;+testCaseID]" />
+                                        <If Condition="[testCaseID &lt;&gt; currentTestCaseID]" DisplayName="If Testcase id not match it creates new Testcase" sap:VirtualizedContainerService.HintSize="1348,1150.66666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="1002,985.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="njl:JObject" Name="json_Body" />
+                                                <Variable x:TypeArguments="x:String" Name="str_TCDescription" />
+                                                <Variable x:TypeArguments="x:String" Default="1.0.0" Name="str_TCVersion" />
+                                                <Variable x:TypeArguments="x:String" Name="str_TCName" />
+                                                <Variable x:TypeArguments="x:String" Name="str_Body" />
+                                                <Variable x:TypeArguments="x:String" Name="str_StepOrderNo" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign TestCase ID" sap:VirtualizedContainerService.HintSize="960,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[currentTestCaseID]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[testCaseID]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="New Testcase Id Log Message" sap:VirtualizedContainerService.HintSize="960,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;New TestCase Id is &quot;+currentTestCaseID]" />
+                                              <If Condition="[String.IsNullOrEmpty(currentTestCaseID) or string.IsNullOrWhiteSpace(currentTestCaseID)]" DisplayName="If TestCase Id is not null Create TestCase" sap:VirtualizedContainerService.HintSize="960,54" sap2010:WorkflowViewState.IdRef="If_4">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="TestCae id null Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Current Testcase ID is null&quot;]" />
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="476,496.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="x:String" Name="str_TestCaseCreation" />
+                                                      <Variable x:TypeArguments="x:Int32" Name="int_TestCaseCreationResponseCode" />
+                                                      <Variable x:TypeArguments="njl:JObject" Name="json_TestCaseCreationResponse" />
+                                                      <Variable x:TypeArguments="x:String" Name="str_TCResult" />
+                                                      <Variable x:TypeArguments="x:String" Name="str_TCStatus" />
+                                                      <Variable x:TypeArguments="x:String" Name="str_Error" />
+                                                    </Sequence.Variables>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="TestCase Details Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Test Case ID &quot;+ currentTestCaseID+&quot; Test Case description &quot;+ CurrentRow(str_TestCaseID).ToString]" />
+                                                    <Assign DisplayName="Assign TestCase Name" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[str_TCName]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestCaseName).ToString]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <If Condition="[Not (string.IsNullOrEmpty(str_TCName) or String.IsNullOrWhiteSpace(str_TCName))]" DisplayName="If TestCase Name is not Null" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_13">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <If.Then>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="476,734.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If Condition="[not string.IsNullOrEmpty(str_TestCaseDescription)]" DisplayName="If TestCase Description column is available" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_11">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <If.Then>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,172.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <Assign DisplayName="Assign TestCase Description" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[str_TCDescription]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestCaseDescription).ToString]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Then>
+                                                            <If.Else>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,172.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <Assign DisplayName="Assign TestCase Description" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[str_TCDescription]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">
+                                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                                    </InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Else>
+                                                          </If>
+                                                          <Assign DisplayName="Assign TC json body" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="njl:JObject">[json_Body]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="njl:JObject" xml:space="preserve">[JObject.FromObject(New With { 
+    .name = str_TCName,
+	.description = str_TCDescription,
+	.projectId =projectID,
+	.version = str_TCVersion
+})]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign json body to string " sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[json_Body.ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:LogMessage DisplayName="TC Json body Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Info" Message="[&quot;TestCase JSON body &quot;+str_Body]" />
+                                                          <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[str_Body]" BodyFormat="application/json" DisplayName="Create TestCase HTTP Request" EnableSSLVerification="True" EndPoint="[str_TestmanagerURL+&quot;/api/v2/&quot;+projectID+&quot;/testcases&quot;]" sap:VirtualizedContainerService.HintSize="434,72" sap2010:WorkflowViewState.IdRef="HttpClient_6" Method="POST" OAuth2Token="[str_AccessToken]" Result="[str_TestCaseCreation]" StatusCode="[int_TestCaseCreationResponseCode]" TimeoutMS="6000">
+                                                            <ui:HttpClient.Attachments>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Attachments>
+                                                            <ui:HttpClient.Cookies>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Cookies>
+                                                            <ui:HttpClient.Headers>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Headers>
+                                                            <ui:HttpClient.Parameters>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Parameters>
+                                                            <ui:HttpClient.UrlSegments>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.UrlSegments>
+                                                          </ui:HttpClient>
+                                                          <If Condition="[int_TestCaseCreationResponseCode=201]" DisplayName="If TestCase Creation Results " sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_12">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <If.Then>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,1056.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:LogMessage DisplayName="TC Creation Response Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;TestCase created successfully wirh Response Code &quot;+int_TestCaseCreationResponseCode.ToString + &quot; &quot;+str_TestCaseCreation.ToString]" />
+                                                                <Assign DisplayName="Assign TestCase creation result Pass to TCStatus" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[str_TCStatus]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">Pass</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <Assign DisplayName="Assign TestCase created" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_65">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Boolean">[bool_TCCreation]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize TC Creation JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_11" JsonObject="[json_TestCaseCreationResponse]" JsonString="[str_TestCaseCreation]" />
+                                                                <ui:LogMessage DisplayName="TC Creation JSON Response Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Info" Message="[&quot;TestCase Creation JSON Response &quot;+json_TestCaseCreationResponse.ToString]" />
+                                                                <ui:LogMessage DisplayName="TM TestCase ID Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Info" Message="[&quot;TestManager TestCase Id &quot;+json_TestCaseCreationResponse(&quot;id&quot;).ToString]" />
+                                                                <Assign DisplayName="Assign TM TestCase Case Id" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_66">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[str_TmTestCaseID]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">[json_TestCaseCreationResponse("id").ToString]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <Assign DisplayName="Assign Step order number" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Int32">[int_StepOrderNo]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Then>
+                                                            <If.Else>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,570" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:LogMessage DisplayName="TC Creation failed response Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Testcase Creation Response &quot;+int_TestCaseCreationResponseCode.ToString + &quot; &quot;+str_TestCaseCreation.ToString]" />
+                                                                <ui:LogMessage DisplayName="TestCase Creation failed Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="Error" Message="[&quot;TestCase not created with Response code &quot;+int_TestCaseCreationResponseCode.ToString]" />
+                                                                <Assign DisplayName="Assign TestCase creation result Fail" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[str_TCStatus]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">["Fail"]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <Assign DisplayName="Assign TestCase created" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Boolean">[bool_TCCreation]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Else>
+                                                          </If>
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="476,559.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="TC Name Null Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Error" Message="[currentTestCaseID +&quot; TestCase  Name is empty due to this TestCase Creation is skipped&quot;]" />
+                                                          <Assign DisplayName="Assign TestCase creation false" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_70">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Boolean">[bool_TCCreation]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign TestCase creation result Fail" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_71">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_TCStatus]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">["Fail"]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign TC Name null to Error" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_72">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_Error]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">TestCase Name is Null</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentTestCaseID,str_TCName,str_TCDescription,str_TCStatus,int_TestCaseCreationResponseCode.ToString, str_Error}]" DataTable="[ResultDT]" DisplayName="Add Data Row of TC Results" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:AddDataRow>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <Sequence DisplayName="Sequence Create TestCase Steps" sap:VirtualizedContainerService.HintSize="960,542.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[bool_TCCreation]" DisplayName="If Test Case is Created" sap:VirtualizedContainerService.HintSize="898,432" sap2010:WorkflowViewState.IdRef="If_15">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If.Then>
+                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,266.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[str_StepDescription]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestSteps).ToString]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <If Condition="[Not (String.IsNullOrEmpty(str_StepDescription) or String.IsNullOrWhiteSpace(str_StepDescription))]" DisplayName="If Step Description is not empty" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_14">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If.Then>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,1294.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <Assign DisplayName="Assign Expected Results" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_74">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[str_StepExpectedResult]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[CurrentRow(str_StepExpectedBehaviour).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <Assign DisplayName="Assign TestData" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_97">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[str_ClipboardData]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestData).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="njl:JObject">[json_BodyTestSteps]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="njl:JObject" xml:space="preserve">[JObject.FromObject(New With { 
+    .testCaseId = str_TmTestCaseID,
+	.orderNo = int_StepOrderNo,
+	.actionType ="",
+	.expectedResult = str_StepExpectedResult,
+	.clipboardData =str_ClipboardData,
+	.description = str_StepDescription	
+})]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_76">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[str_StepsJsonbody]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[json_BodyTestSteps.ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="Info" Message="[&quot;Steps json body &quot;+str_StepsJsonbody]" />
+                                                            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[str_StepsJsonbody]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[str_TestmanagerURL+&quot;/api/v2/&quot;+projectID+&quot;/teststeps&quot;]" sap:VirtualizedContainerService.HintSize="434,72" sap2010:WorkflowViewState.IdRef="HttpClient_7" Method="POST" OAuth2Token="[str_AccessToken]" Result="[str_StepsResponse]" StatusCode="[str_StepsResponseCode]" TimeoutMS="6000">
+                                                              <ui:HttpClient.Attachments>
+                                                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                              </ui:HttpClient.Attachments>
+                                                              <ui:HttpClient.Cookies>
+                                                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                              </ui:HttpClient.Cookies>
+                                                              <ui:HttpClient.Headers>
+                                                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                              </ui:HttpClient.Headers>
+                                                              <ui:HttpClient.Parameters>
+                                                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                              </ui:HttpClient.Parameters>
+                                                              <ui:HttpClient.UrlSegments>
+                                                                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                              </ui:HttpClient.UrlSegments>
+                                                            </ui:HttpClient>
+                                                            <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_12" JsonObject="[str_StepsJsonResponse]" JsonString="[str_StepsResponse]" />
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="Info" Message="[str_StepsResponseCode.ToString+&quot;  &quot;+str_StepsJsonResponse.ToString]" />
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_77">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:Int32">[int_StepOrderNo]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:Int32">[int_StepOrderNo+1]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="Info" Message="[&quot;StepOrderNo&quot;+int_StepOrderNo.ToString]" />
+                                                          </Sequence>
+                                                        </If.Then>
+                                                        <If.Else>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:LogMessage DisplayName="Step description is empty Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_52" Level="Info" Message="[&quot;Step Description is Empty&quot;]" />
+                                                          </Sequence>
+                                                        </If.Else>
+                                                      </If>
+                                                    </Sequence>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Error" Message="[&quot;Test Steps won't be create with out creating the TestCase&quot;]" />
+                                                    </Sequence>
+                                                  </If.Else>
+                                                </If>
+                                              </Sequence>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[bool_TCCreation]" DisplayName="If TestCase is created" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_17">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="476,402.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign DisplayName="Assign Step description" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_78">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[str_StepDescription]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[str_StepDescription + Environment.NewLine + CurrentRow(str_TestSteps).ToString]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <ui:LogMessage DisplayName="Step Description Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[&quot;else &quot;+str_StepDescription]" />
+                                                    <If Condition="[Not (String.IsNullOrEmpty(str_StepDescription) or String.IsNullOrWhiteSpace(str_StepDescription))]" DisplayName="If Step Description is not Empty" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_16">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <If.Then>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="476,1294.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign DisplayName="Assign Step Exp Result" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_79">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_StepExpectedResult]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[str_StepExpectedResult + CurrentRow(str_StepExpectedBehaviour).ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign TestData" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_98">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_ClipboardData]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[CurrentRow(str_TestData).ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign TestSteps Json Body" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_80">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="njl:JObject">[json_BodyTestSteps]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="njl:JObject" xml:space="preserve">[JObject.FromObject(New With { 
+    .testCaseId = str_TmTestCaseID,
+	.orderNo = int_StepOrderNo,
+	.actionType ="",
+	.expectedResult = str_StepExpectedResult,
+	.clipboardData =str_ClipboardData,
+	.description = str_StepDescription	
+})]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Assign Steps Json body to String" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_81">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[str_StepsJsonbody]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[json_BodyTestSteps.ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:LogMessage DisplayName="Steps Json body Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Info" Message="[&quot;Steps json body &quot;+str_StepsJsonbody]" />
+                                                          <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[str_StepsJsonbody]" BodyFormat="application/json" DisplayName="Test Steps HTTP Request" EnableSSLVerification="True" EndPoint="[str_TestmanagerURL+&quot;/api/v2/&quot;+projectID+&quot;/teststeps&quot;]" sap:VirtualizedContainerService.HintSize="434,72" sap2010:WorkflowViewState.IdRef="HttpClient_8" Method="POST" OAuth2Token="[str_AccessToken]" Result="[str_StepsResponse]" StatusCode="[str_StepsResponseCode]" TimeoutMS="6000">
+                                                            <ui:HttpClient.Attachments>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Attachments>
+                                                            <ui:HttpClient.Cookies>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Cookies>
+                                                            <ui:HttpClient.Headers>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Headers>
+                                                            <ui:HttpClient.Parameters>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.Parameters>
+                                                            <ui:HttpClient.UrlSegments>
+                                                              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                                                            </ui:HttpClient.UrlSegments>
+                                                          </ui:HttpClient>
+                                                          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_13" JsonObject="[str_StepsJsonResponse]" JsonString="[str_StepsResponse]" />
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Info" Message="[str_StepsResponseCode.ToString+&quot;  &quot;+str_StepsJsonResponse.ToString]" />
+                                                          <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_82">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Int32">[int_StepOrderNo]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Int32">[int_StepOrderNo+1]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info" Message="[&quot;StepOrderNo Else&quot;+int_StepOrderNo.ToString]" />
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Step description Empty Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;Step Description is Empty&quot;]">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </ui:LogMessage>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Error" Message="[&quot;Test Steps won't be create with out creating the TestCase&quot;]" />
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,183.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="TC Sheet name is null Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_62" Level="Error" Message="[&quot;Testcase Sheet Name is null &quot;]" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEach>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,308.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Given Project not match Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Error" Message="[&quot;Given Project is not matching with the TM Project and its id is null, with out id Testcase won't be create&quot;]" />
+                  <Assign DisplayName="Assign Project Id null" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_93">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_ProjectStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Given Project is not present in TM.</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,166.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="systemException" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Error" Message="[systemException.Message]" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:FileNotFoundException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:FileNotFoundException" Name="fileException" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_64" Level="Error" Message="[fileException.Message]" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:ArgumentException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="argumentException" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Error" Message="[argumentexception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Results and Report Sequence" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_36">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Int32" Name="int_TotalTCCount" />
+            <Variable x:TypeArguments="sd:DataTable" Name="PassedDT" />
+            <Variable x:TypeArguments="sd:DataTable" Name="FailedDT" />
+            <Variable x:TypeArguments="x:Int32" Name="int_PassedTCCount" />
+            <Variable x:TypeArguments="x:Int32" Name="int_FailedTCCount" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Total Test Cases Count" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_83">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_TotalTCCount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[ResultDT.Rows.Count]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:FilterDataTable DataTable="[ResultDT]" DisplayName="Filter Passed TC in Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[PassedDT]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:FilterDataTable>
+          <ui:FilterDataTable DataTable="[ResultDT]" DisplayName="Filter Failed TC in Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[FailedDT]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">["Fail"]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:FilterDataTable>
+          <Assign DisplayName="Assign Passed TC Count" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_84">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_PassedTCCount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[PassedDT.Rows.Count]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Failed TC Count" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_85">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_FailedTCCount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[FailedDT.Rows.Count]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_52">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'&gt;
+&lt;title&gt;Test Case Report&lt;/title&gt;
+&lt;style&gt;
+.main-container{font-family: arial, sans-serif;}
+.heading{background-color: #04AA6D!important;
+color: #ffffff; padding:5px} 
+.token-projects{display: flex;}
+.token{margin-right:20px; margin-bottom:10px}
+.testcases-numbers{display: flex; margin-bottom:10px}
+.passedtestcase{color:green;margin-left:20px}
+.failedtestcase{color:Red;margin-left:20px}
+table {
+  font-family: Roboto,-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {background-color: Tomato;
+  color: #ffffff;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: hsla(9, 100%, 64%, 0.2);
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1 class='heading'&gt;Test Case Report&lt;/h2&gt;
+&lt;div class='main-container'&gt;
+&lt;div class='token-projects'&gt;</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_94">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_reportHTML+ "&lt;span Class='token'&gt;TestManager Token: "+ str_TokenStatus +"&lt;/span&gt;&lt;span&gt;TestManager Project: "+str_ProjectStatus+"&lt;/span&gt;&lt;/div&gt;&lt;div Class='testcases-numbers'&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_86">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_reportHTML+"&lt;span&gt;Total TestCases: " + int_TotalTCCount.ToString +"&lt;/span&gt;&lt;span class='passedtestcase'&gt;Passed TestCases: "+ int_PassedTCCount.ToString+"&lt;/span&gt;&lt;span class='failedtestcase'&gt;Failed TestCases: "+int_FailedTCCount.ToString+"&lt;/span&gt;&lt;/div&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_87">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_reportHTML+"&lt;table&gt;&lt;tr&gt;    &lt;th&gt;TestCase Id&lt;/th&gt;    &lt;th&gt;TestCase Name&lt;/th&gt;    &lt;th&gt;TestCase Description&lt;/th&gt;    &lt;th&gt;Status&lt;/th&gt;    &lt;th&gt;Response Code&lt;/th&gt;	&lt;th&gt;Error&lt;/th&gt;  &lt;/tr&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ResultDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,924.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="testCaseID" />
+                    <Variable x:TypeArguments="x:String" Name="testCaseName" />
+                    <Variable x:TypeArguments="x:String" Name="testCaseDescription" />
+                    <Variable x:TypeArguments="x:String" Name="testCaseStatus" />
+                    <Variable x:TypeArguments="x:String" Name="testCaseResponseCode" />
+                    <Variable x:TypeArguments="x:String" Name="testCaseError" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_53">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseID]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("TestCaseId").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_54">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("TCName").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_55">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseDescription]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("TCDescription").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_56">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("Status").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_57">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseResponseCode]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("ResponseCode").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_88">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[testCaseError]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("Error").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_58">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[str_reportHTML + "&lt;tr&gt;&lt;td&gt;" + testCaseID + "&lt;/td&gt;&lt;td&gt;" + testCaseName + "&lt;/td&gt;&lt;td&gt;" + testCaseDescription + "&lt;/td&gt;&lt;td&gt;" + testCaseStatus + "&lt;/td&gt;&lt;td&gt;" + testCaseResponseCode + "&lt;/td&gt;&lt;td&gt;" + testCaseError + "&lt;/td&gt;&lt;/tr&gt;"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+          <Assign sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_59">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_reportHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_reportHTML + "&lt;/div&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[str_HtmlReportPath+&quot;\TestCaseReport&quot;+DateTime.Now.ToString.Replace(&quot;/&quot;,&quot;_&quot;).Replace(&quot;:&quot;,&quot;_&quot;).Replace(&quot; &quot;,&quot;_&quot;)+&quot;.html&quot;]" sap:VirtualizedContainerService.HintSize="434,136.666666666667" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[str_reportHTML]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:WriteTextFile>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
