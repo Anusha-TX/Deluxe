@@ -18,9 +18,6 @@
     <x:Property Name="str_in_PartOfRecurringSchedule" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
   </x:Members>
-  <this:Verify_the_Customer_Information_details.Validation_CompanyName>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Verify_the_Customer_Information_details.Validation_CompanyName>
   <this:Verify_the_Customer_Information_details.Validation_Fax>
     <InArgument x:TypeArguments="x:String" />
   </this:Verify_the_Customer_Information_details.Validation_Fax>
@@ -68,7 +65,7 @@
   </this:Verify_the_Customer_Information_details.int_in_ReportId>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>881.3333333333334,2930</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>871.3333333333334,2271.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -190,9 +187,11 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="646.6666666666666,2865.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_29">
+  <Sequence sap:VirtualizedContainerService.HintSize="646.6666666666666,2206.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_29">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_out_CustomerInformationTitlePage" />
       <Variable x:TypeArguments="x:String" Name="str_CustomerName" />
@@ -225,9 +224,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584.6666666666666,2754.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584.6666666666666,2096" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Verify_the_ACH_EFT_Customer_Information_details" sap:VirtualizedContainerService.HintSize="546,2516" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Verify_the_ACH_EFT_Customer_Information_details" sap:VirtualizedContainerService.HintSize="546,1857.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -249,13 +248,13 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="484,2311.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="484,1652.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2144" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1485.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="variable1" />
                   </Sequence.Variables>
@@ -282,7 +281,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <If DisplayName="If Verify FirstName" sap:VirtualizedContainerService.HintSize="388,325.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If DisplayName="If Verify FirstName" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_373">!string.IsNullOrEmpty(str_in_CustomerName)</CSharpValue>
@@ -290,20 +289,20 @@
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="324.6666666666667,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_32">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Customer's Name'" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Customer's Name'" sap:VirtualizedContainerService.HintSize="282.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,781" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,796.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="res_CustomerName" />
                               </Sequence.Variables>
@@ -312,7 +311,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NGetText DisplayName="Get Text 'Customer Name Value'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                              <uix:NGetText DisplayName="Get Text 'Customer Name Value'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
                                 <uix:NGetText.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" ContentHash="1GTeRmf_Hk6Lt2eoFAUZ3g" CvTextArea="1071, 496, 124, 12" CvType="AnyWordGroup" DesignTimeRectangle="1025, 332, 77, 17" DesignTimeScaleFactor="1" FriendlyName="'Customer Name Value'" FullSelectorArgument="&lt;webctrl tag='TABLE' class='w-100 table table-borderless' innertext='Customer*Name*' /&gt;&lt;webctrl tag='SPAN' rowName='Customer&amp;apos;s Name : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' class='w-100 table table-borderless' innertext='Customer*Name*' /&gt;&lt;webctrl tag='SPAN' rowName='Customer&amp;apos;s Name : ' type='' class='font-500' aaname='testnew test' check:text='testnew test' /&gt;" Guid="e3d41bfe-601a-4a83-b551-52a8671c1872" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAVCAYAAAA+RgJMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKXSURBVFhH7ZahtqMwEIb3laKicFW4KhyqKq4KVxWH6gtU4VA4FK4KhUPhUHWouH8nCRTKbeneNuesyX9ORcgww3wzmfQPvL6Wh+hAHqIDeYgO5CE60CPEJgVjKZpx+ZVuBQQTKG7j+n/JZU4vfHmIv9E7iE3KyGD+pZOlapEnMQL9PIghy37c0OpRyRg7Tnt8h1iW9ETzEw++hCHZICWoeV1CxgE959iJDK0yjqxexWovCPni44cKCYuQd+MaHfKIQV6Xztzm9NIX6U0n9igEJwgd9OepvoIMQ3JgP7bL9uCiQGc2O2MbXlqz97MTNURG9jnagZZknws222/Gonf5DE1dpUnEFodkoCaotN+1XOb0rhON1ka05lFOdZ7V5RH42Vro6kTZvKv6BnXTm497DnHZPWPHihLGZDOWwlUStNI6a1IOmaYIkwqGm36XEr+HWsplTmtfozYhro/l/Tf2smozHAJ9LCWyoka37ISnEB9npIVok38Xa6gSMHmlZFpcQt11ujsl9AnWEKJldZZymdPHEKdqv9SArimRS0FzZI9TNVL6BOJWLO2Pn9F0OSJjp7uT0zG8oRQh7lNhLZc5fQJR1RKcql3bcbESBaofKzWUxzuU30LcjqWlL48ICV0I0yzUs5FLiROzHflULnP6J4h9gQM7orwpKBOEjs6eYU/HyDhRPVWfEjGVGVAlfN6j9TUNwU9TlWuCFuJMA9v62oa4HctKz0K2nKvmQqGjuNVZLnP64cvqESK9Wp1oyNKHTUMcNHuy497+HaArX1zqMQBJ317T3wEWIE7o5r07p+mVHcx7dmi/g0jaikUyt3J4IQyTbnR7Lm7pp3KZ0xNfpBVEr0/kITqQh+hAHqIDeYgO5CF+LeAvU7GBSgvEqI4AAAAASUVORK5CYII=" InformativeScreenshot="2d3e59896f8cd34c77a7427ab43c7cd2.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/mjMPBJOEN0qmqbsc0ni0gQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NGetText.Target>
@@ -322,7 +321,7 @@
                                   </OutArgument>
                                 </uix:NGetText.TextString>
                               </uix:NGetText>
-                              <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                              <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="388,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpressionWithOperator.FirstExpression>
                                   <InArgument x:TypeArguments="x:String">
                                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">str_CustomerName</CSharpValue>
@@ -339,7 +338,7 @@
                                   </InArgument>
                                 </uta:VerifyExpressionWithOperator.SecondExpression>
                               </uta:VerifyExpressionWithOperator>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -351,7 +350,7 @@
                                   </InArgument>
                                 </ui:LogMessage.Message>
                               </ui:LogMessage>
-                              <If sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_2">
                                 <If.Condition>
                                   <InArgument x:TypeArguments="x:Boolean">
                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">res_CustomerName</CSharpValue>
@@ -435,13 +434,13 @@
                             </Sequence>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_27">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_27">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -453,7 +452,7 @@
                                   </InArgument>
                                 </ui:LogMessage.Message>
                               </ui:LogMessage>
-                              <cr:failedStep Actual_Result="The user given  customer's Name not displayed." Expected_Result="The user given  customer's Name should be displayed." sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_12" str_in_actualStep="Verify Customer Name in Real Time Transaction">
+                              <cr:failedStep Actual_Result="The user given  customer's Name not displayed." Expected_Result="The user given  customer's Name should be displayed." sap:VirtualizedContainerService.HintSize="388,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_12" str_in_actualStep="Verify Customer Name in Real Time Transaction">
                                 <cr:failedStep.str_in_expectedStep>
                                   <InArgument x:TypeArguments="x:String">
                                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">str_StepName</CSharpValue>
@@ -494,140 +493,184 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-                          <Switch.Expression>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">Validation_CompanyName</CSharpValue>
-                            </InArgument>
-                          </Switch.Expression>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState x:Key="True" DisplayName="Check App State 'Company Name'" sap:VirtualizedContainerService.HintSize="954,1044" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,822.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetText DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                                  <uix:NGetText.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" DesignTimeRectangle="1069, 515, 266, 23" DesignTimeScaleFactor="0.75" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl tableCol='2' tag='TD' rowName='Company Name : ' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='TD' rowName='Company Name : ' class='' aaname='' /&gt;" Guid="c85b5d7f-1922-4810-beb3-f467aa0db538" ImageBase64="" InformativeScreenshot="bcd085b679998181d42090a07a2904d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NGetText.Target>
-                                  <uix:NGetText.TextString>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">str_out_CompanyName</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetText.TextString>
-                                </uix:NGetText>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_123">"Company name displayed"</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:passedStep Expected_Result="Company name should be displayed" sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Validation">
-                                  <cr:passedStep.Actual_Result>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">"Company name displayed-"+str_out_CompanyName</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.Actual_Result>
-                                  <cr:passedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_expectedStep>
-                                  <cr:passedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_reportId>
-                                  <cr:passedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_testId>
-                                </cr:passedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_26">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_124">"Company name not displayed"</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:failedStep Actual_Result="Company name not displayed" Expected_Result="Company name should be displayed" sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_11" str_in_actualStep="Validation">
-                                  <cr:failedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_expectedStep>
-                                  <cr:failedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_reportId>
-                                  <cr:failedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_testId>
-                                </cr:failedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="983, 520, 81, 13" CvTextArgument="Company Name :" CvType="Text" DesignTimeRectangle="803, 515, 266, 23" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Company Name'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='Company Name : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='Company Name : ' type='' class='card-title text-right' check:text='Company Name :' /&gt;" Guid="605852ee-b282-468a-a8aa-fddbaf205ccc" InformativeScreenshot="c5f715c6b22e2117466c439b0823e6c4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                            </uix:NCheckState.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </uix:NCheckState>
-                          <x:Null x:Key="False" />
-                        </Switch>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <If DisplayName="If Verify Company Name" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_22">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_381">!string.IsNullOrEmpty(Validation_CompanyName)</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <If DisplayName="If Verify Customer Address" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,768.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="str_CompanyName" />
+                          <Variable x:TypeArguments="x:Boolean" Name="res_CompanyName" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text 'Company Name'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="1508, 414, 30, 18" CvType="AnyWordGroup" DesignTimeRectangle="1505, 406, 367, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FriendlyName="'Xyz'" FullSelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*Company Name*' parentclass='table-responsive d-flex' /&gt;&lt;webctrl tableCol='2' tag='TD' rowName='Company Name : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*Company Name*' parentclass='table-responsive d-flex' /&gt;&lt;webctrl type='' tag='TD' rowName='Company Name : ' class='' aaname='' /&gt;" Guid="2c72f80b-542d-4d8f-ba43-95202eb9298b" ImageBase64="" InformativeScreenshot="52d78dfb357d73d83ad96e5aaba32482.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">str_CompanyName</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">str_CompanyName</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_382">str_CompanyName.Replace(" ","").ToLower().Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">Validation_CompanyName</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_383">Validation_CompanyName.Replace(" ","").ToLower().Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                        <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="478.6666666666667,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_16" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                          <uta:VerifyExpressionWithOperator.FirstExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_384">Validation_CompanyName</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.FirstExpression>
+                          <uta:VerifyExpressionWithOperator.Result>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">res_CompanyName</CSharpReference>
+                            </OutArgument>
+                          </uta:VerifyExpressionWithOperator.Result>
+                          <uta:VerifyExpressionWithOperator.SecondExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_385">str_CompanyName</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.SecondExpression>
+                        </uta:VerifyExpressionWithOperator>
+                        <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_23">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_386">res_CompanyName</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_20" str_in_actualStep="Virify company name in Realtime Transaction">
+                                <cr:passedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_387">"Given Company name displayed "+str_CompanyName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Actual_Result>
+                                <cr:passedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_388">"Company name should be displayed "+Validation_CompanyName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Expected_Result>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <cr:passedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_389">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_expectedStep>
+                                <cr:passedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_390">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_reportId>
+                                <cr:passedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_391">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_testId>
+                              </cr:passedStep>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:failedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_32" str_in_actualStep="Virify company name in Realtime Transaction">
+                                <cr:failedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_392">"Company name not displayed "+str_CompanyName</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Actual_Result>
+                                <cr:failedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_393">"Company name should be displayed "+Validation_CompanyName</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Expected_Result>
+                                <cr:failedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_394">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_expectedStep>
+                                <cr:failedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_395">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_reportId>
+                                <cr:failedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_396">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_testId>
+                              </cr:failedStep>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_91" />
+                    </If.Else>
+                  </If>
+                  <If DisplayName="If Verify Customer Address" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203">!string.IsNullOrEmpty(str_in_CustomerAddress)</CSharpValue>
@@ -635,7 +678,7 @@
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -867,7 +910,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If DisplayName="If Verify Customer City" sap:VirtualizedContainerService.HintSize="388,325.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If DisplayName="If Verify Customer City" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_5">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">!string.IsNullOrEmpty(str_in_CustomerCity)</CSharpValue>
@@ -875,7 +918,7 @@
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -1557,7 +1600,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If DisplayName="If Verify Customer Country in Real Time Transaction" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_13">
+                  <If DisplayName="If Verify Customer Country in Real Time Transaction" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_13">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_273">!string.IsNullOrEmpty(str_in_CustomerCountryCode)</CSharpValue>
@@ -1786,7 +1829,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If DisplayName="If Verify Phone Number" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_16">
+                  <If DisplayName="If Verify Phone Number" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_16">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_306">!string.IsNullOrEmpty(str_in_CustomerPhone)</CSharpValue>
@@ -2018,140 +2061,202 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="559,163" sap2010:WorkflowViewState.IdRef="Sequence_72">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Switch`1_9">
-                          <Switch.Expression>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">Validation_Fax</CSharpValue>
-                            </InArgument>
-                          </Switch.Expression>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState x:Key="True" DisplayName="Check App State 'Fax'" sap:VirtualizedContainerService.HintSize="954,1061.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,840" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetText DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                                  <uix:NGetText.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" DesignTimeRectangle="1069, 672, 266, 23" DesignTimeScaleFactor="0.75" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl tableCol='2' tag='TD' rowName='Fax : ' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='TD' rowName='Fax : ' class='' aaname='' /&gt;" Guid="751b56c2-a4e0-44ba-a5a1-a0f7ce6facce" ImageBase64="" InformativeScreenshot="4f19fe046c0b71d413901ed5887ab3c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NGetText.Target>
-                                  <uix:NGetText.TextString>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">str_out_Fax</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetText.TextString>
-                                </uix:NGetText>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_10">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_137">"Fax number displayed as empty. "</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:passedStep Expected_Result="Fax number should bedisplayed as empty. " sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_actualStep="Validation">
-                                  <cr:passedStep.Actual_Result>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">"Fax number displayed as empty. -"+str_out_Fax</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.Actual_Result>
-                                  <cr:passedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_expectedStep>
-                                  <cr:passedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_reportId>
-                                  <cr:passedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_testId>
-                                </cr:passedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,643" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_19">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_138">"Fax number not displayed as empty. "</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:failedStep Actual_Result="Fax number not displayed as empty. " Expected_Result="Fax number should bedisplayed as empty. " sap:VirtualizedContainerService.HintSize="388,345" sap2010:WorkflowViewState.IdRef="failedStep_5" str_in_actualStep="Validation">
-                                  <cr:failedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_expectedStep>
-                                  <cr:failedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_reportId>
-                                  <cr:failedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_testId>
-                                </cr:failedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="1042, 677, 21, 11" CvTextArgument="Fax" CvType="Text" DesignTimeRectangle="803, 672, 266, 23" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Fax'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='Fax : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='Fax : ' type='' class='card-title text-right' check:text='Fax :' /&gt;" Guid="69148dda-08ea-4a66-9522-5b4ba3c10c84" InformativeScreenshot="9f7a368c0528788aae4734406c572b28.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                            </uix:NCheckState.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </uix:NCheckState>
-                          <x:Null x:Key="False" />
-                        </Switch>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <If DisplayName="If Verify Fax number" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_24">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_397">!string.IsNullOrEmpty(Validation_Fax)</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <If DisplayName="If Verify Email" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_18">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,716.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="str_Fax" />
+                          <Variable x:TypeArguments="x:Boolean" Name="res_Fax" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text '+1 (123) 456-7322'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_22" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="1532, 650, 111, 19" CvType="AnyWordGroup" DesignTimeRectangle="1511, 649, 134, 19" DesignTimeScaleFactor="1.125" ElementType="Text" FriendlyName="'+1 (123) 456-7322'" FullSelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*' /&gt;&lt;webctrl tag='SPAN' rowName='Fax : ' tableCol='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*' /&gt;&lt;webctrl tag='SPAN' rowName='Fax : ' type='' class='font-500' /&gt;" Guid="c6c3520e-bde2-4b8c-95f9-42390bf94892" ImageBase64="" InformativeScreenshot="b1eede25037fe0e580bb1b00cd9782c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">str_Fax</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">str_Fax</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_398">str_Fax.Replace("+","").Replace("(","").Replace(")","").Replace("-","").Replace(" ","").Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">Validation_Fax</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_399">Validation_Fax.Replace("+","").Replace("(","").Replace(")","").Replace("-","").Replace(" ","").Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                        <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_17" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                          <uta:VerifyExpressionWithOperator.FirstExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_400">Validation_Fax</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.FirstExpression>
+                          <uta:VerifyExpressionWithOperator.Result>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">res_Fax</CSharpReference>
+                            </OutArgument>
+                          </uta:VerifyExpressionWithOperator.Result>
+                          <uta:VerifyExpressionWithOperator.SecondExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_401">str_Fax</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.SecondExpression>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uta:VerifyExpressionWithOperator>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="LogMessage_41">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_403">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_404" xml:space="preserve">"Fax number displayed as  "+str_Fax</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_25">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_402">res_Fax</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_21" str_in_actualStep="Verify Fax number in Realtime Transaction">
+                                <cr:passedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_405">"Fax number displayed as expected "+str_Fax</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Actual_Result>
+                                <cr:passedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_406">"Given Fax number should be displayed "+Validation_Fax</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Expected_Result>
+                                <cr:passedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_407">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_expectedStep>
+                                <cr:passedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_408">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_reportId>
+                                <cr:passedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_409">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_testId>
+                              </cr:passedStep>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:failedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_33" str_in_actualStep="Verify Fax number in Realtime Transaction">
+                                <cr:failedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_410">"Failed to display given Fax number "+str_Fax</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Actual_Result>
+                                <cr:failedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_411">"Given Fax number should be displayed "+Validation_Fax</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Expected_Result>
+                                <cr:failedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_412">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_expectedStep>
+                                <cr:failedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_413">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_reportId>
+                                <cr:failedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_414">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_testId>
+                              </cr:failedStep>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_95" />
+                    </If.Else>
+                  </If>
+                  <If DisplayName="If Verify Email" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_18">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_327">!string.IsNullOrEmpty(str_in_Email)</CSharpValue>
@@ -2369,15 +2474,15 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                     <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="559,271" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="558.6666666666666,277.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_80">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="497,160" sap2010:WorkflowViewState.IdRef="Switch`1_11">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="496.6666666666667,166.66666666666666" sap2010:WorkflowViewState.IdRef="Switch`1_11">
                           <Switch.Expression>
                             <InArgument x:TypeArguments="x:String">
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Validation_IpAddress</CSharpValue>
@@ -2389,7 +2494,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState x:Key="True" DisplayName="Check App State 'IP Address'" sap:VirtualizedContainerService.HintSize="954,1075" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                          <uix:NCheckState x:Key="True" DisplayName="Check App State 'IP Address'" sap:VirtualizedContainerService.HintSize="954,1141.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
                             <uix:NCheckState.IfExists>
                               <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,920" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -2502,141 +2607,231 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="559,271" sap2010:WorkflowViewState.IdRef="Sequence_81">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="497,160" sap2010:WorkflowViewState.IdRef="Switch`1_12">
-                          <Switch.Expression>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Validation_CustomerID</CSharpValue>
-                            </InArgument>
-                          </Switch.Expression>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState x:Key="True" DisplayName="Check App State 'Customer ID'" sap:VirtualizedContainerService.HintSize="954,1075" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,858" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetText DisplayName="Get Text '24224'" sap:VirtualizedContainerService.HintSize="388,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
-                                  <uix:NGetText.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="1071, 645, 32, 11" CvType="AnyWordGroup" DesignTimeRectangle="1069, 640, 266, 23" DesignTimeScaleFactor="0.75" FriendlyName="'24224'" FullSelectorArgument="&lt;webctrl tableCol='2' tag='TD' rowName='Customer ID (if applicable) : ' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='TD' rowName='Customer ID (if applicable) : ' class='' aaname='' /&gt;" Guid="b6cf169f-dd03-4814-8921-bc9a700b8e6e" ImageBase64="" InformativeScreenshot="95d1bc8e206bc6fe5e7f094c52abd8a4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NGetText.Target>
-                                  <uix:NGetText.TextString>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">int_out_CustomerID_ifapplicable</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetText.TextString>
-                                </uix:NGetText>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_13">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">"Customer ID displayed as empty."+int_out_CustomerID_ifapplicable</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:passedStep Expected_Result="Customer ID should be displayed as empty." sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="passedStep_12" str_in_actualStep="Validation">
-                                  <cr:passedStep.Actual_Result>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">"Customer ID displayed as empty.-"+int_out_CustomerID_ifapplicable</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.Actual_Result>
-                                  <cr:passedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_expectedStep>
-                                  <cr:passedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_reportId>
-                                  <cr:passedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:passedStep.str_in_testId>
-                                </cr:passedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_110">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">"Customer ID not displayed as empty."</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                </ui:LogMessage>
-                                <cr:failedStep Actual_Result="Customer ID not displayed as empty." Expected_Result="Customer ID should be displayed as empty." sap:VirtualizedContainerService.HintSize="388,380.6666666666667" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_actualStep="Validation">
-                                  <cr:failedStep.str_in_expectedStep>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_111">str_StepName</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_expectedStep>
-                                  <cr:failedStep.str_in_reportId>
-                                    <InArgument x:TypeArguments="x:Int32">
-                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_112">int_in_ReportId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_reportId>
-                                  <cr:failedStep.str_in_testId>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">str_in_TestId</CSharpValue>
-                                    </InArgument>
-                                  </cr:failedStep.str_in_testId>
-                                </cr:failedStep>
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" CvTextArea="933, 644, 129, 14" CvTextArgument="Customer ID (if applicable):" CvType="Text" DesignTimeRectangle="803, 640, 266, 23" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Customer ID'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='Customer ID (if applicable) : ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='Customer ID (if applicable) : ' type='' class='card-title text-right' check:text='Customer ID (if applicable) :' /&gt;" Guid="ac9236ac-ab3f-4694-b95f-a7fcb08bc29b" InformativeScreenshot="ca78e4d3621a52c44de3a27e000d82d5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                            </uix:NCheckState.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </uix:NCheckState>
-                          <x:Null x:Key="False" />
-                        </Switch>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <If DisplayName="If Verify Customer Id" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_26">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_415">!string.IsNullOrEmpty(Validation_CustomerID)</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <If DisplayName="If Verify Recurring Schedule" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_20">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,716.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="str_CustomerId" />
+                          <Variable x:TypeArguments="x:Boolean" Name="res_CustId" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="a434d17f-4e91-42c7-918f-2e6eaab530e1" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/transactiondetail" DesignTimeRectangle="1505, 744, 367, 34" DesignTimeScaleFactor="1.125" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*Customer ID*' /&gt;&lt;webctrl tableCol='2' tag='TD' rowName='Customer ID*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' innertext='Customer*Name*Customer ID*' /&gt;&lt;webctrl type='' tag='TD' rowName='Customer ID*' class='' aaname='' /&gt;" Guid="300480e3-923f-4111-b752-083e2108ce08" ImageBase64="" InformativeScreenshot="0c7035ca3d2df24fb6e498329fc60f3a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Transaction Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">str_CustomerId</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">str_CustomerId</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_416">str_CustomerId.Replace(" ","").Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">Validation_CustomerID</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_417">Validation_CustomerID.Replace(" ","").Trim()</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="LogMessage_42">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_421">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_422">"Displayed Customer id is "+str_CustomerId</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_18" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                          <uta:VerifyExpressionWithOperator.FirstExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_418">Validation_CustomerID</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.FirstExpression>
+                          <uta:VerifyExpressionWithOperator.Result>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">res_CustId</CSharpReference>
+                            </OutArgument>
+                          </uta:VerifyExpressionWithOperator.Result>
+                          <uta:VerifyExpressionWithOperator.SecondExpression>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_419">str_CustomerId</CSharpValue>
+                            </InArgument>
+                          </uta:VerifyExpressionWithOperator.SecondExpression>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uta:VerifyExpressionWithOperator>
+                        <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_27">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_420">res_CustId</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_97">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:passedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_22" str_in_actualStep="Verify Customer Id in Realtime Transaction">
+                                <cr:passedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_423">"Customer ID is displayed "+str_CustomerId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Actual_Result>
+                                <cr:passedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_424">"Given Customer ID should be displayed "+Validation_CustomerID</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.Expected_Result>
+                                <cr:passedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_425">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_expectedStep>
+                                <cr:passedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_426">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_reportId>
+                                <cr:passedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_427">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:passedStep.str_in_testId>
+                              </cr:passedStep>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <cr:failedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_34" str_in_actualStep="Verify Customer Id in Realtime Transaction">
+                                <cr:failedStep.Actual_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_428">"Customer ID not displayed as expected "+str_CustomerId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Actual_Result>
+                                <cr:failedStep.Expected_Result>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_429">"Given Customer ID should be displayed "+Validation_CustomerID</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.Expected_Result>
+                                <cr:failedStep.str_in_expectedStep>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_430">str_StepName</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_expectedStep>
+                                <cr:failedStep.str_in_reportId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_431">int_in_ReportId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_reportId>
+                                <cr:failedStep.str_in_testId>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_432">str_in_TestId</CSharpValue>
+                                  </InArgument>
+                                </cr:failedStep.str_in_testId>
+                              </cr:failedStep>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <cr:passedStep Actual_Result="Customer ID displayed as empty" Expected_Result="Customer ID should be displayed as empty." sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_23" str_in_actualStep="Verify Customer Id in Realtime Transaction">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <cr:passedStep.str_in_expectedStep>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_433">str_StepName</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_expectedStep>
+                          <cr:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_434">int_in_ReportId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_reportId>
+                          <cr:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_435">str_in_TestId</CSharpValue>
+                            </InArgument>
+                          </cr:passedStep.str_in_testId>
+                        </cr:passedStep>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <If DisplayName="If Verify Recurring Schedule" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_20">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_349">!string.IsNullOrEmpty(str_in_PartOfRecurringSchedule)</CSharpValue>
