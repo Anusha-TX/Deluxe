@@ -31,7 +31,7 @@
   </this:Verify_the_transaction_report_grid_information.str_in_RecurringID>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1111.3333333333333,12323.333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1111.3333333333333,12513.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -85,6 +85,8 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>CommonLibrary.Asset</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -154,17 +156,20 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1121.3333333333333,12258.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_33">
+  <Sequence sap:VirtualizedContainerService.HintSize="1121.3333333333333,12448.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_33">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1059.3333333333333,12148" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1059.3333333333333,12338" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Verify_the_transaction_report_grid_information" sap:VirtualizedContainerService.HintSize="1020.6666666666666,11908.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Verify_the_transaction_report_grid_information" sap:VirtualizedContainerService.HintSize="1020.6666666666666,12098.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="str_BrowserValue" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ExtractTransactionDataTable">
@@ -193,26 +198,26 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="DPP_Reports" sap:VirtualizedContainerService.HintSize="958.6666666666666,11704" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="56c7b25b-b0ce-4e35-b10e-d00a7da70831" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="DPP_Reports" sap:VirtualizedContainerService.HintSize="958.6666666666666,11894" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="56c7b25b-b0ce-4e35-b10e-d00a7da70831" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="924.6666666666666,11484.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                <Sequence sap:VirtualizedContainerService.HintSize="924.6666666666666,11674.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_109">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap:VirtualizedContainerService.HintSize="862.6666666666666,11371.333333333334" sap2010:WorkflowViewState.IdRef="If_35">
+                  <If sap:VirtualizedContainerService.HintSize="862.6666666666666,11558.666666666666" sap2010:WorkflowViewState.IdRef="If_35">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_889">bool_in_Transaction == true</CSharpValue>
                       </InArgument>
                     </If.Condition>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476,1562.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,1750" sap2010:WorkflowViewState.IdRef="Sequence_110">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="bool_NoResults" />
                           <Variable x:TypeArguments="x:String" Name="str_CustomerName" />
@@ -244,6 +249,18 @@
                             </InArgument>
                           </Assign.Value>
                         </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_111">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_915">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_916">str_CustomerName</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
                         <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Remove">
                           <ui:FilterDataTable.DataTable>
                             <InArgument x:TypeArguments="sd:DataTable">
@@ -255,7 +272,7 @@
                               <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
                                 <ui:FilterOperationArgument.Column>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_899" xml:space="preserve">"	CUSTOMER NAME"</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_917">"CUSTOMER NAME"</CSharpValue>
                                   </InArgument>
                                 </ui:FilterOperationArgument.Column>
                                 <ui:FilterOperationArgument.Operand>
@@ -286,7 +303,7 @@
                         <If sap:VirtualizedContainerService.HintSize="434,946" sap2010:WorkflowViewState.IdRef="If_36">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
-                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_903">dt_FilteredTransactionReport.Rows.Count !=0</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_919">dt_FilteredTransactionReport.Rows.Count == 0</CSharpValue>
                             </InArgument>
                           </If.Condition>
                           <If.Then>
@@ -299,7 +316,7 @@
                               <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_17" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                 <uta:VerifyExpression.Expression>
                                   <InArgument x:TypeArguments="x:Boolean">
-                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_904">dt_FilteredTransactionReport.Rows.Count !=0</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_920">dt_FilteredTransactionReport.Rows.Count == 0</CSharpValue>
                                   </InArgument>
                                 </uta:VerifyExpression.Expression>
                               </uta:VerifyExpression>
@@ -336,13 +353,13 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,536.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,630" sap2010:WorkflowViewState.IdRef="Sequence_115">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="LogMessage_110">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_110">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_909">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -355,7 +372,7 @@
                                 </ui:LogMessage.Message>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
