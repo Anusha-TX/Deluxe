@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FilterOpenFormandSubmitPayment" this:FilterOpenFormandSubmitPayment.str_in_FormName="Test9304" this:FilterOpenFormandSubmitPayment.str_in_Url="https://forms2.deluxe.com/gateway/*" this:FilterOpenFormandSubmitPayment.str_in_FirstName="Test" this:FilterOpenFormandSubmitPayment.str_in_LastName="Test" this:FilterOpenFormandSubmitPayment.str_in_CompanyName="Test" this:FilterOpenFormandSubmitPayment.str_in_Country="United States" this:FilterOpenFormandSubmitPayment.str_in_Address="Test" this:FilterOpenFormandSubmitPayment.str_in_City="Test" this:FilterOpenFormandSubmitPayment.str_in_State="Texas" this:FilterOpenFormandSubmitPayment.str_in_ZipCode="12345" this:FilterOpenFormandSubmitPayment.str_in_PhoneCode="US/CA (+1)" this:FilterOpenFormandSubmitPayment.str_in_PhoneNumber="1234567898" this:FilterOpenFormandSubmitPayment.str_in_FaxCode="US/CA (+1)" this:FilterOpenFormandSubmitPayment.str_in_FaxNumber="1234567898" this:FilterOpenFormandSubmitPayment.str_in_ShoppingCartProduct="Add" this:FilterOpenFormandSubmitPayment.str_in_CardNumber="5555555555554444" this:FilterOpenFormandSubmitPayment.str_in_CardExpiry="11/25" this:FilterOpenFormandSubmitPayment.str_in_Email="test@test.com" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FilterOpenFormandSubmitPayment" this:FilterOpenFormandSubmitPayment.str_in_FormName="Test9304" this:FilterOpenFormandSubmitPayment.str_in_Url="https://forms2.deluxe.com/gateway/*" this:FilterOpenFormandSubmitPayment.str_in_FirstName="Test" this:FilterOpenFormandSubmitPayment.str_in_LastName="Test" this:FilterOpenFormandSubmitPayment.str_in_CompanyName="Test" this:FilterOpenFormandSubmitPayment.str_in_Country="United States" this:FilterOpenFormandSubmitPayment.str_in_Address="Test" this:FilterOpenFormandSubmitPayment.str_in_City="Test" this:FilterOpenFormandSubmitPayment.str_in_State="Texas" this:FilterOpenFormandSubmitPayment.str_in_ZipCode="12345" this:FilterOpenFormandSubmitPayment.str_in_PhoneCode="US/CA (+1)" this:FilterOpenFormandSubmitPayment.str_in_PhoneNumber="1234567898" this:FilterOpenFormandSubmitPayment.str_in_FaxCode="US/CA (+1)" this:FilterOpenFormandSubmitPayment.str_in_FaxNumber="1234567898" this:FilterOpenFormandSubmitPayment.str_in_ShoppingCartProduct="Add" this:FilterOpenFormandSubmitPayment.str_in_CardNumber="5555555555554444" this:FilterOpenFormandSubmitPayment.str_in_CardExpiry="11/25" this:FilterOpenFormandSubmitPayment.str_in_Email="test@test.com" this:FilterOpenFormandSubmitPayment.str_in_Form="Hosted" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="str_in_FormName" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
@@ -22,6 +22,13 @@
     <x:Property Name="str_in_Email" Type="InArgument(x:String)" />
     <x:Property Name="str_out_AuthResponse" Type="OutArgument(x:String)" />
     <x:Property Name="str_out_TotalAmount" Type="OutArgument(x:String)" />
+    <x:Property Name="str_in_Form" Type="InArgument(x:String)" />
+    <x:Property Name="str_out_FormID" Type="OutArgument(x:String)" />
+    <x:Property Name="str_out_Price" Type="OutArgument(x:String)" />
+    <x:Property Name="str_out_Quantity" Type="OutArgument(x:String)" />
+    <x:Property Name="str_out_SurchargeAmount" Type="OutArgument(x:String)" />
+    <x:Property Name="str_out_Tax" Type="OutArgument(x:String)" />
+    <x:Property Name="str_in_EmbeddedFilePath" Type="InArgument(x:String)" />
   </x:Members>
   <this:FilterOpenFormandSubmitPayment.Int_in_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
@@ -30,7 +37,7 @@
     <InArgument x:TypeArguments="x:String" />
   </this:FilterOpenFormandSubmitPayment.str_in_TestID>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>2962.6666666666665,12619.333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2962.6666666666665,8426.666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,6 +81,7 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>CommonLibrary.Report</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -128,15 +136,27 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FilterOpenFormandSubmitPayment" sap:VirtualizedContainerService.HintSize="2972.6666666666665,12554.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FilterOpenFormandSubmitPayment" sap:VirtualizedContainerService.HintSize="2972.6666666666665,8362" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_getPrice" />
+      <Variable x:TypeArguments="x:String" Name="str_SurchargeAmount" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="2910.6666666666665,12444" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="2910.6666666666665,8251.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
       </Sequence.Variables>
@@ -158,21 +178,21 @@
           </OutArgument>
         </ca:ReadAssetValue.str_out_AssetValue>
       </ca:ReadAssetValue>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2848.6666666666665,12096" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2848.6666666666665,7903.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="FilterFormandOpenForm" sap:VirtualizedContainerService.HintSize="2810,11856.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_87">
+          <Sequence DisplayName="FilterFormandOpenForm" sap:VirtualizedContainerService.HintSize="2810,7664" sap2010:WorkflowViewState.IdRef="Sequence_87">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Online Forms" sap:VirtualizedContainerService.HintSize="2748,11746" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="9f24e242-2b10-4626-9619-b560cab570e9" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Online Forms" sap:VirtualizedContainerService.HintSize="2748,7553.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="9f24e242-2b10-4626-9619-b560cab570e9" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2714,11578.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2714,7334" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="bool_LibraryExists" />
                     </Sequence.Variables>
@@ -186,14 +206,14 @@
                         <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="827, 188, 90, 19" CvTextArgument="LIBRARY" CvType="Text" DesignTimeRectangle="817, 174, 111, 45" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'LIBRARY'" FullSelectorArgument="&lt;webctrl id='library' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='library' tag='A' type='' class='nav-link navbar-brand active' aaname='LIBRARY' check:innerText='LIBRARY' /&gt;" Guid="577e84d7-73a0-4dc6-96b9-78129fdbde9a" InformativeScreenshot="7f84a3f9ee0aa686e1be4fb792d978de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Library'" sap:VirtualizedContainerService.HintSize="2652,11263.333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_28" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Library'" sap:VirtualizedContainerService.HintSize="2652,5370.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_28" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">bool_LibraryExists</CSharpReference>
                         </OutArgument>
                       </uix:NCheckState.Exists>
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="2148,11042" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="2148,5149.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_85">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,9 +249,9 @@
                               <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1763, 548, 60, 22" CvTextArgument="Filter" CvType="Text" DesignTimeRectangle="1692, 531, 149, 56" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Filter'" FullSelectorArgument="&lt;webctrl aaname='*Filter*' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Filter ' tag='BUTTON' type='button' class='bg-primarynew btn rounded-pill text-center text-white ng-star-inserted' check:innerText='Filter' /&gt;" Guid="31703505-41d3-4bb1-8b2c-0ed59846ef06" InformativeScreenshot="ac7dc1263c457797000de3af61e6b906.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'Filter Your Forms'" sap:VirtualizedContainerService.HintSize="2086,10500.666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_27" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'Filter Your Forms'" sap:VirtualizedContainerService.HintSize="2086,4608" sap2010:WorkflowViewState.IdRef="NCheckState_27" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1582,10279.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1582,4386.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Boolean" Name="bool_FormName" />
                                   <Variable x:TypeArguments="x:Boolean" Name="bool_MID" />
@@ -252,6 +272,7 @@
                                   <Variable x:TypeArguments="x:Boolean" Name="bool_OpenForm" />
                                   <Variable x:TypeArguments="x:Boolean" Name="bool_CloseButton" />
                                   <Variable x:TypeArguments="x:Boolean" Name="bool_OpenFormExists" />
+                                  <Variable x:TypeArguments="x:String" Name="str_getFormID" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -838,7 +859,7 @@
                                     </InArgument>
                                   </uta:VerifyExpression.Expression>
                                 </uta:VerifyExpression>
-                                <If sap:VirtualizedContainerService.HintSize="1520,466.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="If_2">
                                   <If.Condition>
                                     <InArgument x:TypeArguments="x:Boolean">
                                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">bool_ClearFilter == true &amp;&amp; dt_FilteredTransactionReport.Rows.Count !=0 == true</CSharpValue>
@@ -846,7 +867,7 @@
                                   </If.Condition>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -905,7 +926,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <uix:NCheckState DisplayName="Check App State 'LABEL'" sap:VirtualizedContainerService.HintSize="1520,1472" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                <uix:NCheckState DisplayName="Check App State 'LABEL'" sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                   <uix:NCheckState.IfExists>
                                     <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -916,23 +937,23 @@
                                     </Sequence>
                                   </uix:NCheckState.IfExists>
                                   <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,1210.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,568.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_38">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1797, 795, 44, 26" CvType="Icon" DesignTimeRectangle="1802, 799, 34, 24" DesignTimeScaleFactor="1.2000000476837158" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='DIV' colName='ACTION' idx='6' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl type='' class='toggle checkcross' tag='DIV' aaname='' /&gt;" Guid="779275f6-32fe-491c-bbe8-35c2756d023f" InformativeScreenshot="ae56c73663c8cf1b9d0a6534247ac66c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NClick.Target>
                                       </uix:NClick>
-                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Yes'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Yes'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="991, 611, 125, 42" CvTextArea="1037, 623, 31, 18" CvTextArgument="Yes" CvType="Button" DesignTimeRectangle="994, 613, 120, 37" DesignTimeScaleFactor="1.2000000476837158" ElementType="Button" FriendlyName="'Yes'" FullSelectorArgument="&lt;webctrl aaname='Yes' aria-label='Close' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Yes' aria-label='Close' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' check:innerText='Yes' /&gt;" Guid="10e96783-803e-4531-8e23-bc0c6528aab9" InformativeScreenshot="ec3627e49aa2fc1cb34b62b7f4fd1d5f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NClick.Target>
                                       </uix:NClick>
-                                      <uix:NCheckState DisplayName="Check App State 'LABEL'" sap:VirtualizedContainerService.HintSize="954,696" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState DisplayName="Check App State 'LABEL'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                         <uix:NCheckState.IfExists>
                                           <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -943,10 +964,11 @@
                                           </Sequence>
                                         </uix:NCheckState.IfExists>
                                         <uix:NCheckState.IfNotExists>
-                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
@@ -964,288 +986,553 @@
                                         <uix:NCheckState.Target>
                                           <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1796, 797, 43, 24" CvType="Icon" DesignTimeRectangle="1802, 801, 34, 14" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'LABEL'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' class='toggle-item' parentclass='toggle checkcross' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='toggle-item' aaname='' /&gt;" Guid="8cf08835-bdfd-4e1d-aff4-1637944fd5c6" InformativeScreenshot="4eed2c5a17f1ad461433871e9a911a7b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NCheckState.Target>
-                                      </uix:NCheckState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1796, 797, 43, 24" CvType="Icon" DesignTimeRectangle="1802, 801, 34, 14" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'LABEL'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' class='toggle-item' parentclass='toggle checkcross' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='toggle-item' aaname='' /&gt;" Guid="8cf08835-bdfd-4e1d-aff4-1637944fd5c6" InformativeScreenshot="4eed2c5a17f1ad461433871e9a911a7b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                </uix:NCheckState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="1520,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" DesignTimeRectangle="1656, 804, 17, 14" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl idx='2' tableRow='2' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl class='fas fa-share-square' type='' tag='I' aaname='' /&gt;" Guid="74ec2a0c-51cd-454c-8c1e-1a207c412f79" ImageBase64="" InformativeScreenshot="57f8db03907046a4875a49356b078e21.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NClick.Target>
-                                </uix:NClick>
-                                <uix:NCheckState DisplayName="Check App State 'SHARE FORM'" sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NCheckState.Exists>
-                                    <OutArgument x:TypeArguments="x:Boolean">
-                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">bool_ShareForm</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NCheckState.Exists>
-                                  <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfExists>
-                                  <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="775, 689, 131, 19" CvTextArgument="SHARE FORM" CvType="Text" DesignTimeRectangle="731, 676, 187, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'SHARE FORM'" FullSelectorArgument="&lt;webctrl aaname=' SHARE FORM ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' SHARE FORM ' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-auto mt-0 rounded-pill text-center text-white' check:innerText='SHARE FORM' /&gt;" Guid="7202323c-8d0d-448e-b8cc-00e5344ba452" InformativeScreenshot="9a6feb2bb43143486ed52e8dc3755e67.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NCheckState>
-                                <uix:NCheckState DisplayName="Check App State 'QR CODE'" sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="NCheckState_15" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NCheckState.Exists>
-                                    <OutArgument x:TypeArguments="x:Boolean">
-                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">bool_QRCode</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NCheckState.Exists>
-                                  <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfExists>
-                                  <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="984, 689, 96, 22" CvTextArgument="QR CODE" CvType="Text" DesignTimeRectangle="938, 676, 154, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'QR CODE'" FullSelectorArgument="&lt;webctrl id='QRCodeLink' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QRCodeLink' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' QR CODE ' check:innerText='QR CODE' /&gt;" Guid="668df96b-30cb-4d4e-aff6-4caf067c68e3" InformativeScreenshot="fcc28051d3d1380cb13992f8ded4d9be.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NCheckState>
-                                <uix:NCheckState DisplayName="Check App State 'COPY LINK'" sap:VirtualizedContainerService.HintSize="1106.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_16" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NCheckState.Exists>
-                                    <OutArgument x:TypeArguments="x:Boolean">
-                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">bool_CopyLink</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NCheckState.Exists>
-                                  <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfExists>
-                                  <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1121, 684, 150, 27" CvTextArgument="© COPY LINK" CvType="Text" DesignTimeRectangle="1112, 676, 170, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'COPY LINK'" FullSelectorArgument="&lt;webctrl id='copylink' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='copylink' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' COPY LINK' check:innerText='COPY LINK' /&gt;" Guid="e4295a35-c242-40ff-a71d-70b55262bc68" InformativeScreenshot="a301d7850020943ef524d3398fa69b42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NCheckState>
-                                <uix:NCheckState DisplayName="Check App State 'OPEN IN NEW TAB'" sap:VirtualizedContainerService.HintSize="1106.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_17" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NCheckState.Exists>
-                                    <OutArgument x:TypeArguments="x:Boolean">
-                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">bool_OpenForm</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NCheckState.Exists>
-                                  <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfExists>
-                                  <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_46">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1344, 689, 182, 19" CvTextArgument="OPEN IN NEW TAB" CvType="Text" DesignTimeRectangle="1302, 676, 237, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OPEN IN NEW TAB'" FullSelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' OPEN IN NEW TAB ' check:innerText='OPEN IN NEW TAB' /&gt;" Guid="f61cfd75-b21d-434c-8e52-66b8aa9af3f8" InformativeScreenshot="12623fd57f321c11e51e2f56d119be19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NCheckState>
-                                <uix:NCheckState DisplayName="Check App State '×'" sap:VirtualizedContainerService.HintSize="1106.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_18" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
-                                  <uix:NCheckState.Exists>
-                                    <OutArgument x:TypeArguments="x:Boolean">
-                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">bool_CloseButton</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NCheckState.Exists>
-                                  <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_47">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfExists>
-                                  <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Sequence>
-                                  </uix:NCheckState.IfNotExists>
-                                  <uix:NCheckState.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1522, 456, 26, 27" CvType="CloseButton" DesignTimeRectangle="1525, 450, 21, 37" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'×'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='×' type='' tag='SPAN' class='' check:innerText='×' /&gt;" Guid="54964b2f-e3c4-499d-a97e-d41ca50b5331" InformativeScreenshot="bf3ba5a371feeaa7dae21bfea0fc6823.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                  </uix:NCheckState.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NCheckState>
-                                <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="1106.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
-                                  <uta:VerifyExpression.Expression>
-                                    <InArgument x:TypeArguments="x:Boolean">
-                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">bool_OpenForm == true &amp;&amp; bool_CopyLink == true &amp;&amp; bool_QRCode == true &amp;&amp; bool_ShareForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
-                                    </InArgument>
-                                  </uta:VerifyExpression.Expression>
-                                </uta:VerifyExpression>
-                                <If sap:VirtualizedContainerService.HintSize="1106.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_3">
-                                  <If.Condition>
-                                    <InArgument x:TypeArguments="x:Boolean">
-                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">bool_OpenForm == true &amp;&amp; bool_CopyLink == true &amp;&amp; bool_QRCode == true &amp;&amp; bool_ShareForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
-                                    </InArgument>
-                                  </If.Condition>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <cr:passedStep Actual_Result="User is able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <cr:passedStep.str_in_reportId>
-                                          <InArgument x:TypeArguments="x:Int32">
-                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">Int_in_Report_ID</CSharpValue>
-                                          </InArgument>
-                                        </cr:passedStep.str_in_reportId>
-                                        <cr:passedStep.str_in_testId>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">str_in_TestID</CSharpValue>
-                                          </InArgument>
-                                        </cr:passedStep.str_in_testId>
-                                      </cr:passedStep>
-                                    </Sequence>
-                                  </If.Then>
-                                  <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_50">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <cr:failedStep Actual_Result="Failed to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="failedStep_3" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <cr:failedStep.str_in_reportId>
-                                          <InArgument x:TypeArguments="x:Int32">
-                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Int_in_Report_ID</CSharpValue>
-                                          </InArgument>
-                                        </cr:failedStep.str_in_reportId>
-                                        <cr:failedStep.str_in_testId>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">str_in_TestID</CSharpValue>
-                                          </InArgument>
-                                        </cr:failedStep.str_in_testId>
-                                      </cr:failedStep>
+                                      </uix:NCheckState>
                                     </Sequence>
-                                  </If.Else>
-                                </If>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OPEN IN NEW TAB'" sap:VirtualizedContainerService.HintSize="1106.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1796, 797, 43, 24" CvType="Icon" DesignTimeRectangle="1802, 801, 34, 14" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'LABEL'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' class='toggle-item' parentclass='toggle checkcross' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='toggle-item' aaname='' /&gt;" Guid="8cf08835-bdfd-4e1d-aff4-1637944fd5c6" InformativeScreenshot="4eed2c5a17f1ad461433871e9a911a7b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="1520,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                   <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1344, 689, 182, 19" CvTextArgument="OPEN IN NEW TAB" CvType="Text" DesignTimeRectangle="1302, 676, 237, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OPEN IN NEW TAB'" FullSelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' OPEN IN NEW TAB ' check:innerText='OPEN IN NEW TAB' /&gt;" Guid="a9ab64d7-d98b-42e9-9616-46bf1adcf7de" InformativeScreenshot="d7417cf35fafcd03558ec44cbca91f19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                    <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" DesignTimeRectangle="1656, 804, 17, 14" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl idx='2' tableRow='2' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tableAuraLibrary' tag='TABLE' /&gt;&lt;webctrl class='fas fa-share-square' type='' tag='I' aaname='' /&gt;" Guid="74ec2a0c-51cd-454c-8c1e-1a207c412f79" ImageBase64="" InformativeScreenshot="57f8db03907046a4875a49356b078e21.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NClick.Target>
                                 </uix:NClick>
-                                <uix:NCheckState DisplayName="Check App State 'Payment Mode'" sap:VirtualizedContainerService.HintSize="1520,5551.333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_26" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Timeout="20" Version="V3">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="1520,1322.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                  <Switch.Expression>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_133">str_in_Form</CSharpValue>
+                                    </InArgument>
+                                  </Switch.Expression>
+                                  <Sequence x:Key="Hosted" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NCheckState DisplayName="Check App State 'SHARE FORM'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">bool_ShareForm</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="775, 689, 131, 19" CvTextArgument="SHARE FORM" CvType="Text" DesignTimeRectangle="731, 676, 187, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'SHARE FORM'" FullSelectorArgument="&lt;webctrl aaname=' SHARE FORM ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' SHARE FORM ' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-auto mt-0 rounded-pill text-center text-white' check:innerText='SHARE FORM' /&gt;" Guid="7202323c-8d0d-448e-b8cc-00e5344ba452" InformativeScreenshot="9a6feb2bb43143486ed52e8dc3755e67.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uix:NCheckState DisplayName="Check App State 'QR CODE'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_15" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">bool_QRCode</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="984, 689, 96, 22" CvTextArgument="QR CODE" CvType="Text" DesignTimeRectangle="938, 676, 154, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'QR CODE'" FullSelectorArgument="&lt;webctrl id='QRCodeLink' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QRCodeLink' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' QR CODE ' check:innerText='QR CODE' /&gt;" Guid="668df96b-30cb-4d4e-aff6-4caf067c68e3" InformativeScreenshot="fcc28051d3d1380cb13992f8ded4d9be.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uix:NCheckState DisplayName="Check App State 'COPY LINK'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_16" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">bool_CopyLink</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1121, 684, 150, 27" CvTextArgument="© COPY LINK" CvType="Text" DesignTimeRectangle="1112, 676, 170, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'COPY LINK'" FullSelectorArgument="&lt;webctrl id='copylink' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='copylink' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' COPY LINK' check:innerText='COPY LINK' /&gt;" Guid="e4295a35-c242-40ff-a71d-70b55262bc68" InformativeScreenshot="a301d7850020943ef524d3398fa69b42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uix:NCheckState DisplayName="Check App State 'OPEN IN NEW TAB'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_17" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">bool_OpenForm</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1344, 689, 182, 19" CvTextArgument="OPEN IN NEW TAB" CvType="Text" DesignTimeRectangle="1302, 676, 237, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OPEN IN NEW TAB'" FullSelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' OPEN IN NEW TAB ' check:innerText='OPEN IN NEW TAB' /&gt;" Guid="f61cfd75-b21d-434c-8e52-66b8aa9af3f8" InformativeScreenshot="12623fd57f321c11e51e2f56d119be19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uix:NCheckState DisplayName="Check App State '×'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_18" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">bool_CloseButton</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1522, 456, 26, 27" CvType="CloseButton" DesignTimeRectangle="1525, 450, 21, 37" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'×'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='×' type='' tag='SPAN' class='' check:innerText='×' /&gt;" Guid="54964b2f-e3c4-499d-a97e-d41ca50b5331" InformativeScreenshot="bf3ba5a371feeaa7dae21bfea0fc6823.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                      <uta:VerifyExpression.Expression>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">bool_OpenForm == true &amp;&amp; bool_CopyLink == true &amp;&amp; bool_QRCode == true &amp;&amp; bool_ShareForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
+                                        </InArgument>
+                                      </uta:VerifyExpression.Expression>
+                                    </uta:VerifyExpression>
+                                    <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If.Condition>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">bool_OpenForm == true &amp;&amp; bool_CopyLink == true &amp;&amp; bool_QRCode == true &amp;&amp; bool_ShareForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
+                                        </InArgument>
+                                      </If.Condition>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <cr:passedStep Actual_Result="User is able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <cr:passedStep.str_in_reportId>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">Int_in_Report_ID</CSharpValue>
+                                              </InArgument>
+                                            </cr:passedStep.str_in_reportId>
+                                            <cr:passedStep.str_in_testId>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">str_in_TestID</CSharpValue>
+                                              </InArgument>
+                                            </cr:passedStep.str_in_testId>
+                                          </cr:passedStep>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <cr:failedStep Actual_Result="Failed to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the hosted link popup with Share form button, QR Code Button, Copy link Button, Open the new tab button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="failedStep_3" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <cr:failedStep.str_in_reportId>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Int_in_Report_ID</CSharpValue>
+                                              </InArgument>
+                                            </cr:failedStep.str_in_reportId>
+                                            <cr:failedStep.str_in_testId>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">str_in_TestID</CSharpValue>
+                                              </InArgument>
+                                            </cr:failedStep.str_in_testId>
+                                          </cr:failedStep>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                    <uix:NGetText DisplayName="Get Text 'https://forms2.deluxe.c…'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="422, 572, 835, 27" CvType="AnyWordGroup" DesignTimeRectangle="396, 552, 1150, 94" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'https://forms2.deluxe.c…'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*https:*' role='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='form_link' tag='TEXTAREA' type='' class='form-control rounded-10 ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="92f544cb-cd92-42bc-8e88-5f188a8bb248" ImageBase64="" InformativeScreenshot="b04b6646995e3429335152c8d9da9efe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NGetText.Target>
+                                      <uix:NGetText.TextString>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">str_getFormID</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NGetText.TextString>
+                                    </uix:NGetText>
+                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">
+                                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">str_out_FormID</CSharpReference>
+                                              </OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">str_getFormID.Split("publish/" , System.StringSplitOptions.None)[1].Trim()</CSharpValue>
+                                              </InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OPEN IN NEW TAB'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1344, 689, 182, 19" CvTextArgument="OPEN IN NEW TAB" CvType="Text" DesignTimeRectangle="1302, 676, 237, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OPEN IN NEW TAB'" FullSelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' OPEN IN NEW TAB ' check:innerText='OPEN IN NEW TAB' /&gt;" Guid="a9ab64d7-d98b-42e9-9616-46bf1adcf7de" InformativeScreenshot="d7417cf35fafcd03558ec44cbca91f19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                  <Sequence x:Key="Embedded" sap:VirtualizedContainerService.HintSize="540.6666666666666,1107.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="str_FormID" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NCheckState DisplayName="Check App State 'COPY CODE'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_29" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">bool_OpenForm</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="673, 666, 116, 22" CvTextArgument="COPY CODE" CvType="Text" DesignTimeRectangle="633, 654, 168, 47" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'COPY CODE'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*COPY CODE' role='push button' text=' COPY CODE' /&gt;" FuzzySelectorArgument="&lt;webctrl id='copylink' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' COPY CODE' check:innerText='COPY CODE' /&gt;" Guid="03690376-6fdb-4ed6-994c-6e500f6f856e" InformativeScreenshot="ecea9aeedd2bb31c65bdd631622bd397.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uix:NCheckState DisplayName="Check App State '×'" sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="NCheckState_30" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NCheckState.Exists>
+                                        <OutArgument x:TypeArguments="x:Boolean">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">bool_CloseButton</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NCheckState.Exists>
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvElementArea="1522, 456, 26, 27" CvType="CloseButton" DesignTimeRectangle="1525, 450, 21, 37" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'×'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='×' type='' tag='SPAN' class='' check:innerText='×' /&gt;" Guid="54964b2f-e3c4-499d-a97e-d41ca50b5331" InformativeScreenshot="bf3ba5a371feeaa7dae21bfea0fc6823.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NCheckState>
+                                    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_9" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                      <uta:VerifyExpression.Expression>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">bool_OpenForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
+                                        </InArgument>
+                                      </uta:VerifyExpression.Expression>
+                                    </uta:VerifyExpression>
+                                    <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_12">
+                                      <If.Condition>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">bool_OpenForm == true &amp;&amp; bool_CloseButton == true</CSharpValue>
+                                        </InArgument>
+                                      </If.Condition>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <cr:passedStep Actual_Result="User is able to view the embedded link popup with Copy code button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the embedded link popup with Copy code button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_20" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <cr:passedStep.str_in_reportId>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_136">Int_in_Report_ID</CSharpValue>
+                                              </InArgument>
+                                            </cr:passedStep.str_in_reportId>
+                                            <cr:passedStep.str_in_testId>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_137">str_in_TestID</CSharpValue>
+                                              </InArgument>
+                                            </cr:passedStep.str_in_testId>
+                                          </cr:passedStep>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <cr:failedStep Actual_Result="Failed to view the embedded link popup with Copy code button, Click the Close button at the right top of the popup" Expected_Result="User should be able to view the embedded link popup with Copy code button, Click the Close button at the right top of the popup" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="failedStep_12" str_in_actualStep="Click on the Share Button" str_in_expectedStep="Step ">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <cr:failedStep.str_in_reportId>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_138">Int_in_Report_ID</CSharpValue>
+                                              </InArgument>
+                                            </cr:failedStep.str_in_reportId>
+                                            <cr:failedStep.str_in_testId>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">str_in_TestID</CSharpValue>
+                                              </InArgument>
+                                            </cr:failedStep.str_in_testId>
+                                          </cr:failedStep>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                    <uix:NGetText DisplayName="Get Text 'https://forms2.deluxe.c…'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="422, 572, 835, 27" CvType="AnyWordGroup" DesignTimeRectangle="396, 552, 1150, 94" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'https://forms2.deluxe.c…'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*https:*' role='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='form_link' tag='TEXTAREA' type='' class='form-control rounded-10 ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="92f544cb-cd92-42bc-8e88-5f188a8bb248" ImageBase64="" InformativeScreenshot="b04b6646995e3429335152c8d9da9efe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NGetText.Target>
+                                      <uix:NGetText.TextString>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">str_getFormID</CSharpReference>
+                                        </OutArgument>
+                                      </uix:NGetText.TextString>
+                                    </uix:NGetText>
+                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,178.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">
+                                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">str_FormID</CSharpReference>
+                                              </OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_145">str_getFormID</CSharpValue>
+                                              </InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">
+                                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">str_getFormID</CSharpReference>
+                                              </OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_143">str_getFormID.Split("data-id='" , System.StringSplitOptions.None)[1].Trim()</CSharpValue>
+                                              </InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">
+                                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">str_out_FormID</CSharpReference>
+                                              </OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">str_getFormID.Split("' data-url" , System.StringSplitOptions.None)[0].Trim()</CSharpValue>
+                                              </InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OPEN IN NEW TAB'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/library" CvTextArea="1344, 689, 182, 19" CvTextArgument="OPEN IN NEW TAB" CvType="Text" DesignTimeRectangle="1302, 676, 237, 46" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'OPEN IN NEW TAB'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*COPY CODE' role='push button' text=' COPY CODE' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Open_Form' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' aaname=' OPEN IN NEW TAB ' check:innerText='OPEN IN NEW TAB' /&gt;" Guid="a9ab64d7-d98b-42e9-9616-46bf1adcf7de" InformativeScreenshot="d7417cf35fafcd03558ec44cbca91f19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </Switch>
+                                <uix:NCheckState DisplayName="Check App State 'Payment Mode'" sap:VirtualizedContainerService.HintSize="1520,1022" sap2010:WorkflowViewState.IdRef="NCheckState_26" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Timeout="20" Version="V3">
                                   <uix:NCheckState.Exists>
                                     <OutArgument x:TypeArguments="x:Boolean">
                                       <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">bool_OpenFormExists</CSharpReference>
                                     </OutArgument>
                                   </uix:NCheckState.Exists>
                                   <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="602.6666666666666,5330" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,800.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_82">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="540.6666666666666,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                      <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                         <uta:VerifyExpression.Expression>
                                           <InArgument x:TypeArguments="x:Boolean">
                                             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">bool_OpenFormExists == true</CSharpValue>
                                           </InArgument>
                                         </uta:VerifyExpression.Expression>
                                       </uta:VerifyExpression>
-                                      <cr:passedStep Actual_Result="Published form is displayed in the new tab" Expected_Result="Published form should be displayed in the new tab" sap:VirtualizedContainerService.HintSize="540.6666666666666,54" sap2010:WorkflowViewState.IdRef="passedStep_8" str_in_actualStep="Click on Open in New tab button" str_in_expectedStep="Step ">
+                                      <cr:passedStep Actual_Result="Published form is displayed in the new tab" Expected_Result="Published form should be displayed in the new tab" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="passedStep_8" str_in_actualStep="Click on Open in New tab button" str_in_expectedStep="Step ">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1263,7 +1550,7 @@
                                           </InArgument>
                                         </cr:passedStep.str_in_testId>
                                       </cr:passedStep>
-                                      <Sequence DisplayName="Fill Form" sap:VirtualizedContainerService.HintSize="540.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                      <Sequence DisplayName="Fill Form" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_59">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1481,6 +1768,70 @@
                                             </InArgument>
                                           </cr:passedStep.str_in_testId>
                                         </cr:passedStep>
+                                        <If sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="If_14">
+                                          <If.Condition>
+                                            <InArgument x:TypeArguments="x:Boolean">
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">string.IsNullOrEmpty(str_in_Email) == false</CSharpValue>
+                                            </InArgument>
+                                          </If.Condition>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT IATS_PaymentItemI…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                                <uix:NTypeInto.Target>
+                                                  <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/publish/5339f1f7-56df-8897-d2fb-987421cbca4d" DesignTimeRectangle="463, 800, 491, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT IATS_PaymentItemI…'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Email' role='editable text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='IATS_PaymentItemInput_Phone_1' tag='INPUT' type='text' class='form-control validate phone_us Phone' /&gt;" Guid="7321760e-5e56-433f-8d66-820f877e4c02" ImageBase64="" InformativeScreenshot="3f49bf32b734cb40d915ac1ef357ac4b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                </uix:NTypeInto.Target>
+                                                <uix:NTypeInto.Text>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">str_in_Email</CSharpValue>
+                                                  </InArgument>
+                                                </uix:NTypeInto.Text>
+                                              </uix:NTypeInto>
+                                              <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="passedStep_21" str_in_actualStep="Enter the Customer email details" str_in_expectedStep="Step ">
+                                                <cr:passedStep.Expected_Result>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">"Entered customer email details as "+str_in_Email</CSharpValue>
+                                                  </InArgument>
+                                                </cr:passedStep.Expected_Result>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <cr:passedStep.str_in_reportId>
+                                                  <InArgument x:TypeArguments="x:Int32">
+                                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">Int_in_Report_ID</CSharpValue>
+                                                  </InArgument>
+                                                </cr:passedStep.str_in_reportId>
+                                                <cr:passedStep.str_in_testId>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">str_in_TestID</CSharpValue>
+                                                  </InArgument>
+                                                </cr:passedStep.str_in_testId>
+                                              </cr:passedStep>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
                                         <If sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="If_4">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
@@ -1556,7 +1907,7 @@
                                             <Sequence sap2010:WorkflowViewState.IdRef="Sequence_52" />
                                           </If.Else>
                                         </If>
-                                        <If sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="If_5">
+                                        <If sap:VirtualizedContainerService.HintSize="410,787.3333333333334" sap2010:WorkflowViewState.IdRef="If_5">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">string.IsNullOrEmpty(str_in_FaxNumber) == false</CSharpValue>
@@ -1564,7 +1915,7 @@
                                           </If.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -1602,7 +1953,7 @@
                                                   </InArgument>
                                                 </uix:NTypeInto.Text>
                                               </uix:NTypeInto>
-                                              <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Enter the Customer phone details" str_in_expectedStep="Step ">
+                                              <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Enter the Customer fax details" str_in_expectedStep="Step ">
                                                 <cr:passedStep.Expected_Result>
                                                   <InArgument x:TypeArguments="x:String">
                                                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">"Entered customer fax details as "+str_in_FaxCode+", "+str_in_FaxNumber</CSharpValue>
@@ -1628,7 +1979,13 @@
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
-                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_54" />
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
                                           </If.Else>
                                         </If>
                                         <If sap:VirtualizedContainerService.HintSize="410,524.6666666666666" sap2010:WorkflowViewState.IdRef="If_6">
@@ -1773,7 +2130,7 @@
                                           </cr:passedStep.str_in_testId>
                                         </cr:passedStep>
                                       </Sequence>
-                                      <Sequence DisplayName="Enter card details" sap:VirtualizedContainerService.HintSize="540.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                      <Sequence DisplayName="Enter card details" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1819,15 +2176,14 @@
                                           </cr:passedStep.str_in_testId>
                                         </cr:passedStep>
                                       </Sequence>
-                                      <Sequence DisplayName="Verify Surcharge" sap:VirtualizedContainerService.HintSize="540.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                      <Sequence DisplayName="Verify Surcharge" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                         <Sequence.Variables>
-                                          <Variable x:TypeArguments="x:String" Name="str_getPrice" />
                                           <Variable x:TypeArguments="x:String" Name="str_getSurcharge" />
-                                          <Variable x:TypeArguments="x:String" Name="str_SurchargeAmount" />
                                           <Variable x:TypeArguments="x:String" Name="str_SurchargePercent" />
                                           <Variable x:TypeArguments="x:String" Name="str_outSurchargeAmount" />
                                           <Variable x:TypeArguments="x:Double" Name="dbl_SurchargeAmount" />
                                           <Variable x:TypeArguments="x:String" Name="inputValue" />
+                                          <Variable x:TypeArguments="x:String" Name="str_getQuantity" />
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1835,7 +2191,7 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NGetText DisplayName="Get Text '$ 1.18'" sap:VirtualizedContainerService.HintSize="510,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                        <uix:NGetText DisplayName="Get Text '$ 1.18'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                           <uix:NGetText.Target>
                                             <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/publish/5339f1f7-56df-8897-d2fb-987421cbca4d" DesignTimeRectangle="1155, 272, 175, 103" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'$ 1.18'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='row' idx='2' /&gt;&lt;ctrl name='$*' role='cell' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' colName='Price' class='' /&gt;" Guid="4a7ded29-ff3e-40a5-8e37-b128d5f5a48a" ImageBase64="" InformativeScreenshot="3dcf0084f33ad669f5e74a2f4f2419ea.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NGetText.Target>
@@ -1845,7 +2201,29 @@
                                             </OutArgument>
                                           </uix:NGetText.TextString>
                                         </uix:NGetText>
-                                        <uix:NGetText DisplayName="Get Text '$ 0.05 (5.00%)'" sap:VirtualizedContainerService.HintSize="510,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                        <uix:NGetText DisplayName="Get Text '1'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
+                                          <uix:NGetText.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/publish/8494a70f-60cc-ed4b-6592-841a11a6cf12" CvElementArea="827, 526, 117, 66" CvType="InputBox" DesignTimeRectangle="829, 528, 115, 62" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'1'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Quantity' role='column header' text='Quantity' /&gt;&lt;nav up='2' /&gt;&lt;ctrl name='1' role='cell' /&gt;&lt;ctrl role='spin box' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='number' tag='INPUT' class='form-control w-100 h-auto py-2 px-2 qtychange' aaname='' /&gt;" Guid="f146844a-bf08-441d-b5a1-7f5b729d9fc2" ImageBase64="" InformativeScreenshot="b9103a1bb1c44159eecd4888d8e90fee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                          </uix:NGetText.Target>
+                                          <uix:NGetText.TextString>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">str_getQuantity</CSharpReference>
+                                            </OutArgument>
+                                          </uix:NGetText.TextString>
+                                        </uix:NGetText>
+                                        <Assign sap:VirtualizedContainerService.HintSize="478.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">str_out_Quantity</CSharpReference>
+                                            </OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_131">str_getQuantity.Trim()</CSharpValue>
+                                            </InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uix:NGetText DisplayName="Get Text '$ 0.05 (5.00%)'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="9f24e242-2b10-4626-9619-b560cab570e9" Version="V3">
                                           <uix:NGetText.Target>
                                             <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/publish/5339f1f7-56df-8897-d2fb-987421cbca4d" DesignTimeRectangle="466, 804, 985, 49" DesignTimeScaleFactor="1.5" FriendlyName="'$ 0.05 (5.00%)'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='grouping' text='A surcharge*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' parentid='surchargeFieldText' type='' class='' /&gt;" Guid="22b02a18-1f37-4401-b7a2-728d15f08476" ImageBase64="" InformativeScreenshot="567f4398a759f31598f689e6917c0357.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NGetText.Target>
@@ -1855,13 +2233,13 @@
                                             </OutArgument>
                                           </uix:NGetText.TextString>
                                         </uix:NGetText>
-                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,301.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                                           <ui:MultipleAssign.AssignOperations>
                                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                                                 <ui:AssignOperation.To>
                                                   <OutArgument x:TypeArguments="x:String">
-                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">str_getPrice</CSharpReference>
+                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_59">str_getPrice</CSharpReference>
                                                   </OutArgument>
                                                 </ui:AssignOperation.To>
                                                 <ui:AssignOperation.Value>
@@ -1909,12 +2287,36 @@
                                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                                                 <ui:AssignOperation.To>
                                                   <OutArgument x:TypeArguments="x:String">
-                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">str_SurchargeAmount</CSharpReference>
+                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">str_SurchargeAmount</CSharpReference>
                                                   </OutArgument>
                                                 </ui:AssignOperation.To>
                                                 <ui:AssignOperation.Value>
                                                   <InArgument x:TypeArguments="x:String">
                                                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">str_getSurcharge.Split("(" , System.StringSplitOptions.None)[0].Trim()</CSharpValue>
+                                                  </InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">
+                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">str_out_Price</CSharpReference>
+                                                  </OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_147">str_getPrice</CSharpValue>
+                                                  </InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">
+                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">str_out_SurchargeAmount</CSharpReference>
+                                                  </OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">str_SurchargeAmount</CSharpValue>
                                                   </InArgument>
                                                 </ui:AssignOperation.Value>
                                               </ui:AssignOperation>
@@ -1927,7 +2329,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:MultipleAssign>
-                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                                           <ui:MultipleAssign.AssignOperations>
                                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -1957,7 +2359,7 @@
                                             </scg:List>
                                           </ui:MultipleAssign.AssignOperations>
                                         </ui:MultipleAssign>
-                                        <If sap:VirtualizedContainerService.HintSize="510,54" sap2010:WorkflowViewState.IdRef="If_7">
+                                        <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_7">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">inputValue.Contains(".")</CSharpValue>
@@ -2065,14 +2467,14 @@
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                        <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                           <uta:VerifyExpression.Expression>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">dbl_SurchargeAmount.Equals(Convert.ToDouble(str_SurchargeAmount)) == true</CSharpValue>
                                             </InArgument>
                                           </uta:VerifyExpression.Expression>
                                         </uta:VerifyExpression>
-                                        <If sap:VirtualizedContainerService.HintSize="510,54" sap2010:WorkflowViewState.IdRef="If_8">
+                                        <If sap:VirtualizedContainerService.HintSize="478.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_8">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">dbl_SurchargeAmount.Equals(Convert.ToDouble(str_SurchargeAmount)) == true</CSharpValue>
@@ -2150,7 +2552,7 @@
                                           </If.Else>
                                         </If>
                                       </Sequence>
-                                      <Sequence DisplayName="Submit Payment and Send Email &amp; SMS" sap:VirtualizedContainerService.HintSize="540.6666666666666,4614" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                      <Sequence DisplayName="Submit Payment and Send Email &amp; SMS" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:Boolean" Name="bool_SuccessMessage" />
                                           <Variable x:TypeArguments="x:Boolean" Name="bool_PaymentMessage" />
@@ -2163,7 +2565,7 @@
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -2358,6 +2760,53 @@
                                             </InArgument>
                                           </Assign.Value>
                                         </Assign>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">str_out_Tax</CSharpReference>
+                                            </OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">(Convert.ToDouble(str_out_TotalAmount)-Convert.ToDouble(str_getPrice)-Convert.ToDouble(str_SurchargeAmount)).ToString()</CSharpValue>
+                                            </InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <If sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_13">
+                                          <If.Condition>
+                                            <InArgument x:TypeArguments="x:Boolean">
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">str_out_Tax.Contains("-") == true</CSharpValue>
+                                            </InArgument>
+                                          </If.Condition>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">
+                                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_62">str_out_Tax</CSharpReference>
+                                                  </OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">0.00</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_97" />
+                                          </If.Else>
+                                        </If>
                                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
                                           <ui:LogMessage.Level>
                                             <InArgument x:TypeArguments="ui:LogLevel">
@@ -2389,12 +2838,18 @@
                                             </InArgument>
                                           </uta:VerifyExpression.Expression>
                                         </uta:VerifyExpression>
-                                        <If sap:VirtualizedContainerService.HintSize="434,1069.3333333333333" sap2010:WorkflowViewState.IdRef="If_9">
+                                        <If sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_9">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">bool_AuthMessage == true &amp;&amp; bool_SuccessMessage == true &amp;&amp; bool_PaymentMessage == true</CSharpValue>
                                             </InArgument>
                                           </If.Condition>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
                                             <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_72">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -2738,6 +3193,66 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NCheckState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                                          <ui:LogMessage.Level>
+                                            <InArgument x:TypeArguments="ui:LogLevel">
+                                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Level>
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">str_out_FormID</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                                          <ui:LogMessage.Level>
+                                            <InArgument x:TypeArguments="ui:LogLevel">
+                                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Level>
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_153">str_out_Price</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+                                          <ui:LogMessage.Level>
+                                            <InArgument x:TypeArguments="ui:LogLevel">
+                                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Level>
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_155">str_out_Quantity</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                                          <ui:LogMessage.Level>
+                                            <InArgument x:TypeArguments="ui:LogLevel">
+                                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Level>
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">str_out_SurchargeAmount</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+                                          <ui:LogMessage.Level>
+                                            <InArgument x:TypeArguments="ui:LogLevel">
+                                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Level>
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">str_out_Tax</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
                                       </Sequence>
                                     </Sequence>
                                   </uix:NCheckState.IfExists>
@@ -2848,12 +3363,7 @@
                 </ActivityAction>
               </uix:NApplicationCard.Body>
               <uix:NApplicationCard.TargetApp>
-                <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="4c8ff94dde451113a1354b6c2aadbe85.jpg" Title="Online Forms">
-                  <uix:TargetApp.Selector>
-                    <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_125">string.Format("&lt;html app='{0}' title='Online Forms' /&gt;", str_BrowserValue)</CSharpValue>
-                    </InArgument>
-                  </uix:TargetApp.Selector>
+                <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="4c8ff94dde451113a1354b6c2aadbe85.jpg" Selector="&lt;html app='chrome.exe' title='Online Forms' /&gt;" Title="Online Forms">
                   <uix:TargetApp.Url>
                     <InArgument x:TypeArguments="x:String">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">str_in_Url</CSharpValue>
