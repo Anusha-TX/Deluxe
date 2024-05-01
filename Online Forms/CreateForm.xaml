@@ -10,10 +10,11 @@
     <x:Property Name="str_in_ImageLocation" Type="InArgument(x:String)" />
     <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
     <x:Property Name="str_out_FormName" Type="InOutArgument(x:String)" />
+    <x:Property Name="str_in_Form" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1386.6666666666667,12588.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1386.6666666666667,12920</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,6 +72,8 @@
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>CommonLibrary.Asset</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -148,9 +151,12 @@
       <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateForm" sap:VirtualizedContainerService.HintSize="1396.6666666666667,12524" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateForm" sap:VirtualizedContainerService.HintSize="1396.6666666666667,12855.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://payments2.deluxe.com/gateway*" Name="Url" />
       <Variable x:TypeArguments="x:String" Default="Step" Name="stepName" />
@@ -162,7 +168,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1334.6666666666667,12413.333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1334.6666666666667,12744.666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +176,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1296,12174" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap:VirtualizedContainerService.HintSize="1296,12505.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -256,13 +262,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="1234,11875.333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="5ec7b189-f912-4d93-b467-73c198543807" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="1234,12206.666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="5ec7b189-f912-4d93-b467-73c198543807" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1200,11656" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1200,11987.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Decimal" Name="Out_RandomNumber" />
                     <Variable x:TypeArguments="x:Boolean" Name="res_FormCreation" />
@@ -828,46 +834,109 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Dpp_OnlineFrm_CrtFrm_FrmSettings_Tab_OurSite'" sap:VirtualizedContainerService.HintSize="1138,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="b6M4Pl2dgEmCwVOnbT9E_w" DesignTimeRectangle="453, 755, 270, 42" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='OUR SITE' role='page tab' /&gt;" FuzzySelectorArgument="&lt;webctrl id='our-site-tab-form-settings' tag='A' type='' class='nav-link active tooltipzTop' aaname='Our Site' check:innerText='OUR SITE' /&gt;" Guid="7dd10374-138d-47cd-a641-4780f89d1e8d" ImageBase64="" InformativeScreenshot="974db09499366c7e203334fd8b6c9aad.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/lvMduXS36EeBZI0YQEVmRQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Online Forms - Google Chrome' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1138,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
-                    <ui:LogMessage.Level>
-                      <InArgument x:TypeArguments="ui:LogLevel">
-                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                      </InArgument>
-                    </ui:LogMessage.Level>
-                    <ui:LogMessage.Message>
-                      <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Clicked on Our Site"</CSharpValue>
-                      </InArgument>
-                    </ui:LogMessage.Message>
-                  </ui:LogMessage>
-                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="The user should be able to view the 'Form saved sucessfully' toast message" sap:VirtualizedContainerService.HintSize="1138,54" sap2010:WorkflowViewState.IdRef="passedStep_23" str_in_actualStep="Click on the save button">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <cr:passedStep.str_in_expectedStep>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="1138,772" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                    <Switch.Expression>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_284">stepName</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_313">str_in_Form</CSharpValue>
                       </InArgument>
-                    </cr:passedStep.str_in_expectedStep>
-                    <cr:passedStep.str_in_reportId>
-                      <InArgument x:TypeArguments="x:Int32">
-                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">int_in_ReportId</CSharpValue>
-                      </InArgument>
-                    </cr:passedStep.str_in_reportId>
-                    <cr:passedStep.str_in_testId>
-                      <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">str_in_TestId</CSharpValue>
-                      </InArgument>
-                    </cr:passedStep.str_in_testId>
-                  </cr:passedStep>
+                    </Switch.Expression>
+                    <Sequence x:Key="Hosted" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Dpp_OnlineFrm_CrtFrm_FrmSettings_Tab_OurSite'" sap:VirtualizedContainerService.HintSize="1138,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="b6M4Pl2dgEmCwVOnbT9E_w" DesignTimeRectangle="453, 755, 270, 42" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='OUR SITE' role='page tab' /&gt;" FuzzySelectorArgument="&lt;webctrl id='our-site-tab-form-settings' tag='A' type='' class='nav-link active tooltipzTop' aaname='Our Site' check:innerText='OUR SITE' /&gt;" Guid="7dd10374-138d-47cd-a641-4780f89d1e8d" ImageBase64="" InformativeScreenshot="974db09499366c7e203334fd8b6c9aad.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/lvMduXS36EeBZI0YQEVmRQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Online Forms - Google Chrome' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1138,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Clicked on Our Site"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:passedStep Actual_Result="{x:Null}" Expected_Result="The user should be able to view the 'Form saved sucessfully' toast message" sap:VirtualizedContainerService.HintSize="1138,54" sap2010:WorkflowViewState.IdRef="passedStep_23" str_in_actualStep="Click on the save button">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <cr:passedStep.str_in_expectedStep>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_284">stepName</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_expectedStep>
+                        <cr:passedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">int_in_ReportId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_reportId>
+                        <cr:passedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">str_in_TestId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_testId>
+                      </cr:passedStep>
+                    </Sequence>
+                    <Sequence x:Key="Embedded" sap:VirtualizedContainerService.HintSize="450,556.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Dpp_OnlineFrm_CrtFrm_FrmSettings_Tab_OurSite'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_60" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="b6M4Pl2dgEmCwVOnbT9E_w" DesignTimeRectangle="734, 662, 270, 42" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='YOUR SITE' role='page tab' /&gt;" FuzzySelectorArgument="&lt;webctrl id='our-site-tab-form-settings' tag='A' type='' class='nav-link active tooltipzTop' aaname='Our Site' check:innerText='OUR SITE' /&gt;" Guid="7dd10374-138d-47cd-a641-4780f89d1e8d" ImageBase64="" InformativeScreenshot="9b8daa87cbc54d7b5cbf1a34d32ddd68.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/lvMduXS36EeBZI0YQEVmRQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Online Forms - Google Chrome' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_61">
+                        <ui:LogMessage.Level>
+                          <InArgument x:TypeArguments="ui:LogLevel">
+                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_314">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Level>
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_315">"Clicked on Your Site"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <cr:passedStep Actual_Result="{x:Null}" Expected_Result="The user should be able to view the 'Form saved sucessfully' toast message" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="passedStep_24" str_in_actualStep="Click on the save button">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <cr:passedStep.str_in_expectedStep>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_316">stepName</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_expectedStep>
+                        <cr:passedStep.str_in_reportId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_317">int_in_ReportId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_reportId>
+                        <cr:passedStep.str_in_testId>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_318">str_in_TestId</CSharpValue>
+                          </InArgument>
+                        </cr:passedStep.str_in_testId>
+                      </cr:passedStep>
+                    </Sequence>
+                  </Switch>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="2" DisplayName="Click 'Dpp_OnlineFrm_CrtFrm_FrmSettings_Btn_Save'" sap:VirtualizedContainerService.HintSize="1138,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="mx7gYpnngkG8aVNQ4JSmZg" DesignTimeRectangle="1573, 975, 73, 36" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='hostCode' tag='INPUT' type='text' class='form-control rounded-10 tooltipzDown ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="02282a6b-aa56-4b70-8549-a4d702910432" ImageBase64="" InformativeScreenshot="26ecfa0283c03d06cac6bf30e50a4dfa.png" Reference="-2pHw0wrh0mJhzMTlUujbQ/ZhLQUKCm802vA54zHmLr5g" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Online Forms - Google Chrome' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
