@@ -6,6 +6,8 @@
     <x:Property Name="str_in_PhoneNumber" Type="InArgument(x:String)" />
     <x:Property Name="str_getPrice" Type="InArgument(x:String)" />
     <x:Property Name="str_SurchargeAmount" Type="InArgument(x:String)" />
+    <x:Property Name="str_out_AuthResponse" Type="OutArgument(x:String)" />
+    <x:Property Name="str_out_TotalAmount" Type="OutArgument(x:String)" />
   </x:Members>
   <this:Workflow.Int_in_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
@@ -13,8 +15,9 @@
   <this:Workflow.str_in_TestID>
     <InArgument x:TypeArguments="x:String" />
   </this:Workflow.str_in_TestID>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1164,6960</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,8098.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,81 +77,82 @@
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>CommonLibrary</AssemblyReference>
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
-      <AssemblyReference>System.Drawing.Common</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>UiPath.CV</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
-      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
-      <AssemblyReference>CommonLibrary</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
-      <AssemblyReference>System.IO.Packaging</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
-      <AssemblyReference>ReporterForUiPath</AssemblyReference>
-      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1174,6895.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="750,8034" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="dbl_TaxAmount" />
       <Variable x:TypeArguments="x:String" Name="str_success" />
@@ -159,13 +163,13 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: WebpageTest" sap:VirtualizedContainerService.HintSize="1112,6690.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: WebpageTest" sap:VirtualizedContainerService.HintSize="688,7869.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1078,6471.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="654,7610" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="str_surcharge" />
             </Sequence.Variables>
@@ -174,7 +178,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Submit Payment and Send Email &amp; SMS" sap:VirtualizedContainerService.HintSize="548.6666666666666,6145.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Submit Payment and Send Email &amp; SMS" sap:VirtualizedContainerService.HintSize="592,7443.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="bool_SuccessMessage" />
                 <Variable x:TypeArguments="x:Boolean" Name="bool_PaymentMessage" />
@@ -185,8 +189,6 @@
                 <Variable x:TypeArguments="x:String" Name="str_getAuthCode" />
                 <Variable x:TypeArguments="x:String" Name="str_getAmount" />
                 <Variable x:TypeArguments="x:String" Name="inputValue" />
-                <Variable x:TypeArguments="x:String" Name="str_out_AuthResponse" />
-                <Variable x:TypeArguments="x:String" Name="str_out_TotalAmount" />
                 <Variable x:TypeArguments="x:String" Name="str_out_Tax" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
@@ -195,14 +197,14 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="486.6666666666667,1284" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="530,1326.6666666666667" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                     </ActivityAction.Argument>
                     <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="a3108a6d44d145141e027f6511ce3997" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
+                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,266" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="a3108a6d44d145141e027f6511ce3997" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
                         <p:CvGetTextWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10" xml:space="preserve">"Target: AnyWordGroup (582,24,98,22)" +
@@ -227,7 +229,7 @@
                           </OutArgument>
                         </p:CvGetTextWithDescriptor.Result>
                       </p:CvGetTextWithDescriptor>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15">
                         <ui:LogMessage.Level>
                           <InArgument x:TypeArguments="ui:LogLevel">
                             <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -239,7 +241,7 @@
                           </InArgument>
                         </ui:LogMessage.Message>
                       </ui:LogMessage>
-                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="a923d78c5151f9a5628221fe3e346f84" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
+                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,266" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="a923d78c5151f9a5628221fe3e346f84" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
                         <p:CvGetTextWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73" xml:space="preserve">"Target: AnyWordGroup (532,86,198,12)" +
@@ -264,7 +266,7 @@
                           </OutArgument>
                         </p:CvGetTextWithDescriptor.Result>
                       </p:CvGetTextWithDescriptor>
-                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="4b1ab9a924495b8965bcd07ad5c6c4d2" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
+                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="bd894aa0-52b8-4b37-8be6-599e0a0cbdf1" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,248.66666666666666" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="4b1ab9a924495b8965bcd07ad5c6c4d2" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
                         <p:CvGetTextWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76" xml:space="preserve">"Target: AnyWordGroup (650,108,38,10)" +
@@ -686,7 +688,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:CVScope>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,94" sap2010:WorkflowViewState.IdRef="CommentOut_10">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,1033.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_38">
                     <sap:WorkflowViewStateService.ViewState>
@@ -879,10 +881,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="530,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">str_out_AuthResponse</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">str_out_AuthResponse</CSharpReference>
                   </OutArgument>
                 </Assign.To>
                 <Assign.Value>
@@ -891,7 +893,7 @@
                   </InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                 <ui:LogMessage.Level>
                   <InArgument x:TypeArguments="ui:LogLevel">
                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -903,7 +905,7 @@
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
-              <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="530,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">str_out_TotalAmount</CSharpReference>
@@ -915,7 +917,7 @@
                   </InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign sap:VirtualizedContainerService.HintSize="530,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">str_out_Tax</CSharpReference>
@@ -927,7 +929,7 @@
                   </InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="530,157.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -945,7 +947,7 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <If sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap:VirtualizedContainerService.HintSize="530,94" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">inputValue.Contains(".")</CSharpValue>
@@ -1052,7 +1054,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign sap:VirtualizedContainerService.HintSize="530,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">str_out_Tax</CSharpReference>
@@ -1064,7 +1066,7 @@
                   </InArgument>
                 </Assign.Value>
               </Assign>
-              <If sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_2">
+              <If sap:VirtualizedContainerService.HintSize="530,474" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">str_out_Tax.Contains("-") == true</CSharpValue>
@@ -1072,18 +1074,18 @@
                 </If.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,192.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_9">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">str_out_Tax</CSharpReference>
@@ -1096,10 +1098,16 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25" />
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,101.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
                 </If.Else>
               </If>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7">
                 <ui:LogMessage.Level>
                   <InArgument x:TypeArguments="ui:LogLevel">
                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
@@ -1111,7 +1119,7 @@
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9">
                 <ui:LogMessage.Level>
                   <InArgument x:TypeArguments="ui:LogLevel">
                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
@@ -1123,14 +1131,14 @@
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
-              <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="486.6666666666667,92" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+              <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" sap:VirtualizedContainerService.HintSize="530,132" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                 <uta:VerifyExpression.Expression>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">string.IsNullOrEmpty(str_success) == false &amp;&amp; string.IsNullOrEmpty(str_getAmount) == false &amp;&amp; string.IsNullOrEmpty(str_getAuthCode) == false</CSharpValue>
                   </InArgument>
                 </uta:VerifyExpression.Expression>
               </uta:VerifyExpression>
-              <If sap:VirtualizedContainerService.HintSize="486.6666666666667,768" sap2010:WorkflowViewState.IdRef="If_3">
+              <If sap:VirtualizedContainerService.HintSize="530,804" sap2010:WorkflowViewState.IdRef="If_3">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">string.IsNullOrEmpty(str_success) == false &amp;&amp; string.IsNullOrEmpty(str_getAmount) == false &amp;&amp; string.IsNullOrEmpty(str_getAuthCode) == false</CSharpValue>
@@ -1143,13 +1151,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,161.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_26">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <cr:passedStep Actual_Result="Payment is successful and also the Success toaster message is displayed with Default Approve Header message, Default payment amount with message, Approve code" Expected_Result="Payment should be successful and also the Success toaster message should be displayed with Default Approve Header message, Default payment amount with message, Approve code" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on Submit Payment button" str_in_expectedStep="Step ">
+                    <cr:passedStep Actual_Result="Payment is successful and also the Success toaster message is displayed with Default Approve Header message, Default payment amount with message, Approve code" Expected_Result="Payment should be successful and also the Success toaster message should be displayed with Default Approve Header message, Default payment amount with message, Approve code" sap:VirtualizedContainerService.HintSize="354,76.66666666666667" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on Submit Payment button" str_in_expectedStep="Step ">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1170,13 +1178,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <cr:failedStep Actual_Result="Payment is Unsuccessful and also the Success toaster message failed to display Default Approve Header message, Default payment amount with message, Approve code" Expected_Result="Payment should be successful and also the Success toaster message should be displayed with Default Approve Header message, Default payment amount with message, Approve code" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Click on Submit Payment button" str_in_expectedStep="Step ">
+                    <cr:failedStep Actual_Result="Payment is Unsuccessful and also the Success toaster message failed to display Default Approve Header message, Default payment amount with message, Approve code" Expected_Result="Payment should be successful and also the Success toaster message should be displayed with Default Approve Header message, Default payment amount with message, Approve code" sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Click on Submit Payment button" str_in_expectedStep="Step ">
                       <cr:failedStep.str_in_reportId>
                         <InArgument x:TypeArguments="x:Int32">
                           <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Int_in_Report_ID</CSharpValue>
@@ -1191,14 +1199,14 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="530,1387.3333333333333" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                     </ActivityAction.Argument>
                     <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                      <p:CvCheckWithDescriptor DelayScreenshotAfterScroll="{x:Null}" InRegion="{x:Null}" Action="Check" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,139.33333333333334" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_2" InformativeScreenshot="fe3c541556053a19a4bd7b72210d0a1b" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvCheckWithDescriptor DelayScreenshotAfterScroll="{x:Null}" InRegion="{x:Null}" Action="Check" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,179.33333333333334" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_2" InformativeScreenshot="fe3c541556053a19a4bd7b72210d0a1b" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvCheckWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82" xml:space="preserve">"Target: CheckBox (558,160,12,11)" +
@@ -1218,7 +1226,7 @@
                           </uc:CvDescriptor>
                         </p:CvCheckWithDescriptor.DesignTimeDescriptor>
                       </p:CvCheckWithDescriptor>
-                      <p:CvCheckWithDescriptor DelayScreenshotAfterScroll="{x:Null}" InRegion="{x:Null}" Action="Check" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,139.33333333333334" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_1" InformativeScreenshot="6681fa37d480184f80c5b9d815e4cc16" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvCheckWithDescriptor DelayScreenshotAfterScroll="{x:Null}" InRegion="{x:Null}" Action="Check" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,179.33333333333334" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_1" InformativeScreenshot="6681fa37d480184f80c5b9d815e4cc16" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvCheckWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">"Target: CheckBox (660,160,12,11)" +
@@ -1238,7 +1246,7 @@
                           </uc:CvDescriptor>
                         </p:CvCheckWithDescriptor.DesignTimeDescriptor>
                       </p:CvCheckWithDescriptor>
-                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,189.33333333333334" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="efe820666e702a4c905cc4b5867187f0" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,229.33333333333334" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="efe820666e702a4c905cc4b5867187f0" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvTypeIntoWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84" xml:space="preserve">"Target: InputBox (483,182,294,32)" +
@@ -1275,7 +1283,7 @@
                           </InArgument>
                         </p:CvTypeIntoWithDescriptor.Text>
                       </p:CvTypeIntoWithDescriptor>
-                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,189.33333333333334" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="007763c402a7aa475c1ebc33690ddb1a" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,229.33333333333334" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="007763c402a7aa475c1ebc33690ddb1a" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvTypeIntoWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86" xml:space="preserve">"Target: InputBox (570,224,206,32)" +
@@ -1310,7 +1318,7 @@
                           </InArgument>
                         </p:CvTypeIntoWithDescriptor.Text>
                       </p:CvTypeIntoWithDescriptor>
-                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,188.66666666666666" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="98c8489fd1eb51180357989bdedfe94c" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DesignTimeCacheId="fe972f31-6150-42fa-aaa2-684a8d6d113e" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,211.33333333333334" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="98c8489fd1eb51180357989bdedfe94c" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvClickWithDescriptor.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -1347,6 +1355,9 @@
                     </Sequence>
                   </ActivityAction>
                 </p:CVScope.Body>
+                <p:CVScope.DesignTimeCache>
+                  <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                </p:CVScope.DesignTimeCache>
                 <p:CVScope.DesignTimeCacheContainer>
                   <uc:CvCacheContainer>
                     <uc:CvCacheContainer.Caches>
@@ -1727,12 +1738,12 @@
                 </p:CVScope.UseLocalServer>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:CVScope>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="486.6666666666667,1285.3333333333333" sap2010:WorkflowViewState.IdRef="CVScope_4" SendOnPremData="False" Version="V6">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DisplayName="CV Screen Scope 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="530,1325.3333333333333" sap2010:WorkflowViewState.IdRef="CVScope_4" SendOnPremData="False" Version="V6">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -1742,7 +1753,7 @@
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="str_SuccessMessage" />
                       </Sequence.Variables>
-                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="7b874077b1117cea1be77f3ef1a3f745" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
+                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,266" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="7b874077b1117cea1be77f3ef1a3f745" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V6">
                         <p:CvGetTextWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89" xml:space="preserve">"Target: AnyWordGroup (560,290,142,12)" +
@@ -1767,7 +1778,7 @@
                           </OutArgument>
                         </p:CvGetTextWithDescriptor.Result>
                       </p:CvGetTextWithDescriptor>
-                      <If sap:VirtualizedContainerService.HintSize="400,54" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If sap:VirtualizedContainerService.HintSize="400,94" sap2010:WorkflowViewState.IdRef="If_6">
                         <If.Condition>
                           <InArgument x:TypeArguments="x:Boolean">
                             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">string.IsNullOrEmpty(str_SuccessMessage) == false</CSharpValue>
@@ -1835,7 +1846,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,188.66666666666666" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="4af4f74dac54bb8ff96794f81313ef97" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DesignTimeCacheId="e5a41c14-9bde-47f4-b347-955518b9040a" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,228.66666666666666" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="4af4f74dac54bb8ff96794f81313ef97" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
                         <p:CvClickWithDescriptor.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -1869,7 +1880,7 @@
                           </ui:Target>
                         </p:CvClickWithDescriptor.Target>
                       </p:CvClickWithDescriptor>
-                      <cr:passedStep Actual_Result="Success toaster message is closed" Expected_Result="Success toaster message should be closed" sap:VirtualizedContainerService.HintSize="400,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Click on Close button" str_in_expectedStep="Step ">
+                      <cr:passedStep Actual_Result="Success toaster message is closed" Expected_Result="Success toaster message should be closed" sap:VirtualizedContainerService.HintSize="400,378" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Click on Close button" str_in_expectedStep="Step ">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1890,6 +1901,9 @@
                     </Sequence>
                   </ActivityAction>
                 </p:CVScope.Body>
+                <p:CVScope.DesignTimeCache>
+                  <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                </p:CVScope.DesignTimeCache>
                 <p:CVScope.DesignTimeCacheContainer>
                   <uc:CvCacheContainer>
                     <uc:CvCacheContainer.Caches>
@@ -2281,7 +2295,7 @@
                   <InArgument x:TypeArguments="x:Boolean" />
                 </p:CVScope.UseLocalServer>
               </p:CVScope>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,94" sap2010:WorkflowViewState.IdRef="CommentOut_11">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,1328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_39">
                     <sap:WorkflowViewStateService.ViewState>
@@ -2445,7 +2459,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,54" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,94" sap2010:WorkflowViewState.IdRef="CommentOut_12">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,390" sap2010:WorkflowViewState.IdRef="Sequence_44">
                     <sap:WorkflowViewStateService.ViewState>
@@ -2534,20 +2548,20 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,484" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,94" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,364" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,360.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="354,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable CvElementArea="962, 608, 186, 42" CvTextArea="1032, 620, 43, 18" CvTextArgument="Close" CvType="Button" DesignTimeRectangle="962, 610, 187, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='WebpageTest' role='document' /&gt;&lt;ctrl name='Aura Form' role='document' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='WebpageTest' role='document' /&gt;&lt;ctrl name='Aura Form' role='document' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" Guid="3d0443f9-55e9-4863-b11a-ed64faac9a03" InformativeScreenshot="465b45c0d60c0ab0bd5f0a2be80c9c9d.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='WebpageTest' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Success'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NCheckState_5" Mode="WaitDisappear" ScopeIdentifier="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Success'" sap:VirtualizedContainerService.HintSize="354,76.66666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_5" Mode="WaitDisappear" ScopeIdentifier="c86817cb-00b3-400d-848c-b7a82c02c6e6" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">bool_SuccessMessage</CSharpReference>
@@ -2622,12 +2636,12 @@
                 </ui:CommentOut.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14">
                 <ui:LogMessage.Level>
                   <InArgument x:TypeArguments="ui:LogLevel">
                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">UiPath.Core.Activities.LogLevel.Trace</CSharpValue>
@@ -2640,7 +2654,7 @@
                 </ui:LogMessage.Message>
               </ui:LogMessage>
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="594.6666666666666,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,79.33333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,364" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2691,8 +2705,14 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="46158db2c6fd089fd7eaf0f67185d04c.png" Selector="&lt;html app='chrome.exe' title='WebpageTest' /&gt;" Title="WebpageTest" Url="file:///D:/Deluxe/Deluxe_UiPathProject/New%20Merge/TestAutomation/Imports/Online_Forms/EmbeddedForm.html" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="690.6666666666666,54" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="688,76.66666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,195.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
