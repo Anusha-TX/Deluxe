@@ -14,10 +14,11 @@
     <x:Property Name="str_in_LogoWidth" Type="InArgument(x:String)" />
     <x:Property Name="str_in_LogoHeight" Type="InArgument(x:String)" />
     <x:Property Name="bool_in_DisableSavePaymentOption" Type="InArgument(x:Boolean)" />
+    <x:Property Name="str_in_DisableSavePaymentOption" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>2548.6666666666665,11217.333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2548.6666666666665,9925.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -159,11 +160,12 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateForm" sap:VirtualizedContainerService.HintSize="2558.6666666666665,11152.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateForm" sap:VirtualizedContainerService.HintSize="2558.6666666666665,9860.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://payments2.deluxe.com/gateway*" Name="Url" />
       <Variable x:TypeArguments="x:String" Default="Step" Name="stepName" />
       <Variable x:TypeArguments="x:String" Default="Updated Please save my payment information on file for future purchases." Name="str_in_SavePaymentOptionText" />
+      <Variable x:TypeArguments="x:String" Name="str_SavePaymentInfoBuilderPage" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -171,7 +173,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2496.6666666666665,11042" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2496.6666666666665,9750" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +181,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="2458,10802.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap:VirtualizedContainerService.HintSize="2458,9510.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -265,13 +267,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="2396,10504" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="5ec7b189-f912-4d93-b467-73c198543807" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Deluxe_OnlineForm" sap:VirtualizedContainerService.HintSize="2396,9212" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="5ec7b189-f912-4d93-b467-73c198543807" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2362,10284.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2362,8992.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="Out_RandomNumber" />
                     <Variable x:TypeArguments="x:Boolean" Default="True" Name="res_FormCreation" />
@@ -333,7 +335,7 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2300,1466" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2300,1386" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1016,1170" sap2010:WorkflowViewState.IdRef="Sequence_20">
@@ -522,7 +524,7 @@
                     </ui:RetryScope.ActivityBody>
                     <ui:RetryScope.Condition>
                       <ActivityFunc x:TypeArguments="x:Boolean">
-                        <uix:NCheckState DisplayName="Check App State 'Choose the'" sap:VirtualizedContainerService.HintSize="246.66666666666666,54" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Timeout="10" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Choose the'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Timeout="10" Version="V3">
                           <uix:NCheckState.IfExists>
                             <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_21">
                               <sap:WorkflowViewStateService.ViewState>
@@ -1153,7 +1155,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <If sap:VirtualizedContainerService.HintSize="2300,5296.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap:VirtualizedContainerService.HintSize="2300,4084.6666666666665" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">res_FormCreation</CSharpValue>
@@ -1166,7 +1168,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="2266,5112.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence sap:VirtualizedContainerService.HintSize="2266,3900.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2383,7 +2385,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NCheckState>
                         </Sequence>
-                        <Sequence DisplayName="Payment Field" sap:VirtualizedContainerService.HintSize="2224,4712.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                        <Sequence DisplayName="Payment Field" sap:VirtualizedContainerService.HintSize="2224,3500.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_50">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2678,23 +2680,23 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'Field: Payment Mode'" sap:VirtualizedContainerService.HintSize="2162,2291.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'Field: Payment Mode'" sap:VirtualizedContainerService.HintSize="2162,1079.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1658,2070" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,858" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                 <Sequence.Variables>
-                                  <Variable x:TypeArguments="x:String" Name="str_SavePaymentInfoBuilderPage" />
                                   <Variable x:TypeArguments="sd2:DataTable" Name="ExtractDataTable">
                                     <Variable.Default>
                                       <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_287">new System.Data.DataTable();</CSharpValue>
                                     </Variable.Default>
                                   </Variable>
+                                  <Variable x:TypeArguments="x:Boolean" Name="str" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1596,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_30">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_30">
                                   <ui:LogMessage.Level>
                                     <InArgument x:TypeArguments="ui:LogLevel">
                                       <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -2706,7 +2708,7 @@
                                     </InArgument>
                                   </ui:LogMessage.Message>
                                 </ui:LogMessage>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1596,54" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="CommentOut_11">
                                   <ui:CommentOut.Body>
                                     <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="576.6666666666666,679.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_148">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -2794,12 +2796,12 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:CommentOut>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="1596,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_58" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="450,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_58" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="277, 706, 45, 26" DesignTimeScaleFactor="1.5" FriendlyName="'DIV'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='ACH/EFT' /&gt;&lt;nav up='1' /&gt;&lt;ctrl role='grouping' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' type='' parentid='multiCollapseExample7' tag='DIV' aaname='' /&gt;" Guid="7a46664d-745d-48f7-9619-ebd166e18c6f" ImageBase64="" InformativeScreenshot="742b11772e8b478df46f27bbb0c25ac1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NClick.Target>
                                 </uix:NClick>
-                                <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify the Save Payment Option toggle" sap:VirtualizedContainerService.HintSize="1596,54" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_7" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify the Save Payment Option toggle" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_7" Operator="Equality" OutputArgument="Exists" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                   <uta:VerifyControlAttribute.ActivityToTest>
                                     <ActivityAction>
                                       <uix:NCheckState DisplayName="Check App State 'Save Payment Info in Builder Page'" sap:VirtualizedContainerService.HintSize="954,484.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
@@ -2898,178 +2900,187 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uta:VerifyControlAttribute>
-                                <If sap:VirtualizedContainerService.HintSize="1596,1382" sap2010:WorkflowViewState.IdRef="If_20">
-                                  <If.Condition>
-                                    <InArgument x:TypeArguments="x:Boolean">
-                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_341">bool_in_DisableSavePaymentOption</CSharpValue>
-                                    </InArgument>
-                                  </If.Condition>
+                                <Sequence sap:VirtualizedContainerService.HintSize="450,170" sap2010:WorkflowViewState.IdRef="Sequence_214">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="1562,1198" sap2010:WorkflowViewState.IdRef="Sequence_203">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NCheckState DisplayName="Check App State 'May we'" sap:VirtualizedContainerService.HintSize="1520,1110.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_44" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                        <uix:NCheckState.IfExists>
-                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,849.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_205">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_62" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                              <uix:NClick.Target>
-                                                <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="78, 850, 42, 25" DesignTimeScaleFactor="1.5" FriendlyName="'DIV'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='Save Payment Option' /&gt;&lt;nav up='2' /&gt;&lt;ctrl role='grouping' idx='10' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' type='' aaname='' parentid='multiCollapseExample7' tag='DIV' /&gt;" Guid="de4ea622-76db-4d73-bc0b-6f08a63c651f" ImageBase64="" InformativeScreenshot="ee6e54efe4b98c7a238cc6ff966df1e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                              </uix:NClick.Target>
-                                            </uix:NClick>
-                                            <uix:NCheckState DisplayName="Check App State 'May we'" sap:VirtualizedContainerService.HintSize="954,536.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_46" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Timeout="2" Version="V3">
-                                              <uix:NCheckState.IfExists>
-                                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_210">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_63" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                                    <uix:NClick.Target>
-                                                      <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="78, 850, 42, 25" DesignTimeScaleFactor="1.5" FriendlyName="'DIV'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='Save Payment Option' /&gt;&lt;nav up='2' /&gt;&lt;ctrl role='grouping' idx='10' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' type='' aaname='' parentid='multiCollapseExample7' tag='DIV' /&gt;" Guid="de4ea622-76db-4d73-bc0b-6f08a63c651f" ImageBase64="" InformativeScreenshot="ee6e54efe4b98c7a238cc6ff966df1e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                                    </uix:NClick.Target>
-                                                  </uix:NClick>
-                                                </Sequence>
-                                              </uix:NCheckState.IfExists>
-                                              <uix:NCheckState.IfNotExists>
-                                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_211">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Sequence>
-                                              </uix:NCheckState.IfNotExists>
-                                              <uix:NCheckState.Target>
-                                                <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="575, 752, 361, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'May we'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*payment information*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentInformationText' tag='LABEL' type='' class='text-justify' aaname='May we save your payment information on file?' check:innerText='May we save your payment information on file?' /&gt;" Guid="f8e43213-4e03-4f99-acb5-64c6209c1ac8" ImageBase64="" InformativeScreenshot="e9860e92bfd8af2718386b807aa916e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                              </uix:NCheckState.Target>
+                                  <If sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_20">
+                                    <If.Condition>
+                                      <InArgument x:TypeArguments="x:Boolean">
+                                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">!string.IsNullOrEmpty(str_in_DisableSavePaymentOption)&amp;&amp;str_in_DisableSavePaymentOption.ToLower().Contains("true")</CSharpValue>
+                                      </InArgument>
+                                    </If.Condition>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NCheckState DisplayName="Check App State 'May we'" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="NCheckState_44" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                          <uix:NCheckState.IfExists>
+                                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_205">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                            </uix:NCheckState>
-                                          </Sequence>
-                                        </uix:NCheckState.IfExists>
-                                        <uix:NCheckState.IfNotExists>
-                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_206">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </Sequence>
-                                        </uix:NCheckState.IfNotExists>
-                                        <uix:NCheckState.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="575, 752, 361, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'May we'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*payment information*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentInformationText' tag='LABEL' type='' class='text-justify' aaname='May we save your payment information on file?' check:innerText='May we save your payment information on file?' /&gt;" Guid="f8e43213-4e03-4f99-acb5-64c6209c1ac8" ImageBase64="" InformativeScreenshot="e9860e92bfd8af2718386b807aa916e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                        </uix:NCheckState.Target>
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_62" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                                <uix:NClick.Target>
+                                                  <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="78, 850, 42, 24" DesignTimeScaleFactor="1.5" FriendlyName="'DIV'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='Enabled' /&gt;&lt;nav up='1' /&gt;&lt;ctrl role='grouping' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' type='' aaname='' parentid='multiCollapseExample7' tag='DIV' /&gt;" Guid="de4ea622-76db-4d73-bc0b-6f08a63c651f" ImageBase64="" InformativeScreenshot="f2ab7624e465caf1f7bab8db9e21ee65.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                </uix:NClick.Target>
+                                              </uix:NClick>
+                                              <uix:NCheckState DisplayName="Check App State 'May we'" sap:VirtualizedContainerService.HintSize="954,536.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_46" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Timeout="2" Version="V3">
+                                                <uix:NCheckState.IfExists>
+                                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_63" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="78, 850, 42, 25" DesignTimeScaleFactor="1.5" FriendlyName="'DIV'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='Save Payment Option' /&gt;&lt;nav up='2' /&gt;&lt;ctrl role='grouping' idx='10' /&gt;" FuzzySelectorArgument="&lt;webctrl class='slider' type='' aaname='' parentid='multiCollapseExample7' tag='DIV' /&gt;" Guid="de4ea622-76db-4d73-bc0b-6f08a63c651f" ImageBase64="" InformativeScreenshot="ee6e54efe4b98c7a238cc6ff966df1e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                    </uix:NClick>
+                                                  </Sequence>
+                                                </uix:NCheckState.IfExists>
+                                                <uix:NCheckState.IfNotExists>
+                                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_211">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </uix:NCheckState.IfNotExists>
+                                                <uix:NCheckState.Target>
+                                                  <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="575, 752, 361, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'May we'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*payment information*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentInformationText' tag='LABEL' type='' class='text-justify' aaname='May we save your payment information on file?' check:innerText='May we save your payment information on file?' /&gt;" Guid="f8e43213-4e03-4f99-acb5-64c6209c1ac8" ImageBase64="" InformativeScreenshot="e9860e92bfd8af2718386b807aa916e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                </uix:NCheckState.Target>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </uix:NCheckState>
+                                            </Sequence>
+                                          </uix:NCheckState.IfExists>
+                                          <uix:NCheckState.IfNotExists>
+                                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_206">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </uix:NCheckState.IfNotExists>
+                                          <uix:NCheckState.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="575, 752, 361, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'May we'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*payment information*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentInformationText' tag='LABEL' type='' class='text-justify' aaname='May we save your payment information on file?' check:innerText='May we save your payment information on file?' /&gt;" Guid="f8e43213-4e03-4f99-acb5-64c6209c1ac8" ImageBase64="" InformativeScreenshot="e9860e92bfd8af2718386b807aa916e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                          </uix:NCheckState.Target>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </uix:NCheckState>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="476,905.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_204">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                      </uix:NCheckState>
-                                    </Sequence>
-                                  </If.Then>
-                                  <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="476,905.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_204">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Please save'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                        <uix:NTypeInto.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" CvElementArea="76, 892, 414, 55" CvTextArea="101, 911, 367, 16" CvTextArgument="Please save my payment information on file for fu" CvType="Button" DesignTimeRectangle="79, 892, 411, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Please save'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='*save*payment information*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentModeInformation' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="f4ce0e45-fb56-431d-88b6-7b177ef04c9c" InformativeScreenshot="8b26d63124ab13fb303cc54d18fac918.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                        </uix:NTypeInto.Target>
-                                        <uix:NTypeInto.Text>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">str_in_SavePaymentOptionText</CSharpValue>
-                                          </InArgument>
-                                        </uix:NTypeInto.Text>
-                                        <uix:NTypeInto.VerifyOptions>
-                                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears" Retry="True">
-                                            <uix:VerifyExecutionTypeIntoOptions.ExpectedText>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_337">str_in_SavePaymentOptionText</CSharpValue>
-                                              </InArgument>
-                                            </uix:VerifyExecutionTypeIntoOptions.ExpectedText>
-                                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                              <InArgument x:TypeArguments="x:Double" />
-                                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                          </uix:VerifyExecutionTypeIntoOptions>
-                                        </uix:NTypeInto.VerifyOptions>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </uix:NTypeInto>
-                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Build'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_56" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                        <uix:NClick.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="FAdrXprYz0yZ5SwI_wGcfQ" DesignTimeRectangle="89, 438, 184, 43" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Build'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl name='Build' role='page tab' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ngb-nav-10' tag='A' type='' class='text-center mr-1 font-weight-bold nav-link' aaname='Build' check:innerText='Build' /&gt;" Guid="611cf5f7-e5e5-4c2a-91cc-179200593c62" ImageBase64="" InformativeScreenshot="493ba354192ea1883b8a185c195c45d8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/gaEKcQsTR0ebc_QnZVxnuA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                                        </uix:NClick.Target>
-                                      </uix:NClick>
-                                      <uix:NGetText DelayBefore="2" DisplayName="Get Text 'Save Payment Info in Builder Page'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
-                                        <uix:NGetText.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="mwyOhJ8JfEW3JBEs5tdSoQ" CvTextArea="611, 764, 497, 21" CvTextArgument="Please save my payment information on file for future purchases." CvType="Text" DesignTimeRectangle="593, 761, 517, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Save Payment Info in Builder Page'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*save*payment information*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='grpCardType' tag='LABEL' type='' class='m-0 ml-3' aaname='Please save my payment information on file for future purchases.' check:innerText='Please save my payment information on file for future purchases.' /&gt;" Guid="7ad6d1bc-d8fa-485a-b952-53e27be5dcd5" InformativeScreenshot="5ad20f821db26a6825e54d70d70d1591.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/36_dwGqKGUCzkvOjcsSw-w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
-                                        </uix:NGetText.Target>
-                                        <uix:NGetText.TextString>
-                                          <OutArgument x:TypeArguments="x:String">
-                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">str_SavePaymentInfoBuilderPage</CSharpReference>
-                                          </OutArgument>
-                                        </uix:NGetText.TextString>
-                                      </uix:NGetText>
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">
-                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">str_SavePaymentInfoBuilderPage</CSharpReference>
-                                          </OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">str_SavePaymentInfoBuilderPage.Replace(" ","").Trim().ToLower()</CSharpValue>
-                                          </InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                      <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Updated Save Payment Option Text in Builder" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
-                                        <uta:VerifyExpressionWithOperator.FirstExpression>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">str_SavePaymentInfoBuilderPage</CSharpValue>
-                                          </InArgument>
-                                        </uta:VerifyExpressionWithOperator.FirstExpression>
-                                        <uta:VerifyExpressionWithOperator.SecondExpression>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">str_in_SavePaymentOptionText.Replace(" ","").Trim().ToLower()</CSharpValue>
-                                          </InArgument>
-                                        </uta:VerifyExpressionWithOperator.SecondExpression>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </uta:VerifyExpressionWithOperator>
-                                    </Sequence>
-                                  </If.Else>
-                                </If>
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Please save'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                          <uix:NTypeInto.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" CvElementArea="76, 892, 414, 55" CvTextArea="101, 911, 367, 16" CvTextArgument="Please save my payment information on file for fu" CvType="Button" DesignTimeRectangle="79, 892, 411, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Please save'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl role='editable text' text='*save*payment information*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='paymentModeInformation' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="f4ce0e45-fb56-431d-88b6-7b177ef04c9c" InformativeScreenshot="8b26d63124ab13fb303cc54d18fac918.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                          </uix:NTypeInto.Target>
+                                          <uix:NTypeInto.Text>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">str_in_SavePaymentOptionText</CSharpValue>
+                                            </InArgument>
+                                          </uix:NTypeInto.Text>
+                                          <uix:NTypeInto.VerifyOptions>
+                                            <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears" Retry="True">
+                                              <uix:VerifyExecutionTypeIntoOptions.ExpectedText>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_337">str_in_SavePaymentOptionText</CSharpValue>
+                                                </InArgument>
+                                              </uix:VerifyExecutionTypeIntoOptions.ExpectedText>
+                                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                                <InArgument x:TypeArguments="x:Double" />
+                                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                            </uix:VerifyExecutionTypeIntoOptions>
+                                          </uix:NTypeInto.VerifyOptions>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </uix:NTypeInto>
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Build'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_56" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="FAdrXprYz0yZ5SwI_wGcfQ" DesignTimeRectangle="89, 438, 184, 43" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Build'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='Payments' role='property page' /&gt;&lt;ctrl name='Build' role='page tab' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ngb-nav-10' tag='A' type='' class='text-center mr-1 font-weight-bold nav-link' aaname='Build' check:innerText='Build' /&gt;" Guid="611cf5f7-e5e5-4c2a-91cc-179200593c62" ImageBase64="" InformativeScreenshot="493ba354192ea1883b8a185c195c45d8.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/gaEKcQsTR0ebc_QnZVxnuA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                        <uix:NGetText DelayBefore="2" DisplayName="Get Text 'Save Payment Info in Builder Page'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5ec7b189-f912-4d93-b467-73c198543807" Version="V3">
+                                          <uix:NGetText.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="mwyOhJ8JfEW3JBEs5tdSoQ" CvTextArea="611, 764, 497, 21" CvTextArgument="Please save my payment information on file for future purchases." CvType="Text" DesignTimeRectangle="593, 761, 517, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Save Payment Info in Builder Page'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='editable text' text='*save*payment information*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='grpCardType' tag='LABEL' type='' class='m-0 ml-3' aaname='Please save my payment information on file for future purchases.' check:innerText='Please save my payment information on file for future purchases.' /&gt;" Guid="7ad6d1bc-d8fa-485a-b952-53e27be5dcd5" InformativeScreenshot="5ad20f821db26a6825e54d70d70d1591.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/36_dwGqKGUCzkvOjcsSw-w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                          </uix:NGetText.Target>
+                                          <uix:NGetText.TextString>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">str_SavePaymentInfoBuilderPage</CSharpReference>
+                                            </OutArgument>
+                                          </uix:NGetText.TextString>
+                                        </uix:NGetText>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">str_SavePaymentInfoBuilderPage</CSharpReference>
+                                            </OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">str_SavePaymentInfoBuilderPage.Replace(" ","").Trim().ToLower()</CSharpValue>
+                                            </InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Updated Save Payment Option Text in Builder" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                          <uta:VerifyExpressionWithOperator.FirstExpression>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_346">str_SavePaymentInfoBuilderPage</CSharpValue>
+                                            </InArgument>
+                                          </uta:VerifyExpressionWithOperator.FirstExpression>
+                                          <uta:VerifyExpressionWithOperator.SecondExpression>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">str_in_SavePaymentOptionText.Replace(" ","").Trim().ToLower()</CSharpValue>
+                                            </InArgument>
+                                          </uta:VerifyExpressionWithOperator.SecondExpression>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </uta:VerifyExpressionWithOperator>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
