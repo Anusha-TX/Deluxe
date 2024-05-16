@@ -44,12 +44,6 @@
   <this:Verify_ReceiptDetails.str_in_TestId>
     <InArgument x:TypeArguments="x:String" />
   </this:Verify_ReceiptDetails.str_in_TestId>
-  <this:Verify_ReceiptDetails.str_in_TransactionId>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Verify_ReceiptDetails.str_in_TransactionId>
-  <this:Verify_ReceiptDetails.str_in_Url>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Verify_ReceiptDetails.str_in_Url>
   <this:Verify_ReceiptDetails.bool_in_VerifyQRCode>
     <InArgument x:TypeArguments="x:Boolean" />
   </this:Verify_ReceiptDetails.bool_in_VerifyQRCode>
@@ -61,7 +55,7 @@
   </this:Verify_ReceiptDetails.str_in_CustomerName>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1340.6666666666667,4187.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1340.6666666666667,5863.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -191,7 +185,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Verify_ReceiptDetails" sap:VirtualizedContainerService.HintSize="1350.6666666666667,4122.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Verify_ReceiptDetails" sap:VirtualizedContainerService.HintSize="1350.6666666666667,5798.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="str_StepName" />
     </Sequence.Variables>
@@ -201,18 +195,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1288.6666666666667,4012" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1288.6666666666667,5688" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="str_AccountLast4NumValue" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1250,3772.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_220">
+        <Sequence sap:VirtualizedContainerService.HintSize="1250,5448.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_220">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:String" Name="str_BrowserValue">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">chrome.exe</Literal>
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -232,13 +222,13 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="1188,3568" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transaction Detail" sap:VirtualizedContainerService.HintSize="1188,5244" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1154,3400.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1154,4984.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1054,9 +1044,9 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NCheckState DisplayName="Check App State 'Print Customer Receipt'" sap:VirtualizedContainerService.HintSize="1092,3096.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Print Customer Receipt'" sap:VirtualizedContainerService.HintSize="1092,4680.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="588,2875.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="588,4459.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="bool_Receipt" />
                         </Sequence.Variables>
@@ -1175,7 +1165,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uta:VerifyControlAttribute>
-                        <If DisplayName="If Custom Receipt is Displayed" sap:VirtualizedContainerService.HintSize="526,2278.6666666666665" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If DisplayName="If Custom Receipt is Displayed" sap:VirtualizedContainerService.HintSize="526,3862.6666666666665" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_274">bool_Receipt</CSharpValue>
@@ -1188,7 +1178,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="492,1652" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                            <Sequence sap:VirtualizedContainerService.HintSize="492,3236" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="bool_ReceiptLogo" />
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_TransactionTypeDataTable">
@@ -2592,7 +2582,7 @@
                                           </InArgument>
                                         </ui:LogMessage.Message>
                                       </ui:LogMessage>
-                                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='SaleItem'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Price'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="NExtractData_4" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
+                                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='SaleItem'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="NExtractData_4" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                         <uix:NExtractData.DataTable>
                                           <InOutArgument x:TypeArguments="sd:DataTable">
                                             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_119">ExtractDataTable</CSharpReference>
@@ -4056,7 +4046,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NMouseScroll>
-                              <Sequence DisplayName="Verify Transaction Details" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                              <Sequence DisplayName="Verify Transaction Details" sap:VirtualizedContainerService.HintSize="450,1668.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_84">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
                                     <Variable.Default>
@@ -4074,7 +4064,7 @@
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -6812,7 +6802,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="476,706" sap2010:WorkflowViewState.IdRef="Sequence_222">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476,831.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_222">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6828,6 +6818,18 @@
                                           </OutArgument>
                                         </uix:NGetText.TextString>
                                       </uix:NGetText>
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_131">str_TransactionId</CSharpReference>
+                                          </OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1111">str_in_TransactionId</CSharpValue>
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_25">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">
@@ -6840,7 +6842,7 @@
                                           </InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Transaction id" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_15" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                      <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Transaction id" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_15" Operator="Contains" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
                                         <uta:VerifyExpressionWithOperator.FirstExpression>
                                           <InArgument x:TypeArguments="x:String">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_602">str_TransactionId.ToUpper()</CSharpValue>
@@ -6890,7 +6892,7 @@
                                               </cr:passedStep.Actual_Result>
                                               <cr:passedStep.Expected_Result>
                                                 <InArgument x:TypeArguments="x:String">
-                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_522">"It should display given Transaction ID as "+str_in_TransactionId</CSharpValue>
+                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1112">"It should display given Transaction ID as "+str_TransactionId</CSharpValue>
                                                 </InArgument>
                                               </cr:passedStep.Expected_Result>
                                               <cr:passedStep.str_in_expectedStep>
@@ -6912,13 +6914,13 @@
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_129">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <cr:failedStep sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="failedStep_33" str_in_actualStep="Verify Transaction Id in Cutom Receipt">
+                                            <cr:failedStep sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_33" str_in_actualStep="Verify Transaction Id in Cutom Receipt">
                                               <cr:failedStep.Actual_Result>
                                                 <InArgument x:TypeArguments="x:String">
                                                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_526">"Transaction Id is not displayed as expected "+str_TransactionId</CSharpValue>
@@ -6926,7 +6928,7 @@
                                               </cr:failedStep.Actual_Result>
                                               <cr:failedStep.Expected_Result>
                                                 <InArgument x:TypeArguments="x:String">
-                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_527">"It should display given Transaction ID "+str_in_TransactionId</CSharpValue>
+                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1113">"It should display given Transaction ID "+str_TransactionId</CSharpValue>
                                                 </InArgument>
                                               </cr:failedStep.Expected_Result>
                                               <cr:failedStep.str_in_expectedStep>
@@ -7911,7 +7913,7 @@
                                                   <uix:NCheckState DisplayName="Check App State 'QrCode'" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NCheckState_25" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                                     <uix:NCheckState.Exists>
                                                       <OutArgument x:TypeArguments="x:Boolean">
-                                                        <VariableReference x:TypeArguments="x:Boolean">
+                                                        <VariableReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="VariableReference`1_23">
                                                           <VariableReference.Variable>
                                                             <Variable x:TypeArguments="x:Boolean" x:Name="__ReferenceID11" Name="_autogenerated_Exists" />
                                                           </VariableReference.Variable>
@@ -7938,7 +7940,7 @@
                                                     </uix:NCheckState.IfNotExists>
                                                     <uix:NCheckState.OutUiElement>
                                                       <OutArgument x:TypeArguments="ui:UiElement">
-                                                        <VariableReference x:TypeArguments="ui:UiElement">
+                                                        <VariableReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="VariableReference`1_24">
                                                           <VariableReference.Variable>
                                                             <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
                                                           </VariableReference.Variable>
@@ -7962,7 +7964,7 @@
                                                   <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_4">
                                                     <uta:ArgumentsBridge.Input>
                                                       <InArgument x:TypeArguments="x:Object">
-                                                        <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID11}" />
+                                                        <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID11}" sap2010:WorkflowViewState.IdRef="VariableValue`1_12" />
                                                       </InArgument>
                                                     </uta:ArgumentsBridge.Input>
                                                   </uta:ArgumentsBridge>
@@ -8121,7 +8123,7 @@
                                                     <uix:NCheckState DisplayName="Check App State Footer Line1" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_32" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                                       <uix:NCheckState.Exists>
                                                         <OutArgument x:TypeArguments="x:Boolean">
-                                                          <VariableReference x:TypeArguments="x:Boolean">
+                                                          <VariableReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="VariableReference`1_25">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="x:Boolean" x:Name="__ReferenceID12" Name="_autogenerated_Exists" />
                                                             </VariableReference.Variable>
@@ -8167,7 +8169,7 @@
                                                       </uix:NCheckState.IfNotExists>
                                                       <uix:NCheckState.OutUiElement>
                                                         <OutArgument x:TypeArguments="ui:UiElement">
-                                                          <VariableReference x:TypeArguments="ui:UiElement">
+                                                          <VariableReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="VariableReference`1_26">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
                                                             </VariableReference.Variable>
@@ -8202,7 +8204,7 @@
                                                     <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_7">
                                                       <uta:ArgumentsBridge.Input>
                                                         <InArgument x:TypeArguments="x:Object">
-                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID12}" />
+                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID12}" sap2010:WorkflowViewState.IdRef="VariableValue`1_13" />
                                                         </InArgument>
                                                       </uta:ArgumentsBridge.Input>
                                                     </uta:ArgumentsBridge>
@@ -8349,7 +8351,7 @@
                                                     <uix:NCheckState DisplayName="Check App State Footer Line1" sap:VirtualizedContainerService.HintSize="246.66666666666666,54" sap2010:WorkflowViewState.IdRef="NCheckState_33" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                                       <uix:NCheckState.Exists>
                                                         <OutArgument x:TypeArguments="x:Boolean">
-                                                          <VariableReference x:TypeArguments="x:Boolean">
+                                                          <VariableReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="VariableReference`1_27">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="x:Boolean" x:Name="__ReferenceID13" Name="_autogenerated_Exists" />
                                                             </VariableReference.Variable>
@@ -8395,7 +8397,7 @@
                                                       </uix:NCheckState.IfNotExists>
                                                       <uix:NCheckState.OutUiElement>
                                                         <OutArgument x:TypeArguments="ui:UiElement">
-                                                          <VariableReference x:TypeArguments="ui:UiElement">
+                                                          <VariableReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="VariableReference`1_28">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
                                                             </VariableReference.Variable>
@@ -8430,7 +8432,7 @@
                                                     <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_8">
                                                       <uta:ArgumentsBridge.Input>
                                                         <InArgument x:TypeArguments="x:Object">
-                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID13}" />
+                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID13}" sap2010:WorkflowViewState.IdRef="VariableValue`1_14" />
                                                         </InArgument>
                                                       </uta:ArgumentsBridge.Input>
                                                     </uta:ArgumentsBridge>
@@ -8578,7 +8580,7 @@
                                                     <uix:NCheckState DisplayName="Check App State Footer Line1" sap:VirtualizedContainerService.HintSize="246.66666666666666,54" sap2010:WorkflowViewState.IdRef="NCheckState_34" ScopeIdentifier="6ca1d0dc-b93d-46e8-a8f3-3f661a77d0c8" Version="V3">
                                                       <uix:NCheckState.Exists>
                                                         <OutArgument x:TypeArguments="x:Boolean">
-                                                          <VariableReference x:TypeArguments="x:Boolean">
+                                                          <VariableReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="VariableReference`1_29">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="x:Boolean" x:Name="__ReferenceID14" Name="_autogenerated_Exists" />
                                                             </VariableReference.Variable>
@@ -8624,7 +8626,7 @@
                                                       </uix:NCheckState.IfNotExists>
                                                       <uix:NCheckState.OutUiElement>
                                                         <OutArgument x:TypeArguments="ui:UiElement">
-                                                          <VariableReference x:TypeArguments="ui:UiElement">
+                                                          <VariableReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="VariableReference`1_30">
                                                             <VariableReference.Variable>
                                                               <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
                                                             </VariableReference.Variable>
@@ -8659,7 +8661,7 @@
                                                     <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_9">
                                                       <uta:ArgumentsBridge.Input>
                                                         <InArgument x:TypeArguments="x:Object">
-                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID14}" />
+                                                          <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID14}" sap2010:WorkflowViewState.IdRef="VariableValue`1_15" />
                                                         </InArgument>
                                                       </uta:ArgumentsBridge.Input>
                                                     </uta:ArgumentsBridge>
