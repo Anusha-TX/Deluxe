@@ -3,9 +3,10 @@
     <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
     <x:Property Name="str_in_TestId" Type="InArgument(x:String)" />
     <x:Property Name="int_in_ReportId" Type="InArgument(x:Int32)" />
+    <x:Property Name="str_in_DeleteCaptchafor" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1140.6666666666667,1997.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>875.3333333333334,2428.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -48,6 +49,10 @@
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,31 +122,36 @@
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Delete_Captcha" sap:VirtualizedContainerService.HintSize="1150.6666666666667,1932.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Delete_Captcha" sap:VirtualizedContainerService.HintSize="764.6666666666666,2364" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1088.6666666666667,1822" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="702.6666666666666,2253.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Online Forms" sap:VirtualizedContainerService.HintSize="1050,1582.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Online Forms" sap:VirtualizedContainerService.HintSize="664,2014" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1363.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630,1794.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="954,54" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on Delete Captcha Button" str_in_expectedStep="Step">
+                <cr:passedStep Actual_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="568,54" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Click on Delete Captcha Button" str_in_expectedStep="Step">
                   <cr:passedStep.Expected_Result>
                     <InArgument x:TypeArguments="x:String" />
                   </cr:passedStep.Expected_Result>
@@ -162,64 +172,170 @@
                     </InArgument>
                   </cr:passedStep.str_in_testId>
                 </cr:passedStep>
-                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="954,380.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
-                  <ui:RetryScope.ActivityBody>
-                    <ActivityAction>
-                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,164.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <If sap:VirtualizedContainerService.HintSize="568,1490.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">str_in_DeleteCaptchafor.ToLower().Contains("medium")</CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="534,653.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,566" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" DesignTimeRectangle="1787, 728, 19, 19" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='link' text='javascript:;' idx='14' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='graphic' idx='18' /&gt;" Guid="b6a7d69e-ba14-4a06-b212-634d9222f896" ImageBase64="" InformativeScreenshot="f5e3967b6b3f403d91f575fa91cbd751.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="1042, 692, 327, 92" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='divPreviewCaptcha' src='/assets/images/captcha-light-theme-checked.png' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='graphic' idx='4' /&gt;" ImageBase64="" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean">
+                            <uix:NCheckState DisplayName="Check App State 'Yes Button Delete Captcha'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="M2VRjUIwQUuX_42TcgEVtg" DesignTimeRectangle="992, 653, 113, 35" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Yes Button Delete Captcha'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*Yes' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Yes' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' check:innerText='Yes' /&gt;" Guid="3129a17d-9b2f-4387-ad8c-31a96fb3d271" ImageBase64="" InformativeScreenshot="3e6b057dd9269fbb036abc58c1e15b41.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/44c5s_L2R0mkoGR5BG3eCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </ActivityFunc>
+                        </ui:RetryScope.Condition>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" CvElementArea="1786, 853, 21, 24" CvType="Icon" DesignTimeRectangle="1781, 856, 32, 19" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='link' text='javascript:;' idx='6' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='divPreviewCaptcha' tag='svg' type='' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;' /&gt;" Guid="2afc75e3-23a9-45ea-b67d-2656d8233f52" ImageBase64="" InformativeScreenshot="75b7775f2899f8b40bd86caf29ec745e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                          </uix:NClick.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NClick>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:RetryScope.ActivityBody>
-                  <ui:RetryScope.Condition>
-                    <ActivityFunc x:TypeArguments="x:Boolean">
-                      <uix:NCheckState DisplayName="Check App State 'Yes Button Delete Captcha'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
-                        <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </uix:NCheckState.IfExists>
-                        <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </uix:NCheckState.IfNotExists>
-                        <uix:NCheckState.Target>
-                          <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="M2VRjUIwQUuX_42TcgEVtg" DesignTimeRectangle="992, 653, 113, 35" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Yes Button Delete Captcha'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*Yes' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Yes' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' check:innerText='Yes' /&gt;" Guid="3129a17d-9b2f-4387-ad8c-31a96fb3d271" ImageBase64="" InformativeScreenshot="3e6b057dd9269fbb036abc58c1e15b41.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/44c5s_L2R0mkoGR5BG3eCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                        </uix:NCheckState.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </uix:NCheckState>
-                    </ActivityFunc>
-                  </ui:RetryScope.Condition>
-                </ui:RetryScope>
-                <uix:NCheckState DisplayName="Check App State 'Yes Button Delete Captcha'" sap:VirtualizedContainerService.HintSize="954,732.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
+                      </ui:RetryScope>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="534,653.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,566" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" CvElementArea="1786, 853, 21, 24" CvType="Icon" DesignTimeRectangle="1781, 856, 32, 19" DesignTimeScaleFactor="1.5" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl role='link' text='javascript:;' idx='6' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='divPreviewCaptcha' tag='svg' type='' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;' /&gt;" Guid="2afc75e3-23a9-45ea-b67d-2656d8233f52" ImageBase64="" InformativeScreenshot="75b7775f2899f8b40bd86caf29ec745e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean">
+                            <uix:NCheckState DisplayName="Check App State 'Yes Button Delete Captcha'" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://forms2.deluxe.com/gateway/forms/edit" ContentHash="M2VRjUIwQUuX_42TcgEVtg" DesignTimeRectangle="992, 653, 113, 35" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Yes Button Delete Captcha'" FullSelectorArgument="&lt;ctrl name='Online Forms' role='document' /&gt;&lt;ctrl name='*Yes' role='push button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Yes' tag='BUTTON' type='button' class='bg-primarynew btn btn-sm ml-2 mt-0 rounded-pill text-center text-white' check:innerText='Yes' /&gt;" Guid="3129a17d-9b2f-4387-ad8c-31a96fb3d271" ImageBase64="" InformativeScreenshot="3e6b057dd9269fbb036abc58c1e15b41.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/44c5s_L2R0mkoGR5BG3eCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Forms' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </ActivityFunc>
+                        </ui:RetryScope.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:RetryScope>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <uix:NCheckState DisplayName="Check App State 'Yes Button Delete Captcha'" sap:VirtualizedContainerService.HintSize="568,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1a629cf8-a7a7-4105-97b5-086d05f74141" Version="V3">
                   <uix:NCheckState.IfExists>
                     <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,463.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
@@ -296,7 +412,7 @@
                   </uix:NCheckState.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -322,7 +438,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1054.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
