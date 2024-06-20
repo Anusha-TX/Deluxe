@@ -14,7 +14,7 @@
   </this:StartDate_CustomerVault.str_in_TestId>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1264.6666666666667,9708</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1264.6666666666667,6932.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,18 +137,20 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StartDate_CustomerVault" sap:VirtualizedContainerService.HintSize="1274.6666666666667,9643.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="StartDate_CustomerVault" sap:VirtualizedContainerService.HintSize="1274.6666666666667,6868" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
       <Variable x:TypeArguments="x:Boolean" Name="isStartDate" />
       <Variable x:TypeArguments="x:Boolean" Name="isEndDate" />
+      <Variable x:TypeArguments="x:String" Name="strMonth" />
+      <Variable x:TypeArguments="x:String" Name="str_out_Month" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1212.6666666666667,9555.333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1212.6666666666667,6757.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,11 +158,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1174,9293.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap:VirtualizedContainerService.HintSize="1174,6516.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strMonthYear" />
-            <Variable x:TypeArguments="x:String" Name="Str_out_Month" />
-            <Variable x:TypeArguments="x:String" Name="strMonth" />
             <Variable x:TypeArguments="x:String" Name="strYear" />
             <Variable x:TypeArguments="x:String" Name="str_out_year" />
             <Variable x:TypeArguments="x:String" Name="str_out_MonthYear" />
@@ -171,7 +171,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="1112,237.33333333333334" sap2010:WorkflowViewState.IdRef="ReadAssetValue_2" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="1112,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadAssetValue_2" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,23 +184,24 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1112,8971.333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Customer Vault Detail" sap:VirtualizedContainerService.HintSize="1112,6168.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1078,8781.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1078,6001.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,8694" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,5885.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Default="4" Name="strDate" />
+                      <Variable x:TypeArguments="x:String" Default="4" Name="str_out_date" />
                       <Variable x:TypeArguments="x:Boolean" Name="isFrequency" />
                       <Variable x:TypeArguments="x:String" Name="MonthYear" />
+                      <Variable x:TypeArguments="x:String" Name="str_get_MonthYear" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -208,12 +209,12 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="287, 873, 43, 22" CvType="Button" DesignTimeRectangle="289, 875, 40, 19" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl parentid='collapseChoosePaymentOption' tag='SPAN' innertext='Recurring' /&gt;&lt;webctrl class='slider' parentid='collapseChoosePaymentOption' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseChoosePaymentOption' tag='SPAN' innertext='Recurring' /&gt;&lt;webctrl class='slider' parentid='collapseChoosePaymentOption' tag='DIV' type='' aaname='' /&gt;" Guid="188045fc-dcb2-4466-9b92-f24ef834460c" InformativeScreenshot="a26cff5c86abd4baaae1f1e6f24fc149.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Start Date'" sap:VirtualizedContainerService.HintSize="954,368.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Timeout="10" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Start Date'" sap:VirtualizedContainerService.HintSize="954,328.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Timeout="10" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">isStartDate</CSharpReference>
@@ -241,7 +242,7 @@
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="286, 839, 77, 15" CvTextArgument="Start Date" CvType="Text" DesignTimeRectangle="288, 838, 74, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Start Date'" FullSelectorArgument="&lt;webctrl aaname=' Start Date ' parentid='collapseChoosePaymentOption' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Start Date ' parentid='collapseChoosePaymentOption' tag='SPAN' type='' class='' check:innerText='Start Date' /&gt;" Guid="987052d1-7252-4497-836b-12c1e059db4d" InformativeScreenshot="26644df9b1d595b1ba085b276a543d4d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NCheckState.Target>
                     </uix:NCheckState>
-                    <uix:NCheckState DisplayName="Check App State 'End Date (Optional)'" sap:VirtualizedContainerService.HintSize="954,368.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Timeout="10" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'End Date (Optional)'" sap:VirtualizedContainerService.HintSize="954,328.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Timeout="10" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">isEndDate</CSharpReference>
@@ -269,7 +270,7 @@
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="828, 838, 145, 20" CvTextArgument="End Date (Optional)" CvType="Text" DesignTimeRectangle="829, 838, 144, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'End Date (Optional)'" FullSelectorArgument="&lt;webctrl aaname=' End Date (Optional) ' parentid='collapseChoosePaymentOption' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' End Date (Optional) ' parentid='collapseChoosePaymentOption' tag='SPAN' type='' class='' check:innerText='End Date (Optional)' /&gt;" Guid="1d3ed7dd-51a4-4032-a91c-8af1c50b4d24" InformativeScreenshot="56323e90acff4198e13e348028dbb892.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NCheckState.Target>
                     </uix:NCheckState>
-                    <uix:NCheckState DisplayName="Check App State 'Frequency'" sap:VirtualizedContainerService.HintSize="954,368.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Frequency'" sap:VirtualizedContainerService.HintSize="954,328.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">isFrequency</CSharpReference>
@@ -297,7 +298,7 @@
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvTextArea="1369, 839, 79, 19" CvTextArgument="Frequency" CvType="Text" DesignTimeRectangle="1370, 838, 77, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Frequency'" FullSelectorArgument="&lt;webctrl aaname=' Frequency ' parentid='collapseChoosePaymentOption' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Frequency ' parentid='collapseChoosePaymentOption' tag='SPAN' type='' class='' check:innerText='Frequency' /&gt;" Guid="96a81940-a030-46cd-909e-c37c8bc4f840" InformativeScreenshot="127ae1c1c24febd509d63adac7d61c34.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NCheckState.Target>
                     </uix:NCheckState>
-                    <If sap:VirtualizedContainerService.HintSize="954,1105.3333333333333" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If sap:VirtualizedContainerService.HintSize="954,54" sap2010:WorkflowViewState.IdRef="If_6">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">isStartDate==true &amp;&amp; isEndDate==true &amp;&amp; isFrequency==true</CSharpValue>
@@ -305,18 +306,18 @@
                       </If.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <cr:passedStep Actual_Result="Recurring toggle Button selected and able to view the Start date , End date and frequecy fields." Expected_Result="Recurring toggle should be selected and able to view the Start date , End date and frequecy fields." sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Enable the Recurring toggle Button" str_in_expectedStep="Step ">
+                          <cr:passedStep Actual_Result="Recurring toggle Button selected and able to view the Start date , End date and frequecy fields." Expected_Result="Recurring toggle should be selected and able to view the Start date , End date and frequecy fields." sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Enable the Recurring toggle Button" str_in_expectedStep="Step ">
                             <cr:passedStep.str_in_reportId>
                               <InArgument x:TypeArguments="x:Int32">
                                 <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">int_in_ReportId</CSharpValue>
@@ -331,13 +332,13 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,462.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <cr:failedStep str_in_testId="{x:Null}" Actual_Result="Recurring toggle Button not selected and able to view the Start date , End date and frequecy fields." Expected_Result="Recurring toggle should be selected and able to view the Start date , End date and frequecy fields." sap:VirtualizedContainerService.HintSize="354,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Enable the Recurring toggle Button" str_in_expectedStep="Step ">
+                          <cr:failedStep str_in_testId="{x:Null}" Actual_Result="Recurring toggle Button not selected and able to view the Start date , End date and frequecy fields." Expected_Result="Recurring toggle should be selected and able to view the Start date , End date and frequecy fields." sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Enable the Recurring toggle Button" str_in_expectedStep="Step ">
                             <cr:failedStep.str_in_reportId>
                               <InArgument x:TypeArguments="x:Int32">
                                 <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">int_in_ReportId</CSharpValue>
@@ -347,7 +348,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="286, 866, 515, 39" CvType="InputBox" DesignTimeRectangle="288, 950, 511, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl tag='INPUT' type='text' class='ng2-flatpickr-input flatpickr-input ng-star-inserted' aaname='' /&gt;" Guid="29d1bf14-be38-4484-a35e-ce833df6fab3" InformativeScreenshot="fbc80cbb0009f2b888c9e36a35a46714.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.PointOffset>
@@ -356,10 +357,22 @@
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <If sap:VirtualizedContainerService.HintSize="954,565.3333333333334" sap2010:WorkflowViewState.IdRef="If_4">
+                    <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_26">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">Str_InputStartDate</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">DateTime.ParseExact(Str_InputStartDate,"MMMM d, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMM dd, yyyy")</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If sap:VirtualizedContainerService.HintSize="954,529.3333333333334" sap2010:WorkflowViewState.IdRef="If_8">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">Str_InputStartDate.Equals(DateTime.Now.ToString("MMMM d, yyyy"))</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_175">Str_InputStartDate.Equals(DateTime.Now.ToString("MMM dd, yyyy"))</CSharpValue>
                         </InArgument>
                       </If.Condition>
                       <sap:WorkflowViewStateService.ViewState>
@@ -369,214 +382,146 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,192.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_37">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_20">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">strMonthYear</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">strMonthYear</CSharpReference>
                               </OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">DateTime.ParseExact(Str_InputStartDate,"MMMM d, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMMM yyyy")</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_176">DateTime.ParseExact(Str_InputStartDate,"MMM dd, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMM yyyy")</CSharpValue>
                               </InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,192.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_38">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_21">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">strMonthYear</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">strMonthYear</CSharpReference>
                               </OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">DateTime.ParseExact(Str_InputStartDate,"MMMM d, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMMM yyyy")</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_177">DateTime.ParseExact(Str_InputStartDate,"MMM dd, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMM yyyy")</CSharpValue>
                               </InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_22">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">strMonth</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">strMonth</CSharpReference>
                         </OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">DateTime.ParseExact(strMonthYear,"MMMM yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMMM")</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_178">DateTime.ParseExact(strMonthYear,"MMM yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMM")</CSharpValue>
                         </InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_23">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">strYear</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">strYear</CSharpReference>
                         </OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">DateTime.ParseExact(strMonthYear,"MMMM yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy")</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_179">DateTime.ParseExact(strMonthYear,"MMM yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy")</CSharpValue>
                         </InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">strDate</CSharpReference>
-                        </OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">DateTime.ParseExact(Str_InputStartDate,"MMMM d, yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("dd")</CSharpValue>
-                        </InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_14">
-                      <ui:LogMessage.Level>
-                        <InArgument x:TypeArguments="ui:LogLevel">
-                          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Level>
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">strDate</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'May'" sap:VirtualizedContainerService.HintSize="954,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'May'" sap:VirtualizedContainerService.HintSize="954,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_14" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                       <uix:NGetAttributeGeneric.Result>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">Str_out_Month</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">str_get_MonthYear</CSharpReference>
                         </OutArgument>
                       </uix:NGetAttributeGeneric.Result>
                       <uix:NGetAttributeGeneric.Target>
-                        <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvElementArea="507, 537, 23, 21" CvTextArea="403, 537, 42, 24" CvTextArgument="May" CvType="ArrowButton" DesignTimeRectangle="394, 533, 139, 28" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'May'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' automationid='' /&gt;" Guid="027e6532-5df1-4adb-801e-68dd05b7c94a" InformativeScreenshot="39beb1cf0abf9ab5ae1e37e6672ab067.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable CVScreenId="c0e79d67-4b09-4b12-91fe-52e073a09731" CvElementArea="521, 686, 23, 21" CvTextArea="418, 687, 40, 24" CvTextArgument="May" CvType="ArrowButton" DesignTimeRectangle="409, 333, 139, 28" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'May'" FullSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl tag='SPAN' parentclass='mdc-button__label' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Payments' role='document' /&gt;&lt;ctrl name='Month' role='combo box' automationid='' /&gt;" Guid="21681e2c-14c6-4cbd-8749-a1f0eb3cfb73" ImageBase64="" InformativeScreenshot="ecdbfc2f25e80237871abd4b181173f8.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.ScopeSelectorArgument>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_180">string.Format("&lt;wnd app='{0}' title='Payments' /&gt;", str_BrowserValue)</CSharpValue>
                             </InArgument>
                           </uix:TargetAnchorable.ScopeSelectorArgument>
                         </uix:TargetAnchorable>
                       </uix:NGetAttributeGeneric.Target>
                     </uix:NGetAttributeGeneric>
-                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute '2024'" sap:VirtualizedContainerService.HintSize="954,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
-                      <uix:NGetAttributeGeneric.Result>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">str_out_year</CSharpReference>
-                        </OutArgument>
-                      </uix:NGetAttributeGeneric.Result>
-                      <uix:NGetAttributeGeneric.Target>
-                        <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvTextArea="537, 537, 48, 19" CvTextArgument="2024" CvType="Text" DesignTimeRectangle="532, 534, 72, 26" DesignTimeScaleFactor="1.5" FriendlyName="'2024'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' automationid='' check:text='2024' /&gt;" Guid="cb505de8-19f5-439c-9f66-ccab9bd34185" InformativeScreenshot="c7884c2c382346275743b82b139f529e.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.ScopeSelectorArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
-                            </InArgument>
-                          </uix:TargetAnchorable.ScopeSelectorArgument>
-                        </uix:TargetAnchorable>
-                      </uix:NGetAttributeGeneric.Target>
-                    </uix:NGetAttributeGeneric>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="954,94" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,313.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="354,228.66666666666666" sap2010:WorkflowViewState.IdRef="GetAttribute_6">
-                            <ui:GetAttribute.Result>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="954,178.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">Str_out_Month</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">str_out_Month</CSharpReference>
                               </OutArgument>
-                            </ui:GetAttribute.Result>
-                            <ui:GetAttribute.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="00c79f5f-0d42-4d85-9281-b5232bb02127" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl tabindex='-1' tag='DIV' class='flatpickr-calendar animate *' isleaf='0' parentclass='mat-typography' /&gt;&lt;webctrl class='flatpickr-current-month' tag='DIV' parentclass='flatpickr-month' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:GetAttribute.Target>
-                          </ui:GetAttribute>
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:CommentOut>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12">
-                      <ui:LogMessage.Level>
-                        <InArgument x:TypeArguments="ui:LogLevel">
-                          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Level>
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_147">Str_out_Month+" "+str_out_year</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_181">str_get_MonthYear.Split(" " , System.StringSplitOptions.None)[1]</CSharpValue>
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_59">str_out_year</CSharpReference>
+                              </OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_182">str_get_MonthYear.Split(" " , System.StringSplitOptions.None)[3]</CSharpValue>
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">str_out_date</CSharpReference>
+                              </OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_183">Str_InputStartDate.Split(" " , System.StringSplitOptions.None)[1].Replace(",","").ToString()</CSharpValue>
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">str_out_MonthYear</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">str_out_MonthYear</CSharpReference>
                         </OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">strMonth+" "+strYear</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_184">str_out_Month+" "+str_out_year</CSharpValue>
                         </InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_13">
-                      <ui:LogMessage.Level>
-                        <InArgument x:TypeArguments="ui:LogLevel">
-                          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Level>
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_131">"Given Month and year"+str_out_MonthYear</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">MonthYear</CSharpReference>
-                        </OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">Str_out_Month+" "+str_out_year</CSharpValue>
-                        </InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <If sap:VirtualizedContainerService.HintSize="954,2724.6666666666665" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If sap:VirtualizedContainerService.HintSize="954,1697.3333333333333" sap2010:WorkflowViewState.IdRef="If_9">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">str_out_MonthYear.Equals(MonthYear)</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_185">str_out_MonthYear.ToLower().Equals(strMonthYear.ToLower())</CSharpValue>
                         </InArgument>
                       </If.Condition>
                       <sap:WorkflowViewStateService.ViewState>
@@ -586,278 +531,130 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,360.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_40">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '20'" sap:VirtualizedContainerService.HintSize="354,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '20'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CVScreenId="8ca02799-df56-4315-9273-e817b3f910c0" CvTextArea="921, 649, 21, 16" CvTextArgument="20" CvType="Text" DesignTimeRectangle="11, -1724, 1915, 800" DesignTimeScaleFactor="1.5" FriendlyName="'20'" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='May 20, 2024' role='grouping' automationid='' check:text='20' /&gt;" Guid="2fe107a9-da42-48aa-a735-d2e9e38a8a42" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable CVScreenId="40c0c1da-6805-468b-aca4-26dd7adc6922" CvTextArea="403, 613, 21, 16" CvTextArgument="20" CvType="Text" DesignTimeRectangle="11, -392, 1915, 878" DesignTimeScaleFactor="1.5" FriendlyName="'20'" FuzzySelectorArgument="&lt;ctrl name='Payments' role='document' /&gt;&lt;ctrl name='May 20, 2024' role='grouping' automationid='' check:text='20' /&gt;" Guid="6b2a4452-1e8e-498c-ac1c-ffb618908869" InformativeScreenshot="eda6048fcb6349b4f286bcb1dbe9e087.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
                                 <uix:TargetAnchorable.FullSelectorArgument>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">string.Format("&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='{0}' role='grouping' /&gt;", Str_InputStartDate)</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201">string.Format("&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='*{0}*' tag='SPAN' /&gt;", str_out_date)</CSharpValue>
                                   </InArgument>
                                 </uix:TargetAnchorable.FullSelectorArgument>
                                 <uix:TargetAnchorable.ScopeSelectorArgument>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_168">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_186">string.Format("&lt;wnd app='{0}' title='Payments -*' /&gt;", str_BrowserValue)</CSharpValue>
                                   </InArgument>
                                 </uix:TargetAnchorable.ScopeSelectorArgument>
                               </uix:TargetAnchorable>
                             </uix:NClick.Target>
-                          </uix:NClick>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,76.66666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,214.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'grouping  April 4, 2024'" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition Position="Center">
-                                      <ui:CursorPosition.OffsetX>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetX>
-                                      <ui:CursorPosition.OffsetY>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetY>
-                                    </ui:CursorPosition>
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ac1c00ad-2e31-4905-a81f-cf17c37f4b13" InformativeScreenshot="599bfa2e3714a19a7ed907c617a4332d">
-                                      <ui:Target.Selector>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121">string.Format("&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Customer Vault Detail - Google Chrome' /&gt;&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='{0}' role='grouping' /&gt;", Str_InputStartDate)</CSharpValue>
-                                        </InArgument>
-                                      </ui:Target.Selector>
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                      <ui:Target.WaitForReady>
-                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                      </ui:Target.WaitForReady>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
-                              </Sequence>
-                            </ui:CommentOut.Body>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:CommentOut>
+                          </uix:NClick>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,2184" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="596.6666666666666,1266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="530,1823.3333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="554.6666666666666,980" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                             <ui:InterruptibleDoWhile.Body>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1667.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520.6666666666666,842" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'May'" sap:VirtualizedContainerService.HintSize="434,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
-                                  <uix:NGetAttributeGeneric.Result>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">Str_out_Month</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetAttributeGeneric.Result>
-                                  <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvElementArea="507, 537, 23, 21" CvTextArea="403, 537, 42, 24" CvTextArgument="May" CvType="ArrowButton" DesignTimeRectangle="394, 533, 139, 28" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'May'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' automationid='' /&gt;" Guid="027e6532-5df1-4adb-801e-68dd05b7c94a" InformativeScreenshot="39beb1cf0abf9ab5ae1e37e6672ab067.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
-                                      <uix:TargetAnchorable.ScopeSelectorArgument>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_173">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
-                                        </InArgument>
-                                      </uix:TargetAnchorable.ScopeSelectorArgument>
-                                    </uix:TargetAnchorable>
-                                  </uix:NGetAttributeGeneric.Target>
-                                </uix:NGetAttributeGeneric>
-                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute '2024'" sap:VirtualizedContainerService.HintSize="434,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_12" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
-                                  <uix:NGetAttributeGeneric.Result>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">str_out_year</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetAttributeGeneric.Result>
-                                  <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvTextArea="537, 537, 48, 19" CvTextArgument="2024" CvType="Text" DesignTimeRectangle="532, 534, 72, 26" DesignTimeScaleFactor="1.5" FriendlyName="'2024'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' automationid='' check:text='2024' /&gt;" Guid="cb505de8-19f5-439c-9f66-ccab9bd34185" InformativeScreenshot="c7884c2c382346275743b82b139f529e.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
-                                      <uix:TargetAnchorable.ScopeSelectorArgument>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_174">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
-                                        </InArgument>
-                                      </uix:TargetAnchorable.ScopeSelectorArgument>
-                                    </uix:TargetAnchorable>
-                                  </uix:NGetAttributeGeneric.Target>
-                                </uix:NGetAttributeGeneric>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,313.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="354,228.66666666666666" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
-                                        <ui:GetAttribute.Result>
-                                          <OutArgument x:TypeArguments="x:String">
-                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">Str_out_Month</CSharpReference>
-                                          </OutArgument>
-                                        </ui:GetAttribute.Result>
-                                        <ui:GetAttribute.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="00c79f5f-0d42-4d85-9281-b5232bb02127" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl tabindex='-1' tag='DIV' class='flatpickr-calendar animate *' isleaf='0' parentclass='mat-typography' /&gt;&lt;webctrl class='flatpickr-current-month' tag='DIV' parentclass='flatpickr-month' /&gt;">
-                                            <ui:Target.TimeoutMS>
-                                              <InArgument x:TypeArguments="x:Int32" />
-                                            </ui:Target.TimeoutMS>
-                                            <ui:Target.WaitForReady>
-                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                            </ui:Target.WaitForReady>
-                                          </ui:Target>
-                                        </ui:GetAttribute.Target>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:GetAttribute>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:CommentOut>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15">
-                                  <ui:LogMessage.Level>
-                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_127">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Level>
-                                  <ui:LogMessage.Message>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">"Do while Month year"+Str_out_Month+" "+str_out_year</CSharpValue>
-                                    </InArgument>
-                                  </ui:LogMessage.Message>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:LogMessage>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="478.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                                   <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="568, 582, 19, 23" CvType="ArrowButton" DesignTimeRectangle="572, 587, 14, 14" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl tag='DIV' parentclass='flatpickr-calendar animate arrow* open' /&gt;&lt;webctrl tag='*' parentclass='flatpickr-next-month' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' parentclass='flatpickr-calendar animate arrow* open' /&gt;&lt;webctrl tag='*' parentclass='flatpickr-next-month' type='' class='' aaname='' /&gt;" Guid="1c6168a6-448e-40fa-8718-f649c55109c1" ImageBase64="" InformativeScreenshot="bef5517ccd2adff7d7ed9d775f9432c5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                                    <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" CVScreenId="5c0a074e-340f-4cb4-a94f-44411e90ad8d" CvElementArea="562, 471, 23, 25" CvType="ArrowButton" DesignTimeRectangle="555, 463, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl aria-label='Next month' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Next month' tag='BUTTON' type='button' class='mat-calendar-next-button mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base' aaname='' /&gt;" Guid="c036a813-8f91-4a0e-9f60-d5dff9a96f79" InformativeScreenshot="b670cdde67359207cdb62686332f72b8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                   </uix:NClick.Target>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
                                 </uix:NClick>
-                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'May'" sap:VirtualizedContainerService.HintSize="434,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_9" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'May'" sap:VirtualizedContainerService.HintSize="478.6666666666667,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_19" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                                   <uix:NGetAttributeGeneric.Result>
                                     <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">Str_out_Month</CSharpReference>
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_73">str_get_MonthYear</CSharpReference>
                                     </OutArgument>
                                   </uix:NGetAttributeGeneric.Result>
                                   <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvElementArea="507, 537, 23, 21" CvTextArea="403, 537, 42, 24" CvTextArgument="May" CvType="ArrowButton" DesignTimeRectangle="394, 533, 139, 28" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'May'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Month' role='combo box' automationid='' /&gt;" Guid="027e6532-5df1-4adb-801e-68dd05b7c94a" InformativeScreenshot="39beb1cf0abf9ab5ae1e37e6672ab067.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable CVScreenId="c0e79d67-4b09-4b12-91fe-52e073a09731" CvElementArea="521, 686, 23, 21" CvTextArea="418, 687, 40, 24" CvTextArgument="May" CvType="ArrowButton" DesignTimeRectangle="409, 333, 139, 28" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'May'" FullSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl tag='SPAN' parentclass='mdc-button__label' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Payments' role='document' /&gt;&lt;ctrl name='Month' role='combo box' automationid='' /&gt;" Guid="21681e2c-14c6-4cbd-8749-a1f0eb3cfb73" ImageBase64="" InformativeScreenshot="ecdbfc2f25e80237871abd4b181173f8.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.ScopeSelectorArgument>
                                         <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_202">string.Format("&lt;wnd app='{0}' title='Payments' /&gt;", str_BrowserValue)</CSharpValue>
                                         </InArgument>
                                       </uix:TargetAnchorable.ScopeSelectorArgument>
                                     </uix:TargetAnchorable>
                                   </uix:NGetAttributeGeneric.Target>
                                 </uix:NGetAttributeGeneric>
-                                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute '2024'" sap:VirtualizedContainerService.HintSize="434,251.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_13" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
-                                  <uix:NGetAttributeGeneric.Result>
-                                    <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">str_out_year</CSharpReference>
-                                    </OutArgument>
-                                  </uix:NGetAttributeGeneric.Result>
-                                  <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable CVScreenId="17e4e772-8b03-466c-bc01-4034fb8c1779" CvTextArea="537, 537, 48, 19" CvTextArgument="2024" CvType="Text" DesignTimeRectangle="532, 534, 72, 26" DesignTimeScaleFactor="1.5" FriendlyName="'2024'" FullSelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='Year' role='spin box' automationid='' check:text='2024' /&gt;" Guid="cb505de8-19f5-439c-9f66-ccab9bd34185" InformativeScreenshot="c7884c2c382346275743b82b139f529e.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
-                                      <uix:TargetAnchorable.ScopeSelectorArgument>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
-                                        </InArgument>
-                                      </uix:TargetAnchorable.ScopeSelectorArgument>
-                                    </uix:TargetAnchorable>
-                                  </uix:NGetAttributeGeneric.Target>
-                                </uix:NGetAttributeGeneric>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,313.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="354,228.66666666666666" sap2010:WorkflowViewState.IdRef="GetAttribute_9">
-                                        <ui:GetAttribute.Result>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,178.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                        <ui:AssignOperation.To>
                                           <OutArgument x:TypeArguments="x:String">
-                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">Str_out_Month</CSharpReference>
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">str_out_Month</CSharpReference>
                                           </OutArgument>
-                                        </ui:GetAttribute.Result>
-                                        <ui:GetAttribute.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="00c79f5f-0d42-4d85-9281-b5232bb02127" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl tabindex='-1' tag='DIV' class='flatpickr-calendar animate *' isleaf='0' parentclass='mat-typography' /&gt;&lt;webctrl class='flatpickr-current-month' tag='DIV' parentclass='flatpickr-month' /&gt;">
-                                            <ui:Target.TimeoutMS>
-                                              <InArgument x:TypeArguments="x:Int32" />
-                                            </ui:Target.TimeoutMS>
-                                            <ui:Target.WaitForReady>
-                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                            </ui:Target.WaitForReady>
-                                          </ui:Target>
-                                        </ui:GetAttribute.Target>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:GetAttribute>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:CommentOut>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_190">str_get_MonthYear.Split(" " , System.StringSplitOptions.None)[1]</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_65">str_out_year</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_191">str_get_MonthYear.Split(" " , System.StringSplitOptions.None)[3]</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">str_out_date</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_192">Str_InputStartDate.Split(" " , System.StringSplitOptions.None)[1].Replace(",","").ToString()</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                                <Assign sap:VirtualizedContainerService.HintSize="478.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_25">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">
-                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">MonthYear</CSharpReference>
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_72">str_out_MonthYear</CSharpReference>
                                     </OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">Str_out_Month+" "+str_out_year</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197">str_out_Month+" "+str_out_year</CSharpValue>
                                     </InArgument>
                                   </Assign.Value>
                                 </Assign>
                               </Sequence>
                             </ui:InterruptibleDoWhile.Body>
                             <ui:InterruptibleDoWhile.Condition>
-                              <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_153">!str_out_MonthYear.Equals(MonthYear)</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">!str_out_MonthYear.ToLower().Equals(strMonthYear.ToLower())</CSharpValue>
                             </ui:InterruptibleDoWhile.Condition>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -866,70 +663,32 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InterruptibleDoWhile>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '20'" sap:VirtualizedContainerService.HintSize="530,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '20'" sap:VirtualizedContainerService.HintSize="554.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CVScreenId="8ca02799-df56-4315-9273-e817b3f910c0" CvTextArea="921, 649, 21, 16" CvTextArgument="20" CvType="Text" DesignTimeRectangle="11, -1724, 1915, 800" DesignTimeScaleFactor="1.5" FriendlyName="'20'" FuzzySelectorArgument="&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='May 20, 2024' role='grouping' automationid='' check:text='20' /&gt;" Guid="2fe107a9-da42-48aa-a735-d2e9e38a8a42" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable CVScreenId="40c0c1da-6805-468b-aca4-26dd7adc6922" CvTextArea="403, 613, 21, 16" CvTextArgument="20" CvType="Text" DesignTimeRectangle="11, -392, 1915, 878" DesignTimeScaleFactor="1.5" FriendlyName="'20'" FuzzySelectorArgument="&lt;ctrl name='Payments' role='document' /&gt;&lt;ctrl name='May 20, 2024' role='grouping' automationid='' check:text='20' /&gt;" Guid="6b2a4452-1e8e-498c-ac1c-ffb618908869" InformativeScreenshot="eda6048fcb6349b4f286bcb1dbe9e087.png" SearchSteps="Selector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
                                 <uix:TargetAnchorable.FullSelectorArgument>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_171">string.Format("&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='{0}' role='grouping' /&gt;", Str_InputStartDate)</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_204">string.Format("&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;&lt;webctrl aria-role='grid' tag='TABLE' /&gt;&lt;webctrl aaname='*{0}*' tag='SPAN' /&gt;", str_out_date)</CSharpValue>
                                   </InArgument>
                                 </uix:TargetAnchorable.FullSelectorArgument>
                                 <uix:TargetAnchorable.ScopeSelectorArgument>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">string.Format("&lt;wnd app='{0}' title='Customer Vault Detail - *' /&gt;", str_BrowserValue)</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203">string.Format("&lt;wnd app='{0}' title='Payments -*' /&gt;", str_BrowserValue)</CSharpValue>
                                   </InArgument>
                                 </uix:TargetAnchorable.ScopeSelectorArgument>
                               </uix:TargetAnchorable>
                             </uix:NClick.Target>
-                          </uix:NClick>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,76.66666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,214.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'grouping  April 4, 2024'" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition Position="Center">
-                                      <ui:CursorPosition.OffsetX>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetX>
-                                      <ui:CursorPosition.OffsetY>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetY>
-                                    </ui:CursorPosition>
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ac1c00ad-2e31-4905-a81f-cf17c37f4b13" InformativeScreenshot="599bfa2e3714a19a7ed907c617a4332d">
-                                      <ui:Target.Selector>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_123">string.Format("&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Customer Vault Detail - Google Chrome' /&gt;&lt;ctrl name='Customer Vault Detail' role='document' /&gt;&lt;ctrl name='{0}' role='grouping' /&gt;", Str_InputStartDate)</CSharpValue>
-                                        </InArgument>
-                                      </ui:Target.Selector>
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                      <ui:Target.WaitForReady>
-                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                      </ui:Target.WaitForReady>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
-                              </Sequence>
-                            </ui:CommentOut.Body>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:CommentOut>
+                          </uix:NClick>
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NGetText DisplayName="Get Text '05/04/2024'" sap:VirtualizedContainerService.HintSize="954,199.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
+                    <uix:NGetText DisplayName="Get Text '05/04/2024'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="8c7c6ca2-98d8-4a1b-90c6-70f9bc512130" Version="V3">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/customerdetail" CvElementArea="286, 871, 516, 38" CvType="InputBox" DesignTimeRectangle="288, 873, 511, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'05/04/2024'" FullSelectorArgument="&lt;webctrl parentid='collapseChoosePaymentOption' tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl parentid='collapseChoosePaymentOption' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapseChoosePaymentOption' tag='DIV' innertext=' Start Date ' /&gt;&lt;webctrl parentid='collapseChoosePaymentOption' tag='INPUT' type='text' class='ng2-flatpickr-input flatpickr-input ng-star-inserted' aaname='' /&gt;" Guid="243acb92-d8d2-401a-a23d-9dc9d673dfc6" ImageBase64="" InformativeScreenshot="b3a9cf76b2b0f06601c4ebc3660f0dbc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Vault Detail' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -945,7 +704,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NGetText>
-                    <Assign sap:VirtualizedContainerService.HintSize="954,125.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">str_out_StartDate</CSharpReference>
@@ -957,7 +716,7 @@
                         </InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,187.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9">
                       <ui:LogMessage.Level>
                         <InArgument x:TypeArguments="ui:LogLevel">
                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
