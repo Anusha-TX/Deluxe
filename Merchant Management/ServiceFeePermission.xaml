@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Service_Fee_Permission" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Service_Fee_Permission" this:Service_Fee_Permission.str_in_Url="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" this:Service_Fee_Permission.str_in_MerchantDBAName="ACC 610 ACCOUNT" this:Service_Fee_Permission.str_in_SearchMerchant="6280010004864302" this:Service_Fee_Permission.str_in_ServiceFeeType="Allow w/Full Refund" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="str_in_Url" Type="InArgument(x:String)" />
     <x:Property Name="str_in_MerchantDBAName" Type="InArgument(x:String)" />
@@ -13,12 +13,9 @@
   <this:Service_Fee_Permission.int_in_ReportId>
     <InArgument x:TypeArguments="x:Int32" />
   </this:Service_Fee_Permission.int_in_ReportId>
-  <this:Service_Fee_Permission.str_in_ServiceFeeType>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Service_Fee_Permission.str_in_ServiceFeeType>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>854,1580.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2410.6666666666665,5982.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -145,7 +142,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Manual Batch Closer" sap:VirtualizedContainerService.HintSize="646.6666666666666,1516" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Manual Batch Closer" sap:VirtualizedContainerService.HintSize="2420.6666666666665,5918" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Step" Name="StepName" />
       <Variable x:TypeArguments="x:String" Name="str_SurchargeFeeRate" />
@@ -156,9 +153,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584.6666666666666,1405.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2358.6666666666665,5807.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="546,1166" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence sap:VirtualizedContainerService.HintSize="2320,5568" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="str_BrowserValue" />
           </Sequence.Variables>
@@ -167,7 +164,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="484,54" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+          <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="2258,54" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -180,7 +177,7 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2258,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -192,13 +189,13 @@
               </InArgument>
             </ui:LogMessage.Message>
           </ui:LogMessage>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="484,776.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dashboard" sap:VirtualizedContainerService.HintSize="2258,5178.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,557.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2224,4959.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="res_MerchantStatus" />
                   </Sequence.Variables>
@@ -208,7 +205,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_actualStep="Click on the 'Merchant Management' menu">
+                  <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="2162,54" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_actualStep="Click on the 'Merchant Management' menu">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -231,12 +228,12 @@
                       </InArgument>
                     </cr:passedStep.str_in_testId>
                   </cr:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchant Management'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchant Management'" sap:VirtualizedContainerService.HintSize="2162,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="56, 609, 147, 18" CvTextArgument="Merchant Management" CvType="Text" DesignTimeRectangle="65, 616, 203, 28" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='menuMerchantmanagement' tag='SPAN' aaname='Merchant Management' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menuMerchantmanagement' tag='SPAN' aaname='Merchant Management' type='' class='hide-menu' check:text='Merchant Management' /&gt;" Guid="431861a6-1535-4388-9521-5ba2a099fa42" InformativeScreenshot="1bebb50af3c3a55af4cb014929b6ed12.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="LogMessage_14">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2162,54" sap2010:WorkflowViewState.IdRef="LogMessage_14">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_111">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -254,9 +251,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <uix:NCheckState DisplayName="Check App State 'Merchants'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NCheckState_24" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Merchants'" sap:VirtualizedContainerService.HintSize="2162,4456" sap2010:WorkflowViewState.IdRef="NCheckState_24" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1238" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1658,4194.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="str_MerchantName" />
                         </Sequence.Variables>
@@ -265,7 +262,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="passedStep_10" str_in_actualStep="Displayed the 'Merchants' sub-menu and Click on it">
+                        <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="1596,54" sap2010:WorkflowViewState.IdRef="passedStep_10" str_in_actualStep="Displayed the 'Merchants' sub-menu and Click on it">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -288,12 +285,12 @@
                             </InArgument>
                           </cr:passedStep.str_in_testId>
                         </cr:passedStep>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchants'" sap:VirtualizedContainerService.HintSize="450,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Merchants'" sap:VirtualizedContainerService.HintSize="1596,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/dashboard/dashboard" CvTextArea="59, 662, 69, 15" CvTextArgument="Merchants" CvType="Text" DesignTimeRectangle="67, 675, 203, 28" DesignTimeScaleFactor="1.1299999952316284" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Merchants' parentid='menuMerchantmanagement' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Merchants' parentid='menuMerchantmanagement' tag='SPAN' type='' class='hide-menu' check:innerText='Merchants' /&gt;" Guid="6e789f01-1889-48c7-ae39-42a671be994a" InformativeScreenshot="af997c8bb4cf2138cdf18028fd8e4fe3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Enter the valid merchant name or Merchant ID in the search box">
+                        <cr:passedStep Actual_Result="{x:Null}" Expected_Result="{x:Null}" sap:VirtualizedContainerService.HintSize="1596,54" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Enter the valid merchant name or Merchant ID in the search box">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -316,7 +313,7 @@
                             </InArgument>
                           </cr:passedStep.str_in_testId>
                         </cr:passedStep>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1596,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" CvElementArea="297, 375, 207, 37" CvType="InputBox" DesignTimeRectangle="335, 352, 231, 39" DesignTimeScaleFactor="1.1299999952316284" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' parentclass='input-group w-auto' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' parentclass='input-group w-auto' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="0634816a-9c8d-4884-9c7a-01f9259e2610" InformativeScreenshot="77087d8982f5427672f072f3c4e2813d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NTypeInto.Target>
@@ -326,12 +323,12 @@
                             </InArgument>
                           </uix:NTypeInto.Text>
                         </uix:NTypeInto>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="450,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="1596,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" DesignTimeRectangle="566, 352, 45, 39" DesignTimeScaleFactor="1.1299999952316284" FullSelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='input-group-text' parentid='main-wrapper' tag='SPAN' type='' aaname='' /&gt;" Guid="856bc6cc-dc57-4fb9-b8f1-fb21ca0ba907" InformativeScreenshot="9734b6b8515c4da4bf9cf33be71ae9af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1596,54" sap2010:WorkflowViewState.IdRef="LogMessage_15">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_120">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -349,7 +346,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <Sequence DisplayName="Verify Merchant Details in Merchant Page" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <Sequence DisplayName="Verify Merchant Details in Merchant Page" sap:VirtualizedContainerService.HintSize="1596,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="res_MerchantName" />
                             <Variable x:TypeArguments="x:String" Name="str_MerchantNo" />
@@ -764,7 +761,7 @@
                             </If.Else>
                           </If>
                         </Sequence>
-                        <If sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If sap:VirtualizedContainerService.HintSize="1596,3010.6666666666665" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Condition>
                             <InArgument x:TypeArguments="x:Boolean">
                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">res_MerchantStatus</CSharpValue>
@@ -772,18 +769,18 @@
                           </If.Condition>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="389.3333333333333,622.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_103">
+                            <Sequence sap:VirtualizedContainerService.HintSize="1562,2592" sap2010:WorkflowViewState.IdRef="Sequence_103">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347.3333333333333,54" sap2010:WorkflowViewState.IdRef="LogMessage_17">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="LogMessage_17">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -801,7 +798,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347.3333333333333,54" sap2010:WorkflowViewState.IdRef="LogMessage_18">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="LogMessage_18">
                                 <ui:LogMessage.Level>
                                   <InArgument x:TypeArguments="ui:LogLevel">
                                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -819,7 +816,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <cr:passedStep Expected_Result="Merchant details tab should be displayed." sap:VirtualizedContainerService.HintSize="347.3333333333333,54" sap2010:WorkflowViewState.IdRef="passedStep_15" str_in_actualStep="Click on the edit button (Pencil icon)">
+                              <cr:passedStep Expected_Result="Merchant details tab should be displayed." sap:VirtualizedContainerService.HintSize="1520,54" sap2010:WorkflowViewState.IdRef="passedStep_15" str_in_actualStep="Click on the edit button (Pencil icon)">
                                 <cr:passedStep.Actual_Result>
                                   <InArgument x:TypeArguments="x:String" />
                                 </cr:passedStep.Actual_Result>
@@ -845,12 +842,12 @@
                                   </InArgument>
                                 </cr:passedStep.str_in_testId>
                               </cr:passedStep>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="347.3333333333333,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="1520,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" CvElementArea="1685, 480, 25, 24" CvType="Icon" DesignTimeRectangle="1690, 484, 14, 14" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='I' colName='Actions' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='I' colName='Actions' class='fas fa-pencil-alt' aaname='' /&gt;" Guid="ec9bbbdf-c9b9-460a-a787-7a22944a3820" InformativeScreenshot="3c3ba9fa466b4d2d06353cc24850c0ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <uix:NCheckState DisplayName="Check App State 'Merchant Details in Edit Page'" sap:VirtualizedContainerService.HintSize="347.3333333333333,54" sap2010:WorkflowViewState.IdRef="NCheckState_23" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
+                              <uix:NCheckState DisplayName="Check App State 'Merchant Details in Edit Page'" sap:VirtualizedContainerService.HintSize="1520,2023.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_23" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
                                 <uix:NCheckState.IfExists>
                                   <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1016,1762" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                     <Sequence.Variables>
@@ -1976,7 +1973,7 @@
                                         <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" CvElementArea="757, 376, 75, 41" CvTextArea="767, 389, 54, 18" CvTextArgument="Settings" CvType="Button" DesignTimeRectangle="760, 379, 71, 38" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Settings'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Settings' parentclass='nav-item' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Settings' parentclass='nav-item' type='' class='p-2 nav-link' check:text='Settings' /&gt;" Guid="8b9b21f5-111c-409b-b87d-d6d57eee9565" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAqCAYAAAD75qYVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMeSURBVGhD7ZcLSypREID7//+k97ug0p6kBEVRqL2sLAyiEkp62GPiGxzZImOn671XZD5Y1HP27Dn7nZnZtU+C1IQsByHLQchyELIchCwHIctByHIQshyELAchy0HIchCyHIQsByHLQVfKenx8lIODA/3sJtyyarWazM/Py8DAgPT398v4+LiUSiV5f39vnvEzxWJRRkdH5fb2ttkikslk9DDOz8/1nKOjo2ZLd+CS9fDwILOzs7KwsKA3+/T0pDc/MjIihUKhedbPpJHVrbhk2Y6fnp42W0QjamlpSQVadO3v78vY2Fgr8ux8hNBmx9bWll7PfpvEs7Mz/c4n5PN5mZubk9XVVY3ooaEh2dzcbM3HJ79ppz+bzcrk5KSOg5eXF1lbW5PBwUHtn5mZkaurK+3z4JJFCnLzTPz8/Nxs/czJyYmKOj4+lkajoTfBmOvra+1PE1nfyeImkUsd297e1miuVqvaT30bHh6Wvb09jX7m5HyTxTjWcHl5qeORSYa0u4d2uGsWdQQZ7CI3WC6X5e3tTfvYYdqQadzf38vU1JTWNfitLCLr9fVVfzOWfquVNt4iDWFEj8my8UQY3Nzc6Ni/LguYlFSzQo8MFmCLTKaaHUiC38pK9pssrvVVDHxtu7i40A3mYCOJMBPr4VeykhA509PTsry83FokadCO/yEL2ODDw0NZXFzUrKD+WaSmxSVrZ2dHc5/alSSXy+ni6vW6FnqO5EKS3zstC6hBPGS+S0PmpnRYfQN7ACXXkAaXLFINWSyMiSjgTMzCNzY29ByKLTtHUWWhlUpF05RUAJ6MLBQRvHoAsim4d3d3GgFeWcxJwbdISxZ4BBL1RD8PGa6/vr4uExMTOp8HdxoyITvJY5haxCIRZcWTxVn0WP/u7u6nXSfy6DPBVlOQzOuJVxbX/unVgSfgyspKa83JzfPwxzWrG0CWPZGBOoosk9kpekIWrwGkMS+aRDhpnXy36xQ9IQtBpDQvpqQZ9Sj5L6NT9ISsf0XIchCyHIQsByHLQchyELIchCwHIctByHIQshz0lStViSPdEZGVGpEPRDIgRKxkO1sAAAAASUVORK5CYII=" InformativeScreenshot="5a14b6e225214acce60df3475699cb5b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                       </uix:NClick.Target>
                                     </uix:NClick>
-                                    <uix:NCheckState DisplayName="Check App State 'Request Only'" sap:VirtualizedContainerService.HintSize="954,977.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_26" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
+                                    <uix:NCheckState DisplayName="Check App State 'Allow w/Full Refund'" sap:VirtualizedContainerService.HintSize="954,977.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_26" ScopeIdentifier="baa748ef-871a-4e5d-be9b-d818c0872be6" Timeout="30" Version="V3">
                                       <uix:NCheckState.IfExists>
                                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,756" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                           <sap:WorkflowViewStateService.ViewState>
@@ -1998,7 +1995,7 @@
                                               </scg:List>
                                             </uix:NSelectItem.Items>
                                             <uix:NSelectItem.Target>
-                                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" DesignTimeRectangle="989, 651, 192, 35" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Request Only'" FullSelectorArgument="&lt;webctrl parentid='ngb-nav-15-panel' tag='DIV' innertext='Service Fee*' /&gt;&lt;webctrl tag='SELECT' parentid='ngb-nav-15-panel' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ngb-nav-15-panel' tag='DIV' innertext='Service Fee*' /&gt;&lt;webctrl tag='SELECT' parentid='ngb-nav-15-panel' type='' class='h-100 form-control w-100 custom-select col-md-7 ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="06c22347-c650-486b-9a64-abdd776c032e" ImageBase64="" InformativeScreenshot="ceeef37d6e732f8cc1677b9c682b7ad8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" DesignTimeRectangle="989, 651, 192, 35" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Request Only'" FullSelectorArgument="&lt;webctrl tag='SELECT' innertext='DisabledRequest OnlyAllow w/Full Refund' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ngb-nav-15-panel' tag='DIV' innertext='Service Fee*' /&gt;&lt;webctrl tag='SELECT' parentid='ngb-nav-15-panel' type='' class='h-100 form-control w-100 custom-select col-md-7 ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="06c22347-c650-486b-9a64-abdd776c032e" ImageBase64="" InformativeScreenshot="29d5e558889fa3014d12fb02b09b2b03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                             </uix:NSelectItem.Target>
                                           </uix:NSelectItem>
                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_50">
@@ -2097,8 +2094,14 @@
                                         </Sequence>
                                       </uix:NCheckState.IfNotExists>
                                       <uix:NCheckState.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" CvTextArea="999, 660, 84, 18" CvTextArgument="Request Only" CvType="Text" DesignTimeRectangle="989, 651, 192, 35" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Request Only'" FullSelectorArgument="&lt;webctrl parentid='ngb-nav-15-panel' tag='DIV' innertext='Service Fee*' /&gt;&lt;webctrl tag='SELECT' parentid='ngb-nav-15-panel' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ngb-nav-15-panel' tag='DIV' innertext='Service Fee*' /&gt;&lt;webctrl tag='SELECT' parentid='ngb-nav-15-panel' type='' class='h-100 form-control w-100 custom-select col-md-7 ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="b3261c53-0fe4-4ad0-a9eb-b720b009ac52" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMQAAAAnCAYAAABQdudHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUoSURBVHhe7Z39U1RVGMf7l/hXmvqhn7RmepmymcYsnSljUitpDDVUIJR3RAVSiDcJQlQISQQRBIQwECWChd2FhV3envb7tOd6FraVtV3Y4PuZeWZ277n33Lfnc89z7s7AK0IIcaAQhFhQCEIsHCHcbrcMDw3J4MAAg7FrAjmP3Dc4QqBhxuUSj8cjXq+XwdjxgVxHziP3DY4QsMXn84nf75dAIMBg7PhAriPnkfuGMCGwwurqqqytrTEYOz6Q68j5fxUC1mBFQnYDyHXkPIUgJAiFIMSCQhBiQSEIsaAQhFhQCEIsKMQW0tUzJNUN7aFvJBmJuxC46a/uSXXi9beOyNETRTIx6QqtkZzMeuYkO/8n8fsDoSUbcc165cz5a/LG28de6rwoRPKTECHsm76ysiLdvcOSmlYgrhlPaGny8SIhZoIyfP51rrS03ddzwjXpeTgih47kyNOJqdBa0aEQyU/ChTCUV92Unr7f9TP6634wLO/uPymvvfmlPmmRcKat6eY92fNBmj6FM3Or5IfCank8NqHt6Bv7sCm83OC0z/sW5eyFSt0WfaAvc/xuz7xk5FzVNjzli8saxR9Y0v7sUW19/6CxpTPied3tHpSS8kbdB46h4FJD2PFfvtqsAgFzbfD9fFGtjD97LtLKyqrkltSFLSNbD+7jlgsxOPxEn8Yer0/7xvLsgmpZWlqW3v7Hcvx0qUxNu7Wt8/4j2XcwY1NCmETDNth2bn5BcgprtE9QWvGLNN/u1jaIcKXyhiY6iDZCIFkvFNfK2PhkaMlzIPK53EpZXAzoMXx4KEMq61q1f8j57feXpG/gD13Xvjbtdx+qOIa/pmdVfFwDEh+ysrI0YgG5kVAhsC0S/qv0EkeAixVNYU9CLMOTFQmHpH0QLEVs7BEgmhCIssqWsOMdGZ3QJzjAekYOAIEWFvz6OZoQWIY2rLMeuw37T88sD+sDI4i5Hva1gfCZeVXOum0dfdJ8q0s/k/8OREhJSdGIRQrkTtyFsMsPxOFv8pzJJxLg2HfFG9bZuy9NhkbG9Sn57M9pXdewWSEi7RuBhAXo92Cw5n/vwCnJu1gfrP2nnXOLlxA4FhtbAvsz9gt5sQ1GoLzS+g3nTbaehAhhbjpAeYSyxdTR0ZJraXlZSxOUDzaxCGHvOxI4F+wbT+OPD2fKvVBf0YSIpWTarBAAI2FVXZueL/rH+ZP4kFQjhH3TsS0mlibxkFyo8yFKJF5UMtU3dWh5YUB/OUU12j488jRMPhsch29hMexcUE6hVAPRhACbnVTHIgSOJ7/0uvZtnxOJDxAhFhkA7mNChQBTLrecDNbWmEMA1PGfpGbL6JNJ7Rv1dG3jHZ2Imkk13vmjDfOPjz476wiBCSomqpiwIvFvtHbLO/vTtR0T0vRzZTqBR19ov9PZL/2PRrXtVHaF/NY1qP3i+4/Vt+Ra7W3t1+OdlxNnrkQcucBmXrvGKgSo+bldUo/nbxgVyfaA+5pwIUBrR69UX/9V+0Lgtev7n57WGv/AF1kyMDSm66Ft/WtXhBECyYi3Q3htisDE1G6HKPhu2s2rVQAxMblf/9oVYL+QA20YhSIR6Yc5zEMMLyMERql/RrXV0BKynSAP4ipEIrBLpp0G5McrWJIcUIhtZHJq1vnNhSQHFGKbQOmEshA/IpLk4X8hBCFbBYUgxIJCEGJBIQixoBCEWFAIQiwoBCEWFIIQi6hC4G/kz83N8a9/M3ZNINeR8xH/PwT/gxBjNwZyPuJ/ECKEiPwN0/ypbA0CsDEAAAAASUVORK5CYII=" InformativeScreenshot="ceeef37d6e732f8cc1677b9c682b7ad8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                        <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/merchantmanagement/merchant" CvTextArea="999, 660, 84, 18" CvTextArgument="Request Only" CvType="Text" DesignTimeRectangle="989, 651, 192, 35" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Allow w/Full Refund'" FullSelectorArgument="&lt;webctrl tag='SELECT' innertext='DisabledRequest OnlyAllow w/Full Refund' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' innertext='DisabledRequest OnlyAllow w/Full Refund' type='' class='h-100 form-control w-100 custom-select col-md-7 ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="b3261c53-0fe4-4ad0-a9eb-b720b009ac52" ImageBase64="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" InformativeScreenshot="29d5e558889fa3014d12fb02b09b2b03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Merchants' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                       </uix:NCheckState.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
                                     </uix:NCheckState>
                                   </Sequence>
                                 </uix:NCheckState.IfExists>
@@ -2151,7 +2154,7 @@
                                 </uix:NCheckState.Target>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -2225,7 +2228,7 @@
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -2257,7 +2260,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="2324.6666666666665,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
