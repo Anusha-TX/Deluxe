@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Verify_the_Sale_Item_Fields" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Verify_the_Sale_Item_Fields" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ca="clr-namespace:CommonLibrary.Asset;assembly=CommonLibrary" xmlns:cr="clr-namespace:CommonLibrary.Report;assembly=CommonLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Step" Type="InArgument(x:String)" />
   </x:Members>
@@ -6,7 +6,7 @@
     <InArgument x:TypeArguments="x:String" />
   </this:Verify_the_Sale_Item_Fields.Step>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>854,764</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,1984</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -48,6 +48,7 @@
       <x:String>ReporterForUiPath.Enums</x:String>
       <x:String>ReporterForUiPath.Activities</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>CommonLibrary.Asset</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -116,30 +117,46 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Verify_the_Sale_Item_Fields" sap:VirtualizedContainerService.HintSize="546,699.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Verify_the_Sale_Item_Fields" sap:VirtualizedContainerService.HintSize="1112,1919.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="484,588.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V2">
+    <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="1050,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadAssetValue_1" str_in_AssetName="BrowserValue" str_in_Orch_FolderPath="DPP_TestAutomation">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ca:ReadAssetValue.str_out_AssetValue>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">str_BrowserValue</CSharpReference>
+        </OutArgument>
+      </ca:ReadAssetValue.str_out_AssetValue>
+    </ca:ReadAssetValue>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Payments" sap:VirtualizedContainerService.HintSize="1050,1571.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,369.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1404" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Items Arrow Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sale Items Arrow Button'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/virtual-terminal" ContentHash="Ewj9djkMBECAkhoGrWujBg" CvElementArea="1814, 557, 38, 31" CvType="ArrowButton" DesignTimeRectangle="1865, 786, 14, 16" DesignTimeScaleFactor="1.125" FriendlyName="'Sale Items Arrow Button'" FullSelectorArgument="&lt;webctrl parentid='main-wrapper' tag='H3' aaname='Sale Items' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='main-wrapper' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='main-wrapper' tag='I' class='fas fa-chevron-up float-right text-dark' aaname='' /&gt;" Guid="dc5ffa5b-c537-4b5c-8ed4-ac7852062aa6" ImageBase64="" InformativeScreenshot="66f03c608aa213e7c9bab12cc55936e4.png" Reference="qnsGvNsFSUiRvH4oM-Q7Tg/tghGRV6XeE-076DtYno7mQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Payments' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Item Name'" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Item Name'" sap:VirtualizedContainerService.HintSize="954,1088.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="68a4713e-6be4-4da3-9066-4d26e2853a78" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,827.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -445,7 +462,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,656" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -472,7 +489,7 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -481,7 +498,13 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="a28a56443d828e1c9b1f268c14aeacbb.jpg" Selector="&lt;html app='chrome.exe' title='Payments' /&gt;" Title="Payments" Url="https://payments2.deluxe.com/gateway/*" />
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="a28a56443d828e1c9b1f268c14aeacbb.jpg" Title="Payments" Url="https://payments2.deluxe.com/gateway/*">
+          <uix:TargetApp.Selector>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">string.Format("&lt;html app='{0}' title='Payments' /&gt;", str_BrowserValue)</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Selector>
+        </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>
