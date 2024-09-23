@@ -12,7 +12,7 @@
   </this:Sequence.str_in_ExcelPath>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>2520.6666666666665,7844.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2520.6666666666665,8141.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -162,7 +162,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="2530.6666666666665,7780" sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence DisplayName="DPP Login" sap:VirtualizedContainerService.HintSize="2530.6666666666665,8076.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DppUsername" />
       <Variable x:TypeArguments="ss:SecureString" Name="str_DppPassword" />
@@ -172,7 +172,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2468.6666666666665,7669.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2468.6666666666665,7966" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,7 +180,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1864,7430" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="1864,7726.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_VerificationCode" />
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lst_Messages" />
@@ -189,21 +189,9 @@
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="Browser_type" />
             <Variable x:TypeArguments="x:String" Name="str_BrowserValue" />
             <Variable x:TypeArguments="x:String" Name="str_Url" />
-            <Variable x:TypeArguments="x:String" Name="str_DppUrl_AssetName">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">DPPUrl</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="str_DppMerchantCredentials_AssetName">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">DPPMerchantCredentials</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="str_DppUserCredentials_AssetName">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">DPPCredentials</Literal>
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:String" Default="DPPUrl" Name="str_DppUrl_AssetName" />
+            <Variable x:TypeArguments="x:String" Default="DPPMerchantCredentials" Name="str_DppMerchantCredentials_AssetName" />
+            <Variable x:TypeArguments="x:String" Default="DPPCredentials" Name="str_DppUserCredentials_AssetName" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -211,10 +199,11 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Read Environment Data" sap:VirtualizedContainerService.HintSize="1802,991.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_88">
+          <Sequence DisplayName="Read Environment Data" sap:VirtualizedContainerService.HintSize="1802,1288" sap2010:WorkflowViewState.IdRef="Sequence_88">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_TestData" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt_EnvironmentData" />
+              <Variable x:TypeArguments="x:String" Name="str_Dpp_Environment" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -222,17 +211,32 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
+            <ca:ReadAssetValue sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="ReadAssetValue_4" str_in_AssetName="DPP_Environment" str_in_Orch_FolderPath="DPP_TestAutomation">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ca:ReadAssetValue.str_out_AssetValue>
                 <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">str_in_ExcelPath</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_61">str_Dpp_Environment</CSharpReference>
                 </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">D:\Naveen Bipuram\DPP_Project\Naveen_010_Build3_310724\Testdata\TestData.xlsx</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Environments">
+              </ca:ReadAssetValue.str_out_AssetValue>
+            </ca:ReadAssetValue>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_63">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_354">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_353">"DPP Environment is "+str_Dpp_Environment</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Environments">
               <ui:ReadRange.DataTable>
                 <OutArgument x:TypeArguments="sd:DataTable">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">dt_TestData</CSharpReference>
@@ -244,7 +248,7 @@
                 </InArgument>
               </ui:ReadRange.WorkbookPath>
             </ui:ReadRange>
-            <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Remove">
+            <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Remove">
               <ui:FilterDataTable.DataTable>
                 <InArgument x:TypeArguments="sd:DataTable">
                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_346">dt_TestData</CSharpValue>
@@ -260,7 +264,7 @@
                     </ui:FilterOperationArgument.Column>
                     <ui:FilterOperationArgument.Operand>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_345">"DPP_QA"</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_355">str_Dpp_Environment</CSharpValue>
                       </InArgument>
                     </ui:FilterOperationArgument.Operand>
                   </ui:FilterOperationArgument>
@@ -277,7 +281,7 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -346,14 +350,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_61">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_61">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_351">"Merchat "+str_DppMerchantCredentials_AssetName</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_62">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_62">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_352">"User "+str_DppUserCredentials_AssetName</CSharpValue>
