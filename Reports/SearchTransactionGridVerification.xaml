@@ -13,6 +13,8 @@
     <x:Property Name="str_in_Amount" Type="InArgument(x:String)" />
     <x:Property Name="str_in_TransactionStatus" Type="InArgument(x:String)" />
     <x:Property Name="bool_in_Transaction" Type="InArgument(x:Boolean)" />
+    <x:Property Name="str_in_FeeType" Type="InArgument(x:String)" />
+    <x:Property Name="str_in_FeeAmount" Type="InArgument(x:String)" />
   </x:Members>
   <this:Verify_the_report_sub_menu_search_transaction_grid_information.str_in_Test_ID>
     <InArgument x:TypeArguments="x:String" />
@@ -20,9 +22,12 @@
   <this:Verify_the_report_sub_menu_search_transaction_grid_information.int_in_Report_ID>
     <InArgument x:TypeArguments="x:Int32" />
   </this:Verify_the_report_sub_menu_search_transaction_grid_information.int_in_Report_ID>
+  <this:Verify_the_report_sub_menu_search_transaction_grid_information.str_in_FeeType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verify_the_report_sub_menu_search_transaction_grid_information.str_in_FeeType>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>854,7808.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,8395.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,15 +142,15 @@
       <AssemblyReference>UiPath.Testing</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="830.6666666666666,7744" sap2010:WorkflowViewState.IdRef="Sequence_23">
+  <Sequence sap:VirtualizedContainerService.HintSize="830.6666666666666,8330.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_23">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="768.6666666666666,7633.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="768.6666666666666,8220" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Verify_the_report_sub_menu_search_transaction_grid_information" sap:VirtualizedContainerService.HintSize="730,7394" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Verify_the_report_sub_menu_search_transaction_grid_information" sap:VirtualizedContainerService.HintSize="730,7980.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_MerchantMID" />
             <Variable x:TypeArguments="x:String" Default="chrome.exe" Name="str_BrowserValue" />
@@ -169,19 +174,19 @@
               </OutArgument>
             </ca:ReadAssetValue.str_out_AssetValue>
           </ca:ReadAssetValue>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Reports Search Transaction" sap:VirtualizedContainerService.HintSize="668,7189.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Reports Search Transaction" sap:VirtualizedContainerService.HintSize="668,7776" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="634,6970" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                <Sequence sap:VirtualizedContainerService.HintSize="634,7556.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_47">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap:VirtualizedContainerService.HintSize="572,6854" sap2010:WorkflowViewState.IdRef="If_11">
+                  <If sap:VirtualizedContainerService.HintSize="572,7440.666666666667" sap2010:WorkflowViewState.IdRef="If_11">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">bool_in_Transaction == true</CSharpValue>
@@ -348,13 +353,13 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="538,6434.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <Sequence sap:VirtualizedContainerService.HintSize="538,7021.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_49">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Verify_the_report_sub_menu_search_transaction_grid_information" sap:VirtualizedContainerService.HintSize="496,6347.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Sequence DisplayName="Verify_the_report_sub_menu_search_transaction_grid_information" sap:VirtualizedContainerService.HintSize="496,6934" sap2010:WorkflowViewState.IdRef="Sequence_22">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="str_td_type" />
                             <Variable x:TypeArguments="x:String" Name="str_td_output" />
@@ -366,6 +371,8 @@
                             <Variable x:TypeArguments="x:String" Name="str_Last4digits" />
                             <Variable x:TypeArguments="x:String" Name="str_PaymentType" />
                             <Variable x:TypeArguments="x:String" Name="str_LastName" />
+                            <Variable x:TypeArguments="x:String" Name="str_FeeType" />
+                            <Variable x:TypeArguments="x:String" Name="str_FeeAmount" />
                           </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1837,6 +1844,435 @@
                                     </InArgument>
                                   </cr:failedStep.str_in_testId>
                                 </cr:failedStep>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <uix:NGetText DisplayName="Get Text 'Surcharge Fee'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" DesignTimeRectangle="1363, 775, 104, 62" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'Surcharge Fee'" FullSelectorArgument="&lt;webctrl tableRow='2' tag='TD' colName='FEE TYPE' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='TD' colName='FEE TYPE' class='' aaname='' /&gt;" Guid="c55d8e43-a601-48ff-9b48-8838be249b74" ImageBase64="" InformativeScreenshot="5cfd0c9cd1861fa6c523d6cf57b35f62.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                            <uix:NGetText.TextString>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_64">str_FeeType</CSharpReference>
+                              </OutArgument>
+                            </uix:NGetText.TextString>
+                          </uix:NGetText>
+                          <If DisplayName="If Verify Fee Type" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_17">
+                            <If.Condition>
+                              <InArgument x:TypeArguments="x:Boolean">
+                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_390">!string.IsNullOrEmpty(str_FeeType) &amp;&amp; !string.IsNullOrEmpty(str_in_FeeType)</CSharpValue>
+                              </InArgument>
+                            </If.Condition>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,475.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="res_FeeType" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_65">str_FeeType</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_391">str_FeeType.ToLower()</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">str_in_FeeType</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_392">str_in_FeeType.ToLower()</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:MultipleAssign>
+                                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Fee Type in Realtime Transaction grid" sap:VirtualizedContainerService.HintSize="334,200" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_393">str_FeeType</CSharpValue>
+                                    </InArgument>
+                                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                                  <uta:VerifyExpressionWithOperator.Result>
+                                    <OutArgument x:TypeArguments="x:Boolean">
+                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_67">res_FeeType</CSharpReference>
+                                    </OutArgument>
+                                  </uta:VerifyExpressionWithOperator.Result>
+                                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_394">str_in_FeeType</CSharpValue>
+                                    </InArgument>
+                                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                                </uta:VerifyExpressionWithOperator>
+                                <If sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="If_18">
+                                  <If.Condition>
+                                    <InArgument x:TypeArguments="x:Boolean">
+                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_395">res_FeeType</CSharpValue>
+                                    </InArgument>
+                                  </If.Condition>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <cr:passedStep Actual_Result="Fee type value in transaction grid displayed as Empty" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_23" str_in_actualStep="Verify Fee Type value in Search transaction grid" str_in_expectedStep="Step ">
+                                        <cr:passedStep.Expected_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_396">"Fee type should be displayed in transaction grid as "+str_in_FeeType</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.Expected_Result>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <cr:passedStep.str_in_reportId>
+                                          <InArgument x:TypeArguments="x:Int32">
+                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_397">int_in_Report_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.str_in_reportId>
+                                        <cr:passedStep.str_in_testId>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_398">str_in_Test_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.str_in_testId>
+                                      </cr:passedStep>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <cr:failedStep sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="failedStep_24" str_in_actualStep="Verify Fee Type value in Search transaction grid" str_in_expectedStep="Step ">
+                                        <cr:failedStep.Actual_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_400">"Failed to display Fee type in Search transaction grid" +str_FeeType</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.Actual_Result>
+                                        <cr:failedStep.Expected_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_399">"Fee type should be displayed in transaction grid" +str_in_FeeType</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.Expected_Result>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <cr:failedStep.str_in_reportId>
+                                          <InArgument x:TypeArguments="x:Int32">
+                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_401">int_in_Report_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.str_in_reportId>
+                                        <cr:failedStep.str_in_testId>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_402">str_in_Test_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.str_in_testId>
+                                      </cr:failedStep>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,442.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <cr:passedStep Actual_Result="Fee type value in transaction grid displayed as Empty" Expected_Result="Fee type should be displayed in transaction grid as Empty" sap:VirtualizedContainerService.HintSize="334,355.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_24" str_in_actualStep="Verify Fee Type value in search transaction grid is displayed as Empty" str_in_expectedStep="Step ">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <cr:passedStep.str_in_reportId>
+                                    <InArgument x:TypeArguments="x:Int32">
+                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_403">int_in_Report_ID</CSharpValue>
+                                    </InArgument>
+                                  </cr:passedStep.str_in_reportId>
+                                  <cr:passedStep.str_in_testId>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_404">str_in_Test_ID</CSharpValue>
+                                    </InArgument>
+                                  </cr:passedStep.str_in_testId>
+                                </cr:passedStep>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <uix:NGetText DisplayName="Get Text 'Fee Amount'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="71f80efd-e7c2-4067-92e5-2df8680d120e" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://payments2.deluxe.com/gateway/reports/searchtransactions" CvTextArea="1509, 785, 50, 18" CvType="AnyWordGroup" DesignTimeRectangle="1467, 775, 98, 62" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'$ 0.12'" FullSelectorArgument="&lt;webctrl class='text-right' tableRow='2' tag='TD' colName='FEE AMOUNT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='text-right' type='' tag='TD' colName='FEE AMOUNT' /&gt;" Guid="d5aa7d7f-df22-44ba-a149-e35874a86fd6" ImageBase64="" InformativeScreenshot="6d473e5b27dfef045534ed30a0dbb91a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                            <uix:NGetText.TextString>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_68">str_FeeAmount</CSharpReference>
+                              </OutArgument>
+                            </uix:NGetText.TextString>
+                          </uix:NGetText>
+                          <If DisplayName="If verify fee amount" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_19">
+                            <If.Condition>
+                              <InArgument x:TypeArguments="x:Boolean">
+                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_405">!string.IsNullOrEmpty(str_in_FeeAmount) &amp;&amp; !string.IsNullOrEmpty(str_FeeAmount)</CSharpValue>
+                              </InArgument>
+                            </If.Condition>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="464.6666666666667,406.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="str_FeeAmount" />
+                                  <Variable x:TypeArguments="x:Boolean" Name="res_FeeAmount" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="422.6666666666667,131.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_69">str_FeeAmount</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_406">str_FeeAmount.Replace("$"," ").Replace("(","").Replace(")","")</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_70">str_in_FeeAmount</CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_407">str_in_FeeAmount.Replace("$"," ").Replace("(","").Replace(")","")</CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Fee Amount in Transaction Report" sap:VirtualizedContainerService.HintSize="422.6666666666667,54" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_408">str_FeeAmount</CSharpValue>
+                                    </InArgument>
+                                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                                  <uta:VerifyExpressionWithOperator.Result>
+                                    <OutArgument x:TypeArguments="x:Boolean">
+                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_71">res_FeeAmount</CSharpReference>
+                                    </OutArgument>
+                                  </uta:VerifyExpressionWithOperator.Result>
+                                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_409">str_in_FeeAmount</CSharpValue>
+                                    </InArgument>
+                                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uta:VerifyExpressionWithOperator>
+                                <If sap:VirtualizedContainerService.HintSize="422.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_20">
+                                  <If.Condition>
+                                    <InArgument x:TypeArguments="x:Boolean">
+                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_410">res_FeeAmount</CSharpValue>
+                                    </InArgument>
+                                  </If.Condition>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_54">
+                                        <ui:LogMessage.Level>
+                                          <InArgument x:TypeArguments="ui:LogLevel">
+                                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_411">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                          </InArgument>
+                                        </ui:LogMessage.Level>
+                                        <ui:LogMessage.Message>
+                                          <InArgument x:TypeArguments="x:Object">
+                                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_412">"Fee amount dispalyed in Search transaction report is "+str_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </ui:LogMessage.Message>
+                                      </ui:LogMessage>
+                                      <cr:passedStep sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="passedStep_26" str_in_expectedStep="Step ">
+                                        <cr:passedStep.Actual_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_413">"Displayed Fee amount value in search transaction report is " +str_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.Actual_Result>
+                                        <cr:passedStep.Expected_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_414">"Fee amount should be displayed in search transaction report is " +str_in_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.Expected_Result>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <cr:passedStep.str_in_actualStep>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_415">"Display Fee Amount value in search transaction report as "+str_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.str_in_actualStep>
+                                        <cr:passedStep.str_in_reportId>
+                                          <InArgument x:TypeArguments="x:Int32">
+                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_416">int_in_Report_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.str_in_reportId>
+                                        <cr:passedStep.str_in_testId>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_417">str_in_Test_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:passedStep.str_in_testId>
+                                      </cr:passedStep>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_55">
+                                        <ui:LogMessage.Level>
+                                          <InArgument x:TypeArguments="ui:LogLevel">
+                                            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_418">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                                          </InArgument>
+                                        </ui:LogMessage.Level>
+                                        <ui:LogMessage.Message>
+                                          <InArgument x:TypeArguments="x:Object">
+                                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_419">"Failed to display Fee amount in search transaction report"</CSharpValue>
+                                          </InArgument>
+                                        </ui:LogMessage.Message>
+                                      </ui:LogMessage>
+                                      <cr:failedStep sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="failedStep_25" str_in_actualStep="Display Fee amount value in search transaction report" str_in_expectedStep="Step ">
+                                        <cr:failedStep.Actual_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_421">"Failed to display Fee amount in search transaction amount" +str_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.Actual_Result>
+                                        <cr:failedStep.Expected_Result>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_420">"Fee amount should be displayed in search transaction report " +str_in_FeeAmount</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.Expected_Result>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <cr:failedStep.str_in_reportId>
+                                          <InArgument x:TypeArguments="x:Int32">
+                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_422">int_in_Report_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.str_in_reportId>
+                                        <cr:failedStep.str_in_testId>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_423">str_in_Test_ID</CSharpValue>
+                                          </InArgument>
+                                        </cr:failedStep.str_in_testId>
+                                      </cr:failedStep>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <cr:passedStep Actual_Result="Displayed Fee amount value in transaction report as Empty" Expected_Result="Fee amount should be displayed in search transaction report as Empty" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="passedStep_25" str_in_actualStep="Verify Fee Amount value in search transaction report displayed as Empty" str_in_expectedStep="Step ">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <cr:passedStep.str_in_reportId>
+                                    <InArgument x:TypeArguments="x:Int32">
+                                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_424">int_in_Report_ID</CSharpValue>
+                                    </InArgument>
+                                  </cr:passedStep.str_in_reportId>
+                                  <cr:passedStep.str_in_testId>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_425">str_in_Test_ID</CSharpValue>
+                                    </InArgument>
+                                  </cr:passedStep.str_in_testId>
+                                </cr:passedStep>
                               </Sequence>
                             </If.Else>
                           </If>
